@@ -1,0 +1,1164 @@
+\documentclass[10pt,german,twocolumn,DIV15]{scrartcl}
+\usepackage{kibitzer}
+\usepackage{babel}
+\usepackage{courier}
+
+\pagestyle{headings}
+
+% \setlength{\topmargin}{-16mm}
+% \setlength{\oddsidemargin}{-20mm}
+% \setlength{\evensidemargin}{-20mm}
+% \setlength{\textwidth}{200mm}   % -> Rand links 5mm breiter als rechts 
+% \setlength{\textheight}{256mm}
+\setlength{\columnsep}{8mm}
+% \setlength{\columnseprule}{0.4pt}
+
+\handwidth22mm
+\parindent0mm
+\parskip2ex plus1ex minus1ex
+
+\def\pik{\,\Sp}
+\def\coe{\,\He}
+\def\kar{\,\Di}
+\def\tre{\,\Cl}
+
+\def\pi{\Sp}
+\def\co{\He}
+\def\ka{\Di}
+\def\tr{\Cl}
+
+\def\mi{\,$\clubsuit /\diamondsuit$} 
+\def\ma{\,$\heartsuit /\spadesuit$}
+\def\good{$^+$}
+\def\bad{$^-$}
+\def\ra{$\rightarrow$}
+\def\pl{$\uparrow$}
+\def\uf{\textsf{\,UF}}
+\def\of{\textsf{\,OF}}
+\def\ufa{\textsf{UF}}
+\def\ofa{\textsf{OF}}
+\def\aof{\textsf{\,aOF}}
+\def\SA{\textsf{\,SA}}
+\def\kontra{\textsf{X}}
+\def\sep{\,--\,}
+\newcommand{\conv}[1]{\emph{#1}}
+\def\bal{\textsc{Ausg}}
+\def\unbal{\textsc{Unausg}}
+\def\nat{\textsc{Nat}}
+\def\pf{\textsc{PF}}
+\def\maxi{\textsc{Max}}
+\def\mini{\textsc{Min}}
+\def\inv{\textsc{Einl}}
+\def\nf{\textsc{NF}}
+\def\rel{\textsc{Rel}}
+\def\stp{\textsc{Stop}}
+\def\hstp{\textsc{Hstop}}
+\def\cstop{\coe-\stp}
+\def\pstop{\pik-\stp}
+\def\tstop{\tre-\stp}
+\def\kstop{\kar-\stp}
+\def\chstop{\coe-\hstp}
+\def\phstop{\pik-\hstp}
+\def\thstop{\tre-\hstp}
+\def\khstop{\kar-\hstp}
+\def\aw{\textsc{Aw}}
+\def\eo{\textsc{E\"o}}
+\def\bdsc{\begin{description}}
+\def\edsc{\end{description}}
+
+\setlength{\labelsep}{2ex}
+
+\newcommand\bidins[1]%
+{%
+\begin{tabular}[t]{llp{32ex}}%
+#1
+\end{tabular}%
+}
+
+\newcommand\bidseq[1]%
+{%
+\begin{flushleft}
+\begin{tabular}[t]{llp{32ex}}%
+#1
+\end{tabular}%
+\end{flushleft}
+}
+
+\newcommand\notebox[1]%
+{%
+\setlength{\fboxsep}{2ex}
+\fbox{\parbox{0.43\textwidth}{#1}}
+}
+  
+
+\begin{document}
+
+\setlength{\itemsep}{0ex plus0.2ex}
+
+\onecolumn
+{\centering\Huge\ 5er Oberfarben (R. Bartels und Th. Schmitt)}
+\tableofcontents
+\twocolumn
+
+\section{"Ubersicht der Er"offnungen}
+
+\subsection*{1er-Stufe}
+\bidins{%
+1\mi & 12\pl	& 3\pl \mi\\[1ex]
+1\ma & 12\pl	& 5\pl \ma\\[1ex]
+1\SA & 15-17	& \bal, 5er\of\ m"oglich\\
+}
+
+\subsection*{2er-Stufe}
+\bidins{%
+2\tre	& 6-10	& Weak Two in \kar, oder\\
+	& 16\pl	& 6er-Farbe, \textbf{8} Spielstiche, oder\\
+	& 22-23	& \bal, oder\\
+	& 26-27	& \bal\\[1ex]
+2\kar	& 6-10	& Weak Two in \coe, oder\\
+	& 18\pl	& 6er-Farbe, \textbf{9} Spielstiche, oder\\
+	& 24-25	& \bal, oder\\
+	& 28\pl	& \bal\\[1ex]
+2\coe	& 6-10	& Zweif"arber mit \coe\\[1ex]
+2\pik	& 6-10	& Weak Two in \pik\\[1ex]
+2\SA	& 20-21	& \bal\\
+}
+
+\subsection*{3er-Stufe}
+\bidins{%
+3\uf	& 5-10	& 7\pl{}\uf, in 1. Hand nur in Nichtgefahr, in 3. Hand 6er-Farbe m"oglich\\[1ex]
+3\of	& 5-10	& 7\pl{}\of\\[1ex]
+3\SA	& 	& Gambling in 1./2. Hand, in 3./4. Hand zum spielen\\
+}
+
+\subsection*{4er-Stufe}
+\bidins{%
+4\mi	& 	& stehende 7\ma\ mit einem Nebenwert\\[1ex]
+4\of	&	& 7\good\pl\of, zum spielen\\[1ex]
+4\SA	&	& 65\pl\uf\\
+}
+
+\section{Die 1\mi-Er"offnung}
+
+Ohne 5\pl\of\ wird grunds"atzlich die l"angere \uf\ er"offnet.  Bei
+gleicher L"ange in den \uf\ wird 1\kar\ er"offnet, mit 33 in den \uf\
+wird 1\tre\ er"offnet.
+
+Siehe auch \textit{Er"offnungsregel f"ur Zweif"arber mit 6/5 \uf/\of} auf
+Seite \pageref{zfregel}.
+
+\subsection{Antworten des Partners (nach 1\tre-Er"offnung)}
+\bidins{%
+1\kar	& 6-7	& \bal\ ohne 4er\of, 3-3-3-4 Verteilung mit 3er\kar\ m"oglich, oder\\
+	& 6\pl	& \kar-Einf"arber, oder\\
+	& 12\pl	& 5er\kar\ und 4er\of\ \conv{(Walsh-\ka)}\\[1ex]
+1\of	& 6\pl	& 4\pl\of\\[1ex]
+1\SA	& 8-10	& \bal\ ohne 4er\of\\[1ex]
+2\tre	& 10\good\pl & 5\pl\tre\ \conv{(Inverted)}\\[1ex]
+2\kar	& 2-5	& 55\of\\[1ex]
+2\of	& 5-8	& gute 6\pl\of\ \conv{(Weak Jump)}\\[1ex]
+2\SA    & 2-6   & 5\pl\tre\ \conv{(Inverted Spezial)}\\[1ex]
+3\tre	& 7-9	& 5\pl\tre\ \conv{(Inverted)}\\[1ex]
+3\kar	& 12-15 & 5/5 in \tre\,+\kar\ \conv{(Fit Jump)}\\[1ex]
+3\coe	& 12-15 & 5/5 in \tre\,+\coe\ \conv{(Fit Jump)}\\[1ex]
+3\pik	& 12-15	& 5/5 in \tre\,+\pik\ \conv{(Fit Jump)}\\[1ex]
+3\SA	& 13-15	& zum spielen\\[1ex]
+4\tre	&	& \conv{KCB}\\[1ex]
+4\of	&	& zum spielen\\
+}
+
+\notebox{%
+Ein unn"otiger Sprung in einer neuen Farbe ist
+  \textsc{Splinter}.\\
+Ein unn"otiger Doppelsprung ist
+  \textsc{Exclusion \mbox{RKCB}}.
+}
+
+\subsection{Bietsequenzen nach 1\mi-Er"offnung}
+
+\subsubsection{Bietsequenzen nach [1\tre-1\kar]}
+
+Wegen \conv{Walsh-\ka} zeigt \aw\ nach 1\tre-Er"offnung seine \of\
+sofort, au"ser mit einer starken Hand und noch l"angeren
+Karos. \mbox{[1\tre-1\kar]} lehnt eine 4er\of\ bei \aw\ also
+meistens ab.
+
+\eo\ reizt daher \SA\ weiter, wenn er \bal\ ist, eine etwaige 4er\of\
+verschweigt er.  Ein \of-R"uckgebot von \eo\ zeigt \unbal\ mit langen
+Treffs.
+
+\bdsc
+\item[1\tre\ -- 1\kar;] ?
+  \bdsc
+  \item[1\coe] 5\pl\tre\ und 4er\coe\ oder 4-4-1-4
+  \item[1\pik] 5\pl\tre\ und 4er\pik
+  \item[1\SA] 12-14, eine oder beide \of\ m"oglich
+    \bdsc
+      \item[2\tre] Schlemm-Interesse in \tre\ oder \kar;
+            \textbf{Frage nach Verteilung} (s.~u.)
+      \item[2\kar] schwach; zum spielen
+      \item[2\ma] \pf\ mit 5/4-Verteilung
+      \item[2\SA] \nat
+      \item[3\tre/\coe/\pik] \conv{Splinter} mit 6er\kar
+      \item[3\kar] \inv\ mit 6er\kar
+    \edsc
+  \item[2\tre] 12-14, 6er\tre
+    \bdsc
+      \item[2\coe] \cstop, kein \pstop.
+        \ra~2\pik\ Frage nach \hstp\ \conv{(VFF)}
+      \item[2\pik] zeigt \pstop, \ra~3\tre\ verneint \cstop, \ra\
+        3\coe\ Frage nach \hstp\ \conv{(VFF)}
+      \item[3\ma] \textsc{Splinter} mit \tre-Anschluss
+      \item[4\ma] \textsc{Exclusion RCKB} auf \tre-Basis
+    \edsc
+  \item[2\SA] 18-19, eine oder beide \of\ m"oglich
+    \bdsc
+    \item[3\tre] \conv{Wolff Sign Off}, verlangt \rel\ 3\kar, worauf
+      man passen kann oder Sign Off gibt
+    \item[3\kar] Forcing
+    \item[3\of] 12\pl\ FP, 5/4-Verteilung, Schlemm m"oglich (s.~u.)
+      \bdsc
+      \item[3\SA] \nat, kein Fit
+      \item[4\of] Fit in der Oberfarbe
+      \item[Rest] Steps \conv{RKCB} auf \kar-Basis
+      \edsc
+    \edsc
+  \edsc
+\edsc
+
+\bdsc
+\item[1\tre\ -- 1\kar; 1\SA\ -- 2\tre;] ?
+
+  Hat \aw\ Schlemm-Interesse in \uf, so kann er die genaue
+  Verteilung der \bal\ Hand von \eo\ erfragen.
+  \bdsc
+  \item[2\kar] 3er\kar, \textbf{nicht 4-3-3-3}
+    \bdsc
+      \item[2\coe] \rel, Frage nach Verteilung\\
+        \ra~2\pik\ = 5er\tre\\
+        \ra~2\SA\ = 4er\tre
+      \item[3\mi] \conv{RKCB}
+    \edsc
+  \item[2\coe] 3-4-2-4
+  \item[2\pik] 4-3-2-4
+  \item[2\SA]  beliebige 4333
+    \bdsc
+      \item[3\tre] \rel, Frage der 4er-Farbe\\
+        \ra~3\kar\ = \textbf{4er\tre}\\
+        \ra~3\coe\ = 4er\coe\\
+        \ra~3\pik\ = 4er\pik
+    \edsc
+  \item[3\tre] 3-3-2-5 (\ra~3\kar\ = \conv{RKCB})
+  \item[3\kar] 4-4-2-3
+  \edsc
+\edsc
+
+\bdsc
+  \item[1\tre\ -- 1\kar; 2\SA\ --] ?
+
+    \aw\ kann nun 3\of\ reizen und damit Schlemm-Interesse in der \of\
+    zeigen.
+    \bdsc
+      \item[3\coe] 12\pl\ FP, 5/4-Verteilung, Schlemm m"oglich
+        \bdsc
+          \item[3\pik] 1 oder 4 Key Cards auf \kar-Basis
+          \item[3\SA] \nat, kein Fit
+          \item[4\tre] 0 oder 3 Key Cards auf \kar-Basis
+          \item[4\kar] 2 Key Cards auf \kar-Basis
+          \item[4\coe] Fit in der \of
+          \item[4\pik] 2 Key Cards mit Trumpf-Dame (\kar-Dame)
+        \edsc
+      \item[3\pik] 12\pl\ FP, 5/4-Verteilung, Schlemm m"oglich
+        \bdsc
+          \item[3\SA] \nat, kein Fit
+          \item[4\tre] 1 oder 4 Key Cards auf \kar-Basis
+          \item[4\kar] 0 oder 3 Key Cards auf \kar-Basis
+          \item[4\coe] 2 Key Cards
+          \item[4\pik] Fit in der \of
+        \edsc
+    \edsc
+\edsc
+
+\subsubsection{Bietsequenzen nach [1\tre-1\of]}
+
+\footnotetext[1]{Einladende H"ande mit 6er-Farbe "uber
+  \conv{Checkback} reizen.}
+
+\bdsc
+\item[1\tre\ -- 1\coe;] ?
+  \bdsc
+  \item[1\pik] 12\pl\ FP, \nat
+
+    Wiederholt der Antwortende seine Oberfarbe auf niedrigster Stufe
+    nachdem der Er"offner zwei Farben gereizt hat, so zeigt dies eine
+    einladende Hand mit 9-11 FP und 6er-Farbe.
+
+    Wiederholt er seine Oberfarbe im Sprung, so zeigt dies eine
+    partieforcierende Hand mit 6er-Farbe:
+    \bdsc
+    \item[2\coe] 9-11 FP, 6er\coe, \inv
+    \item[3\coe] 6er\coe, \pf
+    \edsc
+  \item[1\SA] 12-14 FP \bal, kein 4er\pik
+    \bdsc
+    \item[2\tre] \conv{Checkback Stayman}
+    \item[2\kar] 4er\coe, 5\pl\kar, zum spielen
+    \item[2\coe] 5er\coe, schwach, zum spielen
+    \item[2\pik] 5/4 \coe\,+\pik, \pf
+    \item[2\SA] \nat
+    \item[3\mi] \nat, \pf
+    \item[3\coe] 6er\coe, Schlemm-Interesse\footnotemark[1]
+    \edsc
+  \edsc
+
+\item[1\tre\ -- 1\pik;] ?
+  \bdsc
+  \item[1\SA] 12-14 FP \bal\ (s.~u.)
+  \item[2\tre] 12-16\bad, 5\pl{}er-Farbe (s.~u.)
+  \item[2\SA] 18-19 FP, \bal; siehe \conv{Wolff} etc.
+  \item[3\kar/\co] 4er\pik, Single \ka/\co, \conv{Splinter}
+  \item[3\SA] 18-19 FP, stehendes 6er\tre, K"urze in \pik, Deckung in den
+    ungereizten Farben, 8-8$\frac{1}{2}$ Stiche
+  \item[4\tre] 18\good\pl, 4er\pik, 5\good\pl\tre
+  \item[4\kar/\co] 18\good\pl, 4er\pik, \conv{Exclusion RCKB}
+  \edsc
+\item[1\tre\ -- 1\pik; 1\SA\ --] ?
+
+  12-14 FP \bal
+  \bdsc
+  \item[2\tre] \conv{Checkback Stayman}
+  \item[2\kar] 4er\pik, 5\pl{}\kar, zum spielen
+  \item[2\coe] 5/4 \pik\,+\coe, zum spielen oder ausbessern
+  \item[2\pik] 5er\pik, schwach
+  \item[2\SA] \nat
+  \item[3\mi] \nat, \pf
+  \item[3\coe] 5/4 \pik\,+\coe, \pf
+  \item[3\pik] 6er\pik, Schlemm-Interesse\footnotemark[1]
+  \edsc
+\item[1\tre\ -- 1\pik; 2\tre\ --] ?
+
+  12-16\bad, 5\pl{}er-Farbe
+  \bdsc
+  \item[2\kar] \conv{Dritte Farbe Forcing}
+    \bdsc
+    \item[2\coe] Frage nach \hstp\ (\conv{VFF}), kein 3er\pik
+    \item[2\pik] 3er\pik, \mini\ f"ur 2\tre-R"uckgebot\\
+      \ra~3\tre\ = Forcing mit \tre
+    \item[2\SA] \cstop, kein 3er\pik, \mini
+    \item[3\pik] 3er\pik, \maxi\ f"ur 2\tre-R"uckgebot
+    \edsc
+  \item[3\tre] \inv
+  \edsc
+\edsc
+
+\footnotetext[1]{Einladende H"ande mit 6er-Farbe "uber
+  \conv{Checkback} reizen.}
+
+\subsubsection{Bietsequenzen nach \conv{Reverse}}
+
+\bdsc
+  \item[1\tre\ -- 1\pik; 2\kar\ --] ?
+
+    \conv{Reverse} zeigt 16\good\pl\ und ist selbstforcierend f"ur
+    \eo.
+    \bdsc
+    \item[2\coe] \conv{VFF}, sagt hier aber nichts "uber die St"arke
+      aus, da 2\kar\ selbsforcierend war.  Verneint in diesem Fall
+      \textbf{5er}\pik, da man \pik\ h"atte wiederholen k"onnen ohne
+      dass \eo\ passen darf.
+      \bdsc
+        \item[2\SA] \mini,\cstop, \nf
+        \item[3\tre] \mini, \nf
+        \item[3\kar] \maxi, \pf
+        \item[3\SA] \maxi, \cstop
+      \edsc
+    \item[2\pik] 5er-Farbe, schwach oder stark
+      \bdsc
+        \item[2\SA] \mini, \cstop, kein 3er\pik
+        \item[3\tre] \mini, kein 3er\pik
+        \item[3\kar] \maxi, kein 3er\pik
+        \item[3\coe] \conv{VFF}, Frage nach \cstop
+        \item[3\pik] \mini\ mit 3er\pik
+        \item[3\SA] \maxi, \cstop, kein 3er\pik
+      \edsc
+    \item[2\SA] \conv{Ingberman (Moderateur)}, verlangt \ra~3\tre\ \rel, danach:
+      \bdsc
+      \item[pass/3\kar] zum Spielen
+      \item[3\SA] 8-9 FP \nat
+      \item[4\SA] 12\pl\ FP, quantitative Schlemmeinladung
+      \edsc
+      Mit Zusatzst"arke (18\good\pl) muss \eo\ das 3\tre\ \rel\
+      "uberspringen.
+    \item[3\uf] \pf
+    \item[3\SA] 10-11 FP, \cstop
+    \edsc
+\edsc
+
+\subsubsection{Bietsequenzen nach \conv{Inverted}}
+
+Nach [1\tre-2\tre] bzw. [1\kar-2\kar] gibt es kein Reverse.  \eo\
+zeigt mit 2\SA\ eine ausgeglichene, passbare Hand.  3\tre/\kar\ ist
+ebenfalls passbar.  Alle anderen Gebote des Er"offners zeigen Werte
+(Stopper) und sind \pf.
+
+\bdsc
+  \item[1\tre\ -- 2\tre;] ?
+    \bdsc
+      \item[2\kar] 14\good\pl, \kstop
+        \bdsc
+        \item[2\coe] \cstop\ (h"ochstens \phstop), \ra~2\pik\ fragt
+          nach \phstop\ (siehe \conv{VFF})
+        \item[2\pik] \pstop\ (h"ochstens \chstop)
+        \item[2\SA] \stp\ in \co\ und \pi.
+        \edsc
+      \item[2\coe-2\pik] 14\good\pl, \stp\ in der Farbe
+    \edsc
+\edsc
+
+\subsubsection*{Sonstiges}
+
+Nach [1\tre-2\of] \conv{(Weak Jump)} kann \eo\ mit 2\SA\
+\conv{(Ogust)} nach St"arke und Farbqualit"at fragen (wie nach
+\conv{Weak Two} Er"offnung, siehe \ref{ogust}, S.~\pageref{ogust}).
+
+Nach 1\kar{}-Er"offnung sind die Antworten entsprechend.
+
+Ausnahme:
+\bdsc
+  \item[1\kar\ -- 2\tre;] ?
+    \bdsc
+    \item[2\kar] 12-13 FP \bal\ oder \nat
+    \item[2\SA] 14 FP \bal
+    \edsc
+\edsc
+        
+
+\subsubsection*{\label{zfregel}Er"offnungsregel f"ur Zweif"arber mit 6/5 \uf/\of}
+
+\bdsc
+\setlength{\labelsep}{1ex}
+\item[4\pl{} Verlierer:] \of\ er"offnen und \uf\ billig nachreizen
+\item[3-4 Verlierer:] \uf\ er"offnen und anschliessend \conv{Reverse}
+  reizen
+\item[0-2 Verlierer:] \pf\ er"offnen
+\edsc
+
+\newpage
+\section{Die 1\of-Er"offnungen}
+
+Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
+\begin{itemize}
+\setlength{\itemsep}{0.5ex}
+\item Schwache bis einladende H"ande mit 4\pl{}er-Anschlu"s werden durch
+  \conv{Bergen Raises} gezeigt.
+\item Mit \pf\ und gutem Trumpfanschluss reizen wir
+  \conv{Splinter} oder \conv{Stenberg 2\SA}.
+\item Die restlichen starken Varianten werden durch verz"ogertes
+  Reizen der Trumpfunterst"utzung gezeigt (Farbwechsel).
+\end{itemize}
+
+\subsection{Die 1\coe-Er"offnung}
+
+\bdsc
+  \item[1\pik] 6\pl, 4\pl\pik
+  \item[1\SA] 6-10, kein 3er\coe, kein 4er\pik
+  \item[2\tre] 10\pl, \textbf{k"unstlich}, selbstforcierend
+  \item[2\kar] 10\pl, 5\pl\kar
+  \item[2\coe] 6-10\bad, 3er\coe
+  \item[2\pik] 5-8, 6\pl\pik\ \conv{(Weak Jump)}
+  \item[2\SA] 12\good\pl, 4er\coe\ \conv{(Stenberg)}, \pf\ (siehe
+    \ref{stenberg}, S.~\pageref{stenberg})\\
+    (nach vormaligem Pass: 11-12, Double-\coe\ und 3er\pik)
+  \item[3\tre] 9\good-11, 4\pl\coe\ \conv{(Bergen Raise)}
+  \item[3\kar] 7-9\bad, 4\pl\coe\ \conv{(Bergen Raise)}
+  \item[3\coe] 0-6, 4\pl\coe\ \conv{(Bergen Raise)}
+  \item[3\pik] 11-14, 4\pl\coe\ (oder 3\good\coe), beliebiges Chicane\\
+    \ra~3\SA\ fragt nach dem Chicane (siehe S.~\pageref{chicaneask})
+  \item[3\SA] 11-14, 4\pl\coe\ (oder 3\good\coe), \pi-Single \conv{(Splinter)}
+  \item[4\tre/\ka] 11-14, 4\pl\coe\ (oder 3\good\coe), \tr/\ka-Single
+    \conv{(Splinter)}
+  \item[4\coe] zum spielen
+  \item[4\pik] \conv{Exclusion RKCB} auf \coe-Basis
+\edsc
+
+\subsection{Die 1\pik-Er"offnung}
+
+\bdsc
+  \item[1\SA] 6-10, kein 3er\pik
+  \item[2\tre] 10\good\pl, \textbf{k"unstlich}, selbstforcierend
+  \item[2\kar] 10\good\pl, 5\pl\kar
+  \item[2\coe] 10\good\pl, 5\pl\coe
+  \item[2\pik] 6-10\bad, 3er\pik
+  \item[2\SA] 12\good\pl, 4er\pik\ \conv{(Stenberg)}, \pf\ (siehe
+    \ref{stenberg}, S.~\pageref{stenberg})\\
+    (nach vormaligem Pass: 11-12, Double-\pik\ und 3er\coe)
+  \item[3\tre] 9\good-11, 4\pl\pik\ \conv{(Bergen Raise)}
+  \item[3\kar] 7-9\bad, 4\pl\pik\ \conv{(Bergen Raise)}
+  \item[3\coe] 11-14, 4\pl\pik\ (oder 3\good\pik), beliebiges Chicane\\
+    \ra~3\pik\ fragt nach dem Chicane (siehe S.~\pageref{chicaneask})
+  \item[3\pik] 0-6, 4\pl\pik\ \conv{(Bergen Raise)}
+  \item[3\SA] 11-14, 4\pl\pik\ (oder 3\good\pik), \co-Single \conv{(Splinter)}
+  \item[4\tre/\ka] 11-14, 4\pl\pik\ (oder 3\good\pik), \tr/\ka-Single
+    \conv{(Splinter)}
+  \item[4\coe] zum spielen
+  \item[4\pik] \conv{Exclusion RKCB} auf \coe-Basis
+\edsc
+
+\subsection{Bietsequenzen nach 1\of-Er"offnung}
+
+\bdsc
+\item[1\coe\ -- 1\pik;] ?
+  \bdsc
+  \item[1\SA] 12-14 \bal
+    \bdsc
+    \item[2\tre] \conv{Checkback Stayman}
+    \item[2\kar] 4er\pik, 5\pl\kar, zum spielen
+    \item[3\tre] \nat, forcing
+      \bdsc
+      \item[3\kar] Frage nach \hstp, zeigt \khstop, verneint 3er\pik\
+        (siehe \conv{VFF})
+      \item[3\coe] 2-5-3-3, verneint \khstop
+      \item[3\pik] 3er\pik, \maxi
+      \item[3\SA] \kstop, verneint 3er\pik
+      \item[4\pik] 3er\pik, \mini
+      \edsc
+    \edsc
+  \item[2\tre/\ka] 12-18, 54\pl-Verteilung
+    \bdsc
+    \item[2\coe] Ausbessern, \coe-Double
+    \item[3\tre/\ka] \inv
+    \edsc
+    \textbf{Nach \conv{1~"uber~1} ist die Hebung von \eo's \emph{zweiter} Farbe
+    auf die 3er-Stufe lediglich einladend.}
+  \item[2\SA] 18-19 FP \bal
+  \item[3\tre/\ka] 18\good\pl FP, 5\pl\coe\ und 4\pl\uf\\
+    \ra~3\coe\ = st"arker als 4\coe\ (\emph{Principle of Fast Arrival});
+    \ra~3\pik\ ist dann \conv{Cue Bid}, aber keine K"urze
+    
+    \textbf{Ein \conv{Cue Bid} in Partners erster Farbe zeigt \emph{nie} eine
+    K"urze.}
+  \edsc
+\pagebreak
+\item[1\pik\ -- 2\tre;] ?
+\bdsc
+\item[2\kar] 12-18 FP, 54\pl
+  \bdsc
+  \item[2\pik] \inv\ mit 3er\pik
+  \item[2\SA] \nat\ \nf
+  \item[3\tre] \nat\ \nf
+  \item[3\kar] \pf
+    \bdsc
+    \item[3\coe] Frage nach \hstp\ \conv{(VFF)}
+    \item[3\pik] kein \chstop, verspricht kein 6er\pik
+    \item[3\SA] \cstop
+    \edsc
+  \item[3\pik] Schlemm-Interesse mit 3er\pik
+  \edsc
+  \textbf{Nach \conv{2~"uber~1} ist die Hebung von \eo's
+    \emph{zweiter} Farbe auf die 3er-Stufe \pf.}
+\item[2\coe]~
+  \bdsc
+  \item[2\SA] \nat
+    \bdsc
+    \item[3\kar] 5/5 in den \of, \pf
+    \item[3\coe] 5/5 in den \of, \nf
+    \edsc
+  \item[3\coe] \pf
+  \edsc
+\item[2\pik] 12-14 FP, kann 5er\pik\ sein!
+  \bdsc
+  \item[3\tre] 6er\tre, \nf
+  \item[3\kar/\co] Werte (siehe \conv{DFF}), \pf
+  \item[3\pik] \inv, 3er\pik
+  \edsc
+\item[2\SA] 18-19 FP \bal
+\item[3\tre] 16\pl\ FP, 54\pl\ \pik\,+\tre
+  \bdsc
+  \item[3\kar] \kar-Werte, \ra~3\coe\ = Frage nach \hstp
+  \item[3\coe] \coe-Werte
+  \edsc
+\edsc
+\item[1\pik\ -- 2\coe;] ?
+  \bdsc
+  \item[3\coe] 16\pl\ FP, 53\pl\ \pi\,+\coe
+  \item[4\coe] 12-14 FP, 4er-Anschluss (3er-Anschluss und \mini\
+    "uber 2\pik)
+  \edsc
+\edsc
+
+\bcbiddingpair{West}{Ost}
+{
+  1\pik & 2\kar\\
+  3\tre\al{a} & 3\kar\al{b}\\
+  3\SA\al{c}  & 4\SA\al{d}
+}
+{
+  \Meaning{a}{5/4 in \pi\,+\tre}
+  \Meaning{b}{forcing}
+  \Meaning{c}{\cstop}
+  \Meaning{d}{quantitativ}
+}
+
+\subsubsection{Spezielle \conv{Splinter}-Gebote nach 1\of-Er"offnung}
+[1\of-3\SA] zeigt ein Single in der anderen \of.
+
+Chicane-\conv{Splinter} werden mit einem einfachen Sprung in die
+andere \of\ gezeigt:
+\bdsc
+\item[{[}1\coe\ -- 3\pik{]}] beliebiges Chicane, \ra\ 3\SA\ \rel, Frage nach
+  dem Chicane
+  \bdsc
+    \item[4\tre] \tr-Chicane
+    \item[4\kar] \ka-Chicane
+    \item[4\coe] \pi-Chicane
+  \edsc
+\item[{[}1\pik\ -- 3\coe{]}] beliebiges Chicane, \ra\ 3\pik\ \rel, Frage nach
+  dem Chicane
+  \bdsc
+    \item[3\SA] \co-Chicane
+    \item[4\tre] \tr-Chicane
+    \item[4\kar] \ka-Chicane
+  \edsc
+\edsc
+
+\subsection{Weiterreizung nach [1\of\ -- 2\SA] \conv{(Stenberg)}}
+
+2\SA\ auf eine 1\of-Er"offnung verspricht 4er-Anschluss und
+Vollspielwerte, oder besser.
+
+Der Er"offner reizt daraufhin eine K"urze, falls vorhanden. Hat er
+keine K"urze, so reizt er mit 11-13 4\of, mit 14-15 3\SA\ und mit
+16\pl\ 3\of\ (\conv{principle of fast arrival}, je h"oher wir reizen,
+desto \emph{schw"acher} sind wir).
+
+Hat \eo\ eine K"urze gezeigt, so fragt die n"achste Stufe (\rel) nach
+Art der K"urze und nach Keycards.  Die erste Antwortstufe zeigt ein
+Chicane, weiteres \rel\ ist \conv{RKCB}.  Alle anderen Antwortstufen
+zeigen ein Single und beantworten gleichzeitig \conv{RKCB}.
+
+Hat \eo\ keine K"urze gezeigt, so ist die n"achste Stufe \conv{RKCB}.
+
+\bdsc
+\item[1\of\ -- 2\SA;] ?
+  \bdsc
+  \item[3\uf/\aof] K"urze in der gereizten Farbe, \ra~\rel\ = Frage
+    nach Art der K"urze sowie \conv{RKCB},~\ra
+    \bdsc
+    \item[n"achste Stufe:] K"urze ist ein Chicane, \ra~\rel\ = \conv{RKCB}
+    \item[Rest:] direkte 1430-Antworten auf
+      \conv{RKCB}, K"urze ist ein Single
+    \edsc
+  \item[3\of] 16\pl, keine K"urze, \ra~\rel\ = \conv{RKCB}
+  \item[3\SA] 14-15, keine K"urze, \ra~4\tre\ = \conv{RKCB}
+  \item[4\of] 11-13, keine K"urze, \ra~\rel\ = \conv{RKCB}
+  \edsc
+\item[1\coe\ -- 2\SA; 3\tre\ -- 3\kar;] ?
+  
+  (\eo\ hat eine K"urze in \tr, \aw\ fragt nach Keycards.)~\ra
+  \bdsc
+  \item[3\coe] Chicane in \tre\\
+    \ra~3\pik\ = \conv{RKCB}
+  \item[3\pik] \tre-Single, eine oder vier Keycards
+  \item[3\SA] \tre-Single, keine oder drei Keycards
+  \item[4\tre] \tre-Single, zwei Keycards ohne \co-Dame
+  \item[4\kar] \tre-Single, zwei Keycards mit \co-Dame
+  \edsc
+\edsc
+
+\subsubsection{Beispielreizungen zu \conv{Stenberg}}
+
+\westhand{432}{AB10852}{A3}{K2}
+\easthand{KB6}{K976}{K94}{A87}
+\centerline{\showEWgame}
+\bcbiddingpair{West}{Ost}
+{
+  1\coe & 2\SA\\
+  4\coe\al{a} & pass
+}
+{
+  \Meaning{a}{Minimum (11-13)}
+}
+
+\vfill
+\westhand{4}{AB10852}{A1042}{K2}
+\easthand{876}{KD76}{KD3}{A87}
+\centerline{\showEWgame}
+\bcbiddingpair{West}{Ost}
+{
+  1\coe & 2\SA\\
+  3\pik\al{a} & 3\SA\al{b}\\
+  4\pik\al{c} & 6\coe
+}
+{
+  \Meaning{a}{\pi-K"urze (Single oder Chicane)}
+  \Meaning{b}{Frage}
+  \Meaning{c}{\pi-Single, zwei Keycards ohne Trumpf-Dame}
+}
+
+\vfill
+\westhand{KB1042}{DB753}{2}{K3}
+\easthand{AD53}{AK}{653}{A542}
+\centerline{\showEWgame}
+\bcbiddingpair{West}{Ost}
+{
+  1\pik & 2\SA\\
+  3\kar\al{a} & 3\coe\al{b}\\
+  3\SA{c} & 6\pik
+}
+{
+  \Meaning{a}{\ka-K"urze (Single oder Chicane)}
+  \Meaning{b}{Frage}
+  \Meaning{c}{\ka-Single, eine oder vier Keycards}
+}
+
+\vfill
+\westhand{K752}{AD542}{-}{K742}
+\easthand{A8}{KB76}{D62}{ADB3}
+\centerline{\showEWgame}
+\bcbiddingpair{West}{Ost}
+{
+  1\coe & 2\SA\\
+  3\kar\al{a} & 3\coe\al{b}\\
+  3\pik\al{c} & 3\SA\al{d}\\
+  4\tre\al{e} & 4\kar\al{f}\\
+  4\pik\al{g} & 4\SA\al{h}\\
+  5\tre\al{i} & 7\coe
+}
+{
+  \Meaning{a}{\ka-K"urze (Single oder Chicane)}
+  \Meaning{b}{Frage}
+  \Meaning{c}{\kar-Chicane}
+  \Meaning{d}{\conv{RKCB}}
+  \Meaning{e}{eine oder vier Keycards}
+  \Meaning{f}{Frage nach \co-Dame}
+  \Meaning{g}{\co-Dame und \pi-K"onig vorhanden}
+  \Meaning{h}{Frage nach weiteren K"onigen}
+  \Meaning{i}{\tr-K"onig vorhanden}
+}
+\raggedbottom
+
+\section{Verhalten nach Zwischenreizung durch die Gegner}
+
+\subsection{Allgemeines}
+\begin{itemize}
+\item Das Reizen einer neuen Farbe auf der 1er-Stufe ist weiterhin
+forcierend f"ur eine Runde.
+%
+\item Das Reizen einer neuen Farbe auf der 2er-Stufe ist nicht forcierend
+falls die Zwischenreizung gest"ort hat, sonst forcierend:
+\begin{description}
+\item[1\coe\sep(1\pik)\sep2\kar] ist forcierend da man auch
+ohne die Zwischenreizung 2\kar\ gereizt h"atte.
+\item[1\tre\sep(1\pik)\sep2\coe] ist nicht forcierend da man ohne die
+  Zwischenreizung 1\coe\ gereizt h"atte.
+\end{description}
+%
+\item Eine neue Farbe auf der 3er-Stufe ist immer forcierend
+  (z.~B. 1\pik\sep(2\kar)\sep3\tre).
+\item Nach \conv{Informationskontra} ist eine neue Farbe auf der 2er-Stufe
+  nicht forcierend.
+\item Nach \conv{Weak Jumps} ist das Reizen einer neuen Farbe immer
+  forcierend.
+\item \conv{Kontra} ist negativ bis 3\coe\ oder zeigt eine beliebige
+  starke Hand f"ur die es in der augenblicklichen Situation kein Gebot
+  gab.
+\item Der \conv{"Uberruf}
+  \begin{itemize}
+    \item nach \ufa-Er"offnung fragt nach Stopper.
+    \item nach \ofa-Er"offnung zeigt eine partieforcierende Hand mit
+      Anschlu"s in der \ofa\ (siehe unten).
+    \end{itemize}
+\item 1\SA\ und 3\SA\ sind nat"urlich.
+\end{itemize}
+
+\subsection{Nach \of-Er"offnung}
+\begin{itemize}
+\item Alle \ofa-Hebungen sind schwach.  Falls \conv{Bergen Raises}
+  noch m"oglich sind, werden diese angewendet.
+\item {[}1\of\sep($x$)\sep2\SA{]} zeigt
+  \begin{itemize}
+  \item wenn \conv{Bergen Raises} noch m"oglich sind: eine einladende
+    Hebung mit genau 3er-Anschluss,
+  \item sonst: eine einladende Hebung mit 3er- oder 4er-Anschluss.
+  \end{itemize}
+\item {[}1\of\sep(\kontra)\sep2\SA{]} zeigt
+  \begin{itemize}
+    \item eine einladende Hebung mit genau 3er-Anschluss oder
+    \item eine partieforcierende Hebung.
+  \end{itemize}
+Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
+\item Der \conv{"Uberruf} der gegnerischen Farbe zeigt eine
+  partieforcierende Hand mit Anschluss in der \of\
+  ([1\of\sep(1\,$x$)\sep2\,$x$] oder [1\of\sep(2\,$x$)\sep3\,$x$]).
+\end{itemize}
+
+\subsubsection{Beispiele}
+\begin{description}
+\item[1\pik\sep(2\kar)\sep2\pik] ist m"oglich ab 0 Punkten mit
+  3er-Anschluss.
+\item[1\coe\sep(1\pik)\sep3\kar] ist weiterhin \conv{Bergen} und zeigt
+  7-9 Punkte mit 4er-Anschluss.
+\item[1\coe\sep(2\tre)\sep3\kar] ist nat"urlich und forcierend
+  (s.~o.), zeigt keinen Coeur-Anschluss (\conv{Bergen Raises} sind
+  nicht mehr m"oglich, da das 3\tre-Gebot nun eine andere Bedeutung
+  hat).
+\item[1\pik\sep(X)\sep2\SA] zeigt 3er\pik-Anschluss, einladend oder
+  eine Hand ab 12 Punkten mit 4er- oder besserem Anschluss (die w"are
+  zu stark f"ur \conv{Bergen}).
+\item[1\pik\sep(2\kar)\sep2\SA] zeigt 3er- oder 4er\pik-Anschluss und
+  ist einladend (3\kar\ w"are partieforcierend; \conv{Bergen} kann
+  nicht mehr gereizt werden um die einladende Hand mit 4er\pik{}
+  zu zeigen).
+\item[1\coe\sep(1\pik)\sep2\pik] zeigt eine partieforcierende Hand mit
+  Coeur-Anschluss.
+\end{description}
+
+\subsection{Nach \uf-Er"offnung}
+\begin{itemize}
+\item Es gilt weiterhin \conv{Inverted Minors}.
+\item Der \conv{"Uberruf} der gegnerischen Farbe fragt nach
+  \SA-Stopper ([1\uf\sep(1\,$x$)\sep2\,$x$] oder
+  [1\uf\sep(2\,$x$)\sep3\,$x$]).
+\item {[}1\uf\sep(1\,$x$)\sep2\SA] ist \conv{Inverted} (2-5~FP mit
+  5\pl{}er Anschluss in der er"offneten Unterfarbe; wie in einer
+  ungest"orten Reizung).
+\end{itemize}
+
+\subsubsection{Beispiele}
+\begin{description}
+\item[1\kar\sep(\kontra)\sep2\kar] zeigt 10\pl\ Punkte und 5\pl{}er
+  Karo-Anschluss.
+\item[1\tre\sep(1\pik)\sep2\SA] zeigt 2-5 Punkte und 5\pl{}er
+  Treff-Anschluss.
+\item[1\kar\sep(2\tre)\sep3\tre] ist partieforcierend und fragt nach
+  Treff-Stopper.
+\end{description}
+
+\subsection{Weitere Bietsequenzen}
+
+\bdsc
+\item[1\tre\sep(1\kar)\sep?]~
+\bdsc
+\item[\kontra] beide \of
+\item[1\coe/\pi] mindestens 4er-L"ange
+\item[2\kar] \pf\ und Frage nach \ka-Stopper
+\item[3\kar] Karo-\conv{Splinter}
+\edsc
+\item[1\tre\sep(1\coe)\sep?]~
+\bdsc
+\item[\kontra] genau 4er\pik\ oder eine starke Hand mit \ka-L"ange
+\item[1\pik] mindestens 5er\pik
+\item[2\kar] \nf
+\item[2\coe] \pf\ und Frage nach \co-Stopper
+\item[3\coe] Coeur-\conv{Splinter}
+\edsc
+\item[1\tre\sep(1\pik)\sep?]~
+\bdsc
+\item[\kontra] genau 4er\coe\ oder eine starke Hand mit \ka- oder \co-L"ange
+\item[2\kar] \nf
+\item[2\coe] mindestens 5er\coe, \nf
+\item[2\pik] \pf\ und Frage nach \pi-Stopper
+\item[3\pik] Pik-\conv{Splinter}
+\edsc
+\edsc
+
+Alle "ubrigen Gebote unterscheiden sich nicht von einer ungest"orten
+Reizung (\conv{Fit Jumps}, \conv{Inverted Minors}, \conv{Weak Jumps}).  Die
+Reizung nach 1\kar-Er"offnung ist analog.
+
+\end{document}
+
+\bcbiddingpair{West}{Ost}
+{
+}
+{
+  \Meaning{a}{}
+  \Meaning{b}{}
+  \Meaning{c}{}
+  \Meaning{d}{}
+}
+
+\dealer{S, N--S\\\mbox{}}
+\comment{Board 3\\\mbox{}}
+
+\dealerS
+\northhand{DB6}{D52}{B10432}{B5}
+\southhand{A107}{A763}{KD7}{AK8}
+\westhand{K9853}{B8}{65}{6432}
+\easthand{42}{K1094}{A98}{D1097}
+
+Erst nur die Nord-S\"ud-H\"ande mit Reizung zu viert \ldots
+
+\playproblemNS
+{
+2\,SA & --- & 3\,SA & --- \\
+---   & --- & --- 
+}
+
+\ldots oder zu zweit:
+
+\playproblemNSpair
+{
+2\,SA & 3\,SA \\
+---   & --- 
+}
+
+dann die ganze Hand
+
+\medskip
+
+\centerline{\showgame}
+
+\newpage
+
+Oder vielleicht doch lieber als Gegenspielproblem?
+
+\bidders{Fritz}{Franz}{Fuzzy}{Alf}
+
+\playproblemNW
+{
+2\,SA & --- & 3\,SA & --- \\
+---   & --- & --- 
+}
+
+bzw.
+
+\playproblemNWpair
+{
+2\,SA & 3\,SA \\
+---   & --- 
+}
+
+oder andersherum
+
+\medskip
+
+\playproblemNE
+{
+2\,SA & --- & 3\,SA & --- \\
+---   & --- & --- 
+}
+
+bzw.
+
+\medskip
+
+\playproblemNEpair
+{
+2\,SA & 3\,SA \\
+---   & --- 
+}
+
+\newpage
+
+\dealer{}
+\comment{}
+
+Oder haben die Gegner ein Reizproblem?
+
+\medskip
+
+\playproblemEW
+{
+2\,SA & --- & 3\,SA & --- \\
+---   & --- & --- 
+}
+
+bzw.
+
+\medskip
+
+\playproblemEWpair
+{
+2\,SA & 3\,SA \\
+---   & --- 
+}
+
+Ein Reizproblem zu viert:
+
+\biddingproblem{1.}{ADB96}{KD52}{43}{82}
+{
+1\,\pik & 2\,\kar & 2\,\pik & 3\,\kar \\
+?
+}
+
+und eins zu zweit (ohne Nummer):
+
+\biddingproblempair{}{ADB96}{KD52}{43}{82}
+{
+1\,\pik & 2\,\pik \\
+?
+}
+
+Wie soll man
+
+\onesuitNS{ABxx}{Kxx}
+
+auf 3 Stiche spielen?
+
+Gewinnt Ihre Spielweise auch bei
+
+\onesuit{ABxx}{Kxx}{xxxx}{Dx}
+
+Dann haben Sie es richtig gemacht!
+
+K\"onnen Sie es auch auf Ost-West?
+
+\onesuitEW{KBxx}{Axx}
+
+Auch Farben werden mit dem richtigen Abstand zwischen den einzelnen
+Karten gesetzt: Wie spielen Sie von \suit{AD10xx} aus?
+
+\hanghand{AKD}{AKD}{AKD10}{AKD} An diesem Beispiel kann man gut
+den Unterschied zwischen den Wissenschaftlern und den Zockern
+im Bridge erkl\"aren: Ein echter Zocker w\"urde sicher
+mit 7\,SA er\"offnen; der Wissenschaftler wendet lieber die ber\"uchtigte 
+Hofstein-Konvention an: Die Er\"offnung 5\,SA fragt unmittelbar nach
+Buben, wobei der Partner die Farbe seines niedrigsten Buben bietet
+(ohne Buben bietet er Ohne :-). Falls der Partner einen Buben zeigt,
+den man nicht gebrauchen kann, wie hier \tre-Buben, dann reizt man
+die Farbe, in der man den Buben braucht. Hat der Partner den gesuchten
+Buben, bietet er 7\,\tre, ansonsten wieder 6\,SA. Damit ist dieses
+h\"aufig autretende Bietproblem ein f\"ur alle Mal gel\"ost.
+
+\comment{Problem 1}
+\setlength{\handwidth}{27mm}
+\northhand{-}{B1098765}{DB10}{AKD}
+\southhand{A765432}{AKD}{AK}{2}
+\hangNSgame In einem Paarturnier haben Sie und Ihr Partner schon
+fr\"uh erkannt, da\ss{} diese beiden H\"ande Schlemm produzieren werden.
+Nach etwa 22 Bietrunden konnten Sie mit Ihrem genialen System
+herausfinden, da\ss{} im Prinzip 13~Stiche von oben da sind. Gierig
+wie Sie nun einmal sind, haben Sie dann 7\,SA geboten, anstelle sich mit
+7\,\coe\ zu begn\"ugen. Jetzt brauchen Sie den Kontrakt blo\ss{}
+noch zu erf\"ullen. Wie spielen Sie diese Hand in 7\,SA nach 
+dem Ausspiel von \tre\,B? 
+
+\newpage
+\comment{}
+
+\dots\ und hier ein Auszug aus dem letzten \"Uberstich (hoffentlich mit
+freundlicher Genehmigung des Herausgebers :-):
+
+\westhand{2}  {AB42}{KB10953}{B8}
+\easthand{B75}{D10} {A42}    {AK752}
+
+\bcproblem{Hand 1}{N}{NS}
+{Nord er\"offnet 2\Di\ Flannery (5\pl er \He, 4er \Sp, 11-15).
+S\"ud bietet 2\Sp\ falls m\"oglich.}
+{5\Di=20, 4\Di=13, 3\Cl=8, \\ 2\Sp(S\"ud)=4}
+
+Es ist ziemlich schwierig, in dieser Hand \"uberhaupt in die Reizung zu kommen.
+Michaels Vater bezweifelt, da\ss{} 5\Di\ der Topkontrakt sei. Zugegebenerweise
+ist dieser in erster Linie auf den Karo--Schnitt (vorausgesetzt Nord h\"alt
+nicht gleich ein 4er Karo) angewiesen. Doch die Tatsache, da\ss{} Nord er\"offnet hat plus
+die Zusatzchance, da\ss{} Coeur--Impa\ss{} und die Tr\"umpfe 2--2 stehen, macht f\"ur
+mich 5\Di\ zu einer guten Wette.
+
+\bcbidding{Fu\ss{}}{Gro}
+{
+           & 2\Di & p          & 2\Sp \\
+p          & p    & X\al{a}    & p    \\
+3\Di\al{b} & p    & p          & p    
+}
+{
+\Meaning{a}{Take--out}
+\Meaning{b}{Zusatzst\"arke! 2SA w\"are Lebensohl}
+}
+
+\bcbidding{Frans}{Alain}
+{
+           & 2\Di & p          & 2\Sp \\
+3\Di       & p    & 3\Sp\al{a} & p    \\
+4\Di       & p    & 5\Cl\al{b} & p    \\
+5\Di       & p    & p          & p    
+}
+{
+\Meaning{a}{Frage nach \Sp--Stopper}
+\Meaning{b}{Cue--bid}
+}
+
+\vspace{0.5cm}
+
+\underline{\bf Running Score:} 
+
+\vspace{0.5cm}
+
+Gro -- Fu\ss{} 13, Alain -- Frans 20
+
+\newpage
+
+\westhand{1063}{AD4} {A84}  {A742}
+\easthand{B}   {K103}{KD752}{KB53}
+
+\bcproblem{Hand 2}{W}{NS}{}
+{5\Cl=20, 5\Di=14, 6\Cl=8, \\ 6\Di=6, 3SA=4}
+
+In dieser Hand gilt es, die Pik--Schw\"ache zu lokalisieren, um 3SA vermeiden
+zu k\"onnen. Bei der Wahl der Unterfarbe ist der stabilere 4--4--Fit in Treff
+dem 5--3--Fit in Karo vorzuziehen. Hat man dies alles herausgefunden, stellt
+sich noch die Frage, ob man sich mit Partie begn\"ugen oder den Kleinschlemm
+ansteuern soll. Insgesamt eine nicht ganz leichte Aufgabe$\dots$
+
+\bcbiddingpair{Fu\ss{}}{Gro}
+{
+1SA        & 2\Sp\al{a} \\
+3\Cl\al{b} & 3\He\al{c} \\
+4\Cl       & 5\Cl       \\
+6\Cl\al{d} & p 
+}
+{
+\Meaning{a}{Frage nach Min/Max}
+\Meaning{b}{Maximum}
+\Meaning{c}{1--3--(45) Verteilung, \pf}
+\Meaning{d}{keine Werte in \Sp\ und die \"ubrigen Asse. Etwas optimistisch.}
+}
+
+\bcbiddingpair{Frans}{Alain}
+{
+1\Cl      & 1\Di\al{a} \\
+1SA\al{b} & 3\Cl       \\
+3SA       & p 
+}
+{
+\Meaning{a}{Walsh = keine 4er OF \\ oder \pf}
+\Meaning{b}{12-14 P., 4er OF(n) \\ m\"oglich}
+}
+
+\vspace{0.5cm}
+
+Frans und Alain scheitern leider schon an der ersten H\"urde und landen im
+falschen Vollspiel. Gro und Fu\ss{} vermeiden glorreich 3SA, landen dann aber im
+Kleinschlemm, der etwas gezogen ist.
+
+\vspace{0.25cm}
+
+\underline{\bf Running Score:}
+
+\vspace{0.5cm}
+
+Gro -- Fu\ss{} 21, Alain -- Frans 24
+
+\newpage
+
+\onecolumn{
+\Huge
+\setgamesize{\Huge}
+\setlength{\handwidth}{55mm}	% The width of a hand in a game display
+\setlength{\bidwidth}{100mm}	% The width of the table with the bidding sequence
+\setlength{\cardskip}{2pt}	% The distance between subsequent playing cards
+
+%\centerline{\showgame}
+
+\playproblemNS
+{
+2\,SA & --- & 3\,SA & --- \\
+---   & --- & --- 
+}
+}
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%that's all, hope you enjoy
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
