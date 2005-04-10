@@ -53,18 +53,22 @@
 \def\rel{\textsc{Rel}}
 \def\stp{\textsc{Stop}}
 \def\hstp{\textsc{Hstop}}
-\def\cstop{\coe-\stp}
-\def\pstop{\pik-\stp}
-\def\tstop{\tre-\stp}
-\def\kstop{\kar-\stp}
-\def\chstop{\coe-\hstp}
-\def\phstop{\pik-\hstp}
-\def\thstop{\tre-\hstp}
-\def\khstop{\kar-\hstp}
+\def\cstop{\co-\stp}
+\def\pstop{\pi-\stp}
+\def\tstop{\tr-\stp}
+\def\kstop{\ka-\stp}
+\def\chstop{\co-\hstp}
+\def\phstop{\pi-\hstp}
+\def\thstop{\tr-\hstp}
+\def\khstop{\ka-\hstp}
 \def\aw{\textsc{Aw}}
 \def\eo{\textsc{E\"o}}
 \def\bdsc{\begin{description}}
 \def\edsc{\end{description}}
+\newcommand{\bidex}[1]{\bcbidding{\textsl{West}}{\textsl{Ost}}{#1}}
+\def\xfer{\textsc{Trf}}
+\def\xferto{\xfer\,\ra\,}
+\def\slamint{\textsc{Schl-Int}}
 
 \setlength{\labelsep}{2ex}
 
@@ -427,7 +431,7 @@ Ausnahme:
 \bdsc
   \item[1\kar\ -- 2\tre;] ?
     \bdsc
-    \item[2\kar] 12-13 FP \bal\ oder \nat
+    \item[2\kar] 12-13 FP \bal\ oder \nat\ (kann 3er\kar\ sein)
     \item[2\SA] 14 FP \bal
     \edsc
 \edsc
@@ -735,7 +739,107 @@ Hat \eo\ keine K"urze gezeigt, so ist die n"achste Stufe \conv{RKCB}.
   \Meaning{h}{Frage nach weiteren K"onigen}
   \Meaning{i}{\tr-K"onig vorhanden}
 }
-\raggedbottom
+
+\section{Die 1\SA-Er"offnung}
+
+Die Er"offnung 1\SA verspricht 15-17~FP und eine ausgeglichene
+Verteilung.  5332-Verteilungen mit einer 5er-\ofa\ sind m"oglich.
+
+\subsection{Antworten auf 1\SA-Er"offnung}
+\bidins{%
+2\tre & ab 0 & \conv{Stayman}, verspricht 4er-\ofa\\
+2\kar/\co & ab 0 & \xferto\coe/\pi, verspricht
+5\pl{}er-Farbe\\
+2\pik & ab 0 & \xferto\ufa, verspricht 6\pl{}er-\ufa\ oder
+55\uf.\\
+2\SA & 8-9 & \nat, \inv\\
+3\,$x$ && 6\pl{}er-Farbe, \slamint{}\\
+3\SA && zum spielen\\
+4\tre && \conv{Gerber}-Assfrage (Antworten: 0 oder 4, 1, 2, 3)\\
+4\kar && 55\pl\ in den \ofa, kein \slamint{}\\
+4\SA && quantitativ\\
+5\SA && quantitativ (Einladung zum Gro"sschlemm)
+}
+
+\subsection{Weiterreizung nach 1\SA-Er"offnung}
+
+\subsubsection{Reizung von \ofa-Zweif"arbern ("Ubersicht)}
+
+Folgende Tabelle gibt eine "Ubersicht, wie beim Reizen von
+\ofa-Zweif"arbern (5/4-Verteilung) zu verfahren ist -- jeweils mit
+schwachen, einladenden und starken H"anden.  Details siehe unten.
+\begin{tabular}[t]{|l|c|c|}
+\hline
+\textbf{St"arke} & \textbf{5/4} & \textbf{5/5}\\
+\hline
+\hline
+schwach & \conv{Stayman} & \conv{Transfer}\\
+\hline
+\inv & \multicolumn{2}{|c|}{\conv{Transfer}}\\
+\hline
+\pf & \conv{Stayman} + \conv{Smolen} & 4\kar\\
+\hline
+\pf\ (stark) & \conv{Stayman} + \conv{Smolen} & \conv{Transfer}\\
+\hline
+Schlemm & \multicolumn{2}{|c|}{\conv{Stayman} + \conv{Smolen}}\\
+\hline
+\end{tabular}
+
+\subsubsection{Schwache und einladende \conv{Stayman}-Sequenzen}
+
+Mit schwachen (0-7~FP) H"anden ist \conv{Stayman} nur erlaubt, wenn
+man jede Antwort von \eo\ (2\kar, 2\coe, 2\pik) passen kann -- also
+mit 4-4-4-1, 4-4-5-0, 3-4-5-1 und 4-3-5-1 oder mit 5/4 in den \ofa.
+
+\bdsc
+\item[1\SA\sep2\tre; 2\kar\sep?]~
+\bdsc
+\item[2\coe] 4/4 oder 5/4 in \coe/\pi, mit 3/3~\ofa\ muss \eo\ passen.
+\item[2\pik] 5/4~\pik/\co, \nf
+\edsc
+\edsc
+
+Mit einladenden H"anden reizen wir eine 5/4-Verteilung in den \ofa\
+"uber \conv{Transfer}.
+
+\subsubsection{Starke \conv{Stayman}-Sequenzen}
+
+\bdsc
+\item[1\SA\sep2\tre; ?]~
+\bdsc
+\item[2\kar] keine 4er-\ofa
+\bdsc
+\item[3\coe] \pf\pl, \xferto\pi\ \conv{(Smolen Transfer)};
+  verspricht 4er\coe\ und 5er\pik
+  \begin{itemize}
+  \item mit 5er\coe\ besteht starkes \slamint{}
+  \item mildes \slamint{} mit 5/5~\ofa\ "uber \conv{Transfer}
+  \item ohne \slamint{} mit 5/5~\ofa\ sofort 4\kar\ reizen
+  \end{itemize}
+\item[3\pik] \pf\pl, \xferto\co\ \conv{(Smolen Transfer)};
+  verspricht 5er\pik\ und 4er\coe\ (siehe oben)
+\edsc
+\item[2\coe] 4er\coe\ (4er\pik\ m"oglich)
+  \bdsc
+  \item[2\pik] \slamint{} in \co; keine K"urze
+    \bdsc
+    \item[2\SA] negativ
+    \item[3\tre/\ka] \conv{Cue Bid}
+    \edsc
+  \item[3\pik-4\kar] \conv{Splinter}
+  \item[4\SA] quantitativ mit 4er\pik
+  \edsc
+\item[2\pik] 4er\pik
+  \bdsc
+  \item[3\coe] \slamint{} in \pi; keine K"urze
+    \bdsc
+    \item[3\pik] positiv
+    \item[3\SA] negativ
+    \item[4\tre/\ka] \conv{Cue Bid}
+    \edsc
+  \edsc
+\edsc
+\edsc
 
 \section{Verhalten nach Zwischenreizung durch die Gegner}
 
@@ -839,14 +943,14 @@ Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
 \bdsc
 \item[1\tre\sep(1\kar)\sep?]~
 \bdsc
-\item[\kontra] beide \of
+\item[\kontra] beide \of\ \conv{(Negativkontra)}
 \item[1\coe/\pi] mindestens 4er-L"ange
 \item[2\kar] \pf\ und Frage nach \ka-Stopper
 \item[3\kar] Karo-\conv{Splinter}
 \edsc
 \item[1\tre\sep(1\coe)\sep?]~
 \bdsc
-\item[\kontra] genau 4er\pik\ oder eine starke Hand mit \ka-L"ange
+\item[\kontra] genau 4er\pik\ oder starke mit \ka-L"ange
 \item[1\pik] mindestens 5er\pik
 \item[2\kar] \nf
 \item[2\coe] \pf\ und Frage nach \co-Stopper
@@ -854,7 +958,7 @@ Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
 \edsc
 \item[1\tre\sep(1\pik)\sep?]~
 \bdsc
-\item[\kontra] genau 4er\coe\ oder eine starke Hand mit \ka- oder \co-L"ange
+\item[\kontra] genau 4er\coe\ oder starke mit \ka- oder \co-L"ange
 \item[2\kar] \nf
 \item[2\coe] mindestens 5er\coe, \nf
 \item[2\pik] \pf\ und Frage nach \pi-Stopper
@@ -862,9 +966,93 @@ Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
 \edsc
 \edsc
 
+Die Reizung nach 1\kar-Er"offnung ist analog.
+
+\bdsc
+\item[1\coe\sep(1\pik)\sep?]~
+\bdsc
+\item[\kontra] beide \ufa\ \conv{(Negativkontra)}
+\item[2\tre/\ka] 10\pl\ FP, 4\pl{}er-L"ange, forcierend
+\item[2\coe] ab 0 FP, 3er-Anschluss
+\item[2\pik] \pf\ mit 3\pl{}er-Anschluss
+\item[2\SA] \inv\ mit \emph{genau} 3er-Anschluss
+\item[3\tre/\ka] weiterhin \conv{Bergen Raises}
+\item[3\pik] beliebiger Single-\conv{Splinter} (wie in ungest"orter
+  Reizung)
+\edsc
+\item[1\coe\sep(2\kar)\sep?]~
+\bdsc
+\item[\kontra] \conv{Negativ} oder stark mit \pik-L"ange
+\item[2\pik] \nf\ (denn das 1\pik-Gebot war nicht mehr frei)
+\item[2\SA] \inv\ mit 3er- oder 4er-Anschluss
+\item[3\tre] \nat, forcing
+\item[3\kar] \pf\ mit 3\pl{}er-Anschluss
+\edsc
+\edsc
+
 Alle "ubrigen Gebote unterscheiden sich nicht von einer ungest"orten
-Reizung (\conv{Fit Jumps}, \conv{Inverted Minors}, \conv{Weak Jumps}).  Die
-Reizung nach 1\kar-Er"offnung ist analog.
+Reizung (\conv{Fit Jumps}, \conv{Inverted Minors}, \conv{Weak Jumps}).
+
+\subsection{Der Gegner reizt einen Zweif"arber \conv{(Unusual over
+    Unusual)}}
+
+Reizt der Gegner "uber unsere 1\,$x$-Er"offnung einen Zweif"arber, bei
+dem beide Farben bekannt sein m"ussen, so verwenden wir die Konvention
+\conv{Unusual over Unusual}:
+\begin{itemize}
+\item Die rangniedrigere der gegnerischen Farben steht f"ur die
+  rangniedrigere unserer Farben.
+\item Die rangh"ohere der gegnerischen Farben steht f"ur die
+  rangh"ohere unserer Farben.
+\item Direktes Heben der er"offneten Farbe zeigt Anschluss und ist
+  rein kompetitiv.
+\item Indirektes Heben der er"offneten Farbe (durch Reizen der
+  entsprechenden gegnerischen Farbe) ist mindestens einladend und
+  zeigt Anschluss.
+\item Direktes Reizen der freien Farbe zeigt 5er-L"ange und ist
+  forcierend.
+\item Indirektes Reizen der freien Farbe zeigt 5er-L"ange und ist nur
+  einladend.
+\item \conv{Kontra} zeigt Straf-Bereitschaft f"ur eine der beiden
+  gegnerischen Farben.
+\end{itemize}
+
+\minisec{Beispiel:}
+\bdsc
+\item[1\coe\sep(2\SA*)\sep?] (2\SA\ = beide \ufa)
+\bdsc
+\item[3\tre] \inv\pl\ mit \coe-Anschluss
+\item[3\kar] \inv\ mit \pik-L"ange
+\item[3\coe] kompetitiv (ersetzt 2\coe-Gebot)
+\item[3\pik] \pf\ mit \pik-L"ange
+\edsc
+\edsc
+
+\subsection{Beide Gegner reizen eine Farbe}
+
+Reizen beide Gegner eine Farbe, so ist der \conv{"Uberruf} einer der
+Gegnerfarben \emph{nicht} die Frage nach Stopper sondern \emph{zeigt}
+einen Stopper in der "uberrufenen Farbe:
+\bidex
+{
+  1\coe & 1\pik & 2\tre & 2\kar\\
+  -- & -- & 2\pik\al{a} & --\\
+  2\SA\al{b}
+}
+{
+  \Meaning{a}{zeigt \pstop}
+  \Meaning{b}{\nat, zeigt \kstop\ (3\kar\ w"are Frage nach \khstop)}
+}
+
+\bidex
+{
+  1\kar & 1\pik & \kontra & 2\tre\\
+  2\pik\al{a} & -- & 2\SA\al{b}
+}
+{
+  \Meaning{a}{zeigt \pstop}
+  \Meaning{b}{\nat, zeigt \tstop}
+}
 
 \end{document}
 
