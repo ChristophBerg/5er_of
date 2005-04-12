@@ -1,7 +1,11 @@
-\documentclass[10pt,german,twocolumn,DIV15]{scrartcl}
+\documentclass[10pt,german,twocolumn]{scrartcl}
+\usepackage[a4paper,vscale=0.94,hscale=0.9,includeheadfoot]{geometry}
+%\usepackage[a5paper,vscale=0.94,hscale=0.9,includeheadfoot]{geometry}
 \usepackage{kibitzer}
 \usepackage{babel}
+\usepackage{tabularx}
 \usepackage{courier}
+\usepackage{calc}
 
 \pagestyle{headings}
 
@@ -10,8 +14,8 @@
 % \setlength{\evensidemargin}{-20mm}
 % \setlength{\textwidth}{200mm}   % -> Rand links 5mm breiter als rechts 
 % \setlength{\textheight}{256mm}
-\setlength{\columnsep}{8mm}
-% \setlength{\columnseprule}{0.4pt}
+\setlength{\columnsep}{10mm}
+\setlength{\columnseprule}{0.4pt}
 
 \handwidth22mm
 \parindent0mm
@@ -38,7 +42,8 @@
 \def\ufa{\textsf{UF}}
 \def\ofa{\textsf{OF}}
 \def\aof{\textsf{\,aOF}}
-\def\SA{\textsf{\,SA}}
+\def\aofa{\textsf{aOF}}
+\def\SA{\textsf{\,S\kern-0.08emA}}
 \def\kontra{\textsf{X}}
 \def\sep{\,--\,}
 \newcommand{\conv}[1]{\emph{#1}}
@@ -72,26 +77,30 @@
 
 \setlength{\labelsep}{2ex}
 
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
 \newcommand\bidins[1]%
 {%
-\begin{tabular}[t]{llp{32ex}}%
+\begin{flushleft}
+\begin{tabularx}{\columnwidth}{llX}%
 #1
-\end{tabular}%
+\end{tabularx}%
+\end{flushleft}
 }
 
 \newcommand\bidseq[1]%
 {%
 \begin{flushleft}
-\begin{tabular}[t]{llp{32ex}}%
+\begin{tabularx}{\columnwidth}{llX}%
 #1
-\end{tabular}%
+\end{tabularx}%
 \end{flushleft}
 }
 
 \newcommand\notebox[1]%
 {%
 \setlength{\fboxsep}{2ex}
-\fbox{\parbox{0.43\textwidth}{#1}}
+\fbox{\parbox{\columnwidth - 4ex}{#1}}
 }
   
 
@@ -110,7 +119,7 @@
 \bidins{%
 1\mi & 12\pl	& 3\pl \mi\\[1ex]
 1\ma & 12\pl	& 5\pl \ma\\[1ex]
-1\SA & 15-17	& \bal, 5er\of\ m"oglich\\
+1\SA & 15-17	& \bal, 5er\of\ m"oglich
 }
 
 \subsection*{2er-Stufe}
@@ -125,21 +134,21 @@
 	& 28\pl	& \bal\\[1ex]
 2\coe	& 6-10	& Zweif"arber mit \coe\\[1ex]
 2\pik	& 6-10	& Weak Two in \pik\\[1ex]
-2\SA	& 20-21	& \bal\\
+2\SA	& 20-21	& \bal
 }
 
 \subsection*{3er-Stufe}
 \bidins{%
 3\uf	& 5-10	& 7\pl{}\uf, in 1. Hand nur in Nichtgefahr, in 3. Hand 6er-Farbe m"oglich\\[1ex]
 3\of	& 5-10	& 7\pl{}\of\\[1ex]
-3\SA	& 	& Gambling in 1./2. Hand, in 3./4. Hand zum spielen\\
+3\SA	& 	& Gambling in 1./2. Hand, in 3./4. Hand zum spielen
 }
 
 \subsection*{4er-Stufe}
 \bidins{%
 4\mi	& 	& stehende 7\ma\ mit einem Nebenwert\\[1ex]
 4\of	&	& 7\good\pl\of, zum spielen\\[1ex]
-4\SA	&	& 65\pl\uf\\
+4\SA	&	& 65\pl\uf
 }
 
 \section{Die 1\mi-Er"offnung}
@@ -154,7 +163,7 @@ Seite \pageref{zfregel}.
 \subsection{Antworten des Partners (nach 1\tre-Er"offnung)}
 \bidins{%
 1\kar	& 6-7	& \bal\ ohne 4er\of, 3-3-3-4 Verteilung mit 3er\kar\ m"oglich, oder\\
-	& 6\pl	& \kar-Einf"arber, oder\\
+	& 6\pl	& \ka-Einf"arber, oder\\
 	& 12\pl	& 5er\kar\ und 4er\of\ \conv{(Walsh-\ka)}\\[1ex]
 1\of	& 6\pl	& 4\pl\of\\[1ex]
 1\SA	& 8-10	& \bal\ ohne 4er\of\\[1ex]
@@ -168,7 +177,7 @@ Seite \pageref{zfregel}.
 3\pik	& 12-15	& 5/5 in \tre\,+\pik\ \conv{(Fit Jump)}\\[1ex]
 3\SA	& 13-15	& zum spielen\\[1ex]
 4\tre	&	& \conv{KCB}\\[1ex]
-4\of	&	& zum spielen\\
+4\of	&	& zum spielen
 }
 
 \notebox{%
@@ -192,7 +201,7 @@ verschweigt er.  Ein \of-R"uckgebot von \eo\ zeigt \unbal\ mit langen
 Treffs.
 
 \bdsc
-\item[1\tre\ -- 1\kar;] ?
+\item[1\tre\sep1\kar; ?]~
   \bdsc
   \item[1\coe] 5\pl\tre\ und 4er\coe\ oder 4-4-1-4
   \item[1\pik] 5\pl\tre\ und 4er\pik
@@ -203,7 +212,7 @@ Treffs.
       \item[2\kar] schwach; zum spielen
       \item[2\ma] \pf\ mit 5/4-Verteilung
       \item[2\SA] \nat
-      \item[3\tre/\coe/\pik] \conv{Splinter} mit 6er\kar
+      \item[3\tre/\co/\pi] \conv{Splinter} mit 6er\kar
       \item[3\kar] \inv\ mit 6er\kar
     \edsc
   \item[2\tre] 12-14, 6er\tre
@@ -231,7 +240,7 @@ Treffs.
 \edsc
 
 \bdsc
-\item[1\tre\ -- 1\kar; 1\SA\ -- 2\tre;] ?
+\item[1\tre\sep1\kar; 1\SA\sep2\tre; ?]~
 
   Hat \aw\ Schlemm-Interesse in \uf, so kann er die genaue
   Verteilung der \bal\ Hand von \eo\ erfragen.
@@ -258,7 +267,7 @@ Treffs.
 \edsc
 
 \bdsc
-  \item[1\tre\ -- 1\kar; 2\SA\ --] ?
+  \item[1\tre\sep1\kar; 2\SA\sep{}?]~
 
     \aw\ kann nun 3\of\ reizen und damit Schlemm-Interesse in der \of\
     zeigen.
@@ -285,11 +294,8 @@ Treffs.
 
 \subsubsection{Bietsequenzen nach [1\tre-1\of]}
 
-\footnotetext[1]{Einladende H"ande mit 6er-Farbe "uber
-  \conv{Checkback} reizen.}
-
 \bdsc
-\item[1\tre\ -- 1\coe;] ?
+\item[1\tre\sep1\coe; ?]~
   \bdsc
   \item[1\pik] 12\pl\ FP, \nat
 
@@ -315,7 +321,7 @@ Treffs.
     \edsc
   \edsc
 
-\item[1\tre\ -- 1\pik;] ?
+\item[1\tre\sep1\pik; ?]~
   \bdsc
   \item[1\SA] 12-14 FP \bal\ (s.~u.)
   \item[2\tre] 12-16\bad, 5\pl{}er-Farbe (s.~u.)
@@ -326,7 +332,7 @@ Treffs.
   \item[4\tre] 18\good\pl, 4er\pik, 5\good\pl\tre
   \item[4\kar/\co] 18\good\pl, 4er\pik, \conv{Exclusion RCKB}
   \edsc
-\item[1\tre\ -- 1\pik; 1\SA\ --] ?
+\item[1\tre\sep1\pik; 1\SA\sep{}?]~
 
   12-14 FP \bal
   \bdsc
@@ -339,7 +345,7 @@ Treffs.
   \item[3\coe] 5/4 \pik\,+\coe, \pf
   \item[3\pik] 6er\pik, Schlemm-Interesse\footnotemark[1]
   \edsc
-\item[1\tre\ -- 1\pik; 2\tre\ --] ?
+\item[1\tre\sep1\pik; 2\tre\sep{}?]~
 
   12-16\bad, 5\pl{}er-Farbe
   \bdsc
@@ -361,7 +367,7 @@ Treffs.
 \subsubsection{Bietsequenzen nach \conv{Reverse}}
 
 \bdsc
-  \item[1\tre\ -- 1\pik; 2\kar\ --] ?
+  \item[1\tre\sep1\pik; 2\kar\sep{}?]~
 
     \conv{Reverse} zeigt 16\good\pl\ und ist selbstforcierend f"ur
     \eo.
@@ -385,7 +391,7 @@ Treffs.
         \item[3\pik] \mini\ mit 3er\pik
         \item[3\SA] \maxi, \cstop, kein 3er\pik
       \edsc
-    \item[2\SA] \conv{Ingberman (Moderateur)}, verlangt \ra~3\tre\ \rel, danach:
+    \item[2\SA] \conv{Ingberman}, verlangt \rel\ 3\tre, danach:
       \bdsc
       \item[pass/3\kar] zum Spielen
       \item[3\SA] 8-9 FP \nat
@@ -406,7 +412,7 @@ ebenfalls passbar.  Alle anderen Gebote des Er"offners zeigen Werte
 (Stopper) und sind \pf.
 
 \bdsc
-  \item[1\tre\ -- 2\tre;] ?
+  \item[1\tre\sep2\tre; ?]~
     \bdsc
       \item[2\kar] 14\good\pl, \kstop
         \bdsc
@@ -429,7 +435,7 @@ Nach 1\kar{}-Er"offnung sind die Antworten entsprechend.
 
 Ausnahme:
 \bdsc
-  \item[1\kar\ -- 2\tre;] ?
+  \item[1\kar\sep2\tre; ?]~
     \bdsc
     \item[2\kar] 12-13 FP \bal\ oder \nat\ (kann 3er\kar\ sein)
     \item[2\SA] 14 FP \bal
@@ -447,7 +453,6 @@ Ausnahme:
 \item[0-2 Verlierer:] \pf\ er"offnen
 \edsc
 
-\newpage
 \section{Die 1\of-Er"offnungen}
 
 Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
@@ -461,57 +466,64 @@ Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
   Reizen der Trumpfunterst"utzung gezeigt (Farbwechsel).
 \end{itemize}
 
-\subsection{Die 1\coe-Er"offnung}
+\subsection{Antworten auf 1\of-Er"offnung}
 
+\bidins{%
+  1\SA & 6-10 & kein Anschluss, keine weitere \ofa\\[1ex]
+  2\tre & 10\pl & \textbf{k"unstlich}, selbstforcierend\\[1ex]
+  2\kar & 10\pl & 5\pl\kar\\[1ex]
+  2\of & 6-10 & 3er-Anschluss\\[1ex]
+  2\SA & 12\good\pl & 4\pl{}er-Anschluss \conv{(Stenberg)}, \pf\ (siehe
+    \ref{stenberg}, S.~\pageref{stenberg})
+    (nach vormaligem Pass: 11-12, Double-Anschluss und 3er\aof)\\[1ex]
+  3\tre & 9\good-11 & 4\pl{}er-Anschluss \conv{(Bergen Raise)}\\
+  3\kar & 7-9\bad & 4\pl{}er-Anschluss \conv{(Bergen Raise)}\\
+  3\of & 0-6 & 4\pl{}er-Anschluss \conv{(Bergen Raise)}\\[1ex]
+  3\aof & 11-14 & beliebiges Chicane \conv{(Splinter)}, s.~u.\\
+  3\SA & 11-14 & Single in \aofa\ \conv{(Splinter)}, s.~u.\\
+  4\tre/\ka & 11-14 & \tr/\ka-Single \conv{(Splinter)}\\[1ex]
+  4\of && zum spielen\\[1ex]
+  4\aof && \conv{Exclusion RKCB}\\[3ex]
+  \multicolumn{3}{l}{Nach 1\coe-Er"offnung:}\\[1ex]
+  2\pik & 5-8 & 6\pl\pik\ \conv{(Weak Jump)}\\[2ex]
+  \multicolumn{3}{l}{Nach 1\pik-Er"offnung:}\\[1ex]
+  2\coe & 10\good\pl & 5\pl\coe
+}
+
+\notebox{%
+\conv{Splinter}-Gebote zeigen immer einen mindestens guten
+3er-Anschluss in der Trumpffarbe sowie eine K"urze.  Die Werte f"ur
+ein Vollspiel werden versprochen, aber die Punktspanne ist nach oben
+limitiert.  Mit st"arkeren H"anden sollte \conv{Stenberg}
+gereizt werden.
+}
+
+\subsubsection{Spezielle \conv{Splinter}-Gebote nach 1\of-Er"offnung}
+[1\of-3\SA;] zeigt ein Single in der anderen \of.
+
+Chicane-\conv{Splinter} werden mit einem einfachen Sprung in die
+andere \of\ gezeigt:
 \bdsc
-  \item[1\pik] 6\pl, 4\pl\pik
-  \item[1\SA] 6-10, kein 3er\coe, kein 4er\pik
-  \item[2\tre] 10\pl, \textbf{k"unstlich}, selbstforcierend
-  \item[2\kar] 10\pl, 5\pl\kar
-  \item[2\coe] 6-10\bad, 3er\coe
-  \item[2\pik] 5-8, 6\pl\pik\ \conv{(Weak Jump)}
-  \item[2\SA] 12\good\pl, 4er\coe\ \conv{(Stenberg)}, \pf\ (siehe
-    \ref{stenberg}, S.~\pageref{stenberg})\\
-    (nach vormaligem Pass: 11-12, Double-\coe\ und 3er\pik)
-  \item[3\tre] 9\good-11, 4\pl\coe\ \conv{(Bergen Raise)}
-  \item[3\kar] 7-9\bad, 4\pl\coe\ \conv{(Bergen Raise)}
-  \item[3\coe] 0-6, 4\pl\coe\ \conv{(Bergen Raise)}
-  \item[3\pik] 11-14, 4\pl\coe\ (oder 3\good\coe), beliebiges Chicane\\
-    \ra~3\SA\ fragt nach dem Chicane (siehe S.~\pageref{chicaneask})
-  \item[3\SA] 11-14, 4\pl\coe\ (oder 3\good\coe), \pi-Single \conv{(Splinter)}
-  \item[4\tre/\ka] 11-14, 4\pl\coe\ (oder 3\good\coe), \tr/\ka-Single
-    \conv{(Splinter)}
-  \item[4\coe] zum spielen
-  \item[4\pik] \conv{Exclusion RKCB} auf \coe-Basis
-\edsc
-
-\subsection{Die 1\pik-Er"offnung}
-
-\bdsc
-  \item[1\SA] 6-10, kein 3er\pik
-  \item[2\tre] 10\good\pl, \textbf{k"unstlich}, selbstforcierend
-  \item[2\kar] 10\good\pl, 5\pl\kar
-  \item[2\coe] 10\good\pl, 5\pl\coe
-  \item[2\pik] 6-10\bad, 3er\pik
-  \item[2\SA] 12\good\pl, 4er\pik\ \conv{(Stenberg)}, \pf\ (siehe
-    \ref{stenberg}, S.~\pageref{stenberg})\\
-    (nach vormaligem Pass: 11-12, Double-\pik\ und 3er\coe)
-  \item[3\tre] 9\good-11, 4\pl\pik\ \conv{(Bergen Raise)}
-  \item[3\kar] 7-9\bad, 4\pl\pik\ \conv{(Bergen Raise)}
-  \item[3\coe] 11-14, 4\pl\pik\ (oder 3\good\pik), beliebiges Chicane\\
-    \ra~3\pik\ fragt nach dem Chicane (siehe S.~\pageref{chicaneask})
-  \item[3\pik] 0-6, 4\pl\pik\ \conv{(Bergen Raise)}
-  \item[3\SA] 11-14, 4\pl\pik\ (oder 3\good\pik), \co-Single \conv{(Splinter)}
-  \item[4\tre/\ka] 11-14, 4\pl\pik\ (oder 3\good\pik), \tr/\ka-Single
-    \conv{(Splinter)}
-  \item[4\coe] zum spielen
-  \item[4\pik] \conv{Exclusion RKCB} auf \coe-Basis
+\item[{[}1\coe\sep3\pik;{]}] beliebiges Chicane, \ra\ 3\SA\ \rel, Frage nach
+  dem Chicane
+  \bdsc
+    \item[4\tre] \tr-Chicane
+    \item[4\kar] \ka-Chicane
+    \item[4\coe] \pi-Chicane
+  \edsc
+\item[{[}1\pik\sep3\coe;{]}] beliebiges Chicane, \ra\ 3\pik\ \rel, Frage nach
+  dem Chicane
+  \bdsc
+    \item[3\SA] \co-Chicane
+    \item[4\tre] \tr-Chicane
+    \item[4\kar] \ka-Chicane
+  \edsc
 \edsc
 
 \subsection{Bietsequenzen nach 1\of-Er"offnung}
 
 \bdsc
-\item[1\coe\ -- 1\pik;] ?
+\item[1\coe\sep1\pik; ?]~
   \bdsc
   \item[1\SA] 12-14 \bal
     \bdsc
@@ -535,15 +547,15 @@ Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
     \textbf{Nach \conv{1~"uber~1} ist die Hebung von \eo's \emph{zweiter} Farbe
     auf die 3er-Stufe lediglich einladend.}
   \item[2\SA] 18-19 FP \bal
-  \item[3\tre/\ka] 18\good\pl FP, 5\pl\coe\ und 4\pl\uf\\
+  \item[3\tre/\ka] 18\good\pl\ FP, 5\pl\coe\ und 4\pl\uf\\
     \ra~3\coe\ = st"arker als 4\coe\ (\emph{Principle of Fast Arrival});
     \ra~3\pik\ ist dann \conv{Cue Bid}, aber keine K"urze
     
     \textbf{Ein \conv{Cue Bid} in Partners erster Farbe zeigt \emph{nie} eine
     K"urze.}
   \edsc
-\pagebreak
-\item[1\pik\ -- 2\tre;] ?
+
+\item[1\pik\sep2\tre; ?]~
 \bdsc
 \item[2\kar] 12-18 FP, 54\pl
   \bdsc
@@ -582,7 +594,7 @@ Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
   \item[3\coe] \coe-Werte
   \edsc
 \edsc
-\item[1\pik\ -- 2\coe;] ?
+\item[1\pik\sep2\coe; ?]~
   \bdsc
   \item[3\coe] 16\pl\ FP, 53\pl\ \pi\,+\coe
   \item[4\coe] 12-14 FP, 4er-Anschluss (3er-Anschluss und \mini\
@@ -603,29 +615,7 @@ Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
   \Meaning{d}{quantitativ}
 }
 
-\subsubsection{Spezielle \conv{Splinter}-Gebote nach 1\of-Er"offnung}
-[1\of-3\SA] zeigt ein Single in der anderen \of.
-
-Chicane-\conv{Splinter} werden mit einem einfachen Sprung in die
-andere \of\ gezeigt:
-\bdsc
-\item[{[}1\coe\ -- 3\pik{]}] beliebiges Chicane, \ra\ 3\SA\ \rel, Frage nach
-  dem Chicane
-  \bdsc
-    \item[4\tre] \tr-Chicane
-    \item[4\kar] \ka-Chicane
-    \item[4\coe] \pi-Chicane
-  \edsc
-\item[{[}1\pik\ -- 3\coe{]}] beliebiges Chicane, \ra\ 3\pik\ \rel, Frage nach
-  dem Chicane
-  \bdsc
-    \item[3\SA] \co-Chicane
-    \item[4\tre] \tr-Chicane
-    \item[4\kar] \ka-Chicane
-  \edsc
-\edsc
-
-\subsection{Weiterreizung nach [1\of\ -- 2\SA] \conv{(Stenberg)}}
+\subsection{Weiterreizung nach [1\of\sep2\SA] \conv{(Stenberg)}\label{stenberg}}
 
 2\SA\ auf eine 1\of-Er"offnung verspricht 4er-Anschluss und
 Vollspielwerte, oder besser.
@@ -643,7 +633,7 @@ zeigen ein Single und beantworten gleichzeitig \conv{RKCB}.
 Hat \eo\ keine K"urze gezeigt, so ist die n"achste Stufe \conv{RKCB}.
 
 \bdsc
-\item[1\of\ -- 2\SA;] ?
+\item[1\of\sep2\SA; ?]~
   \bdsc
   \item[3\uf/\aof] K"urze in der gereizten Farbe, \ra~\rel\ = Frage
     nach Art der K"urze sowie \conv{RKCB},~\ra
@@ -656,7 +646,7 @@ Hat \eo\ keine K"urze gezeigt, so ist die n"achste Stufe \conv{RKCB}.
   \item[3\SA] 14-15, keine K"urze, \ra~4\tre\ = \conv{RKCB}
   \item[4\of] 11-13, keine K"urze, \ra~\rel\ = \conv{RKCB}
   \edsc
-\item[1\coe\ -- 2\SA; 3\tre\ -- 3\kar;] ?
+\item[1\coe\sep2\SA; 3\tre\sep3\kar; ?]~
   
   (\eo\ hat eine K"urze in \tr, \aw\ fragt nach Keycards.)~\ra
   \bdsc
@@ -742,7 +732,7 @@ Hat \eo\ keine K"urze gezeigt, so ist die n"achste Stufe \conv{RKCB}.
 
 \section{Die 1\SA-Er"offnung}
 
-Die Er"offnung 1\SA verspricht 15-17~FP und eine ausgeglichene
+Die Er"offnung 1\SA\ verspricht 15-17~FP und eine ausgeglichene
 Verteilung.  5332-Verteilungen mit einer 5er-\ofa\ sind m"oglich.
 
 \subsection{Antworten auf 1\SA-Er"offnung}
@@ -768,6 +758,7 @@ Verteilung.  5332-Verteilungen mit einer 5er-\ofa\ sind m"oglich.
 Folgende Tabelle gibt eine "Ubersicht, wie beim Reizen von
 \ofa-Zweif"arbern (5/4-Verteilung) zu verfahren ist -- jeweils mit
 schwachen, einladenden und starken H"anden.  Details siehe unten.
+
 \begin{tabular}[t]{|l|c|c|}
 \hline
 \textbf{St"arke} & \textbf{5/4} & \textbf{5/5}\\
@@ -775,13 +766,13 @@ schwachen, einladenden und starken H"anden.  Details siehe unten.
 \hline
 schwach & \conv{Stayman} & \conv{Transfer}\\
 \hline
-\inv & \multicolumn{2}{|c|}{\conv{Transfer}}\\
+\inv & \multicolumn{2}{c|}{\conv{Transfer}}\\
 \hline
-\pf & \conv{Stayman} + \conv{Smolen} & 4\kar\\
+\pf & \conv{Stayman}, dann \conv{Smolen} & 4\kar\\
 \hline
-\pf\ (stark) & \conv{Stayman} + \conv{Smolen} & \conv{Transfer}\\
+\pf\ (stark) & \conv{Stayman}, dann \conv{Smolen} & \conv{Transfer}\\
 \hline
-Schlemm & \multicolumn{2}{|c|}{\conv{Stayman} + \conv{Smolen}}\\
+Schlemm & \multicolumn{2}{c|}{\conv{Stayman}, dann \conv{Smolen}}\\
 \hline
 \end{tabular}
 
@@ -1000,21 +991,17 @@ Reizt der Gegner "uber unsere 1\,$x$-Er"offnung einen Zweif"arber, bei
 dem beide Farben bekannt sein m"ussen, so verwenden wir die Konvention
 \conv{Unusual over Unusual}:
 \begin{itemize}
-\item Die rangniedrigere der gegnerischen Farben steht f"ur die
-  rangniedrigere unserer Farben.
-\item Die rangh"ohere der gegnerischen Farben steht f"ur die
-  rangh"ohere unserer Farben.
-\item Direktes Heben der er"offneten Farbe zeigt Anschluss und ist
-  rein kompetitiv.
+\item \conv{Kontra} zeigt Straf-Bereitschaft f"ur mindestens eine der
+  beiden gegnerischen Farben.
+\item Die niedrigere bzw. h"ohere der gegnerischen Farben steht
+  f"ur die niedrigere bzw. h"ohere unserer Farben.
+\item Direktes Heben der er"offneten Farbe ist rein kompetitiv.
 \item Indirektes Heben der er"offneten Farbe (durch Reizen der
-  entsprechenden gegnerischen Farbe) ist mindestens einladend und
-  zeigt Anschluss.
+  entsprechenden gegnerischen Farbe) ist mindestens einladend.
 \item Direktes Reizen der freien Farbe zeigt 5er-L"ange und ist
   forcierend.
 \item Indirektes Reizen der freien Farbe zeigt 5er-L"ange und ist nur
   einladend.
-\item \conv{Kontra} zeigt Straf-Bereitschaft f"ur eine der beiden
-  gegnerischen Farben.
 \end{itemize}
 
 \minisec{Beispiel:}
@@ -1033,6 +1020,7 @@ dem beide Farben bekannt sein m"ussen, so verwenden wir die Konvention
 Reizen beide Gegner eine Farbe, so ist der \conv{"Uberruf} einer der
 Gegnerfarben \emph{nicht} die Frage nach Stopper sondern \emph{zeigt}
 einen Stopper in der "uberrufenen Farbe:
+
 \bidex
 {
   1\coe & 1\pik & 2\tre & 2\kar\\
@@ -1055,6 +1043,8 @@ einen Stopper in der "uberrufenen Farbe:
 }
 
 \end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
 \bcbiddingpair{West}{Ost}
 {
