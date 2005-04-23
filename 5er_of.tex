@@ -6,6 +6,7 @@
 \usepackage{tabularx}
 \usepackage{courier}
 \usepackage{calc}
+\usepackage{german}
 
 \pagestyle{headings}
 
@@ -502,22 +503,26 @@ gereizt werden.
 \subsubsection{Spezielle \conv{Splinter}-Gebote nach 1\of-Er"offnung}
 [1\of-3\SA;] zeigt ein Single in der anderen \of.
 
-Chicane-\conv{Splinter} werden mit einem einfachen Sprung in die
-andere \of\ gezeigt:
+Chicane-\conv{Splinter} werden mit einem Sprung in die
+andere \of\ auf 3er-Stufe gezeigt:
 \bdsc
-\item[{[}1\coe\sep3\pik;{]}] beliebiges Chicane, \ra\ 3\SA\ \rel, Frage nach
-  dem Chicane
+\item[1\coe\sep3\pik; ?] beliebiges Chicane
   \bdsc
+  \item 3\SA\ \rel, Frage nach dem Chicane
+    \bdsc
     \item[4\tre] \tr-Chicane
     \item[4\kar] \ka-Chicane
     \item[4\coe] \pi-Chicane
+    \edsc
   \edsc
-\item[{[}1\pik\sep3\coe;{]}] beliebiges Chicane, \ra\ 3\pik\ \rel, Frage nach
-  dem Chicane
+\item[1\pik\sep3\coe; ?] beliebiges Chicane
   \bdsc
+  \item 3\pik\ \rel, Frage nach dem Chicane
+    \bdsc
     \item[3\SA] \co-Chicane
     \item[4\tre] \tr-Chicane
     \item[4\kar] \ka-Chicane
+    \edsc
   \edsc
 \edsc
 
@@ -526,7 +531,7 @@ andere \of\ gezeigt:
 \bdsc
 \item[1\coe\sep1\pik; ?]~
   \bdsc
-  \item[1\SA] 12-14 \bal
+  \item[1\SA] 12-14 FP \bal
     \bdsc
     \item[2\tre] \conv{Checkback Stayman}
     \item[2\kar] 4er\pik, 5\pl\kar, zum spielen
@@ -577,8 +582,8 @@ andere \of\ gezeigt:
   \bdsc
   \item[2\SA] \nat
     \bdsc
-    \item[3\kar] 5/5 in den \of, \pf
-    \item[3\coe] 5/5 in den \of, \nf
+    \item[3\kar] 5/5 in den \ofa, \pf
+    \item[3\coe] 5/5 in den \ofa, \nf
     \edsc
   \item[3\coe] \pf
   \edsc
@@ -597,7 +602,7 @@ andere \of\ gezeigt:
 \edsc
 \item[1\pik\sep2\coe; ?]~
   \bdsc
-  \item[3\coe] 16\pl\ FP, 53\pl\ \pi\,+\coe
+  \item[3\coe] 16\pl\ FP, 5/3\pl\ \pi\,+\coe
   \item[4\coe] 12-14 FP, 4er-Anschluss (3er-Anschluss und \mini\
     "uber 2\pik)
   \edsc
@@ -1101,7 +1106,7 @@ Antworten:
 
 \subsection{Die 1\SA-Gegenreizung}
 
-Die 1\SA-Gegenreizung zeigt 15-18 FP und \stp. Weiterreizung wie nach
+Die 1\SA-Gegenreizung in zweiter Position zeigt 15-18 FP und \stp. Weiterreizung wie nach
 1\SA-Er"offnung, d.h. Stayman und Transfers wenn der rechte Gegner passt,
 ansonsten Lebensohl.
 
@@ -1111,7 +1116,7 @@ Stayman. 2\tre\ ist dann ebenfalls ein Transfer.
 \subsection{Weak Jumps}
 
 Weak Jumps zeigen 6-10 FP und eine 6\pl{}er-Farbe, manchmal auch blo"s eine
-5er-Farbe. 2\SA\ vom \eo fragt nach Qualit"at und St"arke, siehe \ref{ogust},
+5er-Farbe. 2\SA\ vom \eo\ fragt nach Qualit"at und St"arke, siehe \ref{ogust},
 S.~\pageref{ogust}.
 
 \subsection{Michaels Pr"azis}
@@ -1251,7 +1256,7 @@ eine partieforcierende.
 \subsection{Vierte Farbe Forcing (VFF)}
 
 Die Vierte Farbe auf der 2er-Stufe gereizt ist mindestens einladend, auf der
-3er-Stufe partieforcierend. Prioritäten des Antwortenden:
+3er-Stufe partieforcierend. Priorit"aten des Antwortenden:
 
 1. 3er-Anschluss in der \ofa\ des Partners zeigen
 
@@ -1401,17 +1406,133 @@ Siehe Gegenreizung.
 
 Siehe Verhalten nach Zwischenreizung der Gegner.
 
-\subsubsection{Responsive \kontra}
+\subsubsection{Antwortkontra (Responsive \kontra)}
+
+Nach Informationskontra oder Farbgegenreizung vom Partner und
+\emph{Hebung der Er"offnerfarbe} zeigt das Antwortkontra die
+nicht gereizten Farben (siehe auch Scrambling 2\SA).
+
+\bidex
+{
+  1\kar & \kontra & 2\kar & \kontra\al{a} \\
+  1\coe & \kontra & 2\coe & \kontra\al{b} \\
+  1\coe & 1\pik & 2\coe & \kontra\al{c} \\
+  1\tre & 1\coe & 2\pik & \kontra\al{d} \\
+}
+{
+  \Meaning{a}{beide \ofa\ zu viert}
+  \Meaning{b}{beide \ufa\ zu viert, kein 4er-\pi}
+  \Meaning{c}{beide \ufa\ zu viert, kein 3er-\pi}
+  \Meaning{d}{Snapdragon \kontra, zeigt 9/10\pl\ FP, 5er-\ka\ und Double-Figur in \co}
+}
 
 \subsubsection{Competitive \kontra}
 
-\subsubsection{Ausspielkontra}
+Das Competitive \kontra benutzen wir, um noch weitere Information bez"uglich der St"arke
+einer Hand mitzuteilen.
+
+\bidex
+{
+  1\tre & 1\coe & 1\pik & 2\coe \\
+  pass & pass & \kontra\al{a}
+}
+{
+  \Meaning{a}{Zusatzst"arke, ab etwa 10\pl\ FP}
+}
+
+\bidex
+{
+  1\pik & 2\coe & 2\pik & 3\coe \\
+  \kontra\al{a}
+}
+{
+  \Meaning{a}{Full Value (siehe auch Trial Bids)}
+}
+
+\bidex
+{
+  1\pik & 2\tre & 2\pik & 3\tre \\
+  \kontra\al{a}
+}
+{
+  \Meaning{a}{Strafe (siehe auch Trial Bids)}
+}
+
+\bidex
+{
+  1\pik & 2\coe & 2\tre & pass \\
+  pass & \kontra\al{a}
+}
+{
+  \Meaning{a}{Wiederbelebung, zeigt gute Hand und Toleranz f"ur die nicht gereizten Farben}
+}
+
+\subsubsection{Ausspielkontra (Lightner \kontra)}
+
+Das Kontra auf einen Endkontrakt verlangt normalerweise die vom Dummy zuerst gereizte Farbe.
+Nach 1\SA\sep 3\SA\ verlangt Kontra das Ausspiel der k"urzeren Oberfarbe.
 
 \subsubsection{Trump Support \kontra}
 
+Diese Konvention benutzt der Er"offner, wenn der Partner eine Oberfarbe gereizt
+und der n"achste Gegner gesprochen hat. Er zeigt mit \kontra\ bzw.
+\kontra\kontra\ 3er-Anschluss in der Oberfarbe des Partners.
+
+\bidex
+{
+  1\kar & pass & 1\pik & 2\tre \\
+  2\pik\al{a} \\
+  \kontra\al{b}
+}
+{
+  \Meaning{a}{4er-Anschluss}
+  \Meaning{b}{3er-Anschluss}
+}
+
+\bidex
+{
+  1\kar & pass & 1\pik & \kontra \\
+  2\pik\al{a} \\
+  \kontra\kontra\al{b}
+}
+{
+  \Meaning{a}{4er-Anschluss}
+  \Meaning{b}{3er-Anschluss}
+}
+
 \subsection{1\SA\ als Zweif"arber}
 
+Diese Konvention benutzen wir in vierter Position nach Er"offnung, pass vom
+Partner und einem Farbgebot auf der 1er-Stufe des rechten Gegners, um die
+beiden nicht gereizten Farben zu zeigen.
+
+S"ud \\
+\dealerW
+\vhand{DB108}{42}{53}{KD1094}
+\begin{bidding}
+  1\kar & pass & 1\coe & 1\SA \\
+\end{bidding}
+
+S"ud \\
+\vhand{2}{AD105}{KB952}{643}
+\begin{bidding}
+  1\tre & pass & 1\pik & 1\SA \\
+\end{bidding}
+
 \subsection{2\SA\ als Zweif"arber}
+
+In zweiter Postition ist 2\SA\ Michaels Pr"azis, in vierter Position wie 1\SA\
+ein Zweif"arber, nur mit besserer Verteilung.
+
+S"ud \\
+\vhand{AB1087}{4}{73}{KD1093}
+\begin{bidding}
+  1\kar & pass & 1\coe & 2\SA \\
+\end{bidding}
+
+Haben die Gegner eine Oberfarbe er"offnet und gehoben, zeigt 2\SA\ einen
+unbestimmten Zweif"arber. Die Reizung (1\kar)\sep pass\sep(1\pik)\sep2\pik\
+zeigt eine echte Farbe.
 
 \subsection{Nebul"ose 2\SA\ (Scrambling 2\SA)}
 
@@ -1444,6 +1565,32 @@ Siehe Verhalten nach Zwischenreizung der Gegner.
 \subsection{Markierungen}
 
 \begin{appendix}
+
+\section{Glossar}
+
+\begin{flushleft}
+\begin{tabularx}{\columnwidth}{lX}%
+$n$\good, $n$\bad & $n$ gute/schlechte Punkte \\
+$n$\pl & mindestens $n$ Karten/Punkte \\
+\ufa, \ofa & Unterfarbe(n), Oberfarbe(n) \\
+\aufa, \aofa & andere \ufa, \ofa\\
+\bal & ausgeglichen (4333, 4432, 5332)\\
+\unbal & nicht ausgeglichen \\
+\aw & Antwortender \\
+\inv & einladend \\
+\eo & Er"offner \\
+\maxi & Maximum \\
+\mini & Minimum \\
+\nat & nat"urlich \\
+\nf & nonforcing \\
+\pf & Partieforcing \\
+\rel & Relais \\
+\stp & Stopper (A, Kx, Dxx, Bxxx) \\
+\hstp & Halbstopper (K, Dx, Bxx, 10xxx) \\
+\slamint & Schlemminteresse \\
+\xfer & Transfer \\
+\end{tabularx}%
+\end{flushleft}
 
 \section{"Anderungen am System}
 
