@@ -1,4 +1,4 @@
-\documentclass[10pt,german,twocolumn]{scrartcl}
+\documentclass[11pt,german,twocolumn]{scrartcl}
 \usepackage[a4paper,vscale=0.94,hscale=0.9,includeheadfoot]{geometry}
 %\usepackage[a5paper,vscale=0.94,hscale=0.9,includeheadfoot]{geometry}
 \usepackage{kibitzer}
@@ -23,9 +23,15 @@
 \parskip2ex plus1ex minus1ex
 
 %% Farbe
-%\usepackage{color,pxfonts}
-%\renewcommand{\Di}{{\color{red}{$\vardiamondsuit$}}}
-%\renewcommand{\He}{{\color{red}{$\varheartsuit$}}}
+\usepackage{color,pxfonts}
+\definecolor{ClColor}{rgb}{0.0,0.6,0.0}
+\definecolor{DiColor}{rgb}{1.0,0.3,0.0}
+\definecolor{HeColor}{rgb}{0.9,0.0,0.0}
+\definecolor{SpColor}{rgb}{0.0,0.0,0.7}
+\renewcommand{\Cl}{{\color{ClColor}{$\clubsuit$}}}
+\renewcommand{\Di}{{\color{DiColor}{$\vardiamondsuit$}}}
+\renewcommand{\He}{{\color{HeColor}{$\varheartsuit$}}}
+\renewcommand{\Sp}{{\color{SpColor}{$\spadesuit$}}}
 
 \def\pik{\,\Sp}
 \def\coe{\,\He}
@@ -1102,11 +1108,14 @@ Antworten:
 \subsection{Crash gegen starke 1\tre-Er"offnung}
 
 \bdsc
+\item[(1\tre)] 16\pl\ FP, bel. Vert.
+\bdsc
 \item[\kontra] \underline{C}olour - gleichfarbige (\tr/\pi\ oder \ka/\co)
 \item[1\kar] \underline{Ra}nk - gleichrangige (\tr/\ka\ oder \co/\pi)
 \item[1\of] \nat
 \item[1\SA] \underline{Sh}ape - gleichf"ormige (\tr/\co\ oder \ka/\pi)
 \item[2\uf] \nat
+\edsc
 \edsc
 
 \subsection{Die 1\SA-Gegenreizung}
@@ -1370,7 +1379,7 @@ Halbstopper sind: Kx, Dxx, Bxx, 10xxx.
 }
 {
   \Meaning{a}{VFF, fragt nach \ka-\stp}
-  \Meaning{b}{kein \ka-\stp, muss kein 5er-\co sein}
+  \Meaning{b}{kein \ka-\stp, muss kein 5er-\co\ sein}
   \Meaning{c}{zeigt \ka-\hstp}
   \Meaning{d}{ebenfalls \ka-\hstp}
 }
@@ -1551,6 +1560,17 @@ zeigt eine echte Farbe.
 
 \paragraph{Gerber}
 
+\bdsc
+\item[1\SA\sep4\tre] Gerber
+ \bdsc
+ \item[4\kar/4\coe/4\pik/4\SA] 0/4, 1, 2, 3 Asse
+  \bdsc
+  \item[4\SA] zum spielen
+  \item[\rel] Frage nach platzierten K"onigen
+  \edsc
+ \edsc
+\edsc
+
 \paragraph{(Roman) Keycard-Assfrage (KCB)}
 
 \paragraph{Preempt Keycard-Assfrage (PKCA)}
@@ -1575,8 +1595,8 @@ zeigt eine echte Farbe.
 
 \begin{flushleft}
 \begin{tabularx}{\columnwidth}{lX}%
-$n$\good, $n$\bad & $n$ gute/schlechte Punkte \\
-$n$\pl & mindestens $n$ Karten/Punkte \\
+$n$\good, $n$\bad & $n$ gute/schlechte Punkte/Karten \\
+$n$\pl & mindestens $n$ Punkte/Karten \\
 \ufa, \ofa & Unterfarbe(n), Oberfarbe(n) \\
 \aufa, \aofa & andere \ufa, \ofa\\
 \bal & ausgeglichen (4333, 4432, 5332)\\
