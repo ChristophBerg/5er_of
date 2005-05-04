@@ -4,17 +4,13 @@
 \usepackage{kibitzer}
 \usepackage{babel}
 \usepackage{tabularx}
-\usepackage{courier}
+%\usepackage{times}
 \usepackage{calc}
 \usepackage{german}
+\usepackage{suitsymbols}
 
 \pagestyle{headings}
 
-% \setlength{\topmargin}{-16mm}
-% \setlength{\oddsidemargin}{-20mm}
-% \setlength{\evensidemargin}{-20mm}
-% \setlength{\textwidth}{200mm}   % -> Rand links 5mm breiter als rechts 
-% \setlength{\textheight}{256mm}
 \setlength{\columnsep}{10mm}
 \setlength{\columnseprule}{0.4pt}
 
@@ -23,15 +19,31 @@
 \parskip2ex plus1ex minus1ex
 
 %% Farbe
-\usepackage{color,pxfonts}
+\usepackage{color}
+%
+% Biet-Box-Farben
 \definecolor{ClColor}{rgb}{0.0,0.6,0.0}
 \definecolor{DiColor}{rgb}{1.0,0.3,0.0}
 \definecolor{HeColor}{rgb}{0.9,0.0,0.0}
 \definecolor{SpColor}{rgb}{0.0,0.0,0.7}
-\renewcommand{\Cl}{{\color{ClColor}{$\clubsuit$}}}
-\renewcommand{\Di}{{\color{DiColor}{$\vardiamondsuit$}}}
-\renewcommand{\He}{{\color{HeColor}{$\varheartsuit$}}}
-\renewcommand{\Sp}{{\color{SpColor}{$\spadesuit$}}}
+%
+% Farben wie in der Biet-Box
+\renewcommand{\Cl}{{\color{ClColor}{\clubs}}}
+\renewcommand{\Di}{{\color{DiColor}{\sdiamonds}}}
+\renewcommand{\He}{{\color{HeColor}{\shearts}}}
+\renewcommand{\Sp}{{\color{SpColor}{\spades}}}
+%
+% Schwarz-Rot
+%\renewcommand{\Cl}{\clubs}
+%\renewcommand{\Di}{{\color{HeColor}{\sdiamonds}}}
+%\renewcommand{\He}{{\color{HeColor}{\shearts}}}
+%\renewcommand{\Sp}{\spades}
+%
+% mit pxfonts (haesslich)
+%\renewcommand{\Cl}{{\color{ClColor}{\relsize{2}$\clubsuit$}}}
+%\renewcommand{\Di}{{\color{DiColor}{\relsize{2}$\vardiamondsuit$}}}
+%\renewcommand{\He}{{\color{HeColor}{\relsize{1}$\varheartsuit$}}}
+%\renewcommand{\Sp}{{\color{SpColor}{\relsize{2}$\spadesuit$}}}
 
 \def\pik{\,\Sp}
 \def\coe{\,\He}
@@ -115,14 +127,14 @@
 \setlength{\fboxsep}{2ex}
 \fbox{\parbox{\columnwidth - 4ex}{#1}}
 }
-  
+
 
 \begin{document}
 
 \setlength{\itemsep}{0ex plus0.2ex}
 
 \onecolumn
-{\centering\Huge\ 5er Oberfarben (R. Bartels und Th. Schmitt)}
+{\centering\Huge\ 5er Oberfarben (R. Bartels und Th. Schmitt)\symbol{175}}
 \tableofcontents
 \twocolumn
 
@@ -518,6 +530,7 @@ ebenfalls passbar.  Alle anderen Gebote des Er"offners zeigen Werte
     \edsc
 \edsc
 
+
 \subsubsection*{\label{zfregel}Er"offnungsregel f"ur Zweif"arber mit 6/5 \uf/\of}
 
 \bdsc
@@ -629,7 +642,7 @@ andere \of\ auf 3er-Stufe gezeigt:
   \item[3\tre/\ka] 18\good\pl\ FP, 5\pl\coe\ und 4\pl\uf\\
     \ra~3\coe\ = st"arker als 4\coe\ (\emph{Principle of Fast Arrival});
     \ra~3\pik\ ist dann \conv{Cue Bid}, aber keine K"urze
-    
+
     \textbf{Ein \conv{Cue Bid} in Partners erster Farbe zeigt \emph{nie} eine
     K"urze.}
   \edsc
@@ -726,7 +739,7 @@ Hat \eo\ keine K"urze gezeigt, so ist die n"achste Stufe \conv{RKCB}.
   \item[4\of] 11-13, keine K"urze, \ra~\rel\ = \conv{RKCB}
   \edsc
 \item[1\coe\sep2\SA; 3\tre\sep3\kar; ?]~
-  
+
   (\eo\ hat eine K"urze in \tr, \aw\ fragt nach Keycards.)~\ra
   \bdsc
   \item[3\coe] Chicane in \tre\\
@@ -1925,7 +1938,7 @@ Erst nur die Nord-S\"ud-H\"ande mit Reizung zu viert \ldots
 \playproblemNS
 {
 2\,SA & --- & 3\,SA & --- \\
----   & --- & --- 
+---   & --- & ---
 }
 
 \ldots oder zu zweit:
@@ -1933,7 +1946,7 @@ Erst nur die Nord-S\"ud-H\"ande mit Reizung zu viert \ldots
 \playproblemNSpair
 {
 2\,SA & 3\,SA \\
----   & --- 
+---   & ---
 }
 
 dann die ganze Hand
@@ -1951,7 +1964,7 @@ Oder vielleicht doch lieber als Gegenspielproblem?
 \playproblemNW
 {
 2\,SA & --- & 3\,SA & --- \\
----   & --- & --- 
+---   & --- & ---
 }
 
 bzw.
@@ -1959,7 +1972,7 @@ bzw.
 \playproblemNWpair
 {
 2\,SA & 3\,SA \\
----   & --- 
+---   & ---
 }
 
 oder andersherum
@@ -1969,7 +1982,7 @@ oder andersherum
 \playproblemNE
 {
 2\,SA & --- & 3\,SA & --- \\
----   & --- & --- 
+---   & --- & ---
 }
 
 bzw.
@@ -1979,7 +1992,7 @@ bzw.
 \playproblemNEpair
 {
 2\,SA & 3\,SA \\
----   & --- 
+---   & ---
 }
 
 \newpage
@@ -1994,7 +2007,7 @@ Oder haben die Gegner ein Reizproblem?
 \playproblemEW
 {
 2\,SA & --- & 3\,SA & --- \\
----   & --- & --- 
+---   & --- & ---
 }
 
 bzw.
@@ -2004,7 +2017,7 @@ bzw.
 \playproblemEWpair
 {
 2\,SA & 3\,SA \\
----   & --- 
+---   & ---
 }
 
 Ein Reizproblem zu viert:
@@ -2045,7 +2058,7 @@ Karten gesetzt: Wie spielen Sie von \suit{AD10xx} aus?
 \hanghand{AKD}{AKD}{AKD10}{AKD} An diesem Beispiel kann man gut
 den Unterschied zwischen den Wissenschaftlern und den Zockern
 im Bridge erkl\"aren: Ein echter Zocker w\"urde sicher
-mit 7\,SA er\"offnen; der Wissenschaftler wendet lieber die ber\"uchtigte 
+mit 7\,SA er\"offnen; der Wissenschaftler wendet lieber die ber\"uchtigte
 Hofstein-Konvention an: Die Er\"offnung 5\,SA fragt unmittelbar nach
 Buben, wobei der Partner die Farbe seines niedrigsten Buben bietet
 (ohne Buben bietet er Ohne :-). Falls der Partner einen Buben zeigt,
@@ -2064,8 +2077,8 @@ Nach etwa 22 Bietrunden konnten Sie mit Ihrem genialen System
 herausfinden, da\ss{} im Prinzip 13~Stiche von oben da sind. Gierig
 wie Sie nun einmal sind, haben Sie dann 7\,SA geboten, anstelle sich mit
 7\,\coe\ zu begn\"ugen. Jetzt brauchen Sie den Kontrakt blo\ss{}
-noch zu erf\"ullen. Wie spielen Sie diese Hand in 7\,SA nach 
-dem Ausspiel von \tre\,B? 
+noch zu erf\"ullen. Wie spielen Sie diese Hand in 7\,SA nach
+dem Ausspiel von \tre\,B?
 
 \newpage
 \comment{}
@@ -2092,7 +2105,7 @@ mich 5\Di\ zu einer guten Wette.
 {
            & 2\Di & p          & 2\Sp \\
 p          & p    & X\al{a}    & p    \\
-3\Di\al{b} & p    & p          & p    
+3\Di\al{b} & p    & p          & p
 }
 {
 \Meaning{a}{Take--out}
@@ -2104,7 +2117,7 @@ p          & p    & X\al{a}    & p    \\
            & 2\Di & p          & 2\Sp \\
 3\Di       & p    & 3\Sp\al{a} & p    \\
 4\Di       & p    & 5\Cl\al{b} & p    \\
-5\Di       & p    & p          & p    
+5\Di       & p    & p          & p
 }
 {
 \Meaning{a}{Frage nach \Sp--Stopper}
@@ -2113,7 +2126,7 @@ p          & p    & X\al{a}    & p    \\
 
 \vspace{0.5cm}
 
-\underline{\bf Running Score:} 
+\underline{\bf Running Score:}
 
 \vspace{0.5cm}
 
@@ -2138,7 +2151,7 @@ ansteuern soll. Insgesamt eine nicht ganz leichte Aufgabe$\dots$
 1SA        & 2\Sp\al{a} \\
 3\Cl\al{b} & 3\He\al{c} \\
 4\Cl       & 5\Cl       \\
-6\Cl\al{d} & p 
+6\Cl\al{d} & p
 }
 {
 \Meaning{a}{Frage nach Min/Max}
@@ -2151,7 +2164,7 @@ ansteuern soll. Insgesamt eine nicht ganz leichte Aufgabe$\dots$
 {
 1\Cl      & 1\Di\al{a} \\
 1SA\al{b} & 3\Cl       \\
-3SA       & p 
+3SA       & p
 }
 {
 \Meaning{a}{Walsh = keine 4er OF \\ oder \pf}
@@ -2186,7 +2199,7 @@ Gro -- Fu\ss{} 21, Alain -- Frans 24
 \playproblemNS
 {
 2\,SA & --- & 3\,SA & --- \\
----   & --- & --- 
+---   & --- & ---
 }
 }
 \end{document}

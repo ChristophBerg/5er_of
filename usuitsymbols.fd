@@ -1,0 +1,9 @@
+\ProvidesFile{usuitsymbols.fd}
+             [2005/05/04 v0.1
+              Suit symbol font definitions]
+\DeclareFontFamily{U}{suitsymbols}{}
+\DeclareFontShape{U}{suitsymbols}{m}{n}{ <5> <6> <7> <8> <9> gen * suitsymbols
+      <10> <10.95> <12> <14.4> <17.28> <20.74> <24.88>suitsymbols  }{}
+\DeclareFontShape{U}{suitsymbols}{b}{n}{ <-10> sub * suitsymbols/m/n
+ <10> <10.95> <12> <14.4> <17.28> <20.74> <24.88>suitsymbols }{}
+\endinput

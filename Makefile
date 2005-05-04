@@ -1,8 +1,12 @@
-all: 5er_of.ps
+all: 5er_of.dvi
 
 %.dvi: %.tex
 	latex -src-specials=par,math $<
 	latex -src-specials=par,math $<
 
+fontproof: suitsymbols.mf
+	mf '\mode:=proof; input suitsymbols'
+	gftodvi suitsymbols.2602gf
+
 clean:
-	rm -f 5er_of.ps 5er_of.dvi *.log *.aux *.toc
+	rm -f 5er_of.ps 5er_of.dvi *.log *.aux *.toc *pk *.tfm
