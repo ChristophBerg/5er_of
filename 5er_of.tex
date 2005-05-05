@@ -68,7 +68,8 @@
 \def\ofa{\textsf{OF}}
 \def\aof{\textsf{\,aOF}}
 \def\aofa{\textsf{aOF}}
-\def\SA{\textsf{\,S\kern-0.08emA}}
+\def\sa{\textsf{S\kern-0.08emA}}
+\def\SA{\,\sa}
 \def\kontra{\textsf{X}}
 \def\sep{\,--\,}
 \newcommand{\conv}[1]{\emph{#1}}
@@ -1746,10 +1747,12 @@ Kontrollgebot} reizen!
 
 \paragraph{Gerber}
 
+Direktes 4\tre-Gebot auf eine \sa-Er"offnung:
+
 \bdsc
-\item[1\SA\sep4\tre] Gerber
+\item[1\SA\sep4\tre] Gerber-Assfrage
  \bdsc
- \item[4\kar/\coe/\pik/\SA] 0/4, 1, 2, 3 Asse
+ \item[4\kar/\co/\pi/\sa] 0/4, 1, 2, 3 Asse
   \bdsc
   \item[4\SA] zum Spielen
   \item[\rel] Frage nach platzierten K"onigen
@@ -1793,9 +1796,9 @@ Man kann nun mit dem n"achsten Gebot nach weiteren K"onigen fragen, mit dem
   \Meaning{a}{\tr-Fit, gute \tr-Farbe}
   \Meaning{b}{KCB auf \pi-Basis}
   \Meaning{c}{3/0}
-  \Meaning{d}{platziere K"onige?}
+  \Meaning{d}{platzierte K"onige?}
   \Meaning{e}{\tr-K"onig}
-  \Meaning{f}{platziere Damen? (6\kar\ weitere K"onige?)}
+  \Meaning{f}{platzierte Damen? (6\kar\ weitere K"onige?)}
   \Meaning{g}{\tr-Dame}
 }
 
@@ -1817,21 +1820,129 @@ Man kann nun mit dem n"achsten Gebot nach weiteren K"onigen fragen, mit dem
   \Meaning{e}{bei 3er \pi\ und Single \tr\ leider chancenlos}
 }
 
+\westhand{AK2}{2}{D65}{AKD742}
+\easthand{B6}{AB874}{AKB2}{B8}
+\centerline{\showEWgame}
+\bcbiddingpair{West}{Ost}
+{
+  1\tre & 1\coe \\
+  3\tre & 4\tre\al{a} \\
+  4\coe\al{b} & 4\pik\al{c} \\
+  4\SA\al{d} & 5\coe\al{e} \\
+  6\kar\al{f} & 7\SA
+}
+{
+  \Meaning{a}{KCB}
+  \Meaning{b}{3/0}
+  \Meaning{c}{\tr-Dame?}
+  \Meaning{d}{\tr-Dame und \pi-K"onig}
+  \Meaning{e}{platzierte Damen?}
+  \Meaning{f}{\ka-Dame}
+}
+
+\westhand{AD1072}{K76}{B102}{D6}
+\easthand{653}{A5}{AK98}{AK52}
+\centerline{\showEWgame}
+\bcbiddingpair{West}{Ost}
+{
+  1\pik & 2\tre \\
+  2\pik & 4\SA\al{a} \\
+  5\tre\al{b} & 5\kar\al{c} \\
+  5\coe\al{d} & 6\pik
+}
+{
+  \Meaning{a}{KCB}
+  \Meaning{b}{1/4}
+  \Meaning{c}{\pi-Dame?}
+  \Meaning{d}{\tr-Dame und \co-K"onig}
+}
+
+\westhand{AK}{AD32}{65}{KD632}
+\easthand{B432}{KB}{AB4}{AB109}
+\centerline{\showEWgame}
+\bcbiddingpair{West}{Ost}
+{
+  1\tre & 1\pik \\
+  2\coe & 4\tre\al{a} \\
+  4\coe\al{b} & 4\pik\al{c} \\
+  4\SA\al{d} & 5\coe\al{e} \\
+  5\SA\al{f} & 7\tre
+}
+{
+  \Meaning{a}{KCB}
+  \Meaning{b}{0/3}
+  \Meaning{c}{\tr-Dame?}
+  \Meaning{d}{\tr-Dame und \pi-K"onig}
+  \Meaning{e}{platzierte Damen?}
+  \Meaning{f}{\co-Dame}
+}
+
 \paragraph{Preempt Keycard-Assfrage (PKCA)}
 
-\paragraph{Exclusion Keycard-Assfrage (Voidwood)}
+Diese Assfrage spielen wir nach preemptiven Er"offnungen
+des Partners, also nach 2\coe/\pi/3\tre/\ka/\co/\pi/4\coe/\pi.
+Nach 2er- und 3er-Starts ist das \emph{direkte} 4\tre-Gebot PKCA,
+nach 4 in \ofa ist es 4\SA. Antworten:
+%
+\bdsc
+\item[1. Stufe] 1 Ass ohne Trumpf-Dame
+\item[2. Stufe] 0 Asse
+\item[3. Stufe] 1 Ass mit Trumpf-Dame
+\item[4. Stufe] 2 Asse ohne Trumpf-Dame
+\item[5. Stufe] 2 Asse mit Trumpf-Dame
+\edsc
+
+\paragraph{Exclusion Keycard-Assfrage (Voidwood, EKCB)}
+
+Die Exclusion-Assfrage wird durch einen ungew"ohnlichen Sprung
+(meist in die 5er-Stufe) gestellt, der kein Splinter sein kann.
+
+\bcbiddingpair{West}{Ost}
+{
+  1\coe & 1\pik \\
+  2\coe & 5\tre\al{a}
+}
+{
+  \Meaning{a}{EKCB}
+}
+
+\bcbiddingpair{West}{Ost}
+{
+  1\tre & 1\kar \\
+  2\kar & 4\coe\al{a}
+}
+{
+  \Meaning{a}{EKCB, hier kein Splinter, da wir den Fit schon haben}
+}
 
 \subsubsection{DOPI-ROPI}
 
+Nach der Assfrage und Zwischenreizung der Gegner (Farbe oder Kontra) zeigt pass
+die erste Stufe, also 1/4 Keycards (P-1), und Kontra/Rekontra die zweite Stufe
+mit 3/0 Keycards (D-0). Diese Konvention wenden wir auch immer dann an, wenn
+Stufenantworten erforderlich sind und der Gegner zwischengereizt hat.
+
 \subsubsection{Josephine}
+
+Eine 5\SA-Reizung \emph{im Sprung} fordert den Partner auf, die Anzahl der
+Topfiguren anzugeben: 0, 1, 2, 3.
 
 \section{Ausspiele und Markierungen}
 
 \subsection{Ausspiele gegen Farbkontrakte}
 
+3./5.-h"ochste. Im weiteren Verlauf des Spiels zeigt eine kleine Karte eine
+Figur, eine hohe hingegen zeigt keine Werte.
+
 \subsection{Ausspiele gegen \SA-Kontrakte}
 
+4.-h"ochste. Ausspiel der 10 und 9 verspricht 0 oder 2 h"ohere Karten. Von
+KD10xx wird der K"onig ausgespielt, der Partner soll den Buben deblockieren. In
+Partners gereizter wird die 3./5.-h"ochste ausgespielt.
+
 \subsection{Markierungen}
+
+Markiert wird niedrig-hoch, d.h. eine kleine Karte ist positiv.
 
 \begin{appendix}
 
@@ -1897,6 +2008,7 @@ Wendelin Albert,
 Christoph Berg,
 Frederic Boldt,
 Helmut Horacek,
+Klaus Kiefer,
 Frank Luithle.
 
 \section{Layout}
