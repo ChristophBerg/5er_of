@@ -1,7 +1,8 @@
-all: 5er_of.dvi
+all: 5er_of.ps
 
 %.dvi: %.tex
 	latex -src-specials=par,math $<
+	makeindex 5er_of.idx
 	latex -src-specials=par,math $<
 
 fontproof: suitsymbols.mf
