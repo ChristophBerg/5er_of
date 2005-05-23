@@ -16,9 +16,11 @@
 \setlength{\columnsep}{10mm}
 \setlength{\columnseprule}{0.4pt}
 
-\handwidth22mm
+\handwidth7.5em
+\cardskip0.23ex
 \parindent0mm
 \parskip2ex plus1ex minus1ex
+\renewcommand{\arraystretch}{1.07}
 
 %% Farbe
 \usepackage{color}
@@ -47,31 +49,31 @@
 %\renewcommand{\He}{{\color{HeColor}{\relsize{1}$\varheartsuit$}}}
 %\renewcommand{\Sp}{{\color{SpColor}{\relsize{2}$\spadesuit$}}}
 
-\def\pik{\nobreak\,\Sp\xspace}
-\def\coe{\nobreak\,\He\xspace}
-\def\kar{\nobreak\,\Di\xspace}
-\def\tre{\nobreak\,\Cl\xspace}
+\def\pik{\nobreak\hspace{\cardskip}\Sp\xspace}
+\def\coe{\nobreak\hspace{\cardskip}\He\xspace}
+\def\kar{\nobreak\hspace{\cardskip}\Di\xspace}
+\def\tre{\nobreak\hspace{\cardskip}\Cl\xspace}
 
 \def\pi{\Sp\xspace}
 \def\co{\He\xspace}
 \def\ka{\Di\xspace}
 \def\tr{\Cl\xspace}
 
-\def\mi{\,\Cl /\Di\xspace}
-\def\ma{\,\He /\Sp\xspace}
+\def\mi{\hspace{\cardskip}\Cl{}/\Di\xspace}
+\def\ma{\hspace{\cardskip}\He{}/\Sp\xspace}
 \def\good{$^+$\xspace}
 \def\bad{$^-$\xspace}
 \def\ra{$\rightarrow$\xspace}
 \def\pl{$\uparrow$\xspace}
-\def\uf{\nobreak\textsf{\,UF}\xspace}
-\def\of{\nobreak\textsf{\,OF}\xspace}
+\def\uf{\nobreak\hspace{\cardskip}\textsf{UF}\xspace}
+\def\of{\nobreak\hspace{\cardskip}\textsf{OF}\xspace}
 \def\ufa{\nobreak\textsf{UF}\xspace}
 \def\aufa{\nobreak\textsf{aUF}\xspace}
 \def\ofa{\nobreak\textsf{OF}\xspace}
-\def\aof{\nobreak\textsf{\,aOF}\xspace}
+\def\aof{\nobreak\hspace{\cardskip}\textsf{aOF}\xspace}
 \def\aofa{\nobreak\textsf{aOF}\xspace}
 \def\sa{\nobreak\textsf{S\kern-0.08emA}\xspace}
-\def\SA{\nobreak\,\sa}
+\def\SA{\nobreak\hspace{\cardskip}\sa}
 \def\kontra{\textsf{X}\xspace}
 \def\rekontra{\textsf{X\kern-0.08emX}\xspace}
 \def\sep{\,--\,}
@@ -104,23 +106,54 @@
 \def\xferto{\xfer~\ra~}
 \def\slamint{\textsc{Schl-Int}\xspace}
 
-\setlength{\labelsep}{2ex}
+%\setlength{\labelsep}{1.7ex}
+
+\usepackage{paralist}
+\setlength{\plitemsep}{0.6ex}
+\setlength{\pltopsep}{0.8ex}
+\setlength{\plpartopsep}{0ex}
+\defaultleftmargin{2.5ex}{2.3ex}{2.1ex}{1.9ex}
 
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 \newcommand\bidins[1]%
 {%
 \begin{flushleft}
-\begin{tabularx}{\columnwidth}{llX}%
+\begin{tabularx}{\columnwidth}{llY}%
 #1
 \end{tabularx}%
 \end{flushleft}
 }
 
+\newcommand{\handwithdesc}[5]{%
+%\handwidth6em
+\vhand{#1}{#2}{#3}{#4}\hspace{1.5ex}\vrule\hspace{1ex}
+\begin{minipage}[t]{\columnwidth-\handwidth-2.5ex-0.6pt}
+#5
+\end{minipage}
+%\medskip
+%\handwidth7.5em
+}
+
+\newcommand{\exhand}[9]{%
+\begin{minipage}{\columnwidth}
+\westhand{#1}{#2}{#3}{#4}
+\easthand{#5}{#6}{#7}{#8}
+\centerline{\showEWgame}
+\bigskip
+{\smaller\begin{tabularx}{\columnwidth}{rYrY}
+\multicolumn{2}{l}{West} &
+\multicolumn{2}{l}{Ost}\\
+\hline
+#9
+\end{tabularx}}
+\end{minipage}
+}
+
 \newcommand\bidseq[1]%
 {%
 \begin{flushleft}
-\begin{tabularx}{\columnwidth}{llX}%
+\begin{tabularx}{\columnwidth}{llY}%
 #1
 \end{tabularx}%
 \end{flushleft}
@@ -141,13 +174,10 @@
 
 \setlength{\itemsep}{0ex plus0.2ex}
 
-%\onecolumn
 \begin{center}
-{\Huge 5er-Oberfarben
-
-\huge R. Bartels und Th. Schmitt\symbol{175}}
+\textsf{{\relsize{5}\co{}~~5er-Oberfarben~~\pi\\[1ex]}
+\tr{}~~Regine Bartels und Thomas Schmitt~~\ka}
 \end{center}
-%\twocolumn
 \tableofcontents
 
 \newpage
@@ -162,16 +192,16 @@
 
 \subsection*{2er-Stufe}
 \bidins{%
-2\tre	& 6-10	& Weak Two in \kar, oder\\
+2\tre	& 6-10	& Weak Two in \ka, oder\\
 	& 16\pl	& 6er-Farbe, \textbf{8} Spielstiche, oder\\
 	& 22-23	& \bal, oder\\
 	& 26-27	& \bal\\[1ex]
-2\kar	& 6-10	& Weak Two in \coe, oder\\
+2\kar	& 6-10	& Weak Two in \co, oder\\
 	& 18\pl	& 6er-Farbe, \textbf{9} Spielstiche, oder\\
 	& 24-25	& \bal, oder\\
 	& 28\pl	& \bal\\[1ex]
-2\coe	& 6-10	& Zweif"arber mit \coe\\[1ex]
-2\pik	& 6-10	& Weak Two in \pik\\[1ex]
+2\coe	& 6-10	& Zweif"arber mit \co\\[1ex]
+2\pik	& 6-10	& Weak Two in \pi\\[1ex]
 2\SA	& 20-21	& \bal
 }
 
@@ -179,7 +209,7 @@
 \bidins{%
 3\uf	& 5-10	& 7\pl{}er-\ufa, in 1. Hand nur in Nichtgefahr, in 3. Hand 6er-Farbe m"oglich\\[1ex]
 3\of	& 5-10	& 7\pl{}er-\ofa\\[1ex]
-3\SA	& 	& Gambling in 1./2. Hand, in 3./4. Hand zum spielen
+3\SA	& 	& Gambling in 1./2. Hand, in 3./4. Hand zum Spielen
 }
 
 \subsection*{4er-Stufe}
@@ -207,9 +237,9 @@ Seite \pageref{zfregel}.
 1\of	& 6\pl	& 4\pl{}er-\ofa\\[1ex]
 1\SA	& 8-10	& \bal ohne 4er-\ofa\\[1ex]
 2\tre	& 10\good{}\pl & 5\pl{}er-\tr \conv{(Inverted)}\\[1ex]
-2\kar	& 2-5	& 5/5\of\\[1ex]
+2\kar	& 2-5	& 5/5 \ofa\\[1ex]
 2\of	& 5-8	& gute 6\pl{}er-\ofa \conv{(Weak Jump)}\\
-        &       & \ra 2\SA \Index{Ogust} \\[1ex]
+        &       & \ra 2\SA = \conv{\Index{Ogust}} \\[1ex]
 2\SA    & 2-6   & 5\pl{}er-\tr \conv{(Inverted Spezial)}\\
 3\tre	& 7-9	& 5\pl{}er-\tr \conv{(Inverted)}\\[1ex]
 3\kar	& 12-15 & 5/5 in \tr{}+\ka \conv{(Fit Jump)}\\
@@ -222,12 +252,12 @@ Seite \pageref{zfregel}.
 
 \notebox{%
 Weiterreizung:
-%\begin{itemize}
+%\begin{compactitem}
 %\item
 Ein unn"otiger Sprung in einer neuen Farbe ist \conv{\Index{Splinter}}.
 %\item
 Ein unn"otiger Doppelsprung ist \conv{Exclusion RKCB}.
-%\end{itemize}
+%\end{compactitem}
 }
 
 Nach 1\kar{}-Er"offnung sind die Antworten entsprechend
@@ -254,7 +284,7 @@ Treffs.
     \bdsc
       \item[2\tre] Schlemm-Interesse in \tre oder \kar;
             \textbf{Frage nach Verteilung} (s.~u.)
-      \item[2\kar] schwach; zum spielen
+      \item[2\kar] schwach; zum Spielen
       \item[2\ma] \pf mit 5/4-Verteilung
       \item[2\SA] \nat
       \item[3\tre/\co/\pi] \conv{\Index{Splinter}} mit 6er-\ka
@@ -361,8 +391,8 @@ Treffs.
   \item[1\SA] 12-14 FP \bal, kein 4er-\pi (\ra \ref{1sarebid})
     %\bdsc
     %\item[2\tre] \conv{Checkback Stayman}
-    %\item[2\kar] 4er-\co, 5\pl\kar, zum spielen
-    %\item[2\coe] 5er-\co, schwach, zum spielen
+    %\item[2\kar] 4er-\co, 5\pl\kar, zum Spielen
+    %\item[2\coe] 5er-\co, schwach, zum Spielen
     %\item[2\pik] 5/4 \co{}+\pi, \pf
     %\item[2\SA] \nat
     %\item[3\mi] \nat, \pf
@@ -560,7 +590,7 @@ zeigen Werte (Stopper) und sind \pf.
 \section{Die 1\of-Er"offnungen}
 
 Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
-\begin{itemize}
+\begin{compactitem}
 \setlength{\itemsep}{0.5ex}
 \item Schwache bis einladende H"ande mit 4\pl{}er-Anschlu"s werden durch
   \conv{Bergen Hebungen} gezeigt.
@@ -568,7 +598,7 @@ Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
   \conv{\Index{Splinter}} oder \conv{Stenberg 2\SA}.
 \item Die restlichen starken Varianten werden durch verz"ogertes
   Reizen der Trumpfunterst"utzung gezeigt (Farbwechsel).
-\end{itemize}
+\end{compactitem}
 
 \subsection{Antworten auf 1\of-Er"offnung}
 
@@ -586,7 +616,7 @@ Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
   3\aof & 11-14 & beliebiges Chicane \conv{(Splinter)}, s.~u.\\
   3\SA & 11-14 & Single in \aofa \conv{(Splinter)}, s.~u.\\
   4\tre/\ka & 11-14 & \tr/\ka-Single \conv{(Splinter)}\\[1ex]
-  4\of && zum spielen\\[1ex]
+  4\of && zum Spielen\\[1ex]
   4\aof && \conv{Exclusion RKCB}\\[3ex]
   \multicolumn{3}{l}{Nach 1\coe-Er"offnung:}\\[1ex]
   2\pik & 5-8 & 6\pl\pik \conv{(Weak Jump)}\\[2ex]
@@ -636,7 +666,7 @@ andere \of auf 3er-Stufe gezeigt:
   \item[1\SA] 12-14 FP \bal
     \bdsc
     \item[2\tre] \conv{Checkback Stayman}
-    \item[2\kar] 4er-\pi, 5\pl\kar, zum spielen
+    \item[2\kar] 4er-\pi, 5\pl\kar, zum Spielen
     \item[3\tre] \nat, forcing
       \bdsc
       \item[3\kar] Frage nach \hstp, zeigt \khstop, verneint 3er-\pi\
@@ -710,18 +740,14 @@ andere \of auf 3er-Stufe gezeigt:
   \edsc
 \edsc
 
-\bcbiddingpair{West}{Ost}
-{
-  1\pik & 2\kar\\
-  3\tre\al{a} & 3\kar\al{b}\\
-  3\SA\al{c}  & 4\SA\al{d}
-}
-{
-  \Meaning{a}{5/4 in \pi{}+\tr}
-  \Meaning{b}{forcing}
-  \Meaning{c}{\cstop}
-  \Meaning{d}{quantitativ}
-}
+\begin{tabularx}{\columnwidth}{rYrY}
+\multicolumn{2}{l}{West} &
+\multicolumn{2}{l}{Ost}\\
+\hline
+1\pik & & 2\kar\\
+3\tre & 5/4 in \pi{}+\tr & 3\kar & forcing\\
+3\SA  & \cstop & 4\SA & quatitativ
+\end{tabularx}
 
 \subsection{Weiterreizung nach [1\of{}\sep2\SA] \conv{(Stenberg)}\label{stenberg}}
 
@@ -769,73 +795,38 @@ Hat \eo keine K"urze gezeigt, so ist die n"achste Stufe \conv{RKCB}.
 
 \subsubsection{Beispielreizungen zu \conv{Stenberg}}
 
-\westhand{432}{AB10852}{A3}{K2}
-\easthand{KB6}{K976}{K94}{A87}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
+\exhand{432}{AB10852}{A3}{K2}%
+{KB6}{K976}{K94}{A87}%
 {
-  1\coe & 2\SA\\
-  4\coe\al{a} & pass
-}
-{
-  \Meaning{a}{Minimum (11-13)}
+  1\coe & & 2\SA &\\
+  4\coe & Minimum (11-13) & pass &
 }
 
-\vfill
-\westhand{4}{AB10852}{A1042}{K2}
-\easthand{876}{KD76}{KD3}{A87}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
+\exhand{4}{AB10852}{A1042}{K2}%
+{876}{KD76}{KD3}{A87}%
 {
-  1\coe & 2\SA\\
-  3\pik\al{a} & 3\SA\al{b}\\
-  4\pik\al{c} & 6\coe
-}
-{
-  \Meaning{a}{\pi-K"urze (Single oder Chicane)}
-  \Meaning{b}{Frage}
-  \Meaning{c}{\pi-Single, zwei Keycards ohne Trumpf-Dame}
+  1\coe & & 2\SA &\\
+  3\pik & \pi-K"urze (Single oder Chicane) & 3\SA & Frage\\
+  4\pik & \pi-Single, zwei Keycards ohne Trumpf-Dame & 6\coe &
 }
 
-\vfill
-\westhand{KB1042}{DB753}{2}{K3}
-\easthand{AD53}{AK}{653}{A542}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
+\exhand{KB1042}{DB753}{2}{K3}%
+{AD53}{AK}{653}{A542}%
 {
-  1\pik & 2\SA\\
-  3\kar\al{a} & 3\coe\al{b}\\
-  3\SA{c} & 6\pik
-}
-{
-  \Meaning{a}{\ka-K"urze (Single oder Chicane)}
-  \Meaning{b}{Frage}
-  \Meaning{c}{\ka-Single, eine oder vier Keycards}
+  1\pik & & 2\SA &\\
+  3\kar & \ka-K"urze (Single oder Chicane) & 3\coe & Frage\\
+  3\SA  & \ka-Single, eine oder vier Keycards & 6\pik &
 }
 
-\vfill
-\westhand{K752}{AD542}{-}{K742}
-\easthand{A8}{KB76}{D62}{ADB3}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
+\exhand{K752}{AD542}{-}{K742}%
+{A8}{KB76}{D62}{ADB3}%
 {
-  1\coe & 2\SA\\
-  3\kar\al{a} & 3\coe\al{b}\\
-  3\pik\al{c} & 3\SA\al{d}\\
-  4\tre\al{e} & 4\kar\al{f}\\
-  4\pik\al{g} & 4\SA\al{h}\\
-  5\tre\al{i} & 7\coe
-}
-{
-  \Meaning{a}{\ka-K"urze (Single oder Chicane)}
-  \Meaning{b}{Frage}
-  \Meaning{c}{\kar-Chicane}
-  \Meaning{d}{\conv{RKCB}}
-  \Meaning{e}{eine oder vier Keycards}
-  \Meaning{f}{Frage nach \co-Dame}
-  \Meaning{g}{\co-Dame und \pi-K"onig vorhanden}
-  \Meaning{h}{Frage nach weiteren K"onigen}
-  \Meaning{i}{\tr-K"onig vorhanden}
+  1\coe & & 2\SA &\\
+  3\kar & \ka-K"urze (Single oder Chicane) & 3\coe & Frage\\
+  3\pik & \kar-Chicane & 3\SA & \conv{RKCB}\\
+  4\tre & eine oder vier Keycards & 4\kar & Frage nach \co-Dame\\
+  4\pik & \co-Dame und \pi-K"onig vorhanden & 4\SA & Frage nach weiteren K"onigen\\
+  5\tre & \tr-K"onig vorhanden & 7\coe\\
 }
 
 \newpage
@@ -853,7 +844,7 @@ Verteilung.  5332-Verteilungen mit einer 5er-\ofa sind m"oglich.
 55\uf.\\
 2\SA & 8-9 & \nat, \inv\\
 3\,$x$ && 6\pl{}er-Farbe, \slamint{}\\
-3\SA && zum spielen\\
+3\SA && zum Spielen\\
 4\tre && \conv{\Index{Gerber}}-Assfrage (Antworten: 0 oder 4, 1, 2, 3)\\
 4\kar && 55\pl in den \ofa, kein \slamint{}\\
 4\SA && quantitativ\\
@@ -909,14 +900,14 @@ Mit einladenden H"anden reizen wir eine 5/4-Verteilung in den \ofa\
 \bdsc
 \item[2\kar] keine 4er-\ofa
 \bdsc
-\item[3\coe] \pf\pl, \xferto\pi \conv{(\Index{Smolen} Transfer)};
+\item[3\coe] \pf{}\pl, \xferto\pi \conv{(\Index{Smolen} Transfer)};
   verspricht 4er-\co und 5er-\pi
-  \begin{itemize}
+  \begin{compactitem}
   \item falls 5er-\co: starkes \slamint{}
   \item mildes \slamint{} mit 5/5~\ofa wird "uber \conv{Transfer} gereizt
   \item ohne \slamint{} mit 5/5~\ofa wird [1\SA-4\kar;] gereizt
-  \end{itemize}
-\item[3\pik] \pf\pl, \xferto\co \conv{(Smolen Transfer)};
+  \end{compactitem}
+\item[3\pik] \pf{}\pl, \xferto\co \conv{(Smolen Transfer)};
   verspricht 5er-\pi und 4er-\co (siehe oben)
 \edsc
 \item[2\coe] 4er-\co (4er-\pi m"oglich)
@@ -944,7 +935,9 @@ Mit einladenden H"anden reizen wir eine 5/4-Verteilung in den \ofa\
 \subsubsection{Transfer-Sequenzen}
 
 \bdsc
-  \item[1\SA{}\sep2\kar; ?] \xferto\co
+  \item[1\SA{}\sep2\kar; ?]~
+
+  \xferto\co
   \bdsc
     \item[2\coe] f"uhrt \xfer aus
     \bdsc
@@ -978,12 +971,16 @@ Mit einladenden H"anden reizen wir eine 5/4-Verteilung in den \ofa\
       \ra~3\kar = Wiederholung des \xfer
     \item[3\coe] 4er-\co, \mini \conv{(Super Accept)}
   \edsc
-  \item[1\SA{}\sep2\coe; 2\pik] \xferto\pi ausgef"uhrt
+  \item[1\SA{}\sep2\coe; 2\pik]~
+  
+  \xferto\pi ausgef"uhrt
   \bdsc
     \item[3\coe] 5/4 \pi/\co, \inv
     \item[4\coe] 5/5 \pi/\co, mildes \slamint
   \edsc
-  \item[1\SA{}\sep2\pik; ?] \xferto\ufa
+  \item[1\SA{}\sep2\pik; ?]~
+
+  \xferto\ufa
   \bdsc
     \item[2\SA] Pr"aferenz f"ur \ka
     \bdsc
@@ -997,7 +994,9 @@ Mit einladenden H"anden reizen wir eine 5/4-Verteilung in den \ofa\
 \subsubsection{Schlemm-Sequenzen}
 
 \bdsc
-  \item[1\SA{}\sep3\tre; ?] \slamint in \tr
+  \item[1\SA{}\sep3\tre; ?]~
+
+  \slamint in \tr
   \bdsc
     \item[3\kar/\co/\pi] Kontrolle in der Farbe, \maxi, \tr-Fit
     \item[3\SA] \mini, \tr-Double oder 3 kleine Karten
@@ -1091,7 +1090,7 @@ solange kein Fit best"atigt wurde.
   Gegner\label{zwischenreizung}}
 
 \subsection{Allgemeines}
-\begin{itemize}
+\begin{compactitem}
 \item Das Reizen einer neuen Farbe auf der 1er-Stufe ist weiterhin
 forcierend f"ur eine Runde.
 %
@@ -1114,34 +1113,34 @@ ohne die Zwischenreizung 2\kar gereizt h"atte.
   starke Hand f"ur die es in der augenblicklichen Situation kein Gebot
   gab.
 \item Der \conv{"Uberruf}
-  \begin{itemize}
+  \begin{compactitem}
     \item nach \ufa-Er"offnung fragt nach Stopper.
     \item nach \ofa-Er"offnung zeigt eine partieforcierende Hand mit
       Anschlu"s in der \ofa (siehe unten).
-    \end{itemize}
+    \end{compactitem}
 \item 1\SA und 3\SA sind nat"urlich.
-\end{itemize}
+\end{compactitem}
 
 \subsection{Nach \of-Er"offnung}
-\begin{itemize}
+\begin{compactitem}
 \item Alle \ofa-Hebungen sind schwach.  Falls \conv{Bergen Hebungen}
   noch m"oglich sind, werden diese angewendet.
 \item {[}1\of{}\sep($x$){}\sep2\SA{]} zeigt
-  \begin{itemize}
+  \begin{compactitem}
   \item wenn \conv{Bergen Hebungen} noch m"oglich sind: eine einladende
     Hebung mit genau 3er-Anschluss,
   \item sonst: eine einladende Hebung mit 3er- oder 4er-Anschluss.
-  \end{itemize}
+  \end{compactitem}
 \item {[}1\of{}\sep(\kontra){}\sep2\SA{]} zeigt
-  \begin{itemize}
+  \begin{compactitem}
     \item eine einladende Hebung mit genau 3er-Anschluss oder
     \item eine partieforcierende Hebung.
-  \end{itemize}
+  \end{compactitem}
 Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
 \item Der \conv{"Uberruf} der gegnerischen Farbe zeigt eine
   partieforcierende Hand mit Anschluss in der \of\
   ([1\of{}\sep(1\,$x$){}\sep2\,$x$] oder [1\of{}\sep(2\,$x$){}\sep3\,$x$]).
-\end{itemize}
+\end{compactitem}
 
 \subsubsection{Beispiele}
 \begin{description}
@@ -1165,7 +1164,7 @@ Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
 \end{description}
 
 \subsection{Nach \uf-Er"offnung}
-\begin{itemize}
+\begin{compactitem}
 \item Es gilt weiterhin \conv{Inverted Minors}.
 \item Der \conv{"Uberruf} der gegnerischen Farbe fragt nach
   \sa-Stopper ([1\uf{}\sep(1\,$x$){}\sep2\,$x$] oder
@@ -1173,7 +1172,7 @@ Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
 \item {[}1\uf{}\sep(1\,$x$){}\sep2\SA] ist \conv{Inverted} (2-5~FP mit
   5\pl{}er Anschluss in der er"offneten Unterfarbe; wie in einer
   ungest"orten Reizung).
-\end{itemize}
+\end{compactitem}
 
 \subsubsection{Beispiele}
 \begin{description}
@@ -1246,7 +1245,7 @@ Reizung (\conv{Fit Jumps}, \conv{Inverted Minors}, \conv{Weak Jumps}).
 Reizt der Gegner "uber unsere 1\,$x$-Er"offnung einen Zweif"arber, bei
 dem beide Farben bekannt sein m"ussen, so verwenden wir die Konvention
 \conv{Unusual over Unusual}:
-\begin{itemize}
+\begin{compactitem}
 \item \conv{Kontra} zeigt Straf-Bereitschaft f"ur mindestens eine der
   beiden gegnerischen Farben.
 \item Die niedrigere bzw. h"ohere der gegnerischen Farben steht
@@ -1258,13 +1257,13 @@ dem beide Farben bekannt sein m"ussen, so verwenden wir die Konvention
   forcierend.
 \item Indirektes Reizen der freien Farbe zeigt 5er-L"ange und ist nur
   einladend.
-\end{itemize}
+\end{compactitem}
 
 \minisec{Beispiel:}
 \bdsc
 \item[1\coe{}\sep(2\SA*){}\sep?] (2\SA = beide \ufa)
 \bdsc
-\item[3\tre] \inv\pl mit \coe-Anschluss
+\item[3\tre] \inv{}\pl mit \coe-Anschluss
 \item[3\kar] \inv mit \pik-L"ange
 \item[3\coe] kompetitiv (ersetzt 2\coe-Gebot)
 \item[3\pik] \pf mit \pik-L"ange
@@ -1581,55 +1580,27 @@ wenn m"oglich auf \tr- bzw. \ka-Basis.
 
 \subsubsection{Beispiele}
 
-\westhand{3}{DB865}{54}{K10975}
-\easthand{9876}{AK}{AK}{AD86}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
-{
-  2\coe & 2\SA \\
-  3\tre\al{a} & 3\kar\al{b} \\
-  3\coe\al{c} & 3\pik\al{d} \\
-  3\SA\al{e} & 4\tre\al{f} \\
-  4\kar\al{g} & 6\tre
-}
-{
-  \Meaning{a}{5/5 \tr/\co}
-  \Meaning{b}{Frage nach St"arke und K"urze}
-  \Meaning{c}{\mini}
-  \Meaning{d}{Frage nach K"urze}
-  \Meaning{e}{\pi-K"urze}
-  \Meaning{f}{PKCA auf \tr-Basis}
-  \Meaning{g}{1 Ass ohne \tr-Dame}
+\exhand{3}{DB865}{54}{K10975}
+{9876}{AK}{AK}{AD86}{%
+  2\coe && 2\SA \\
+  3\tre & 5/5 \tr/\co & 3\kar & Frage nach St"arke und K"urze\\
+  3\coe & \mini & 3\pik & Frage nach K"urze\\
+  3\SA  & \pi-K"urze & 4\tre & PKCA auf \tr-Basis\\
+  4\kar & 1 Ass ohne \tr-Dame & 6\tre\\
 }
 
-\westhand{32}{KB874}{KD872}{5}
-\easthand{AD54}{106}{A54}{ADB2}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
-{
-  2\coe & 2\SA \\
-  3\SA\al{a} & pass
-}
-{
-  \Meaning{a}{5/5 \co/\ka, \maxi}
+\exhand{32}{KB874}{KD872}{5}
+{AD54}{106}{A54}{ADB2}{%
+  2\coe && 2\SA &\\
+  3\SA  & 5/5 \co/\ka, \maxi & pass &\\
 }
 
-\westhand{KB986}{DB764}{54}{2}
-\easthand{AD76}{2}{AKD106}{A54}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
-{
-  2\coe & 2\SA \\
-  3\coe\al{a} & 4\kar\al{b} \\
-  4\coe\al{c} & 4\SA\al{d} \\
-  5\tre\al{e} & 6\pik
-}
-{
-  \Meaning{a}{5/5 \co/\pi, \mini}
-  \Meaning{b}{\pi-Fit, Frage nach K"urze}
-  \Meaning{c}{\tr-K"urze}
-  \Meaning{d}{PKCA}
-  \Meaning{e}{1 Ass ohne \pi-Dame}
+\exhand{KB986}{DB764}{54}{2}
+{AD76}{2}{AKD106}{A54}{%
+  2\coe & & 2\SA  & \\
+  3\coe & 5/5 \co/\pi, \mini & 4\kar & \pi-Fit, Frage nach K"urze\\
+  4\coe & \tr-K"urze & 4\SA  & PKCA\\
+  5\tre & 1 Ass ohne \pi-Dame & 6\pik
 }
 
 \subsection{Die 2\pik-Er"offnung}
@@ -1695,52 +1666,26 @@ Das Schema nach [2\pik{}\sep2\SA] funktioniert genau wie nach [2\tre{}\sep2\SA] 
 
 \subsubsection{Beispiele}
 
-\westhand{KD9874}{862}{B74}{2}
-\easthand{A3}{A973}{A92}{A986}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
-{
-  2\pik & 2\SA \\
-  3\kar\al{a} & 3\SA\al{b}
-}
-{
-  \Meaning{a}{\mini, gute Farbe}
+\exhand{KD9874}{862}{B74}{2}
+{A3}{A973}{A92}{A986}{%
+  2\pik && 2\SA&\\
+  3\kar & \mini, gute Farbe & 3\SA
 }
 
-\westhand{K109876}{862}{A74}{2}
-\easthand{AD5}{AKD97}{2}{A873}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
-{
-  2\pik & 2\SA \\
-  3\tre\al{a} & 3\kar\al{b} \\
-  4\tre\al{c} & 4\kar\al{d} \\
-  5\tre\al{e} & 7\pik
-}
-{
-  \Meaning{a}{\mini, schlechte Farbe}
-  \Meaning{b}{Frage nach K"urze}
-  \Meaning{c}{\tr-K"urze}
-  \Meaning{d}{PKCA}
-  \Meaning{e}{2 Asse ohne \pi-Dame}
+\exhand{K109876}{862}{A74}{2}
+{AD5}{AKD97}{2}{A873}{%
+  2\pik & & 2\SA\\
+  3\tre & \mini, schlechte Farbe & 3\kar & Frage nach K"urze\\
+  4\tre & \tr-K"urze & 4\kar & PKCA\\
+  5\tre & 2 Asse ohne \pi-Dame & 7\pik
 }
 
-\westhand{KD10874}{A62}{B74}{2}
-\easthand{AB3}{KDB4}{AK2}{986}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
-{
-  2\pik & 2\SA \\
-  3\pik\al{a} & 4\tre\al{b} \\
-  4\SA\al{c} & 5\tre\al{d} \\
-  6\tre\al{e} & 6\pik
-}
-{
-  \Meaning{a}{\maxi, gute Farbe}
-  \Meaning{b}{Frage nach K"urze}
-  \Meaning{c}{\tr-K"urze}
-  \Meaning{d}{PKCA}
-  \Meaning{e}{2 Asse mit \pi-Dame}
+\exhand{KD10874}{A62}{B74}{2}
+{AB3}{KDB4}{AK2}{986}{%
+  2\pik & & 2\SA\\
+  3\pik & \maxi, gute Farbe & 4\tre & Frage nach K"urze\\
+  4\SA  & \tr-K"urze & 5\tre & PKCA\\
+  6\tre & 2 Asse mit \pi-Dame & 6\pik
 }
 
 \newpage
@@ -1837,17 +1782,17 @@ nach \Index{Weak Two}-Er"offnung: [(2\of){}\sep\kontra{}\sep(pass)].
 
 Antworten:
 
-\begin{itemize}
+\begin{compactitem}
 \item Alle Hebungen sind schwach.
 \item Neue Farbe ist nicht forcierend (8-12 FP).
 \item Neue Farbe im Sprung ist Fit-Jump.
 \item Der "Uberruf zeigt starke H"ande:
-  \begin{itemize}
+  \begin{compactitem}
   \item eine mindestens einladende Hand mit Fit oder
   \item einen Einf"arber mit mehr als 12 FP oder
   \item eine starke \sa-Hand ohne \stp.
-  \end{itemize}
-\end{itemize}
+  \end{compactitem}
+\end{compactitem}
 
 \subsection{Crash gegen starke 1\tre-Er"offnung}
 
@@ -1880,8 +1825,8 @@ Stayman. 2\tre ist dann ebenfalls ein Transfer.
 \subsection{Weak Jumps}
 
 \conv{Weak Jumps} zeigen 6-10 FP und eine 6\pl{}er-Farbe oder eine
-sehr gute 5er-Farbe. 2\SA vom \eo ist Ogust\index{Ogust}
-(\ra~\ref{ogust}).
+sehr gute 5er-Farbe. 2\SA vom \eo ist \conv{Ogust\index{Ogust}}
+(\ra~\ref{ogust}, Seite~\pageref{ogust}).
 
 \subsection{Michaels Pr"azis}
 
@@ -1934,52 +1879,28 @@ Maximum das Vollspiel ansagen. Mit massierten Werten in einer Farbe reizt der
 \aw diese Farbe auf 3er-Stufe. Bei St"orung durch die Gegner ersetzt die
 niedrigste freie Farbe, sofern es noch eine gibt, das 2\SA-Trial Bid.
 
-\paragraph{Beispielreizungen zu Trial Bids} ~
+\minisec{Beispiele}
+\begin{description}
+\item[1\tre{}\sep1\coe;~1\pik{}\sep2\pik;~2\SA]~
 
-\bcbiddingpair{West}{Ost}
-{
-  1\tre & 1\coe \\
-  1\pik & 2\pik \\
-  2\SA\al{a}
-}
-{
-  \Meaning{a}{allgemeines Trial Bid}
-}
+  allgemeines Trial Bid
+\item[1\tre{}\sep1\pik;~2\pik{}\sep2\SA]~
 
-\bcbiddingpair{West}{Ost}
-{
-  1\tre & 1\pik \\
-  2\pik & 2\SA\al{a}
-}
-{
-  \Meaning{a}{allgemeines Trial Bid, auch als Schlemmvorbereiung nutzbar}
-}
+  allgemeines Trial Bid, auch als Schlemmvorbereiung nutzbar
+\item[1\pik{}\sep(2\tre)\sep2\pik{}\sep(3\tre);~?]~
+  \begin{description}
+    \item[pass] 5er-\pi, Minimum
+    \item[\kontra] Strafe
+    \item[3\kar] allgemeines Trial Bid (die n"achste freie Stufe
+      ersetzt 2\SA)
+    \item[3\coe] normales Trial Bid
+    \item[3\pik] kompetitiv
+  \end{description}
+\item[1\pik{}\sep(2\coe)\sep2\pik{}\sep(3\coe);~\kontra]~
 
-\bidex
-{
-  1\pik & 2\tre & 2\pik & 3\tre \\
-  pass\al{a} \\
-  \kontra\al{b} \\
-  3\kar\al{c} \\
-  3\coe\al{d} \\
-  3\pik\al{e}
-}
-{
-  \Meaning{a}{5er-\pi, Minimum}
-  \Meaning{b}{Strafe}
-  \Meaning{c}{allgemeines Trial Bid (n"achste Stufe ersetzt 2\SA)}
-  \Meaning{d}{normales Trial Bid}
-  \Meaning{e}{kompetitiv}
-}
-
-\bidex
-{
-  1\pik & 2\coe & 2\pik & 3\coe \\
-  \kontra\al{a}
-}
-{
-  \Meaning{a}{allgemeines Trial Bid (Competitive \kontra/Full Value \kontra; Gegnerfarbe direkt unter uns)}
-}
+  allgemeines Trial Bid (Competitive \kontra/Full Value \kontra;
+  Gegnerfarbe direkt unter uns)
+\end{description}
 
 \subsection{Checkback-Stayman}
 
@@ -2031,37 +1952,24 @@ eine partieforcierende.
 Die Vierte Farbe auf der 2er-Stufe gereizt ist mindestens einladend, auf der
 3er-Stufe partieforcierend. Priorit"aten des Antwortenden:
 
-1. 3er-Anschluss in der \ofa des Partners zeigen
+1. 3er-Anschluss in der \ofa des Partners zeigen:
+\begin{description}
+\item[1\coe{}\sep1\pik;~2\tre{}\sep2\kar;~?]~
+  \begin{description}
+    \item[2\pik] 3er-\pi, Minimum
+    \item[3\pik] 3er-\pi mit Zusatzwerten
+  \end{description}
+\end{description}
 
-\bcbiddingpair{West}{Ost}
-{
-  1\coe & 1\pik \\
-  2\tre & 2\kar\al{a} \\
-  2\pik\al{b} \\
-  3\pik\al{c}
-}
-{
-  \Meaning{a}{VFF}
-  \Meaning{b}{3er-\pi, Minimum}
-  \Meaning{c}{3er-\pi, Zusatzwerte}
-}
-
-2. \sa mit Stopper in der vierten Farbe reizen
-
-\bcbiddingpair{West}{Ost}
-{
-  1\coe & 1\pik \\
-  2\tre & 2\kar\al{a} \\
-  2\SA\al{b} \\
-  3\SA\al{c} \\
-  4\SA!\al{d}
-}
-{
-  \Meaning{a}{VFF}
-  \Meaning{b}{12-14 FP, kein 3er-\pi, \ka-\stp}
-  \Meaning{c}{15-16 FP, kein 3er-\pi, \ka-\stp}
-  \Meaning{d}{\nat, 17-18 FP, kein 3er-\pi, \ka-\stp}
-}
+2. \sa mit Stopper in der vierten Farbe reizen:
+\begin{description}
+\item[1\coe{}\sep1\pik;~2\tre{}\sep2\kar;~?]~
+  \begin{description}
+    \item[2\SA] 12-14 FP, kein 3er-\pi, \ka-\stp
+    \item[3\SA] 15-16 FP, kein 3er-\pi, \ka-\stp
+    \item[4\SA] \nat{} (!), 17-18 FP, kein 3er-\pi, \ka-\stp
+  \end{description}
+\end{description}
 
 3. Verteilung zeigen
 
@@ -2162,14 +2070,14 @@ Besonderheit:
 
 Wir spielen \Index{Lebensohl} in folgenden Situationen:
 %
-\begin{itemize}
+\begin{compactitem}
 \item nach \sa-Er"offnung des Partners und Farbgegenreizung der Gegner
  (Lebensohl \emph{mit} Stopper)
 \item nach \Index{Weak Two}-Er"offung des Gegners und Informationskontra des Partners
 \item nach \ofa-Er"offnung des Gegners, Informationskontra des Partners und
  \ofa-Hebung des Partners des \eo (siehe auch \conv{Good Bad
    Notrump}, Seite~\pageref{goodbadnt}).
-\end{itemize}
+\end{compactitem}
 
 \subsection{Kontras}
 
@@ -2185,17 +2093,17 @@ Siehe \emph{Verhalten nach Zwischenreizung durch die Gegner}, Seite
 \subsubsection{Responsive Double (Antwortkontra)}
 
 Nach Informationskontra oder Farbgegenreizung vom Partner und
-\emph{Hebung der Er"offnerfarbe} zeigt das Antwortkontra die
-nicht gereizten Farben (siehe auch \conv{Scrambling 2\NT}
-\ra~\ref{scrambling2nt}, Seite~\pageref{scrambling2nt}).
+\emph{Hebung der Er"offnerfarbe} zeigt das Antwortkontra die nicht
+gereizten Farben (siehe auch \conv{Scrambling 2\NT},
+Seite~\pageref{scrambling2nt}).
 
 \bdsc
-\item[(1\kar){}\sep\kontra;~(2\kar){}\sep\kontra] beide \ofa zu viert
-\item[(1\coe){}\sep\kontra;~(2\coe){}\sep\kontra] beide \ufa zu viert,
+\item[(1\kar){}\sep\kontra{}\sep(2\kar){}\sep\kontra] beide \ofa zu viert
+\item[(1\coe){}\sep\kontra{}\sep(2\coe){}\sep\kontra] beide \ufa zu viert,
   kein 4er-\pi
-\item[(1\coe){}\sep1\pik;~(2\coe){}\sep\kontra] beide \ufa zu viert, kein
+\item[(1\coe){}\sep1\pik{}\sep(2\coe){}\sep\kontra] beide \ufa zu viert, kein
   3er-\pi
-\item[(1\tre){}\sep1\coe;~(2\pik){}\sep\kontra] \conv{\Index{Snapdragon Double}}, zeigt
+\item[(1\tre){}\sep1\coe{}\sep(2\pik){}\sep\kontra] \conv{\Index{Snapdragon Double}}, zeigt
   9/10\pl FP, 5er-\ka und Double-Figur in~\co
 \edsc
 
@@ -2210,7 +2118,7 @@ einer Hand mitzuteilen.
   pass & pass & \kontra\al{a}
 }
 {
-  \Meaning{a}{Zusatzst"arke, ab etwa 10\pl FP}
+  \Meaning{a}{Zusatzst"arke, ab etwa 10 FP}
 }
 
 \bidex
@@ -2281,34 +2189,36 @@ Diese Konvention benutzen wir in vierter Position nach Er"offnung, pass vom
 Partner und einem Farbgebot auf der 1er-Stufe des rechten Gegners, um die
 beiden nicht gereizten Farben zu zeigen.
 
-S"ud \\
-\dealerW
-\vhand{DB108}{42}{53}{KD1094}
-\begin{bidding}
-  1\kar & pass & 1\coe & 1\SA \\
-\end{bidding}
+\conv{Sandwich Notrump} zeigt eine Hand die zu schwach ist f"ur ein
+Informationskontra, aber daf"ur etwas g"unstiger verteilt.
 
 S"ud \\
-\vhand{2}{AD105}{KB952}{643}
+\handwithdesc{DB108}{42}{53}{KD1094}{%
+\begin{bidding}
+  1\kar & pass & 1\coe & 1\SA \\
+\end{bidding}}
+
+S"ud \\
+\handwithdesc{2}{AD105}{KB952}{643}{%
 \begin{bidding}
   1\tre & pass & 1\pik & 1\SA \\
-\end{bidding}
+\end{bidding}}
 
 \medskip
 In zweiter Postition ist 2\SA Michaels Pr"azis, in vierter Position wie 1\SA\
-ein Zweif"arber, nur mit besserer Verteilung.
+ein Zweif"arber, nur mit noch besserer Verteilung.
 
 S"ud \\
-\vhand{AB1087}{4}{73}{KD1093}
+\handwithdesc{AB1087}{4}{73}{KD1093}{%
 \begin{bidding}
   1\kar & pass & 1\coe & 2\SA \\
-\end{bidding}
+\end{bidding}}
 
-Haben die Gegner eine Oberfarbe er"offnet und gehoben, zeigt 2\SA einen
-unbestimmten Zweif"arber. Die Reizung (1\kar){}\sep pass{}\sep(1\pik){}\sep2\pik\
-zeigt eine echte Farbe.
+\medskip \notebox{Haben die Gegner eine Oberfarbe er"offnet und
+  gehoben, dann zeigt 2\SA einen unbestimmten Zweif"arber. Die Reizung
+  (1\kar){}\sep pass{}\sep(1\pik){}\sep2\pik\ zeigt eine echte Farbe.}
 
-\subsection{Scrambling 2\,\NT (Nebul"ose 2\SA)\label{scrambling2nt}}
+\subsection{Scrambling 2\NT{} (Nebul"ose 2\SA)\label{scrambling2nt}}
 
 Haben die Gegner eine Farbe er"offnet \emph{und gehoben} und der Partner
 gibt ein Informationskontra, sowohl in der direkten als auch in der Pass
@@ -2316,21 +2226,21 @@ Out-Position, so ist 2\SA nicht echt, sondern bedeutet, dass man kein klares
 Gebot hat.
 
 S"ud \\
-\vhand{9754}{K52}{A64}{D54}
+\handwithdesc{9754}{K52}{A64}{D54}{%
 \begin{bidding}
   1\pik & pass & 2\pik & pass \\
   pass & \kontra & pass & 2\SA
-\end{bidding}
+\end{bidding}}
 
 Partner kann 1-5-4-3, 1-4-5-3 oder 1-4-3-5 verteilt sein,
 wir wollen nicht im 3-3-Fit landen.
 
 S"ud \\
-\vhand{B65}{D3}{K1053}{K763}
+\handwithdesc{B65}{D3}{K1053}{K763}{%
 \begin{bidding}
   1\pik & pass & 2\pik & pass \\
   pass & \kontra & pass & 2\SA
-\end{bidding}
+\end{bidding}}
 
 Partner wird entweder seine 5er-Farbe reizen oder seine 4er-Farben von unten
 nach oben.
@@ -2343,60 +2253,68 @@ Wunsch, in der 3er-Stufe zu spielen. Der Partner muss 3\tre bieten (siehe auch
 \Index{Lebensohl}), wonach der 2\SA-Reizer seine Farbe zeigt.
 
 S"ud \\
-\vhand{32}{AK865}{5}{KB1063}
+\handwithdesc{32}{AK865}{5}{KB1063}{%
 \begin{bidding}
   & & & 1\coe \\
   pass & 1\SA & 2\pik & 2\SA \\
   pass & 3\tre & pass & pass
-\end{bidding}
+\end{bidding}}
+
+S"ud \\
+\handwithdesc{32}{AK865}{5}{KB1063}{%
+\begin{bidding}
+  & & & 1\coe \\
+  pass & 1\SA & 2\pik & 2\SA \\
+  pass & 3\tre & pass & pass
+\end{bidding}}
 
 Ein direktes 3\tre-Gebot von S"ud h"atte eine st"arkere Er"offung gezeigt.
 
 S"ud \\
-\vhand{K65}{A74}{D1093}{873}
+\handwithdesc{K65}{A74}{D1093}{873}{%
 \begin{bidding}
   1\coe & 2\kar & 2\coe & 3\kar
-\end{bidding}
+\end{bidding}}
 
 Hier direkt 3\kar, konstruktiv.
 
 S"ud \\
-\vhand{865}{A74}{D1093}{873}
+\handwithdesc{865}{A74}{D1093}{873}{%
 \begin{bidding}
   1\coe & 2\kar & 2\coe & 2\SA \\
   pass & 3\tre & pass & 3\kar
-\end{bidding}
+\end{bidding}}
 
 Mit dieser schwachen Hand zuerst 2\SA und sp"ater 3\kar.
 
 S"ud \\
-\vhand{5}{AKD63}{AKB74}{52}
+\handwithdesc{5}{AKD63}{AKB74}{52}{%
 \begin{bidding}
   & & & 1\coe \\
   1\pik & pass & 2\pik & 3\kar
-\end{bidding}
+\end{bidding}}
 
-Stark genug, um 3\kar zu reizen. Mit \co A 9 7 6 4 und der gleichen
-\ka-Haltung w"urde man zuerst 2\SA reizen.
+Stark genug, um 3\kar zu reizen. Mit \co{}\hspace{\cardskip}\suit{A9764}
+und der gleichen \ka-Haltung w"urde man zuerst 2\SA reizen.
 
 S"ud \\
-\vhand{63}{AKB8643}{K73}{9}
+\handwithdesc{63}{AKB8643}{K73}{9}{%
 \begin{bidding}
   & & & 1\coe \\
   1\pik & 1\SA & 2\pik & 2\SA \\
   pass & 3\tre & pass & 3\coe
-\end{bidding}
+\end{bidding}}
 
 Nicht immer muss der Partner des 2\SA-Reizers 3\tre sagen, dann n"amlich, wenn
 er eine st"arkere Hand hat und die Gefahr besteht, dass der 2\SA-Reizer 3\tre\
 passt:
 
 S"ud \\
-\vhand{A963}{A5}{762}{AB85}
+\handwithdesc{A963}{A5}{762}{AB85}{%
 \begin{bidding}
   & 1\kar & 1\coe & \kontra \\
   2\coe & 2\SA & pass & 3\coe
-\end{bidding}
+\end{bidding}}
 
 \newpage
 \section{Schlemmkonventionen}
@@ -2408,24 +2326,14 @@ Ein erstes Kontrollgebot auf der 5er-Stufe zeigt allerdings
 Erstrundenkontrolle. Nicht K"urze in Partners erster Farbe als \emph{erstes
 Kontrollgebot} reizen!
 
-\westhand{2}{AD932}{AK92}{DB3}
-\easthand{DB543}{B74}{DB3}{AK}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
-{
-  1\coe & 1\pik \\
-  3\kar & 3\coe\al{a} \\
-  4\kar\al{b} & 5\tre\al{c} \\
-  5\kar\al{d} & 6\tre\al{e} \\
-  6\coe\al{f}
-}
-{
-  \Meaning{a}{st"arker als 4\coe}
-  \Meaning{b}{\ka-Kontrolle}
-  \Meaning{c}{keine \pi-Kontrolle, \tr-Erstrundenk.}
-  \Meaning{d}{\pi-K"urze (sonst Sign off), \ka-Erstrundenk.}
-  \Meaning{e}{\tr-Erst- und Zweitrundenkontrolle}
-  \Meaning{f}{\pi-Single}
+\exhand{2}{AD932}{AK92}{DB3}
+{DB543}{B74}{DB3}{AK}{%
+  1\coe & & 1\pik &\\
+  3\kar & & 3\coe & st"arker als 4\coe\\
+  4\kar & \ka-Kontrolle & 5\tre & keine \pi-Kontrolle, \tr-ERK\\
+  5\kar & \pi-K"urze (sonst Sign Off), \ka-ERK & 6\tre
+  & \tr-ERK und -ZRK\\
+  6\coe & \pi-Single\\
 }
 
 \subsection{\Index{Gerber}-Assfrage} \label{gerber}
@@ -2465,100 +2373,48 @@ Fragefarbe.
 Man kann nun mit dem n"achsten Gebot nach weiteren K"onigen fragen, mit dem
 "ubern"achsten nach platzierten Damen. Das Antwortschema bleibt sich gleich.
 
-\westhand{A742}{76}{A2}{AKD52}
-\easthand{KDB65}{AK}{KD3}{763}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
-{
-  1\tre & 1\pik \\
-  4\tre\al{a} & 4\SA\al{b} \\
-  5\kar\al{c} & 5\SA\al{d} \\
-  6\tre\al{e} & 6\coe\al{f} \\
-  7\tre\al{g} & 7\SA
-}
-{
-  \Meaning{a}{\tr-Fit, gute \tr-Farbe}
-  \Meaning{b}{KCB auf \pi-Basis}
-  \Meaning{c}{3/0}
-  \Meaning{d}{platzierte K"onige?}
-  \Meaning{e}{\tr-K"onig}
-  \Meaning{f}{platzierte Damen? (6\kar weitere K"onige?)}
-  \Meaning{g}{\tr-Dame}
+\exhand{A742}{76}{A2}{AKD52}
+{KDB65}{AK}{KD3}{763}{%
+  1\tre & & 1\pik \\
+  4\tre & \pi-Fit, gute \tr-Farbe & 4\SA & KCB auf \pi-Basis\\
+  5\kar & 3 oder 0 & 5\SA & platzierte K"onige?\\
+  6\tre & \tr-K"onig vorhanden & 6\coe & platzierte Damen? (6\kar weitere K"onige?)\\
+  7\tre & \tr-Dame vorhanden & 7\SA
 }
 
-\westhand{A2}{K754}{AKD43}{52}
-\easthand{K532}{ADB}{7632}{A3}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
-{
-  1\kar & 1\pik \\
-  2\coe & 4\kar\al{a} \\
-  4\pik\al{b} & 4\SA\al{c} \\
-  5\coe\al{d} & 7\kar\al{e}
-}
-{
-  \Meaning{a}{KCB}
-  \Meaning{b}{3/0}
-  \Meaning{c}{\ka-Dame?}
-  \Meaning{d}{\ka-Dame und \co-K"onig, ohne \tr-K"onig}
-  \Meaning{e}{bei 3er \pi und Single \tr leider chancenlos}
+\exhand{A2}{K754}{AKD43}{52}
+{K532}{ADB}{7632}{A3}{%
+  1\kar & & 1\pik &\\
+  2\coe & & 4\kar & KCB\\
+  4\pik & 3 oder 0 & 4\SA & \ka-Dame?\\
+  5\coe & \ka-Dame und \co-K"onig, ohne \tr-K"onig & 7\ka &
+  bei 3er-\pi und Single-\tr leider chancenlos
 }
 
-\westhand{AK2}{2}{D65}{AKD742}
-\easthand{B6}{AB874}{AKB2}{B8}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
-{
-  1\tre & 1\coe \\
-  3\tre & 4\tre\al{a} \\
-  4\coe\al{b} & 4\pik\al{c} \\
-  4\SA\al{d} & 5\coe\al{e} \\
-  6\kar\al{f} & 7\SA
-}
-{
-  \Meaning{a}{KCB}
-  \Meaning{b}{3/0}
-  \Meaning{c}{\tr-Dame?}
-  \Meaning{d}{\tr-Dame und \pi-K"onig}
-  \Meaning{e}{platzierte Damen?}
-  \Meaning{f}{\ka-Dame}
+\exhand{AK2}{2}{D65}{AKD742}
+{B6}{AB874}{AKB2}{B8}{%
+  1\tre & & 1\coe\\
+  3\tre & & 4\tre & KCB\\
+  4\coe & 3 oder 0 & 4\pik & \tr-Dame?\\
+  4\SA  & \tr-Dame und \pi-K"onig & 5\coe & platzierte Damen?\\
+  6\kar & \ka-Dame & 7\SA
 }
 
-\westhand{AD1072}{K76}{B102}{D6}
-\easthand{653}{A5}{AK98}{AK52}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
-{
-  1\pik & 2\tre \\
-  2\pik & 4\SA\al{a} \\
-  5\tre\al{b} & 5\kar\al{c} \\
-  5\coe\al{d} & 6\pik
-}
-{
-  \Meaning{a}{KCB}
-  \Meaning{b}{1/4}
-  \Meaning{c}{\pi-Dame?}
-  \Meaning{d}{\tr-Dame und \co-K"onig}
+\exhand{AD1072}{K76}{B102}{D6}
+{653}{A5}{AK98}{AK52}{%
+  1\pik & & 2\tre\\
+  2\pik & & 4\SA & KCB\\
+  5\tre & 1 oder 4 & 5\kar & \pi-Dame?\\
+  5\coe & \pi-Dame und \co-K"onig & 6\pik
 }
 
-\westhand{AK}{AD32}{65}{KD632}
-\easthand{B432}{KB}{AB4}{AB109}
-\centerline{\showEWgame}
-\bcbiddingpair{West}{Ost}
-{
-  1\tre & 1\pik \\
-  2\coe & 4\tre\al{a} \\
-  4\coe\al{b} & 4\pik\al{c} \\
-  4\SA\al{d} & 5\coe\al{e} \\
-  5\SA\al{f} & 7\tre
-}
-{
-  \Meaning{a}{KCB}
-  \Meaning{b}{0/3}
-  \Meaning{c}{\tr-Dame?}
-  \Meaning{d}{\tr-Dame und \pi-K"onig}
-  \Meaning{e}{platzierte Damen?}
-  \Meaning{f}{\co-Dame}
+\exhand{AK}{AD32}{65}{KD632}
+{B432}{KB}{AB4}{AB109}{%
+  1\tre & & 1\pik\\
+  2\coe & & 4\tre & KCB\\
+  4\coe & 0 oder 3 & 4\pik & \tr-Dame?\\
+  4\SA  & \tr-Dame und \pi-K"onig & 5\coe & platzierte Damen?\\
+  5\SA  & \co-Dame & 7\tre
 }
 
 \subsection{Preempt Keycard-Assfrage (PKCA)}
@@ -2634,11 +2490,10 @@ Karte eine gerade L"ange und eine hohe Karte eine ungerade L"ange zeigt.
 Erster freier Abwurf im \sa-Kontrakt ist Lavinthal. In Farbkontrakten wird
 direkt markiert.
 \raggedbottom
+
 \begin{appendix}
-
-\newpage
+%\newpage
 \section{Glossar}
-
 \begin{flushleft}
 \begin{tabularx}{\columnwidth}{lY}%
 $n$\good{}, $n$\bad{} & $n$ gute/schlechte Punkte/Karten\\
@@ -2671,10 +2526,10 @@ $n$\pl & mindestens $n$ Punkte/Karten\\
 
 Folgende "Anderungen sind m"oglich:
 %
-\begin{itemize}
+\begin{compactitem}
 \item 1\ofa{}\sep2\tre: nat"urlich
 \item Unusual over unusual: "Uberruf der Gegnerfarben immer st"arker als direkte Reizung
-\end{itemize}
+\end{compactitem}
 
 \subsection{Checkback Stayman}
 
@@ -2685,8 +2540,8 @@ ersetzt. (Mai 2005)
 \item[1\tre{}\sep1\pik; 1\SA] 12-14 FP \bal
   \bdsc
   \item[2\tre] \conv{Checkback Stayman}
-  \item[2\kar] 4er-\pi, 5\pl{}\kar, zum spielen
-  \item[2\coe] 5/4 \pi{}+\co, zum spielen oder ausbessern
+  \item[2\kar] 4er-\pi, 5\pl{}\kar, zum Spielen
+  \item[2\coe] 5/4 \pi{}+\co, zum Spielen oder ausbessern
   \item[2\pik] 5er-\pi, schwach
   \item[2\SA] \nat
   \item[3\mi] \nat, \pf
@@ -2695,8 +2550,8 @@ ersetzt. (Mai 2005)
   \edsc
 \edsc
 \end{appendix}
-\printindex
 \end{document}
+\printindex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
