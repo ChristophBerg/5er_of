@@ -130,13 +130,13 @@
 }
 
 \newcommand{\handwithdesc}[5]{%
-%\handwidth6em
+\handwidth6em
 \vhand{#1}{#2}{#3}{#4}\hspace{1.5ex}\vrule\hspace{1ex}
 \begin{minipage}[t]{\columnwidth-\handwidth-2.5ex-0.6pt}
 #5
 \end{minipage}
-%\medskip
-%\handwidth7.5em
+\smallskip
+\handwidth7.5em
 }
 
 \newcommand{\exhand}[9]{%
@@ -230,20 +230,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% 1 UF-Eroeffnung %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 \newpage
-\section{Die 1\mi-Er"offnung}
+\section{Die 1\tre/\ka-Er"offnungen}
 
-Bei gleicher L"ange in den \uf wird 1\kar er"offnet, mit 3/3 in den \uf\
+Bei gleicher L"ange in den \uf wird 1\kar er"offnet, mit 3/3 in den \uf
 wird 1\tre er"offnet.
 Ohne 5\pl{}er-\ofa wird grunds"atzlich die l"angere \uf er"offnet.
 
-Siehe auch \textit{Er"offnungsregel f"ur Zweif"arber mit 6/5 \uf/\of} auf
+Siehe auch \textit{Er"offnungsregel f"ur Zweif"arber mit 6/5 \ufa/\ofa{}} auf
 Seite \pageref{zfregel}.
 
 \subsection{Antworten des Partners (nach 1\tre-Er"offnung)}
 \bidins{%
-1\kar	& 6-7	& \bal ohne 4er-\ofa, 3-3-3-4 Verteilung mit 3er-\ka m"oglich, oder\\
-	& 6\pl	& \ka-Einf"arber, oder\\
-	& 12\pl	& 5er-\ka und 4er-\ofa \conv{(Walsh-\ka)}\\[1ex]
+1\kar	& 6-7	& \bal ohne 4er-\ofa, 3-3-3-4 m"oglich, oder\\
+	& 6\pl	& 7\pl{}er-\ka, oder\\
+	& 12\pl	& 5\pl{}er-\ka und 4\pl{}er-\ofa \conv{(Walsh-\ka)}\\[1ex]
 1\of	& 6\pl	& 4\pl{}er-\ofa\\[1ex]
 1\SA	& 8-10	& \bal ohne 4er-\ofa\\[1ex]
 2\tre	& 10\good{}\pl & 5\pl{}er-\tr \conv{(Inverted)}\\[1ex]
@@ -272,15 +272,51 @@ Nach 1\kar{}-Er"offnung sind die Antworten entsprechend
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Walsh-Sequenzen %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+\subsubsection{Die \conv{Walsh}-Antwort auf 1\tre-Er"offnung}
+
+Der Antwortende zeigt nach 1\tre-Er"offnung immer sofort eine
+4er-\ofa, es sei denn
+\begin{compactitem}
+\item er h"alt mindestens ein 7er-\ka, oder
+\item die Karos sind l"anger als die \ofa und der Antwortende ist
+  bereit, bei der n"achsten Gelegenheit die \ofa revers zu reizen
+  (also ab 12 Punkten).
+\end{compactitem}
+In allen anderen F"allen zeigt der Antwortende immer \emph{sofort}
+seine rangniedrigste 4er-\ofa.
+
+Der Er"offner bietet nach 1\kar-Antwort mit ausgeglichener Hand auch
+dann 1\SA zur"uck, wenn er eine oder beide \ofa h"alt -- denn der
+Antwortende hat entweder keine 4er-\ofa oder wird diese nun reizen,
+was gleichzeitig ein Partieforcing etabliert.
+
+Ein \ofa-R"uckgebot des Er"offners nach [1\tre-1\kar;] zeigt
+\emph{immer} eine unausgeglichene Hand mit langen Treffs.
+
+\subsubsection{\conv{Wolff Sign Off} nach 2\SA-R"uckgebot}
+
+\conv{Wolff Sign Off} ist n"utzlich in Situationen, in denen der
+Antwortende sehr schwach ist und seine erste Antwort lediglich den
+Er"offner vor einem schlechten Treff- oder Karo-Kontrakt hat bewahren
+sollen.  Nach dem forcierten 3\kar-Gebot des Er"offners kann er
+passen, 3\coe zum Spielen oder Ausbessern anbieten, oder ein
+beliebiges Gebot zum Spielen abgeben.
+
+\minisec{Beispiele:}
+
+Die Reizung beginnt jeweils mit [1\tre{}\sep1\pik;~2\SA{}].
+
+\handwithdesc{Qxxxx}{Qxxxx}{xx}{x}{%
+  Wir m"ochten entweder 3\coe oder 3\pik spielen.  Wir reizen daher
+  [3\tre;~3\kar{}\sep3\coe;] zum Spielen in 3\coe oder Ausbessern nach
+  3\pik.}
+
+\handwithdesc{K10xx}{xx}{J10xxxx}{x}{%
+  Wir m"ochten in jedem Fall 3\kar spielen.  Wir reizen
+  [3\tre;~3\kar{}\sep{}pass].}
+
 \subsubsection{Bietsequenzen nach [1\tre-1\kar{}]}
 
-Wegen \conv{Walsh-\ka} zeigt der Antwortende nach 1\tre-Er"offnung seine \of\
-sofort, au"ser mit einer starken Hand und l"angeren
-Karos. \mbox{[1\tre-1\kar{}]} lehnt eine 4er-\ofa beim Antwortenden also
-meistens ab.
-Der Er"offner reizt daher \sa weiter, wenn er ausgeglichen ist, eine etwaige 4er-\ofa\
-verschweigt er.  Ein \of-R"uckgebot vom Er"offner zeigt eine unausgeglichene Hand mit langen
-Treffs.
 
 \bdsc
 \item[1\tre{}\sep1\kar; ?]~
@@ -300,16 +336,16 @@ Treffs.
   \item[2\tre] 12-14, 6er-\tr
     \bdsc
       \item[2\coe] \cstop, kein \pstop.
-        \ra~2\pik Frage nach \hstp \conv{(VFF)}
-      \item[2\pik] zeigt \pstop, \ra~3\tre verneint \cstop, \ra~3\coe
+        \ra~2\pik Frage nach \phstop \conv{(VFF)}
+      \item[2\pik] zeigt \pstop, \ra~3\tre verneint \cstop \ra~3\coe
         Frage nach \chstop \conv{(VFF)}
-      \item[3\ma] \textsc{Splinter} mit \tre-Anschluss
-      \item[4\ma] \textsc{Exclusion RCKB} auf \tre-Basis
+      \item[3\ma] \conv{Splinter} mit \tr-Anschluss
+      \item[4\ma] \conv{Exclusion RCKB} auf \tr-Basis
     \edsc
   \item[2\SA] 18-19, eine oder beide \of m"oglich
     \bdsc
-    \item[3\tre] \conv{Wolff Sign Off}, verlangt \rel 3\kar, worauf
-      man passen kann oder Sign Off gibt
+    \item[3\tre] \pupto3\kar, worauf man passen kann oder Sign Off gibt
+    \conv{(Wolff Sign Off)}
     \item[3\kar] Forcing
     \item[3\of] 12\pl FP, 5/4-Verteilung, Schlemm m"oglich (s.~u.)
       \bdsc
@@ -324,8 +360,9 @@ Treffs.
 \bdsc
 \item[1\tre{}\sep1\kar; 1\SA{}\sep2\tre; ?]~
 
-  Hat \aw Schlemm-Interesse in \uf, so kann er die genaue
-  Verteilung der \bal Hand von \eo erfragen.
+  Hat der Antwortende Schlemm-Interesse in \ufa, so kann er die genaue
+  Verteilung der ausgeglichenen Hand des Er"offners erfragen.
+
   \bdsc
   \item[2\kar] 3er-\ka, \textbf{nicht 4-3-3-3}
     \bdsc
@@ -355,8 +392,11 @@ Treffs.
 \bdsc
   \item[1\tre{}\sep1\kar; 2\SA{}\sep{}?]~
 
-    \aw kann nun 3\of reizen und damit Schlemm-Interesse in der \of\
-    zeigen.
+    Reizt der Antwortende in dieser Situation 3\of (verspricht ab 12
+    Punkten), so ist meistens ein Schlemm m"oglich.  Der Er"offner
+    beantwortet daher mit Fit in \ufa sofort die Assfrage auf
+    \ufa-Basis (andernfalls Sign Off in \SA oder \ofa).
+
     \bdsc
       \item[3\coe] 12\pl FP, 5/4-Verteilung, Schlemm m"oglich
         \bdsc
@@ -521,12 +561,12 @@ Wir unterscheiden folgende Handtypen:
 	\edsc
 \edsc
 
-\subsubsection{Bietsequenzen nach \conv{Reverse}}
+\subsubsection{Bietsequenzen nach Revers-Reizung}
 
 \bdsc
   \item[1\tre{}\sep1\pik; 2\kar{}\sep{}?]~
 
-    \conv{Reverse} zeigt 16\good{}\pl und ist selbstforcierend f"ur
+    \conv{Revers} zeigt 16\good{}\pl und ist selbstforcierend f"ur
     \eo.
     \bdsc
     \item[2\coe] \conv{VFF}, sagt hier aber nichts "uber die St"arke
@@ -560,18 +600,18 @@ Wir unterscheiden folgende Handtypen:
 \edsc
 
 \notebox{\textbf{Ingberman:} Nach einer Revers-Reizung fordert 2\SA
-ein passbares 3\tre Puppet-Gebot an,
+ein passbares 3\tre-Gebot an,
 um auf der 3er-Stufe ein Abschlussgebot abgeben zu k"onnen.
 Der Antwortende sollte mit Minimum (6-7) diese Konvention
 anwenden.
-Mit Zusatzst"arke (18\good{}\pl) muss der Er"offner das 3\tre{}-\rel
+Mit Zusatzst"arke (18\good{}\pl) muss der Partner das 3\tre{}-\rel
 "uberspringen.
 }
 
 \subsubsection{Bietsequenzen nach \conv{Inverted}} \label{inverted}
 
 Nach [1\tre{}\sep2\tre{};] bzw. [1\kar{}\sep2\kar{};] gibt es kein
-Reverse.  Der Er"offner zeigt mit 2\SA eine ausgeglichene, passbare Hand.
+Revers.  Der Er"offner zeigt mit 2\SA eine ausgeglichene, passbare Hand.
 3\tre/\kar ist ebenfalls passbar.  Alle anderen Gebote des Er"offners
 zeigen Werte (Stopper) und sind partieforcing.
 
@@ -605,13 +645,13 @@ zeigen Werte (Stopper) und sind partieforcing.
 \bdsc
 \setlength{\labelsep}{1ex}
 \item[4\pl{} Verlierer:] \of er"offnen und \uf billig nachreizen
-\item[3-4 Verlierer:] \uf er"offnen und anschlie"send \conv{Reverse}
+\item[3-4 Verlierer:] \uf er"offnen und anschlie"send \conv{Revers}
   reizen
 \item[0-3\bad{} Verlierer:] Partieforcing (2\kar) er"offnen
 \edsc
 
 \newpage
-\section{Die 1\of-Er"offnungen}
+\section{Die 1\coe/\pi-Er"offnungen}
 
 Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
 \begin{compactitem}
@@ -634,9 +674,9 @@ Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
   2\SA & 12\good{}\pl & 4\pl{}er-Anschluss \conv{(Stenberg)}, \pf (siehe
     \ref{stenberg}, S.~\pageref{stenberg})
     (nach vormaligem Pass: 11-12, Double-Anschluss und 3er-\aof)\\[1ex]
-  3\tre & 9\good{}-11 & 4\pl{}er-Anschluss \conv{(Bergen Raise)}\\
-  3\kar & 7-9\bad{} & 4\pl{}er-Anschluss \conv{(Bergen Raise)}\\
-  3\of & 0-6 & 4\pl{}er-Anschluss \conv{(Bergen Raise)}\\[1ex]
+  3\tre & 9\good{}-11 & 4\pl{}er-Anschluss \conv{(Bergen Hebung)}\\
+  3\kar & 7-9\bad{} & 4\pl{}er-Anschluss \conv{(Bergen Hebung)}\\
+  3\of & 0-6 & 4\pl{}er-Anschluss \conv{(Bergen Hebung)}\\[1ex]
   3\aof & 11-14 & beliebiges Chicane \conv{(Splinter)}, s.~u.\\
   3\SA & 11-14 & Single in \aofa \conv{(Splinter)}, s.~u.\\
   4\tre/\ka & 11-14 & \tr/\ka-Single \conv{(Splinter)}\\[1ex]
@@ -861,7 +901,7 @@ Verteilung.  5332-Verteilungen mit einer 5er-\ofa sind m"oglich.
 
 \subsection{Antworten auf 1\SA-Er"offnung}
 \bidins{%
-2\tre & ab 0 & \conv{Stayman}, verspricht 4er-\ofa\\
+2\tre & ab 0 & Stayman, verspricht 4er-\ofa\\
 2\kar/\co & ab 0 & \xferto\coe/\pi, verspricht
 5\pl{}er-Farbe\\
 2\pik & ab 0 & \xferto\ufa, verspricht 6\pl{}er-\ufa oder
@@ -888,21 +928,21 @@ schwachen, einladenden und starken H"anden.  Details siehe unten.
 \textbf{St"arke} & \textbf{5/4} & \textbf{5/5}\\
 \hline
 \hline
-schwach & \conv{Stayman} & \conv{Transfer}\\
+schwach & Stayman & \conv{Transfer}\\
 \hline
 \inv & \multicolumn{2}{c|}{\conv{Transfer}}\\
 \hline
-\pf & \conv{Stayman}, dann \conv{Smolen} & 4\kar\\
+\pf & Stayman, dann \conv{Smolen} & 4\kar\\
 \hline
-\pf (stark) & \conv{Stayman}, dann \conv{Smolen} & \conv{Transfer}\\
+\pf (stark) & Stayman, dann \conv{Smolen} & \conv{Transfer}\\
 \hline
-Schlemm & \multicolumn{2}{c|}{\conv{Stayman}, dann \conv{Smolen}}\\
+Schlemm & \multicolumn{2}{c|}{Stayman, dann \conv{Smolen}}\\
 \hline
 \end{tabular}
 
-\subsubsection{Schwache und einladende \conv{Stayman}-Sequenzen}
+\subsubsection{Schwache und einladende Stayman-Sequenzen}
 
-Mit schwachen (0-7~FP) H"anden ist \conv{Stayman} nur erlaubt, wenn
+Mit schwachen (0-7~FP) H"anden ist Stayman nur erlaubt, wenn
 man jede Antwort des Er"offners (2\kar, 2\coe, 2\pik) passen kann -- also
 mit 4-4-4-1, 4-4-5-0, 3-4-5-1 und 4-3-5-1 oder mit 5/4 in den \ofa.
 
@@ -917,7 +957,7 @@ mit 4-4-4-1, 4-4-5-0, 3-4-5-1 und 4-3-5-1 oder mit 5/4 in den \ofa.
 Mit einladenden H"anden reizen wir eine 5/4-Verteilung in den \ofa\
 "uber \conv{Transfer}.
 
-\subsubsection{Starke \conv{Stayman}-Sequenzen}
+\subsubsection{Starke Stayman-Sequenzen}
 
 \bdsc
 \item[1\SA{}\sep2\tre; ?]~
@@ -1277,12 +1317,12 @@ dem beide Farben bekannt sein m"ussen, so verwenden wir die Konvention
   f"ur die niedrigere bzw. h"ohere unserer Farben.
 \item Direkte Farbgebote und Hebungen sind immer rein kompetitiv.
 \item Indirekte Farbgebote und Hebungen sind konstruktiv:
-	\begin{compactitem}
-		\item Neue Farben sind mindestens gute 5er-L"angen mit mindestens
-		einladender Punktst"arke.
-		\item Hebungen zeigen guten Trumpf-Anschluss mit mindestens
-		einladender Punktstaerke
-	\end{compactitem}
+\begin{compactitem}
+\item Neue Farben sind mindestens gute 5er-L"angen mit
+  Partie-Werten
+\item Hebungen zeigen Trumpf-Anschluss mit mindestens
+  einladender Punktstaerke
+\end{compactitem}
 \end{compactitem}
 
 \minisec{Beispiel:}
@@ -1290,9 +1330,9 @@ dem beide Farben bekannt sein m"ussen, so verwenden wir die Konvention
 \item[1\coe{}\sep(2\SA{}*){}\sep?] (2\SA = beide \ufa)
 \bdsc
 \item[3\tre] \inv{}\pl mit \coe-Anschluss
-\item[3\kar] \inv{}\pl mit 5\good{}\pl{}er-\pik
+\item[3\kar] \pf mit 5\pl{}er-\pik
 \item[3\coe] kompetitiv (ersetzt 2\coe-Gebot)
-\item[3\pik] \nf mit 5\good{}\pl{}er-\pik
+\item[3\pik] \nf mit 6\pl{}er-\pik (oder sehr gutem 5er)
 \edsc
 \edsc
 
@@ -1351,12 +1391,16 @@ einen Stopper in der "uberrufenen Farbe:
 
 \subsection{Die 2\tre-Er"offnung}
 
-Die 2\tre-Er"offnung zeigt entweder ein Semiforcing in einer beliebigen Farbe
-(16\pl FP, 6\pl{}er-Farbe, 8 Spielstiche),
-eine \sa-Hand mit 22-23 oder 26-27~FP (Benjamin) oder ein \Index{Weak Two} in \ka. Der
-Antwortende reizt in der Regel 2\kar als Relais, es sei denn dass er gegen"uber
-einem Weak Two in \ka ein volles Spiel sieht, dann reizt er 2\SA, was auch
-\ka-Fit impliziert.
+Die 2\tre-Er"offnung zeigt entweder
+\begin{compactitem}
+\item ein \textbf{Semiforcing} in einer beliebigen Farbe
+  (16\pl FP, 6\pl{}er-Farbe, 8 Spielstiche),
+\item eine \textbf{ausgeglichene Hand} mit 22-23 oder 26-27~FP oder
+\item ein \Index{\textbf{Weak Two}} in \ka.
+\end{compactitem}
+Der Antwortende reizt in der Regel 2\kar als Relais, es sei denn dass
+er gegen"uber einem Weak Two in \ka ein volles Spiel sieht, dann reizt
+er 2\SA, was auch \ka-Fit impliziert.
 
 \bdsc
 \item[2\tre{}\sep2\kar;] \rel
@@ -1451,12 +1495,17 @@ Alle anderen Gebote zeigen eine starke Variante
 
 \subsection{Die 2\kar-Er"offnung}
 
-Die 2\kar-Er"offnung zeigt entweder ein Partieforcing in einer beliebigen Farbe
-(18\pl FP, 6\pl{}er-Farbe, 9 Spielstiche), eine \sa-Hand mit 24-25 oder
-28\pl~FP (Benjamin) oder ein \Index{Weak Two} in \co. Der Antwortende reizt in der
-Regel 2\coe als Relais, es sei denn dass er gegen"uber einem Weak Two in \ka\
-ein volles Spiel sieht, dann reizt er entweder 2\pik, was nat"urlich ist, oder
-2\SA, was auch \co-Fit impliziert.
+Die 2\kar-Er"offnung zeigt entweder
+\begin{compactitem}
+\item ein \textbf{Partieforcing} in einer beliebigen Farbe
+  (18\pl FP, 6\pl{}er-Farbe, 9 Spielstiche),
+\item eine \textbf{ausgeglichene Hand} mit 24-25 oder 28\pl~FP oder
+\item ein \Index{\textbf{Weak Two}} in \co.
+\end{compactitem}
+Der Antwortende reizt in der Regel 2\coe als Relais, es sei denn dass
+er gegen"uber einem Weak Two in \co ein volles Spiel sieht, dann reizt
+er entweder 2\pik, was nat"urlich ist, oder 2\SA, was auch \co-Fit
+impliziert.
 
 \bdsc
 \item[2\kar{}\sep2\coe;] \rel
@@ -1518,11 +1567,11 @@ Das Schema nach [2\kar{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
 \subsection{Die 2\coe-Er"offnung}
 
 Die 2\coe-Er"offnung zeigt einen Zweif"arber mit einem 5er-\co und einer
-weiteren 5er-Farbe im Bereich von 6-10 FP. In dritter Hand kann die Verteilung
+weiteren 5er-Farbe im Bereich von 5-10 FP. In dritter Hand kann die Verteilung
 auch 5/4 sein.
 
 \bdsc
-\item[2\coe] 6-10 FP, 5/5 \co/?
+\item[2\coe] 5-10 FP, 5/5 \co/?
   \bdsc
   \item[2\pik] schwach, zum Spielen oder ausbessern
   \item[2\SA] Frage nach 2. Farbe und St"arke
@@ -1786,18 +1835,17 @@ oder \emph{Erstrunden}kontrollen, wenn er Schlemminteresse hat.
 \section{Die Gegenreizung\label{gegenreizung}}
 
 \subsection{Informationskontra}
-
-Der "Uberruf der er"offneten Farbe ist entweder
-stark (11\pl FP) oder zeigt eine Hand mit beiden \ofa und 8-10 FP. Der Sprung
-in eine \ofa (2er-Stufe) zeigt 8-10 FP und eine 4er-Farbe. Der Doppelsprung
-(3er-Stufe) verspricht die gleiche Punktzahl, aber eine 5er-Farbe.
-
 \bdsc
-\item[\kontra] Informationskontra
+\item[(1\anybid)\sep\kontra{}\sep{}(p)\sep{}?]~
   \bdsc
-  \item["Uberruf] stark, 11\pl FP, oder \pi{}+\co, 8-10 FP
-  \item[Sprung in 2\of] 4er-Farbe, 8-10 FP
-  \item[Sprung in 3\of] 5er-Farbe, 8-10 FP
+  \item[1\hspace{\cardskip}$y$] 0-7 FP
+  \item[2\anybid] ("Uberruf der Gegnerfarbe)
+    \begin{compactitem}
+      \item 11\pl FP, beliebige Verteilung oder
+      \item beide \ofa, 8-10 FP
+    \end{compactitem}
+  \item[2\of] 4er-Farbe, 8-10 FP
+  \item[3\of] 5er-Farbe, 8-10 FP
   \edsc
 \edsc
 
@@ -1807,18 +1855,17 @@ nach \Index{Weak Two}-Er"offnung: [(2\of){}\sep\kontra{}\sep(p)].
 \subsection{Farbgegenreizung}
 
 Antworten:
-
-\begin{compactitem}
+\begin{itemize}
 \item Alle Hebungen sind schwach.
 \item Neue Farbe ist nicht forcierend (8-12 FP).
-\item Neue Farbe im Sprung ist Fit-Jump.
+\item Neue Farbe im Sprung ist \conv{Fit Jump}.
 \item Der "Uberruf zeigt starke H"ande:
   \begin{compactitem}
   \item eine mindestens einladende Hand mit Fit oder
   \item einen Einf"arber mit mehr als 12 FP oder
   \item eine starke \sa-Hand ohne \stp.
   \end{compactitem}
-\end{compactitem}
+\end{itemize}
 
 \subsection{Crash gegen starke 1\tre-Er"offnung}
 
@@ -1842,7 +1889,7 @@ konstruktiven H"anden sollte \conv{Crash} nicht gereizt werden.
 
 Die 1\SA-Gegenreizung in zweiter Position zeigt 15-18 FP und einen
 Stopper in der er"offneten Farbe. Weiterreizung wie nach
-1\SA-Er"offnung, d.h. \conv{Stayman} und \conv{Transfers} wenn der
+1\SA-Er"offnung, d.h. Stayman und \conv{Transfers} wenn der
 rechte Gegner passt, ansonsten \Index{\conv{Lebensohl}}.
 
 Hat der Gegner eine \ofa er"offnet, so ist der Transfer \emph{in} diese \ofa\
@@ -1861,11 +1908,11 @@ nichtgereizten Farben.  Es \emph{muss} mindestens eine 5/5-Verteilung
 vorhanden sein; die Werte sollen sich in den langen Farben befinden.
 %
 \bdsc
-\item[(1\ufa){}\sep2\kar] \co und \pi
-\item[(1\ufa){}\sep2\SA] \co und \aufa
-\item[(1\ofa){}\sep2\of] \aofa und \tr
-\item[(1\ofa){}\sep2\SA] \tr und \ka \conv{(Unusual Notrump)}
-\item[(1\ofa){}\sep3\tre] \aofa und \ka
+\item[(1\uf){}\sep2\kar] \co und \pi
+\item[(1\uf){}\sep2\SA] \co und \aufa \conv{(Unusual Notrump)}
+\item[(1\of){}\sep2\of] \aofa und \tr
+\item[(1\of){}\sep2\SA] \tr und \ka \conv{(Unusual Notrump)}
+\item[(1\of){}\sep3\tre] \aofa und \ka
 \edsc
 
 Nach \ofa-Er"offung gibt es somit keinen schwachen Sprung in \tr! Eine
@@ -2094,14 +2141,14 @@ Besonderheit:
 
 \subsection{Lebensohl}
 
-Wir spielen \Index{Lebensohl} in folgenden Situationen:
+Wir spielen \Index{\conv{Lebensohl}} in folgenden Situationen:
 %
 \begin{compactitem}
 \item nach \sa-Er"offnung des Partners und Farbgegenreizung der Gegner
- (Lebensohl \emph{mit} Stopper)
+ (\conv{Lebensohl} \emph{mit} Stopper)
 \item nach \Index{Weak Two}-Er"offung des Gegners und Informationskontra des Partners
 \item nach \ofa-Er"offnung des Gegners, Informationskontra des Partners und
- \ofa-Hebung des Partners des \eo (siehe auch \conv{Good Bad
+ \ofa-Hebung durch den anderen Gegner (siehe auch \conv{Good Bad
    Notrump}, Seite~\pageref{goodbadnt}).
 \end{compactitem}
 
@@ -2209,6 +2256,7 @@ beiden nicht gereizten Farben zu zeigen.
 \conv{Sandwich Notrump} zeigt eine Hand die zu schwach ist f"ur ein
 Informationskontra, aber daf"ur etwas g"unstiger verteilt.
 
+\dealerW
 S"ud \\
 \handwithdesc{DB108}{42}{53}{KD1094}{%
 \begin{bidding}
@@ -2242,6 +2290,7 @@ gibt ein Informationskontra, sowohl in der direkten als auch in der Pass
 Out-Position, so ist 2\SA nicht echt, sondern bedeutet, dass man kein klares
 Gebot hat.
 
+\dealerW
 S"ud \\
 \handwithdesc{9754}{K52}{A64}{D54}{%
 \begin{bidding}
@@ -2267,16 +2316,9 @@ nach oben.
 Hat der rechte Gegner ein Gebot auf der 2er-Stufe abgegeben, sind in
 kompetitiven Situationen die 2\SA-Ansagen nicht nat"urlich, sondern zeigen den
 Wunsch, in der 3er-Stufe zu spielen. Der Partner muss 3\tre bieten (siehe auch
-\Index{Lebensohl}), wonach der 2\SA-Reizer seine Farbe zeigt.
+\Index{\conv{Lebensohl}}), wonach der 2\SA-Reizer seine Farbe zeigt.
 
-S"ud \\
-\handwithdesc{32}{AK865}{5}{KB1063}{%
-\begin{bidding}
-  & & & 1\coe \\
-  pass & 1\SA & 2\pik & 2\SA \\
-  pass & 3\tre & pass & pass
-\end{bidding}}
-
+\dealerW
 S"ud \\
 \handwithdesc{32}{AK865}{5}{KB1063}{%
 \begin{bidding}
