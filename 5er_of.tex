@@ -4,7 +4,7 @@
 \usepackage{kibitzer}
 \usepackage{babel}
 \usepackage{tabularx}
-%\usepackage{times}
+\usepackage{times}
 \usepackage{calc}
 %\usepackage{german}
 \usepackage{suitsymbols}
@@ -1122,27 +1122,27 @@ solange kein Fit best"atigt wurde.
     \bdsc
     \item[3\coe] 4er-\pi, 4er-\co m"oglich
       \bdsc
-      \item[3\pik] Fitbest"atigung, danach Cuebids
-      \item[3\SA] 4er-\co
+      \item[3\pik] \pi-Fit, danach Cuebids
+      \item[3\SA] negativ, 4er-\co
         \bdsc
         \item[4\tre] Optional KCB
         \item[4\kar] Optional KCB
-        \item[4\coe] zum Spielen
-        \item[4\pik] KCB auf \co-Basis
+        \item[4\coe] \co-Fit, zum Spielen
+        \item[4\pik] \co-Fit(!), KCB auf \co-Basis
         \item[4\SA] Gerber-Assfrage
         \edsc
       \edsc
     \item[3\pik] 4er-\co
       \bdsc
-      \item[3\SA] 4er-\pi
+      \item[3\SA] negativ, 4er-\pi
         \bdsc
         \item[4\tre] Optional KCB
         \item[4\kar] Optional KCB
         \item[4\SA] Gerber-Assfrage
         \edsc
-      \item[4\tre] Fitbest"atigung, Cuebid
-      \item[4\kar] Fitbest"atigung, Cuebid
-      \item[4\coe] Fitbest"atigung, kein \ka- und \tr-Cuebid
+      \item[4\tre] \co-Fit, Cuebid
+      \item[4\kar] \co-Fit, Cuebid
+      \item[4\coe] \co-Fit, kein \ka- und \tr-Cuebid
       \edsc
     \item[3\SA] keine 4er-\ofa
     \item[4\tre] Optional KCB
@@ -1151,14 +1151,14 @@ solange kein Fit best"atigt wurde.
     \edsc
   \item[3\coe] 5er-\co
     \bdsc
-    \item[3\pik] KCB auf \co-Basis
+    \item[3\pik] \co-Fit(!), KCB auf \co-Basis
     \item[3\SA] zum Spielen
     \item[4\tre] Optional KCB
     \item[4\kar] Optional KCB
     \item[4\coe] zum Spielen
     \item[4\SA] Gerber-Assfrage
     \edsc
-  \item[3\pik] 5er-\pi
+  \item[3\pik] 5er-\pi, weiter wie nach 3\coe
   \item[3\SA] keine 4er-, keine 5er-\ofa
   \edsc
 \edsc
@@ -1419,12 +1419,12 @@ er 2\SA, was auch \ka-Fit impliziert.
 \bdsc
 \item[2\tre{}\sep2\kar;] \rel
   \bdsc
-  \item[2\coe] Semiforcing in \coe
-  \item[2\pik] Semiforcing in \pik
+  \item[2\coe] Semiforcing in \co
+  \item[2\pik] Semiforcing in \pi
   \item[2\SA] 22-23 FP, \bal, 5er-\ofa m"oglich \\
     \ra weiter wie nach 2\SA-Er"offnung
-  \item[3\tre] Semiforcing in \tre
-  \item[3\kar] Semiforcing in \kar
+  \item[3\tre] Semiforcing in \tr
+  \item[3\kar] Semiforcing in \ka
   \item[3\SA] 26-27 FP, \bal, 5er-\ofa m"oglich
   \edsc
 \edsc
@@ -1432,25 +1432,26 @@ er 2\SA, was auch \ka-Fit impliziert.
 \subsubsection*{Ogust} \label{ogust}
 
 Nach [2\tre{}\sep2\SA{}] benutzt der Er"offner die Ogust-Konvention, um sein Weak
-Two n"aher zu beschreiben. Danach kann der Antwortende mit der n"achsten Frage
+Two n"aher zu beschreiben (Min Min Max Max). Danach kann der Antwortende mit der n"achsten Farbe
 (au"ser der Trumpffarbe) nach K"urze fragen, wobei eine \sa-Antwort des
 Er"offners (meist 3\SA) eine K"urze in der Fragefarbe zeigt. Das Reizen der
 Trumpffarbe verneint eine K"urze. \emph{Nach Beantworten der K"urzenfrage} ist
-4\tre PKCA auf Basis der Weak Two-Farbe. Ist 4\tre als Assfrage nicht mehr
-m"oglich, so ist die n"achste Farbe (au"ser der Trumpffarbe) PKCA.
+ist die n"achste Farbe\footnote{vor Mai 2005: 4\tre oder h"oher} (au"ser der
+Trumpffarbe auf Partiestufe) PKCA auf Basis der Weak Two-Farbe. Ein \sa-Gebot
+des Antwortenden ist zum Spielen.
 
 \bdsc
 \item[2\tre{}\sep2\SA;] Ogust\index{Ogust}
   \bdsc
-  \item[3\tre] 6-8 FP, schlechte Farbe
+  \item[3\tre] Weak Two in \ka, 6-8 FP, schlechte Farbe
     \bdsc
     \item[3\kar] zum Spielen
     \item[3\coe] K"urzenfrage
       \bdsc
-      \item[3\pik] \pi-K"urze (4\tre PKCA)
-      \item[3\SA] \co-K"urze (4\tre PKCA)
-      \item[4\tre] \tr-K"urze (4\kar PKCA)
-      \item[4\kar] keine K"urze (4\coe PKCA)
+      \item[3\pik] \pi-K"urze (4\tre: PKCA)
+      \item[3\SA] \co-K"urze (4\tre: PKCA)
+      \item[4\tre] \tr-K"urze (4\kar: PKCA)
+      \item[4\kar] keine K"urze (4\coe: PKCA)
       \edsc
     \item[3\SA] zum Spielen
     \edsc
@@ -1460,18 +1461,19 @@ m"oglich, so ist die n"achste Farbe (au"ser der Trumpffarbe) PKCA.
     \bdsc
     \item[3\pik] K"urzenfrage
       \bdsc
-      \item[3\SA] \pi-K"urze (4\tre PKCA)
-      \item[4\tre] \tr-K"urze (4\kar PKCA)
-      \item[4\kar] keine K"urze (4\coe PKCA)
-      \item[4\coe] \co-K"urze (4\pik PKCA)
+      \item[3\SA] \pi-K"urze (4\tre: PKCA)
+      \item[4\tre] \tr-K"urze (4\kar: PKCA)
+      \item[4\kar] keine K"urze (4\coe: PKCA)
+      \item[4\coe] \co-K"urze (4\pik: PKCA)
       \edsc
+    \item[3\SA] zum Spielen
     \edsc
   \item[3\pik] 9-10 FP, gute Farbe (2 Topfiguren)
     \bdsc
     \item[3\SA] zum Spielen
     \item[4\tre] K"urzenfrage (\emph{nicht} PKCA)
       \bdsc
-      \item[4\SA] \tr-K"urze (5\tre PKCA)\footnote{nicht besonders gl"ucklich}
+      \item[4\SA] \tr-K"urze (5\tre: PKCA\footnote{nicht besonders gl"ucklich})
       \edsc
     \edsc
   \item[3\SA] 3 Topfiguren: AKD, weiter wie oben
@@ -1495,12 +1497,12 @@ erforderlich sind, zwischenreizt, so gilt:
   \item[(2\,Farbe)]
     \bdsc
     \item[pass] erste Stufe (DOPI)
-    \item[\kontra] zweite Stufe
+    \item[\kontra \dots] zweite Stufe \dots
     \edsc
   \item[(3\,Farbe)]
     \bdsc
     \item[pass] schlechtes Weak Two
-    \item[\kontra] gutes Weak Two
+    \item[\kontra] gutes Weak Two\footnote{Vielleicht gibt's was Besseres, keine Ahnung.}
     \edsc
   \edsc
 \edsc
@@ -1524,12 +1526,12 @@ impliziert.
 \bdsc
 \item[2\kar{}\sep2\coe;] \rel
   \bdsc
-  \item[2\pik] \pf in \pik
+  \item[2\pik] \pf in \pi
   \item[2\SA] 24-25 FP, \bal, 5er-\ofa m"oglich \\
     \ra weiter wie nach 2\SA-Er"offnung
-  \item[3\tre] \pf in \tre
-  \item[3\kar] \pf in \kar
-  \item[3\coe] \pf in \coe
+  \item[3\tre] \pf in \tr
+  \item[3\kar] \pf in \ka
+  \item[3\coe] \pf in \co
   \item[3\SA] 28\pl FP, \bal, 5er-\ofa m"oglich
   \edsc
 \edsc
@@ -1541,14 +1543,14 @@ Das Schema nach [2\kar{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
 \bdsc
 \item[2\coe{}\sep2\SA;] Ogust\index{Ogust}
   \bdsc
-  \item[3\tre] 6-8 FP, schlechte Farbe
+  \item[3\tre] Weak Two in \co, 6-8 FP, schlechte Farbe
     \bdsc
     \item[3\kar] K"urzenfrage
       \bdsc
-      \item[3\coe] keine K"urze (4\tre PKCA)
-      \item[3\pik] \pi-K"urze (4\tre PKCA)
-      \item[3\SA] \ka-K"urze (4\tre PKCA)
-      \item[4\tre] \tr-K"urze (4\kar PKCA)
+      \item[3\coe] keine K"urze (3\pik: PKCA)
+      \item[3\pik] \pi-K"urze (4\tre: PKCA)
+      \item[3\SA] \ka-K"urze (4\tre: PKCA)
+      \item[4\tre] \tr-K"urze (4\kar: PKCA)
       \edsc
     \item[3\coe] zum Spielen
     \item[3\SA] zum Spielen
@@ -1558,10 +1560,10 @@ Das Schema nach [2\kar{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
     \item[3\coe] zum Spielen
     \item[3\pik] K"urzenfrage
       \bdsc
-      \item[3\SA] \pi-K"urze (4\tre PKCA)
-      \item[4\tre] \tr-K"urze (4\kar PKCA)
-      \item[4\kar] \ka-K"urze (4\coe PKCA)
-      \item[4\coe] keine K"urze (4\pik PKCA)
+      \item[3\SA] \pi-K"urze (4\tre: PKCA)
+      \item[4\tre] \tr-K"urze (4\kar: PKCA)
+      \item[4\kar] \ka-K"urze (4\pik: PKCA)
+      \item[4\coe] keine K"urze (4\pik: PKCA)
       \edsc
     \edsc
   \item[3\coe] 9-10 FP, schlechte Farbe, weiter wie oben
@@ -1570,7 +1572,7 @@ Das Schema nach [2\kar{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
     \item[3\SA] zum Spielen
     \item[4\tre] K"urzenfrage (\emph{nicht} PKCA)
       \bdsc
-      \item[4\SA] \tr-K"urze (5\tre PKCA)\footnote{nicht besonders gl"ucklich}
+      \item[4\SA] \tr-K"urze (5\tre: PKCA)
       \edsc
     \edsc
   \item[3\SA] 3 Topfiguren: \suit{AKD}, weiter wie oben
@@ -1581,7 +1583,7 @@ Das Schema nach [2\kar{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
 \subsection{2\coe: Zweif"arber mit \co}
 
 Die 2\coe-Er"offnung zeigt einen Zweif"arber mit einem 5er-\co und einer
-weiteren 5er-Farbe im Bereich von 5-10 FP. In dritter Hand kann die Verteilung
+weiteren 5er-Farbe im Bereich von 6-10 FP. In dritter Hand kann die Verteilung
 auch 5/4 sein.
 
 \bdsc
@@ -1599,19 +1601,13 @@ auch 5/4 sein.
 Der Er"offner zeigt mit seinem R"uckgebot seine zweite Farbe und seine
 Punktst"arke, nur bei einem \co/\tr-Zweif"arber kann er die Punktst"arke nicht
 sofort mitteilen. Die n"achste freie Farbe fragt dann nach K"urze, bei \co/\tr
-nach K"urze und Punktst"arke. F"ur die Beantwortung der K"urzenfrage gilt:
+nach K"urze und Punktst"arke (Antworten "ahnlich der Ogust-Konvention: Min Min
+Max Max).
 
-(1) Wenn eine nat"urliche Antwort f"ur eine K"urze mit der n"achsten oder
-"ubern"achsten Stufe m"oglich ist, zeigt die verbleibenden Stufe (1. oder 2.)
-die verbleibende K"urze.
-
-(2) Ist die n"achste oder "ubern"achste Stufe 3\SA\, zeigt dies K"urze in der
-Fragefarbe. die verbleibende Stufe zeigt K"urze in der verbleibenden Farbe.
-
-(3) Ansonsten gilt: niedrigste Stufe zeigt niedrigste K"urze.
-
-Innerhalb einer Sequenz ist 4\pik immer PKCA auf \co-Basis, 4\tre und 4\kar
-wenn m"oglich auf \tr- bzw. \ka-Basis.
+F"ur die Beantwortung der K"urzenfrage gilt: niedrigste Stufe zeigt niedrigste
+K"urze. Die n"achste Stufe des Antwortenden ist dann PKCA f"ur die niedrigere
+Farbe, die "ubern"achste Stufe PKCA f"ur die h"ohere Farbe, nat"urlich unter
+Auslassung von 3\SA und 4\coe.
 
 \bdsc
 \item[2\coe{}\sep2\SA;] Frage nach St"arke und zweiter Farbe
@@ -1620,16 +1616,10 @@ wenn m"oglich auf \tr- bzw. \ka-Basis.
     \bdsc
     \item[3\kar] Frage nach St"arke und K"urze
       \bdsc
-      \item[3\coe] 6-8 FP
-        \bdsc
-        \item[3\pik] Frage nach K"urze
-          \bdsc
-          \item[3\SA] \pi-K"urze (2) (\ra 4\tre = \tr-PKCA, 4\pik = \co-PKCA)
-          \item[4\tre] \ka-K"urze (2) (\ra 4\kar = \tr-PKCA, 4\pik = \co-PKCA)
-          \edsc
-        \edsc
-      \item[3\pik] 9-10 FP, \pi-K"urze (1)
-      \item[3\SA] 9-10 FP, \ka-K"urze (2)
+      \item[3\coe] 6-8 FP, K"urze in \ka (3\pik: \tr-, 4\tre: \co-PKCA)
+      \item[3\pik] 6-8 FP, \pi-K"urze (4\tre: \tr-, 4\kar: \co-PKCA)
+      \item[3\SA] 9-10 FP, \ka-K"urze (4\tre: \tr-, 4\kar: \co-PKCA)
+      \item[3\tre] 9-10 FP, \pik-K"urze (4\kar: \tr-, 4\pik: \co-PKCA)
       \edsc
     \edsc
   \item[3\kar] 6-8 FP, 5/5 \co/\ka
@@ -1637,8 +1627,8 @@ wenn m"oglich auf \tr- bzw. \ka-Basis.
     \item[3\coe] zum Spielen
     \item[3\pik] Frage nach K"urze
       \bdsc
-      \item[3\SA] \pi-K"urze (2), (\ra 4\kar = \ka-PKCA)
-      \item[4\tr] \tr-K"urze (1), (\ra 4\pik = \co-PKCA)
+      \item[3\SA] \tr-K"urze (4\kar: \ka-PKCA)
+      \item[4\tre] \pi-K"urze (4\pik: \co-PKCA)
       \edsc
     \edsc
   \item[3\coe] 6-8 FP, 5/5 \co/\pi
@@ -1646,13 +1636,13 @@ wenn m"oglich auf \tr- bzw. \ka-Basis.
     \item[3\pik] zum Spielen
     \item[4\tre] \co-Fit und Frage nach K"urze
       \bdsc
-      \item[4\kar] \ka-K"urze (1)
-      \item[4\coe] \tr-K"urze (1) (\ra 4\pik = \co-PKCA)
+      \item[4\kar] \tr-K"urze
+      \item[4\coe] \ka-K"urze (4\pik: \co-PKCA)
       \edsc
     \item[4\kar] \pi-Fit und Frage nach K"urze
       \bdsc
-      \item[4\coe] \tr-K"urze (3)
-      \item[4\pik] \ka-K"urze (3) (\ra 4\SA = \pi-PKCA)
+      \item[4\coe] \tr-K"urze
+      \item[4\pik] \ka-K"urze (4\SA: \pi-PKCA)
       \edsc
     \edsc
   \item[3\pik] 9-10 FP, 5/5 \co/\pi, weiter wie nach 3\coe
@@ -1660,8 +1650,8 @@ wenn m"oglich auf \tr- bzw. \ka-Basis.
     \bdsc
     \item[4\tre] Frage nach K"urze
       \bdsc
-      \item[4\kar] \tr-K"urze (3) (\ra 4\pik = \co-PKCA)
-      \item[4\coe] \pi-K"urze (3) (\ra 4\SA = \ka-PKCA\footnote{Vorsicht!})
+      \item[4\kar] \tr-K"urze (4\pik: \co-PKCA)
+      \item[4\coe] \pi-K"urze (4\SA: \ka-PKCA, \emph{Vorsicht!})
       \edsc
     \edsc
   \edsc
@@ -1673,8 +1663,7 @@ wenn m"oglich auf \tr- bzw. \ka-Basis.
 {9876}{AK}{AK}{AD86}{%
   2\coe && 2\SA \\
   3\tre & 5/5 \tr/\co & 3\kar & Frage nach St"arke und K"urze\\
-  3\coe & \mini & 3\pik & Frage nach K"urze\\
-  3\SA  & \pi-K"urze & 4\tre & PKCA auf \tr-Basis\\
+  3\coe & \mini, \pi-K"urze & 4\tre & PKCA auf \tr-Basis\\
   4\kar & 1 Ass ohne \tr-Dame & 6\tre\\
 }
 
@@ -1687,7 +1676,7 @@ wenn m"oglich auf \tr- bzw. \ka-Basis.
 \exhand{KB986}{DB764}{54}{2}
 {AD76}{2}{AKD106}{A54}{%
   2\coe & & 2\SA  & \\
-  3\coe & 5/5 \co/\pi, \mini & 4\kar & \pi-Fit, Frage nach K"urze\\
+  3\coe & 5/5 \co/\pi, \mini & 4\kar & \pi-Fit, K"urzenfrage \\
   4\coe & \tr-K"urze & 4\SA  & PKCA\\
   5\tre & 1 Ass ohne \pi-Dame & 6\pik
 }
@@ -1700,13 +1689,17 @@ ohne 4er-\co (4er-\ufa m"oglich).
 \bdsc
 \item[2\pik] 6-10 FP, 6er-\pi
   \bdsc
-\item[2\SA] 15/16\pl FP, Frage nach St"arke und Farbqualit"at
+\item[2\SA] 15/16\pl FP, \pi-Fit, Frage nach St"arke und Farbqualit"at
   \conv{(Ogust)}
   \item[3\pik] weitere Sperre
   \item[4\tre] PKCA auf \pi-Basis
   \item[4\pik] weitere Sperre oder konstruktiv
   \edsc
 \edsc
+
+Das Reizen einer neuen Farbe zeigt 6\pl (5 gute) Karten und ist
+selbstverst"andlich forcing. Der Er"offner hebt mit 3er-Anschluss oder mit
+Double-Anschluss und einer K"urze.
 
 \subsubsection*{Ogust}
 
@@ -1720,10 +1713,10 @@ Das Schema nach [2\pik{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
     \bdsc
     \item[3\kar] K"urzenfrage
       \bdsc
-      \item[3\coe] \co-K"urze (4\tre PKCA)
-      \item[3\pik] keine K"urze (4\tre PKCA)
-      \item[3\SA] \ka-K"urze (4\tre PKCA)
-      \item[4\tre] \tr-K"urze (4\kar PKCA)
+      \item[3\coe] \co-K"urze (4\tre: PKCA)
+      \item[3\pik] keine K"urze (4\tre: PKCA)
+      \item[3\SA] \ka-K"urze (4\tre: PKCA)
+      \item[4\tre] \tr-K"urze (4\kar: PKCA)
       \edsc
     \item[3\pik] zum Spielen
     \item[3\SA] zum Spielen
@@ -1732,10 +1725,10 @@ Das Schema nach [2\pik{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
     \bdsc
     \item[3\coe] K"urzenfrage
       \bdsc
-      \item[3\pik] keine -K"urze (4\tre PKCA)
-      \item[3\SA] \co-K"urze (4\tre PKCA)
-      \item[4\tre] \tr-K"urze (4\kar PKCA)
-      \item[4\kar] \ka-K"urze (4\coe PKCA)
+      \item[3\pik] keine -K"urze (4\tre: PKCA)
+      \item[3\SA] \co-K"urze (4\tre: PKCA)
+      \item[4\tre] \tr-K"urze (4\kar: PKCA)
+      \item[4\kar] \ka-K"urze (4\coe: PKCA)
       \edsc
     \item[3\pik] zum Spielen
     \edsc
@@ -2014,9 +2007,9 @@ der 2er-Stufe gereizt zeigt eine mindestens einladende Hand, auf der 3er-Stufe
 eine partieforcierende.
 
 \woreizung{
-  2\tre & Semiforcing & 2\kar & Relais \\
-  2\coe & & 2\tre \\
-  3\coe & & 3\pik & DFF, zeigt \pi-Werte
+  2\tre & Semiforcing & 2\kar & \rel \\
+  2\coe & \nat & 2\tre & \nat \\
+  3\coe & \nat & 3\pik & DFF, zeigt \pi-Werte
 }
 
 \subsection{Vierte Farbe Forcing (VFF)}
@@ -2191,9 +2184,9 @@ gereizte Vollspiele oder Schlemms handelt -- verlangt normalerweise
 die vom Dummy zuerst gereizte Farbe.  Nach [1\SA{}\sep3\SA;] verlangt
 Kontra das Ausspiel der k"urzeren Oberfarbe.
 
-\subsubsection{Trump Support Double (Trumpfunterst"utzungs-Kontra)}
+\subsubsection{Trump Support Double}
 
-Diese Konvention benutzt der Er"offner, wenn der Partner eine Oberfarbe gereizt
+Das Trumpfunterst"utzungs-Kontra benutzt der Er"offner, wenn der Partner eine Oberfarbe gereizt
 und der n"achste Gegner gesprochen hat. Er zeigt mit \kontra bzw.
 \rekontra 3er-Anschluss in der Oberfarbe des Partners:
 
@@ -2210,7 +2203,7 @@ und der n"achste Gegner gesprochen hat. Er zeigt mit \kontra bzw.
 	\edsc
 \edsc
 
-\subsection{Sandwich Notrump (1\SA/2\SA als Zweif"arber)}
+\subsection{Sandwich \NT{} (1\SA/2\SA als Zweif"arber)}
 
 Diese Konvention benutzen wir in vierter Position nach Er"offnung, pass vom
 Partner und einem Farbgebot auf der 1er-Stufe des rechten Gegners, um die
@@ -2434,7 +2427,7 @@ Man kann nun mit dem n"achsten Gebot nach weiteren K"onigen fragen, mit dem
 {B432}{KB}{AB4}{AB109}{%
   1\tre & & 1\pik\\
   2\coe & & 4\tre & KCB\\
-  4\coe & 0 oder 3 & 4\pik & \tr-Dame?\\
+  4\coe & 3 oder 0 & 4\pik & \tr-Dame?\\
   4\SA  & \tr-Dame und \pi-K"onig & 5\coe & platzierte Damen?\\
   5\SA  & \co-Dame & 7\tre
 }
@@ -2454,9 +2447,9 @@ nach 4\of ist es 4\SA. Antworten:
 \item[5. Stufe] 2 Asse mit Trumpf-Dame
 \edsc
 
-\subsection{Exclusion Keycard-Assfrage (Voidwood, EKCB)}
+\subsection{Exclusion Keycard-Assfrage (EKCB)}
 
-Die Exclusion-Assfrage wird durch einen ungew"ohnlichen Sprung
+Die Exclusion-Assfrage (Voidwood) wird durch einen ungew"ohnlichen Sprung
 (meist in die 5er-Stufe) gestellt, der kein \Index{Splinter} sein kann:
 %
 \bdsc
@@ -2504,7 +2497,7 @@ Partners gereizter wird die 3./5.-h"ochste ausgespielt.
 
 Markiert wird niedrig-hoch, d.h. eine kleine Karte ist positiv und zeigt somit
 Interesse an der ausgespielten Farbe, eine hohe Karte ist negativ und zeigt
-somit Desinteresse.
+somit Desinteresse (\conv{UDCA}).
 
 Spielt der Alleinspieler, so kann man L"angenmarken geben, wobei eine niedrige
 Karte eine gerade L"ange und eine hohe Karte eine ungerade L"ange zeigt.
@@ -2553,7 +2546,7 @@ Folgende "Anderungen sind m"oglich:
 \item 1\ofa{}\sep2\tre: nat"urlich
 \end{compactitem}
 
-\subsection{Checkback Stayman}
+\subsection*{Checkback Stayman}
 
 Checkback Stayman wurde durch den 2\tre/2\SA-Transfer (\ra~\ref{1sarebid})
 ersetzt. (Mai 2005)
@@ -2574,303 +2567,82 @@ eine starke Hand mit 4er-\ofa und 5er-\ufa hatte, die Er"offungsfarbe war.
   \item[3\pik] 6er-\pi, Schlemm-Interesse
   \edsc
 \edsc
+
+\subsection*{Weak Two, 2\coe}
+
+Vor Mai 2005 war PKCA in den Ogust-Sequenzen immer mindestens 4\tre.
+
+Die K"urzenfrage nach 2\coe wurde wie folgt beantwortet:
+
+(1) Wenn eine nat"urliche Antwort f"ur eine K"urze mit der n"achsten oder
+"ubern"achsten Stufe m"oglich ist, zeigt die verbleibenden Stufe (1. oder 2.)
+die verbleibende K"urze.
+
+(2) Ist die n"achste oder "ubern"achste Stufe 3\SA\, zeigt dies K"urze in der
+Fragefarbe. die verbleibende Stufe zeigt K"urze in der verbleibenden Farbe.
+
+(3) Ansonsten gilt: niedrigste Stufe zeigt niedrigste K"urze.
+
+Innerhalb einer Sequenz ist 4\pik immer PKCA auf \co-Basis, 4\tre und 4\kar
+wenn m"oglich auf \tr- bzw. \ka-Basis.
+
+\bdsc
+\item[2\coe{}\sep2\SA;] Frage nach St"arke und zweiter Farbe
+  \bdsc
+  \item[3\tre] 6-10 FP, 5/5 \co/\tr
+    \bdsc
+    \item[3\kar] Frage nach St"arke und K"urze
+      \bdsc
+      \item[3\coe] 6-8 FP
+        \bdsc
+        \item[3\pik] Frage nach K"urze
+          \bdsc
+          \item[3\SA] \pi-K"urze (2) (\ra 4\tre = \tr-PKCA, 4\pik = \co-PKCA)
+          \item[4\tre] \ka-K"urze (2) (\ra 4\kar = \tr-PKCA, 4\pik = \co-PKCA)
+          \edsc
+        \edsc
+      \item[3\pik] 9-10 FP, \pi-K"urze (1)
+      \item[3\SA] 9-10 FP, \ka-K"urze (2)
+      \edsc
+    \edsc
+  \item[3\kar] 6-8 FP, 5/5 \co/\ka
+    \bdsc
+    \item[3\coe] zum Spielen
+    \item[3\pik] Frage nach K"urze
+      \bdsc
+      \item[3\SA] \pi-K"urze (2), (\ra 4\kar = \ka-PKCA)
+      \item[4\tr] \tr-K"urze (1), (\ra 4\pik = \co-PKCA)
+      \edsc
+    \edsc
+  \item[3\coe] 6-8 FP, 5/5 \co/\pi
+    \bdsc
+    \item[3\pik] zum Spielen
+    \item[4\tre] \co-Fit und Frage nach K"urze
+      \bdsc
+      \item[4\kar] \ka-K"urze (1)
+      \item[4\coe] \tr-K"urze (1) (\ra 4\pik = \co-PKCA)
+      \edsc
+    \item[4\kar] \pi-Fit und Frage nach K"urze
+      \bdsc
+      \item[4\coe] \tr-K"urze (3)
+      \item[4\pik] \ka-K"urze (3) (\ra 4\SA = \pi-PKCA)
+      \edsc
+    \edsc
+  \item[3\pik] 9-10 FP, 5/5 \co/\pi, weiter wie nach 3\coe
+  \item[3\SA] 9-10 FP, 5/5 \co/\ka
+    \bdsc
+    \item[4\tre] Frage nach K"urze
+      \bdsc
+      \item[4\kar] \tr-K"urze (3) (\ra 4\pik = \co-PKCA)
+      \item[4\coe] \pi-K"urze (3) (\ra 4\SA = \ka-PKCA, Vorsicht!)
+      \edsc
+    \edsc
+  \edsc
+\edsc
+
+%\printindex
+
 \end{appendix}
+
 \end{document}
-\printindex
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-
-\bcbiddingpair{West}{Ost}
-{
-}
-{
-  \Meaning{a}{}
-  \Meaning{b}{}
-  \Meaning{c}{}
-  \Meaning{d}{}
-}
-
-\dealer{S, N--S\\\mbox{}}
-\comment{Board 3\\\mbox{}}
-
-\dealerS
-\northhand{DB6}{D52}{B10432}{B5}
-\southhand{A107}{A763}{KD7}{AK8}
-\westhand{K9853}{B8}{65}{6432}
-\easthand{42}{K1094}{A98}{D1097}
-
-Erst nur die Nord-S\"ud-H\"ande mit Reizung zu viert \ldots
-
-\playproblemNS
-{
-2\,SA & --- & 3\,SA & --- \\
----   & --- & ---
-}
-
-\ldots oder zu zweit:
-
-\playproblemNSpair
-{
-2\,SA & 3\,SA \\
----   & ---
-}
-
-dann die ganze Hand
-
-\medskip
-
-\centerline{\showgame}
-
-\newpage
-
-Oder vielleicht doch lieber als Gegenspielproblem?
-
-\bidders{Fritz}{Franz}{Fuzzy}{Alf}
-
-\playproblemNW
-{
-2\,SA & --- & 3\,SA & --- \\
----   & --- & ---
-}
-
-bzw.
-
-\playproblemNWpair
-{
-2\,SA & 3\,SA \\
----   & ---
-}
-
-oder andersherum
-
-\medskip
-
-\playproblemNE
-{
-2\,SA & --- & 3\,SA & --- \\
----   & --- & ---
-}
-
-bzw.
-
-\medskip
-
-\playproblemNEpair
-{
-2\,SA & 3\,SA \\
----   & ---
-}
-
-\newpage
-
-\dealer{}
-\comment{}
-
-Oder haben die Gegner ein Reizproblem?
-
-\medskip
-
-\playproblemEW
-{
-2\,SA & --- & 3\,SA & --- \\
----   & --- & ---
-}
-
-bzw.
-
-\medskip
-
-\playproblemEWpair
-{
-2\,SA & 3\,SA \\
----   & ---
-}
-
-Ein Reizproblem zu viert:
-
-\biddingproblem{1.}{ADB96}{KD52}{43}{82}
-{
-1\,\pik & 2\,\kar & 2\,\pik & 3\,\kar \\
-?
-}
-
-und eins zu zweit (ohne Nummer):
-
-\biddingproblempair{}{ADB96}{KD52}{43}{82}
-{
-1\,\pik & 2\,\pik \\
-?
-}
-
-Wie soll man
-
-\onesuitNS{ABxx}{Kxx}
-
-auf 3 Stiche spielen?
-
-Gewinnt Ihre Spielweise auch bei
-
-\onesuit{ABxx}{Kxx}{xxxx}{Dx}
-
-Dann haben Sie es richtig gemacht!
-
-K\"onnen Sie es auch auf Ost-West?
-
-\onesuitEW{KBxx}{Axx}
-
-Auch Farben werden mit dem richtigen Abstand zwischen den einzelnen
-Karten gesetzt: Wie spielen Sie von \suit{AD10xx} aus?
-
-\hanghand{AKD}{AKD}{AKD10}{AKD} An diesem Beispiel kann man gut
-den Unterschied zwischen den Wissenschaftlern und den Zockern
-im Bridge erkl\"aren: Ein echter Zocker w\"urde sicher
-mit 7\,SA er\"offnen; der Wissenschaftler wendet lieber die ber\"uchtigte
-Hofstein-Konvention an: Die Er\"offnung 5\,SA fragt unmittelbar nach
-Buben, wobei der Partner die Farbe seines niedrigsten Buben bietet
-(ohne Buben bietet er Ohne :-). Falls der Partner einen Buben zeigt,
-den man nicht gebrauchen kann, wie hier \tre-Buben, dann reizt man
-die Farbe, in der man den Buben braucht. Hat der Partner den gesuchten
-Buben, bietet er 7\,\tre, ansonsten wieder 6\,SA. Damit ist dieses
-h\"aufig autretende Bietproblem ein f\"ur alle Mal gel\"ost.
-
-\comment{Problem 1}
-\setlength{\handwidth}{27mm}
-\northhand{-}{B1098765}{DB10}{AKD}
-\southhand{A765432}{AKD}{AK}{2}
-\hangNSgame In einem Paarturnier haben Sie und Ihr Partner schon
-fr\"uh erkannt, da\ss{} diese beiden H\"ande Schlemm produzieren werden.
-Nach etwa 22 Bietrunden konnten Sie mit Ihrem genialen System
-herausfinden, da\ss{} im Prinzip 13~Stiche von oben da sind. Gierig
-wie Sie nun einmal sind, haben Sie dann 7\,SA geboten, anstelle sich mit
-7\,\coe zu begn\"ugen. Jetzt brauchen Sie den Kontrakt blo\ss{}
-noch zu erf\"ullen. Wie spielen Sie diese Hand in 7\,SA nach
-dem Ausspiel von \tre\,B?
-
-\newpage
-\comment{}
-
-\dots und hier ein Auszug aus dem letzten \"Uberstich (hoffentlich mit
-freundlicher Genehmigung des Herausgebers :-):
-
-\westhand{2}  {AB42}{KB10953}{B8}
-\easthand{B75}{D10} {A42}    {AK752}
-
-\bcproblem{Hand 1}{N}{NS}
-{Nord er\"offnet 2\Di Flannery (5\pl{}er \He, 4er \Sp, 11-15).
-S\"ud bietet 2\Sp falls m\"oglich.}
-{5\Di=20, 4\Di=13, 3\Cl=8, \ 2\Sp(S\"ud)=4}
-
-Es ist ziemlich schwierig, in dieser Hand \"uberhaupt in die Reizung zu kommen.
-Michaels Vater bezweifelt, da\ss{} 5\Di der Topkontrakt sei. Zugegebenerweise
-ist dieser in erster Linie auf den Karo--Schnitt (vorausgesetzt Nord h\"alt
-nicht gleich ein 4er Karo) angewiesen. Doch die Tatsache, da\ss{} Nord er\"offnet hat plus
-die Zusatzchance, da\ss{} Coeur--Impa\ss{} und die Tr\"umpfe 2--2 stehen, macht f\"ur
-mich 5\Di zu einer guten Wette.
-
-\bcbidding{Fu\ss{}}{Gro}
-{
-           & 2\Di & p          & 2\Sp \\
-p          & p    & X\al{a}    & p    \\
-3\Di\al{b} & p    & p          & p
-}
-{
-\Meaning{a}{Take--out}
-\Meaning{b}{Zusatzst\"arke! 2SA w\"are Lebensohl}
-}
-
-\bcbidding{Frans}{Alain}
-{
-           & 2\Di & p          & 2\Sp \\
-3\Di       & p    & 3\Sp\al{a} & p    \\
-4\Di       & p    & 5\Cl\al{b} & p    \\
-5\Di       & p    & p          & p
-}
-{
-\Meaning{a}{Frage nach \Sp--Stopper}
-\Meaning{b}{Cue--bid}
-}
-
-\vspace{0.5cm}
-
-\underline{\bf Running Score:}
-
-\vspace{0.5cm}
-
-Gro -- Fu\ss{} 13, Alain -- Frans 20
-
-\newpage
-
-\westhand{1063}{AD4} {A84}  {A742}
-\easthand{B}   {K103}{KD752}{KB53}
-
-\bcproblem{Hand 2}{W}{NS}{}
-{5\Cl=20, 5\Di=14, 6\Cl=8, \ 6\Di=6, 3SA=4}
-
-In dieser Hand gilt es, die Pik--Schw\"ache zu lokalisieren, um 3SA vermeiden
-zu k\"onnen. Bei der Wahl der Unterfarbe ist der stabilere 4--4--Fit in Treff
-dem 5--3--Fit in Karo vorzuziehen. Hat man dies alles herausgefunden, stellt
-sich noch die Frage, ob man sich mit Partie begn\"ugen oder den Kleinschlemm
-ansteuern soll. Insgesamt eine nicht ganz leichte Aufgabe$\dots$
-
-\bcbiddingpair{Fu\ss{}}{Gro}
-{
-1SA        & 2\Sp\al{a} \\
-3\Cl\al{b} & 3\He\al{c} \\
-4\Cl       & 5\Cl       \\
-6\Cl\al{d} & p
-}
-{
-\Meaning{a}{Frage nach Min/Max}
-\Meaning{b}{Maximum}
-\Meaning{c}{1--3--(45) Verteilung, \pf}
-\Meaning{d}{keine Werte in \Sp und die \"ubrigen Asse. Etwas optimistisch.}
-}
-
-\bcbiddingpair{Frans}{Alain}
-{
-1\Cl      & 1\Di\al{a} \\
-1SA\al{b} & 3\Cl       \\
-3SA       & p
-}
-{
-\Meaning{a}{Walsh = keine 4er OF \ oder \pf}
-\Meaning{b}{12-14 P., 4er OF(n) \ m\"oglich}
-}
-
-\vspace{0.5cm}
-
-Frans und Alain scheitern leider schon an der ersten H\"urde und landen im
-falschen Vollspiel. Gro und Fu\ss{} vermeiden glorreich 3SA, landen dann aber im
-Kleinschlemm, der etwas gezogen ist.
-
-\vspace{0.25cm}
-
-\underline{\bf Running Score:}
-
-\vspace{0.5cm}
-
-Gro -- Fu\ss{} 21, Alain -- Frans 24
-
-\newpage
-
-\onecolumn{
-\Huge
-\setgamesize{\Huge}
-\setlength{\handwidth}{55mm}	% The width of a hand in a game display
-\setlength{\bidwidth}{100mm}	% The width of the table with the bidding sequence
-\setlength{\cardskip}{2pt}	% The distance between subsequent playing cards
-
-%\centerline{\showgame}
-
-\playproblemNS
-{
-2\,SA & --- & 3\,SA & --- \\
----   & --- & ---
-}
-}
-\end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%that's all, hope you enjoy
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
