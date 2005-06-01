@@ -1,8 +1,13 @@
-\documentclass[11pt,german,twocolumn]{scrartcl}
-\usepackage[a4paper,vscale=0.94,hscale=0.9,includeheadfoot]{geometry}
+\documentclass[11pt,german,twocolumn,twoside]{scrartcl}
+\usepackage[a4paper,vscale=0.94,includehead,
+  %lmargin=10mm,rmargin=15mm, % zum Lochen
+  hmargin=10mm, % zum Abheften
+]{geometry}
 %\usepackage[a5paper,vscale=0.94,hscale=0.9,includeheadfoot]{geometry}
 \usepackage{kibitzer}
 \usepackage{babel}
+\usepackage{color}
+\usepackage{fancyhdr}
 \usepackage{tabularx}
 \usepackage{times}
 \usepackage{calc}
@@ -10,8 +15,6 @@
 \usepackage{suitsymbols}
 \usepackage{makeidx}
 \usepackage{xspace}
-
-\pagestyle{headings}
 
 % L"angen
 \setlength{\columnsep}{10mm}
@@ -26,7 +29,6 @@
 \renewcommand{\arraystretch}{1.07}
 
 %% Farbe
-\usepackage{color}
 %
 % Biet-Box-Farben
 \definecolor{ClColor}{rgb}{0.0,0.6,0.0}
@@ -47,6 +49,7 @@
 %\renewcommand{\Sp}{\spades}
 %
 % mit pxfonts (haesslich)
+%\usepackage{pxfonts}
 %\renewcommand{\Cl}{{\color{ClColor}{\relsize{2}$\clubsuit$}}}
 %\renewcommand{\Di}{{\color{DiColor}{\relsize{2}$\vardiamondsuit$}}}
 %\renewcommand{\He}{{\color{HeColor}{\relsize{1}$\varheartsuit$}}}
@@ -187,15 +190,23 @@
 % }
 
 % Kasten mit Rahmen
+\setlength{\fboxsep}{2ex}
 \newcommand\notebox[1]%
 {%
-\setlength{\fboxsep}{2ex}
 \fbox{\parbox{\columnwidth - 4ex}{#1}}
 }
 
 % Index
 \makeindex
 \newcommand{\Index}[1]{#1\index{#1}}
+
+% Pagestyle
+\renewcommand{\sectionmark}[1]{\markleft{#1}}
+\pagestyle{fancy}
+\fancyhead[RE,LO]{\nouppercase{\emph{\leftmark}}}
+\fancyhead[RO,LE]{\thepage}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
 
 
 \begin{document}
@@ -284,7 +295,7 @@ Seite \pageref{zfregel}.
 
 \notebox{Weiterreizung:
 Ein unn"otiger Sprung in einer neuen Farbe ist \conv{\Index{Splinter}}.
-Ein unn"otiger Doppelsprung ist \conv{Exclusion RKCB}.}
+Ein unn"otiger Doppelsprung ist \conv{Exclusion KCB}.}
 
 Nach 1\kar{}-Er"offnung sind die Antworten entsprechend
 (Ausnahme: [1\kar{}\sep2\tre{}] \ra\ref{inverted}).
@@ -348,7 +359,7 @@ Die Reizung beginnt jeweils mit [1\tre{}\sep1\pik;~2\SA{}].
   \item[1\pik] 5\pl{}er-\tr und 4er-\pi
   \item[1\SA] 12-14, eine oder beide \of m"oglich
     \bdsc
-      \item[2\tre] Schlemm-Interesse in \tre oder \kar;
+      \item[2\tre] \slamint in \tre oder \kar;
             \textbf{Frage nach Verteilung} (s.~u.)
       \item[2\kar] schwach; zum Spielen
       \item[2\ma] \pf mit 5/4-Verteilung
@@ -387,7 +398,7 @@ Die Reizung beginnt jeweils mit [1\tre{}\sep1\pik;~2\SA{}].
   Verteilung der ausgeglichenen Hand des Er"offners erfragen.
 
   \bdsc
-  \item[2\kar] 3er-\ka, \textbf{nicht 4-3-3-3}
+  \item[2\kar] 3er-\ka (\textbf{nicht 4333})
     \bdsc
       \item[2\coe] \rel, Frage nach Verteilung
         \bdsc
@@ -398,7 +409,7 @@ Die Reizung beginnt jeweils mit [1\tre{}\sep1\pik;~2\SA{}].
     \edsc
   \item[2\coe] 3-4-2-4
   \item[2\pik] 4-3-2-4
-  \item[2\SA]  beliebige 4-3-3-3-Verteilung
+  \item[2\SA]  beliebige 4333-Verteilung
     \bdsc
       \item[3\tre] \rel, Frage nach 4er-Farbe
         \bdsc
@@ -462,15 +473,6 @@ Die Reizung beginnt jeweils mit [1\tre{}\sep1\pik;~2\SA{}].
     \item[3\coe] 6er-\co, \pf
     \edsc
   \item[1\SA] 12-14 FP \bal, kein 4er-\pi (\ra \ref{1sarebid})
-    %\bdsc
-    %\item[2\tre] \conv{Checkback Stayman}
-    %\item[2\kar] 4er-\co, 5\pl\kar, zum Spielen
-    %\item[2\coe] 5er-\co, schwach, zum Spielen
-    %\item[2\pik] 5/4 \co{}+\pi, \pf
-    %\item[2\SA] \nat
-    %\item[3\mi] \nat, \pf
-    %\item[3\coe] 6er-\co, Schlemm-Interesse\footnotemark[1]
-    %\edsc
   \edsc
 
 \item[1\tre{}\sep1\pik; ?]~
@@ -502,7 +504,7 @@ Die Reizung beginnt jeweils mit [1\tre{}\sep1\pik;~2\SA{}].
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sequenzen nach 1SA-Rebid (Puppet) %%%%%%%%%%%%%%%
 %
-\subsection{Bietsequenzen nach 1\SA-R"uckgebot} \label{1sarebid}
+\subsection{Relaistransfer nach 1\SA-R"uckgebot} \label{1sarebid}
 
 Neben den nat"urlichen Antworten benutzen wir die beiden Puppet-Gebote 2\tre
 und 2\SA, um m"oglichst viele Verteilungen zeigen zu k"onnen.
@@ -541,8 +543,8 @@ Wir unterscheiden folgende Handtypen:
   \item[1] schwach, 4/5\pl \ofa/\tr
   \item[2] stark:
     \begin{compactitem}
-    \item[a] 4/5 \ofa/\tr nach 1\tre-Er"offung
-    \item[b] 4/5 \ofa/\ka nach 1\kar-Er"offung
+    \item[a] 4/5 \ofa/\tr nach 1\tre-Er"offnung
+    \item[b] 4/5 \ofa/\ka nach 1\kar-Er"offnung
     \item[c] 5/4 \pi/\co nach 1\pik-Antwort
     \end{compactitem}
   \end{compactitem}
@@ -556,11 +558,11 @@ Wir unterscheiden folgende Handtypen:
 	\bdsc
 	\item[2\tre] \pupto2\kar{} -- siehe unten (B)
 	\item[2\kar] 4er-\pi, 5\pl{}er-\ka, genau \inv (sonst \conv{Walsh}) (A1)
-	\item[2\coe] 5/4 \pi{}+\co, zum Spielen oder ausbessern (A2)
+	\item[2\coe] 5/4 \pi{}+\co, zum Spielen oder Ausbessern (A2)
 	\item[2\pik] 5er-\pi, schwach (A2)
 	\item[2\SA] \pupto3\tre{} -- siehe unten (C)
 	\item[3\anybid] 5/5 \pi{}+\any, \pf (A3)
-	\item[3\pik] 6er-\pi, leichtes \slamint\footnote{Einladende H"ande mit
+	\item[3\pik] 6er-\pi, leichtes \slamint{}\footnote{Einladende H"ande mit
 		6er-Farbe "uber 2\tre reizen.} (A4)
 	\item[4\anybid] 6\good{}er-\pi, Single \any \conv{(Autosplinter)} (A5)
 	\edsc
@@ -675,12 +677,13 @@ zeigen Werte (Stopper) und sind partieforcing.
 \edsc
 
 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Die 1\coe/\pi-Er"offnungen}
 
 Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
 \begin{compactitem}
 %\setlength{\itemsep}{0.5ex}
-\item Schwache bis einladende H"ande mit 4\pl{}er-Anschlu"s werden durch
+\item Schwache bis einladende H"ande mit 4\pl{}er-Anschluss werden durch
   \conv{Bergen Hebungen} gezeigt.
 \item Mit \pf und gutem Trumpfanschluss reizen wir
   \conv{\Index{Splinter}} oder \conv{Stenberg 2\SA}.
@@ -705,7 +708,7 @@ Die Fortsetzung nach 1\of-Er"offnungen folgt folgenden Prinzipien:
   3\SA & 11-14 & Single in \aofa \conv{(Splinter)}, s.~u.\\
   4\tre/\ka & 11-14 & \tr/\ka-Single \conv{(Splinter)}\\[1ex]
   4\of && zum Spielen\\[1ex]
-  4\aof && \conv{Exclusion RKCB}\\[3ex]
+  4\aof && \conv{Exclusion KCB}\\[3ex]
   \multicolumn{3}{l}{Nach 1\coe-Er"offnung:}\\[1ex]
   2\pik & 5-8 & 6\pl\pik \conv{(Weak Jump)}\\[2ex]
   \multicolumn{3}{l}{Nach 1\pik-Er"offnung:}\\[1ex]
@@ -753,8 +756,9 @@ andere \ofa auf 3er-Stufe gezeigt
   \bdsc
   \item[1\SA] 12-14 FP \bal
     \bdsc
-    \item[2\tre] \conv{Checkback Stayman}
+    \item[2\tre] \conv{Relaistransfer} \ra 2\kar (\ra \ref{1sarebid})
     \item[2\kar] 4er-\pi, 5\pl\kar, zum Spielen
+    \item[2\SA] \conv{Relaistransfer} \ra 3\tre (\ra \ref{1sarebid})
     \item[3\tre] \nat, forcing
       \bdsc
       \item[3\kar] Frage nach \hstp, zeigt \khstop, verneint 3er-\pi
@@ -765,7 +769,7 @@ andere \ofa auf 3er-Stufe gezeigt
       \item[4\pik] 3er-\pi, \mini
       \edsc
     \edsc
-  \item[2\tre/\ka] 12-18, 54\pl-Verteilung
+  \item[2\tre/\ka] 12-18, 5/4\pl-Verteilung
     \bdsc
     \item[2\coe] Ausbessern, \coe-Double
     \item[3\tre/\ka] \inv
@@ -773,9 +777,9 @@ andere \ofa auf 3er-Stufe gezeigt
     \textbf{Nach \conv{1~"uber~1} ist die Hebung von Er"offners \emph{zweiter} Farbe
     auf die 3er-Stufe lediglich einladend.}
   \item[2\SA] 18-19 FP \bal
-  \item[3\tre/\ka] 18\good{}\pl FP, 5\pl\coe und 4\pl\uf\\
-    \ra~3\coe = st"arker als 4\coe (\emph{Principle of Fast Arrival});
-    \ra~3\pik ist dann \conv{Cue Bid}, aber keine K"urze.
+  \item[3\tre/\ka] 18\good{}\pl FP, 5\pl/4\pl \coe/\uf\\
+    \ra~3\coe st"arker als 4\coe (\emph{Principle of Fast Arrival});
+    \ra~3\pik \conv{Cue Bid}, aber keine K"urze.
 
     \textbf{Ein \conv{Cue Bid} in Partners erster Farbe zeigt \emph{nie} eine
     K"urze.}
@@ -915,6 +919,7 @@ Hat der Er"offner keine K"urze gezeigt, so ist die n"achste Stufe \conv{RKCB}.
 }
 
 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Die 1\SA-Er"offnung}
 
 Die Er"offnung 1\SA verspricht 15-17~FP und eine ausgeglichene
@@ -1082,9 +1087,10 @@ Mit einladenden H"anden reizen wir eine 5/4-Verteilung in den \ofa
 \edsc
 
 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Die 2\SA-Er"offnung}
 
-Die 2\SA-Er"offung zeigt eine ausgeglichene Hand mit 20-21 FP, eine 5er-\ofa
+Die 2\SA-Er"offnung zeigt eine ausgeglichene Hand mit 20-21 FP, eine 5er-\ofa
 kann enthalten sein.
 
 \bdsc
@@ -1128,7 +1134,7 @@ solange kein Fit best"atigt wurde.
         \item[4\tre] Optional KCB
         \item[4\kar] Optional KCB
         \item[4\coe] \co-Fit, zum Spielen
-        \item[4\pik] \co-Fit(!), KCB auf \co-Basis
+        \item[4\pik] \co-Fit (!), KCB auf \co-Basis
         \item[4\SA] Gerber-Assfrage
         \edsc
       \edsc
@@ -1151,7 +1157,7 @@ solange kein Fit best"atigt wurde.
     \edsc
   \item[3\coe] 5er-\co
     \bdsc
-    \item[3\pik] \co-Fit(!), KCB auf \co-Basis
+    \item[3\pik] \co-Fit (!), KCB auf \co-Basis
     \item[3\SA] zum Spielen
     \item[4\tre] Optional KCB
     \item[4\kar] Optional KCB
@@ -1164,10 +1170,12 @@ solange kein Fit best"atigt wurde.
 \edsc
 
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Verhalten nach Zwischenreizung durch die
   Gegner\label{zwischenreizung}}
 
-\subsection{Allgemeines}
+\subsection{Allgemeines nach Farbzwischenreizung}
 \begin{compactitem}
 \item Das Reizen einer neuen Farbe auf der 1er-Stufe ist weiterhin
 forcierend f"ur eine Runde.
@@ -1183,75 +1191,62 @@ ohne die Zwischenreizung 2\kar gereizt h"atte.
 %
 \item Eine neue Farbe auf der 3er-Stufe ist immer forcierend
   (z.~B. 1\pik{}\sep(2\kar){}\sep3\tre).
-\item Nach gegnerischem \conv{Informationskontra} ist eine neue Farbe auf der 2er-Stufe
-  nicht forcierend.
 \item Nach gegnerischen \conv{Weak Jumps} ist das Reizen einer neuen Farbe immer
   forcierend.
 \item \conv{Kontra} ist negativ bis 3\coe oder zeigt eine beliebige
   starke Hand f"ur die es in der augenblicklichen Situation kein Gebot
   gab.
-\item Der \conv{"Uberruf}
+\item Der \conv{"Uberruf} nach
   \begin{compactitem}
-    \item nach \ufa-Er"offnung fragt nach Stopper.
-    \item nach \ofa-Er"offnung zeigt eine partieforcierende Hand mit
-      Anschlu"s in der \ofa (siehe unten).
+    \item \ufa-Er"offnung fragt nach Stopper,
+    \item \ofa-Er"offnung zeigt eine partieforcierende Hand mit
+      Anschluss in der \ofa.
     \end{compactitem}
-\item 1\SA und 3\SA sind nat"urlich.
+\item \conv{Sprung-"Uberruf} oder "Uberruf auf 4er-Stufe ist \conv{Splinter}.
+\item 1\SA und 3\SA sind nat"urlich (oder weiterhin konventionell).
 \end{compactitem}
-
-\subsection{Nach \of-Er"offnung}
-\begin{compactitem}
-\item Alle \ofa-Hebungen sind schwach.  Falls \conv{Bergen Hebungen}
-  noch m"oglich sind (d.h. im Sprung), werden diese angewendet.
-\item {[}1\of{}\sep($x$){}\sep2\SA{]} zeigt
-  \begin{compactitem}
-  \item wenn \conv{Bergen Hebungen} noch m"oglich sind: eine einladende
-    Hebung mit genau 3er-Anschluss,
-  \item sonst: eine einladende Hebung mit 3er- oder 4er-Anschluss.
-  \end{compactitem}
-\item {[}1\of{}\sep(\kontra){}\sep2\SA{]} zeigt
-  \begin{compactitem}
-    \item eine einladende Hebung mit genau 3er-Anschluss oder
-    \item eine partieforcierende Hebung.
-  \end{compactitem}
-Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
-\item Der \conv{"Uberruf} der gegnerischen Farbe zeigt eine
-  partieforcierende Hand mit Anschluss in der \ofa
-  ([1\of{}\sep(1\anybid){}\sep2\anybid{}] oder [1\of{}\sep(2\anybid){}\sep3\anybid{}]).
-\end{compactitem}
-
-\subsubsection*{Beispiele}
-\begin{description}
-\item[1\pik{}\sep(2\kar){}\sep2\pik] ist m"oglich ab 0 FP mit
-  3er-Anschluss.
-\item[1\coe{}\sep(1\pik){}\sep3\kar] ist weiterhin \conv{Bergen} und zeigt
-  7-9 FP mit 4er-Anschluss.
-\item[1\coe{}\sep(2\tre){}\sep3\kar] ist nat"urlich und forcierend
-  (s.~o.), zeigt keinen Coeur-Anschluss (\conv{Bergen Hebungen} sind
-  nicht mehr m"oglich, da das 3\tre-Gebot nun eine andere Bedeutung
-  hat).
-\item[1\pik{}\sep(X){}\sep2\SA] zeigt 3er-\pi-Anschluss, einladend oder
-  eine Hand ab 12 FP mit 4er- oder besserem Anschluss (die w"are
-  zu stark f"ur \conv{Bergen}).
-\item[1\pik{}\sep(2\kar){}\sep2\SA] zeigt 3er- oder 4er-\pi-Anschluss und
-  ist einladend (3\kar w"are partieforcierend; \conv{Bergen} kann
-  nicht mehr gereizt werden um die einladende Hand mit 4er-\pi{}
-  zu zeigen).
-\item[1\coe{}\sep(1\pik){}\sep2\pik] zeigt eine partieforcierende Hand mit
-  Coeur-Anschluss.
-\end{description}
 
 \subsection{Nach \uf-Er"offnung}
 \begin{compactitem}
 \item Es gilt weiterhin \conv{Inverted Minors}, solange alle dazu ben"otigten
-	Gebote noch frei sind.
-\item Der \conv{"Uberruf} der gegnerischen Farbe fragt nach
-  \sa-Stopper ([1\uf{}\sep(1\anybid){}\sep2\anybid{}] oder
-  [1\uf{}\sep(2\anybid){}\sep3\anybid{}]).
-\item {[}1\uf{}\sep(1\anybid){}\sep2\SA{}] ist \conv{Inverted} (2-5~FP mit
-  5\pl{}er Anschluss in der er"offneten Unterfarbe; wie in einer
-  ungest"orten Reizung).
+	Gebote noch frei sind (z.B. 1\uf{}\sep(1\anybid)\sep2\SA).
+\item Der \conv{"Uberruf} der gegnerischen Farbe fragt nach Stopper und ist
+  Partieforcing (z.B. 1\uf{}\sep(1\anybid){}\sep2\anybid{} oder
+  1\uf{}\sep(2\anybid)\sep3\anybid{}).
 \end{compactitem}
+
+Alle "ubrigen Gebote unterscheiden sich nicht von einer ungest"orten
+Reizung (\conv{Fit Jumps}, \conv{Inverted Minors}, \conv{Weak Jumps}).
+
+\subsubsection*{Details}
+
+\bdsc
+\item[1\tre{}\sep(1\kar){}\sep?]~
+\bdsc
+\item[\kontra] beide \of \conv{(Negativkontra)}
+\item[1\coe/\pi] mindestens 4er-L"ange
+\item[2\tre/2\SA/3\tre] Inverted
+\item[2\kar] \pf und Frage nach \ka-Stopper
+\item[2\of/3\of] Weak Jump
+\item[3\kar] Karo-\conv{\Index{Splinter}}
+\edsc
+\item[1\tre{}\sep(1\coe){}\sep?]~
+\bdsc
+\item[\kontra] genau 4er-\pi oder starke Hand mit \ka-L"ange
+\item[1\pik] 5\pl{}er-\pi
+\item[2\kar] \nf
+\item[2\coe] \pf und Frage nach \co-Stopper
+\item[3\coe] \co-\conv{Splinter}
+\edsc
+\item[1\tre{}\sep(1\pik){}\sep?]~
+\bdsc
+\item[\kontra] genau 4er-\co oder starke Hand mit \ka- oder \co-L"ange
+\item[2\kar] \nf
+\item[2\coe] 5\pl{}er-\co, \nf
+\item[2\pik] \pf und Frage nach \pi-Stopper
+\item[3\pik] \pi-\conv{Splinter}
+\edsc
+\edsc
 
 \subsubsection*{Beispiele}
 \begin{description}
@@ -1263,66 +1258,102 @@ Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
   \tr-Stopper.
 \end{description}
 
-\subsection{Weitere Bietsequenzen}
-
-\bdsc
-\item[1\tre{}\sep(1\kar){}\sep?]~
-\bdsc
-\item[\kontra] beide \of \conv{(Negativkontra)}
-\item[1\coe/\pi] mindestens 4er-L"ange
-\item[2\kar] \pf und Frage nach \ka-Stopper
-\item[3\kar] Karo-\conv{\Index{Splinter}}
-\edsc
-\item[1\tre{}\sep(1\coe){}\sep?]~
-\bdsc
-\item[\kontra] genau 4er-\pi oder starke Hand mit \ka-L"ange
-\item[1\pik] mindestens 5er-\pi
-\item[2\kar] \nf
-\item[2\coe] \pf und Frage nach \co-Stopper
-\item[3\coe] Coeur-\conv{Splinter}
-\edsc
-\item[1\tre{}\sep(1\pik){}\sep?]~
-\bdsc
-\item[\kontra] genau 4er-\co oder starke Hand mit \ka- oder \co-L"ange
-\item[2\kar] \nf
-\item[2\coe] mindestens 5er-\co, \nf
-\item[2\pik] \pf und Frage nach \pi-Stopper
-\item[3\pik] Pik-\conv{Splinter}
-\edsc
-\edsc
-
 Die Reizung nach 1\kar-Er"offnung ist analog.
+
+\subsection{Nach \of-Er"offnung}
+\begin{compactitem}
+\item Alle \ofa-Hebungen sind schwach.  Falls \conv{Bergen Hebungen}
+  noch m"oglich sind (d.h. im Sprung), werden diese angewendet.
+\item 1\of{}\sep($x$){}\sep2\SA zeigt
+  \begin{compactitem}
+  \item wenn \conv{Bergen Hebungen} noch m"oglich sind: eine einladende
+    Hebung mit genau 3er-Anschluss,
+  \item sonst eine einladende Hebung mit 3er- oder 4er-Anschluss.
+  \end{compactitem}
+\item 1\of{}\sep(\kontra){}\sep2\SA zeigt
+  \begin{compactitem}
+    \item eine einladende Hebung mit genau 3er-Anschluss oder
+    \item eine partieforcierende Hebung.
+  \end{compactitem}
+Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
+\item Der \conv{"Uberruf} der gegnerischen Farbe zeigt eine
+  partieforcierende Hand mit Anschluss in der \ofa
+  (1\of{}\sep(1\anybid){}\sep2\anybid{} oder 1\of{}\sep(2\anybid){}\sep3\anybid{}).
+\end{compactitem}
+
+\subsubsection*{Details}
 
 \bdsc
 \item[1\coe{}\sep(1\pik){}\sep?]~
-\bdsc
-\item[\kontra] beide \ufa \conv{(Negativkontra)}
-\item[2\tre/\ka] 10\pl FP, 4\pl{}er-L"ange, forcierend
-\item[2\coe] ab 0 FP, 3er-Anschluss
-\item[2\pik] \pf mit 3\pl{}er-Anschluss
-\item[2\SA] \inv mit \emph{genau} 3er-Anschluss
-\item[3\tre/\ka] weiterhin \conv{Bergen Hebungen}
-\item[3\pik] beliebiger Single-\conv{Splinter} (wie in ungest"orter
-  Reizung)
-\edsc
+  \bdsc
+  \item[\kontra] beide \ufa \conv{(Negativkontra)}
+  \item[2\tre/\ka] 10\pl FP, 4\pl{}er-L"ange, forcierend
+  \item[2\pik] \pf mit 3\pl{}er-Anschluss
+  \item[2\SA] \inv mit \emph{genau} 3er-Anschluss
+  \item[3\tre/\ka] weiterhin \conv{Bergen Hebungen}
+  \item[3\pik] beliebiger Single-\conv{Splinter} (wie in ungest"orter
+    Reizung)
+  \edsc
 \item[1\coe{}\sep(2\kar){}\sep?]~
-\bdsc
-\item[\kontra] \conv{Negativ} oder stark mit \pik-L"ange
-\item[2\pik] \nf (denn das 1\pik-Gebot war nicht mehr frei)
-\item[2\SA] \inv mit 3er- oder 4er-Anschluss
-\item[3\tre] \nat, forcing
-\item[3\kar] \pf mit 3\pl{}er-Anschluss
-\edsc
+  \bdsc
+  \item[\kontra] \conv{Negativ} oder stark mit \pik-L"ange
+  \item[2\pik] \nf (denn das 1\pik-Gebot war nicht mehr frei)
+  \item[2\SA] \inv mit 3er- oder 4er-Anschluss
+  \item[3\tre] \nat, forcing
+  \item[3\kar] \pf mit 3\pl{}er-Anschluss
+  \edsc
+\item[1\pik{}\sep(2\coe){}\sep?]~
+  \bdsc
+  \item[2\SA] \inv mit 3\pl{}er-Anschluss
+  \item[3\coe] \pf mit 3\pl{}er-Anschluss
+  \item[3\pik] schwache Hebung
+  \item[3\SA] Chicane-Splinter (!)
+  \item[4\coe] \co-Splinter
+  \edsc
+\item[1\coe{}\sep(2\pik){}\sep?]~
+  \bdsc
+  \item[3\pik] \pf mit 3\pl{}er-Anschluss
+  \item[3\SA] Chicane oder Single \pi (!)
+  \item[4\pik] EKCB
+  \edsc
 \edsc
 
-Alle "ubrigen Gebote unterscheiden sich nicht von einer ungest"orten
-Reizung (\conv{Fit Jumps}, \conv{Inverted Minors}, \conv{Weak Jumps}).
+\subsubsection*{Beispiele}
+\begin{description}
+\item[1\pik{}\sep(2\kar){}\sep2\pik] zeigt weiterhin 6-9 FP mit
+  3er-Anschluss.
+\item[1\coe{}\sep(1\pik){}\sep3\kar] ist weiterhin \conv{Bergen} und zeigt
+  7-9 FP mit 4er-Anschluss.
+\item[1\coe{}\sep(2\tre){}\sep3\kar] ist nat"urlich und forcierend.
+  (\conv{Bergen Hebungen} sind nicht mehr im Sprung m"oglich.)
+\item[1\pik{}\sep(X){}\sep2\SA] zeigt 3er-\pi-Anschluss, einladend oder
+  eine Hand ab 12 FP mit 4er- oder besserem Anschluss (die w"are
+  zu stark f"ur \conv{Bergen}).
+\item[1\pik{}\sep(2\kar){}\sep2\SA] zeigt 3er- oder 4er-\pi-Anschluss und
+  ist einladend (3\kar w"are partieforcierend; \conv{Bergen} kann
+  nicht mehr gereizt werden um die einladende Hand mit 4er-\pi{}
+  zu zeigen).
+\item[1\coe{}\sep(1\pik){}\sep2\pik] zeigt eine partieforcierende Hand mit
+  Coeur-Anschluss.
+\end{description}
+
+\subsection{Informationskontra vom Gegner}
+
+Nach Info-\kontra vom Gegner gelten die gleichen Prinzipien.
+\begin{compactitem}
+\item Eine neue Farbe auf der ist 2er-Stufe nonforcing.
+\item Weiterhin Inverted und Bergen.
+\item 2\SA verspricht nach \ofa-Er"offnung eine mindestens einladende Hand mit
+  3\pl{}er-Anschluss (\emph{kein} Stenberg).
+\item Rekontra verspricht Punktemajorit"at und verneint einen Fit in der
+  er"offneten Farbe.
+\end{compactitem}
 
 \subsection{Der Gegner reizt einen Zweif"arber \conv{(Unusual over
     Unusual)}}
 
 Reizt der Gegner "uber unsere 1\anybid-Er"offnung einen Zweif"arber, bei
-dem beide Farben bekannt sein m"ussen, so verwenden wir die Konvention
+dem beide Farben bekannt sind, so verwenden wir die Konvention
 \conv{Unusual over Unusual}:
 \begin{compactitem}
 \item \conv{Kontra} zeigt Straf-Bereitschaft f"ur mindestens eine der
@@ -1380,9 +1411,7 @@ einen Stopper in der "uberrufenen Farbe:
 \subsection{Nach \sa-Er"offnung}
 
 \bdsc
-\item[1\SA{}\sep(?)] ~
-  \bdsc
-  \item[(\kontra)] ~
+\item[1\SA{}\sep(\kontra)] Gegner kontriert 1\SA
     \bdsc
     \item[\rekontra] \xferto \tr oder schwach mit beiden \ofa zu viert.
       Auf das 2\tre-\rel passt \aw mit \tr oder reizt 2\kar f"ur die \ofa.
@@ -1390,13 +1419,20 @@ einen Stopper in der "uberrufenen Farbe:
     \item[pass] \bal, schwach oder stark. \eo muss \rekontra reizen, \aw
       passt mit der starken Hand und l"auft mit der schwachen raus.
     \edsc
-  \item[(2\,$x$)] \ra \conv{\Index{Lebensohl}} (\ref{lebensohl})
-  \edsc
-\item[1\SA{}\sep{}(p){}\sep2\tre{}\sep(\kontra); ?]~
+\item[1\SA{}\sep(2\anybid)] Gegner reizt eine Farbe \\
+    \ra \conv{\Index{Lebensohl}} (\ref{lebensohl})
+\item[1\SA{}\sep2\tre{}\sep(\kontra);] Gegner kontriert Stayman
     \bdsc
+    \item[pass] verneint 4er-\ofa, 5er-\tr, 5er-\ka
     \item[\rekontra] 5er-\tr
     \item[2\kar] 5er-\ka
-    \item[pass] verneint 4er-\ofa, 5er-\tr, 5er-\ka
+    \item[2\of] 4er-\ofa
+    \edsc
+\item[1\SA{}\sep2\kar/\co{}\sep(\kontra);] Gegner kontriert \xferto \ofa
+    \bdsc
+    \item[pass] 2er \of
+    \item[2\coe/\pi] 3\pl{}er \of
+    \item[\rekontra] gutes 4er mit Werten in der Transferfarbe
     \edsc
 \edsc
 
@@ -1507,7 +1543,7 @@ erforderlich sind, zwischenreizt, so gilt:
   \edsc
 \edsc
 
-Alle anderen Gebote zeigen die starke Variante der Er"offung.
+Alle anderen Gebote zeigen die starke Variante der Er"offnung.
 
 \subsection{2\kar: Weak Two in \co oder Benjamin}
 
@@ -1771,6 +1807,8 @@ Das Schema nach [2\pik{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
 }
 
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Sperrer"offnungen h"oherer Stufe}
 
 \subsection{3 in Farbe}
@@ -1830,6 +1868,7 @@ einer Nebenfarb-Kontrolle (K"onig/Ass). Partner reizt entweder 4 in der \ofa
 oder \emph{Erstrunden}kontrollen, wenn er Schlemminteresse hat.
 
 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Die Gegenreizung\label{gegenreizung}}
 
 \subsection{Informationskontra}
@@ -1913,8 +1952,9 @@ vorhanden sein; die Werte sollen sich in den langen Farben befinden.
 \item[(1\of){}\sep3\tre] \aofa und \ka
 \edsc
 
-Nach \ofa-Er"offung gibt es somit keinen schwachen Sprung in \tr! Eine
+Nach \ofa-Er"offnung gibt es keinen schwachen Sprung in \tr! Eine
 vorbereitende 1\tre-Er"offnung wird als nat"urlich behandelt.
+Nach \ufa-Er"offnung wird der Zweif"arber mit \pi und \aufa nat"urlich gereizt.
 
 \subsection{Gegenreizung gegen 1\SA (\Index{Multi-Landy})}
 
@@ -1939,6 +1979,7 @@ vorbereitende 1\tre-Er"offnung wird als nat"urlich behandelt.
 \edsc
 
 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Konventionen zum System}
 
 \subsection{Long Suit Trial Bids}
@@ -1972,30 +2013,6 @@ niedrigste freie Farbe, sofern es noch eine gibt, das 2\SA-Trial Bid.
   allgemeines Trial Bid (Competitive \kontra/Full Value \kontra;
   Gegnerfarbe direkt unter uns)
 \end{description}
-
-\subsection{Checkback-Stayman}
-
-Der \aw benutzt diese Konvention mit einer 5er \ofa und einer mindestens
-einladenden Hand, wenn der \eo 1\SA zur"uckgeboten hat; der \aw m"ochte
-wissen, ob der \eo einen 3er-Anschluss hat.
-
-\bdsc
-\item[1\ufa{}\sep1\pik; 1\SA{}\sep2\tre] Checkback-Stayman
- \bdsc
- \item[2\kar] 12-13\bad{} FP, kein 3er-\pi, kein 4er-\co
-  \bdsc
-  \item[2\coe] 10/11 FP, 5/5 in \co und \pi, \nf
-  \item[2\pik] 9-11 FP, 6er-\pi, \nf
-  \item[2\SA] 11/12 FP, 5er-\pi, \nf
-  \item[3\coe] 5/5 in \co und \pi, \slamint
-  \edsc
- \item[2\coe] 12-13\bad{} FP, 4er-\co, 3er-\pi m"oglich
- \item[2\pik] 12-13\bad{} FP, 3er-\pi
- \item[2\SA]  13\good{}-14 FP, kein 3er-\pi, kein 4er-\co
- \item[3\ufa] 13\good{}-14 FP, 3er-\pi, gute \ufa
- \item[3\pik] 13\good{}-14 FP, 3er-\pi
- \edsc
-\edsc
 
 \subsection{Dritte Farbe Forcing (DFF)}
 
@@ -2102,7 +2119,7 @@ Wir spielen \Index{\conv{Lebensohl}} in folgenden Situationen:
 \begin{compactitem}
 \item nach \sa-Er"offnung des Partners und Farbgegenreizung der Gegner
  (\conv{Lebensohl} \emph{mit} Stopper)
-\item nach \Index{Weak Two}-Er"offung des Gegners und Informationskontra des Partners
+\item nach \Index{Weak Two}-Er"offnung des Gegners und Informationskontra des Partners
 \item nach \ofa-Er"offnung des Gegners, Informationskontra des Partners und
  \ofa-Hebung durch den anderen Gegner (siehe auch \conv{Good Bad
    Notrump}, Seite~\pageref{goodbadnt}).
@@ -2283,7 +2300,7 @@ S"ud \\
   pass & 3\tre & pass & pass
 \end{bidding}}
 
-Ein direktes 3\tre-Gebot von S"ud h"atte eine st"arkere Er"offung gezeigt.
+Ein direktes 3\tre-Gebot von S"ud h"atte eine st"arkere Er"offnung gezeigt.
 
 S"ud \\
 \handwithdesc{K65}{A74}{D1093}{873}{%
@@ -2332,6 +2349,7 @@ S"ud \\
 \end{bidding}}
 
 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Schlemmkonventionen}
 
 \subsection{Mixed Cue Bids}
@@ -2480,11 +2498,15 @@ Eine 5\SA-Reizung \emph{im Sprung} fordert den Partner auf, die Anzahl der
 Topfiguren anzugeben: 0, 1, 2, 3.
 
 \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ausspiele und Markierungen}
 
 \subsection{Ausspiele gegen Farbkontrakte}
 
-3./5.-h"ochste. Im weiteren Verlauf des Spiels zeigt eine kleine Karte eine
+3./5.-h"ochste, h"ochste der Sequenz, hoch vom Double.
+Von \cards{AK} wird \cards{K} ausgespielt.
+
+Im weiteren Verlauf des Spiels zeigt eine kleine Karte eine
 Figur, eine hohe hingegen zeigt keine Werte.
 
 \subsection{Ausspiele gegen \sa-Kontrakte}
@@ -2506,6 +2528,7 @@ Erster freier Abwurf im \sa-Kontrakt ist Lavinthal. In Farbkontrakten wird
 direkt markiert.
 \raggedbottom
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{appendix}
 %\newpage
 \section{Glossar}
@@ -2517,10 +2540,10 @@ $n$\pl & mindestens $n$ Punkte/Karten\\
 \ufa, \ofa & Unterfarbe(n), Oberfarbe(n)\\
 \aufa, \aofa & andere \ufa, \ofa\\
 1\anybid, 2\anybid, \ldots & beliebiges Gebot 1 in Farbe, 2 in Farbe usw.\\
-\bal & ausgeglichen (4333, 4432, 5332)\\
-\unbal & nicht ausgeglichen \\
 5332 & beliebige 5332-Verteilung\\
 5-3-3-2 & genau 5\pik 3\coe 3\kar 2\tre\\
+\bal & ausgeglichen (4333, 4432, 5332)\\
+\unbal & nicht ausgeglichen \\
 \aw & Antwortender \\
 \inv & einladend \\
 \eo & Er"offner \\
@@ -2538,39 +2561,51 @@ $n$\pl & mindestens $n$ Punkte/Karten\\
 \end{tabularx}%
 \end{flushleft}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{"Anderungen am System}
 
 Folgende "Anderungen sind m"oglich:
 %
 \begin{compactitem}
-\item 1\ofa{}\sep2\tre: nat"urlich
+\item 1\ofa{}\sep2\tre: nat"urlich \\
+ 2\kar zeigt dann eine 4\pl{}er-L"ange
 \end{compactitem}
+
+Die folgenden Konventionen wurden aus dem System entfernt.
 
 \subsection*{Checkback Stayman}
 
-Checkback Stayman wurde durch den 2\tre/2\SA-Transfer (\ra~\ref{1sarebid})
-ersetzt. (Mai 2005)
+\emph{Checkback Stayman wurde durch den 2\tre/2\SA-Transfer (\ra~\ref{1sarebid})
+ersetzt. (Mai 2005)}
 
-Das vorher benutzte System mit Checkback-Stayman hatte eine L"ucke, wenn der Antwortende
-eine starke Hand mit 4er-\ofa und 5er-\ufa hatte, die Er"offungsfarbe war.
+\emph{Das vorher benutzte System mit Checkback-Stayman hatte eine L"ucke, wenn der Antwortende
+eine starke Hand mit 4er-\ofa und 5er-\ufa hatte, die Er"offungsfarbe war.}
+
+Der \aw benutzt diese Konvention mit einer 5er \ofa und einer mindestens
+einladenden Hand, wenn der \eo 1\SA zur"uckgeboten hat; der \aw m"ochte
+wissen, ob der \eo einen 3er-Anschluss hat.
 
 \bdsc
-\item[1\tre{}\sep1\pik; 1\SA] 12-14 FP \bal
+\item[1\ufa{}\sep1\pik; 1\SA{}\sep2\tre] Checkback-Stayman
+ \bdsc
+ \item[2\kar] 12-13\bad{} FP, kein 3er-\pi, kein 4er-\co
   \bdsc
-  \item[2\tre] \conv{Checkback Stayman}
-  \item[2\kar] 4er-\pi, 5\pl{}\kar, zum Spielen
-  \item[2\coe] 5/4 \pi{}+\co, zum Spielen oder ausbessern
-  \item[2\pik] 5er-\pi, schwach
-  \item[2\SA] \nat
-  \item[3\mi] \nat, \pf
-  \item[3\coe] 5/4 \pi{}+\co, \pf
-  \item[3\pik] 6er-\pi, Schlemm-Interesse
+  \item[2\coe] 10/11 FP, 5/5 in \co und \pi, \nf
+  \item[2\pik] 9-11 FP, 6er-\pi, \nf
+  \item[2\SA] 11/12 FP, 5er-\pi, \nf
+  \item[3\coe] 5/5 in \co und \pi, \slamint
   \edsc
+ \item[2\coe] 12-13\bad{} FP, 4er-\co, 3er-\pi m"oglich
+ \item[2\pik] 12-13\bad{} FP, 3er-\pi
+ \item[2\SA]  13\good{}-14 FP, kein 3er-\pi, kein 4er-\co
+ \item[3\ufa] 13\good{}-14 FP, 3er-\pi, gute \ufa
+ \item[3\pik] 13\good{}-14 FP, 3er-\pi
+ \edsc
 \edsc
 
 \subsection*{Weak Two, 2\coe}
 
-Vor Mai 2005 war PKCA in den Ogust-Sequenzen immer mindestens 4\tre.
+\emph{Vor Mai 2005 war PKCA in den Ogust-Sequenzen immer mindestens 4\tre.}
 
 Die K"urzenfrage nach 2\coe wurde wie folgt beantwortet:
 
