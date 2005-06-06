@@ -1,0 +1,330 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% kibitzer.sty
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\def\fileversion{v1.0}
+\def\filename{kibitzer}
+\def\filedate{16 Apr 95}
+%	kibitzer.sty
+%
+%	macros for LaTeX 2e to make it easier to typeset bridge articles
+%
+%	this style file requires the package bridge-i, which for 
+%       itself is an extension to 'bridge' style by J.L. Braams (thanks again)
+%
+%	written by Rene Steiner (steiner@uni-duesseldorf.de)
+%	and	   Thomas Hof   (thof@physik.uni-osnabrueck.de)
+%
+%	if there are any bug reports, please send them to BOTH authors
+%
+%
+% identification part
+%
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{kibitzer}[1995/04/16 v1.0 Typesetting bridge]
+%
+% initial code
+%
+\typeout{*** Package kibitzer v1.0 1995/04/16 ***}
+%
+% setting international default values
+%
+\def\bcdealer{dealer}
+\def\bcvulnerable{vulnerable}
+\def\bcawards{Awards}
+%
+% Declaration of options
+%
+\DeclareOption{german}
+{
+  \gdef\bcdealer{Teiler}%
+  \gdef\bcvulnerable{in Gefahr}%
+  \gdef\bcawards{Bewertung}%
+}
+\DeclareOption{dutch}
+{    
+  \gdef\bcdealer{gever}%
+  \gdef\bcvulnerable{kwetsbar}%
+  \gdef\bcawards{Waarderingen}%
+}
+\DeclareOption{francais}
+{
+  \gdef\bcdealer{Donneur}%
+  \gdef\bcvulnerable{vuln\'erable}%
+  \gdef\bcawards{Cotation}%
+}
+%\DeclareOption*{}
+%
+%
+% Execution of options
+%
+\ProcessOptions
+%
+% Package loading 
+%
+\RequirePackage{bridge-i}[1995/04/16]
+%
+\newlength{\c@lumnwidth}
+%
+\AtBeginDocument%
+{%
+  \c@lumnwidth 0.5\textwidth%
+  \advance\c@lumnwidth by -0.5\columnsep%
+}
+%
+% commands for declaring play problems
+%
+\newcommand\playproblemNS[1]%
+{%
+  \noindent\showNSgame%
+  \hfill%
+  \begin{minipage}{\bidwidth}%
+    \begin{bidding}%
+      #1%
+    \end{bidding}%
+  \end{minipage}%
+  \medskip%
+}
+%
+\newcommand\playproblemNSpair[1]%
+{%
+  \noindent\showNSgame%
+  \hfill%
+  \begin{minipage}{0.55\bidwidth}%
+    \begin{biddingpair}%
+      #1%
+    \end{biddingpair}%
+  \end{minipage}%
+  \hfill%
+  \medskip%
+}
+%
+\newcommand\playproblemEW[1]%
+{%
+  \centerline{\showEWgame}%
+  \bigskip%
+  \centerline%
+  {%
+    \begin{bidding}%
+      #1%
+    \end{bidding}%
+  }%
+}
+%
+\newcommand\playproblemEWpair[1]%
+{%
+  \centerline{\showEWgame}%
+  \bigskip%
+  \centerline%
+  {%
+    \begin{biddingpair}%
+      #1%
+    \end{biddingpair}%
+  }%
+}
+%
+\newcommand\playproblemNE[1]%
+{%
+  \centerline{\showNEgame}%
+  \bigskip%
+  \centerline%
+  {%
+    \begin{bidding}%
+      #1%
+    \end{bidding}%
+  }%
+}
+%
+\newcommand\playproblemNEpair[1]%
+{%
+  \noindent\showNEgame%
+  \hfill%
+  \begin{minipage}{0.55\bidwidth}%
+    \begin{biddingpair}%
+      #1%
+    \end{biddingpair}%
+  \end{minipage}%
+  \medskip%
+}
+%
+\newcommand\playproblemNW[1]%
+{%
+  \centerline{\showNWgame}%
+  \bigskip%
+  \centerline%
+  {%
+    \begin{bidding}%
+      #1%
+    \end{bidding}%
+  }%
+}
+%
+\newcommand\playproblemNWpair[1]%
+{%
+  \bgroup%
+    \parindent 0mm%
+    \showNWgame%
+    \hfill%
+    \begin{minipage}{0.55\bidwidth}%
+      \begin{biddingpair}%
+        #1%
+      \end{biddingpair}%
+    \end{minipage}%
+    \medskip%
+  \egroup%
+}
+%
+\newcommand\biddingproblem[6]%
+{%
+  \noindent%
+  \ifx#1\empty%
+  \else%
+    #1\ %
+  \fi%
+  \vhand{#2}{#3}{#4}{#5}%
+  \hfill%
+  \begin{bidding}%
+    #6%
+  \end{bidding}%
+}
+%
+\newcommand\biddingproblempair[6]%
+{%
+  \noindent%
+  \ifx#1\empty%
+  \else%
+    #1\quad%
+  \fi%
+  \vhand{#2}{#3}{#4}{#5}%
+  \hfill%
+  \begin{biddingpair}%
+    #6%
+  \end{biddingpair}%
+  \hfill%
+}
+%
+\newlength{\bc@tmpwidth}
+%
+\newcommand\bcproblem[5]%
+{%
+  \bgroup%
+    \parindent 0mm%
+    {\larger\textbf{#1}}\\*[1.6ex]%
+    #2 \bcdealer, #3 \bcvulnerable\\*[1.6ex]%
+    \ifx#4\empty%
+    \else%
+      #4\\*[2ex]%
+    \fi%
+%				save current \handwidth
+    \bc@tmpwidth \handwidth
+%				set local \handwidth to
+%				0.5 * (columnwidth - 1.1 * width of NESW-box)
+    \handwidth 0.5\c@lumnwidth
+    \advance\handwidth by -0.55\wd\NESW%
+    \showEWgame\\*[1.6ex]%
+%				restore original \handwidth
+    \handwidth \bc@tmpwidth%
+    {%
+      \textsl \bcawards:%
+      \settowidth{\bc@tmpwidth}{\bcawards:~~}%
+      \advance\bc@tmpwidth by -\c@lumnwidth%
+      \hfill%
+      \parbox[t]{-\bc@tmpwidth}{#5}%
+    }%
+    \bigskip%
+  \egroup%
+} 
+%
+%	list environment for list of meanings
+%
+\newenvironment{bclist}[1]%
+{%
+  \begin{list}{}%
+  {%
+    \settowidth{\labelwidth}{#1}%
+    \labelsep 0.5em%
+    \rightmargin 0mm%
+    \parsep 0mm%
+    \itemsep 0.2ex%
+    \partopsep 0ex%
+    \topsep 0mm%
+    \leftmargin\labelwidth%
+    \advance\leftmargin by \labelsep%
+  }%
+}%
+{%
+  \end{list}%
+}
+%
+\newcommand\Meaning[2]%
+{%
+  \item[$#1)$] #2%
+}
+%
+\newcommand\al[1]%
+{%
+  $^{#1}$%
+}
+%
+\newcommand\bcbiddingpair[4]%
+{%
+  \bgroup%
+    \parindent 0mm%
+    \tabcolsep 0.8\tabcolsep%
+    \begin{tabular}{ll}%
+      \hphantom{3\,SA$^{10}$} & \hphantom{3\,SA$^{10}$}\\%
+      #1                      & #2\\%
+    \end{tabular}%
+    \\[-0.4ex]%
+    \rule{\c@lumnwidth}{0.4pt}\\%
+    \begin{tabular}[t]{ll}%
+      #3\\%
+      \hphantom{3\,SA$^{10}$}   & \hphantom{3\,SA$^{10}$}%
+    \end{tabular}
+    \hfill%
+    \settowidth{\bc@tmpwidth}{3\,SA$^{10}$}%
+    \advance\bc@tmpwidth by \bc@tmpwidth%
+    \advance\bc@tmpwidth by 5.\tabcolsep%
+    \advance\bc@tmpwidth by -\c@lumnwidth%
+    \begin{minipage}[t]{-\bc@tmpwidth}%
+      \footnotesize%
+      \begin{bclist}{10)}%
+        #4%
+      \end{bclist}%
+    \end{minipage}%
+  \egroup%
+}
+%
+\newcommand\bcbidding[4]%
+{%
+  \bgroup%
+    \parindent 0mm%
+    \tabcolsep 0.8\tabcolsep%
+    \bc@tmpwidth 0.25\c@lumnwidth%
+    \advance\bc@tmpwidth by -2\tabcolsep%
+    \begin{tabular}{llll}%
+      \rule{\bc@tmpwidth}{0pt} & \rule{\bc@tmpwidth}{0pt} &%
+      \rule{\bc@tmpwidth}{0pt} & \rule{\bc@tmpwidth}{0pt}\\%
+      #1                       & \textsl{\N@rth} &% 
+      #2                       & \textsl{\S@uth}\\%
+    \end{tabular}%
+    \\[-0.4ex]%
+    \rule{\c@lumnwidth}{0.4pt}\\%
+    \begin{tabular}[t]{llll}%
+      #3\\%
+      \rule{\bc@tmpwidth}{0pt} & \rule{\bc@tmpwidth}{0pt} &%
+      \rule{\bc@tmpwidth}{0pt} & \rule{\bc@tmpwidth}{0pt}\\%
+    \end{tabular}%
+    \\%
+    \vspace{-2.6ex}%
+    {%
+      \footnotesize%
+      \begin{bclist}{10)}%
+        #4%
+      \end{bclist}%
+    }%
+  \egroup%
+}
+%
+%	That's all folks
+\endinput
