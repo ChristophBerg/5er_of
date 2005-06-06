@@ -1,9 +1,21 @@
+% DIN A4, zweispaltig
+%
 \documentclass[11pt,german,twocolumn,twoside]{scrartcl}
 \usepackage[a4paper,vscale=0.94,includehead,
   %lmargin=10mm,rmargin=15mm, % zum Lochen
   hmargin=10mm, % zum Abheften
 ]{geometry}
-%\usepackage[a5paper,vscale=0.94,hscale=0.9,includeheadfoot]{geometry}
+
+% DIN A5, zweispaltig
+%
+%\documentclass[8pt,german,twocolumn,twoside]{scrartcl}
+%\usepackage[a5paper,vscale=0.94,includehead,hmargin=5mm]{geometry}
+
+% DIN A6, einspaltig
+%
+%\documentclass[8pt,german,twoside]{scrartcl}
+%\usepackage[a6paper,vscale=0.94,includehead,hmargin=5mm]{geometry}
+
 \usepackage{kibitzer}
 \usepackage{babel}
 \usepackage{color}
@@ -37,10 +49,10 @@
 \definecolor{SpColor}{rgb}{0.0,0.0,0.7}
 %
 % Farben wie in der Biet-Box
-\renewcommand{\Cl}{{\color{ClColor}{\clubs}}}
-\renewcommand{\Di}{{\color{DiColor}{\sdiamonds}}}
-\renewcommand{\He}{{\color{HeColor}{\shearts}}}
-\renewcommand{\Sp}{{\color{SpColor}{\spades}}}
+%\renewcommand{\Cl}{{\color{ClColor}{\clubs}}}
+%\renewcommand{\Di}{{\color{DiColor}{\sdiamonds}}}
+%\renewcommand{\He}{{\color{HeColor}{\shearts}}}
+%\renewcommand{\Sp}{{\color{SpColor}{\spades}}}
 %
 % Schwarz-Rot
 %\renewcommand{\Cl}{\clubs}
@@ -1522,29 +1534,25 @@ des Antwortenden ist zum Spielen.
   \edsc
 \edsc
 
-\minisec{Zwischenreizung nach 2\SA-Antwort}
+\minisec{Zwischenreizung nach 2\SA-Relais}
 
-Wenn der Gegner nach einer 2\SA-Antwort, nach der Stufenantworten des Er"offners
+Wenn der Gegner nach einem 2\SA-Relais, nach dem Stufenantworten des Er"offners
 erforderlich sind, zwischenreizt, so gilt:
 
 \bdsc
 \item[2\tre{}\sep2\SA;] ~
   \bdsc
-  \item[(\kontra)]
+  \item[(\kontra)]~
     \bdsc
-    \item[pass] erste Stufe (ROPI)\index{DOPI-ROPI}
+    \item[pass] erste Stufe\index{DOPI-ROPI}
     \item[\rekontra] zweite Stufe
-    \item[3\tre \dots] dritte Stufe \dots
+    \item[3\tre] dritte Stufe
+    \item[\ldots]
     \edsc
-  \item[(2\,Farbe)]
-    \bdsc
-    \item[pass] erste Stufe (DOPI)
-    \item[\kontra \dots] zweite Stufe \dots
-    \edsc
-  \item[(3\,Farbe)]
+  \item[(3\anybid)]~
     \bdsc
     \item[pass] schlechtes Weak Two
-    \item[\kontra] gutes Weak Two\footnote{Vielleicht gibt's was Besseres, keine Ahnung.}
+    \item[\kontra] gutes Weak Two\footnote{vielleicht gibt es etwas Besseres, keine Ahnung}
     \edsc
   \edsc
 \edsc
