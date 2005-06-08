@@ -2,8 +2,8 @@
 %
 \documentclass[11pt,german,twocolumn,twoside]{scrartcl}
 \usepackage[a4paper,vscale=0.94,includehead,
-  %lmargin=10mm,rmargin=15mm, % zum Lochen
-  hmargin=10mm, % zum Abheften
+%rmargin=10mm,lmargin=15mm, % zum Lochen
+hmargin=10mm, % zum Abheften
 ]{geometry}
 
 % DIN A5, zweispaltig
@@ -14,18 +14,21 @@
 % DIN A6, einspaltig
 %
 %\documentclass[8pt,german,twoside]{scrartcl}
-%\usepackage[a6paper,vscale=0.94,includehead,hmargin=5mm]{geometry}
+%\usepackage[a6paper,vmargin=1mm,includehead,hmargin=1mm]{geometry}
+%\usepackage{times}
+%\usepackage{savetrees}
 
-\usepackage{kibitzer}
-\usepackage{babel}
 \usepackage{color}
+
+\usepackage{babel}
 \usepackage{fancyhdr}
 \usepackage{tabularx}
 %\usepackage{times}
-\usepackage{calc}
 %\usepackage{german}
+\usepackage{calc}
 \usepackage{suitsymbols}
 \usepackage{makeidx}
+\usepackage{kibitzer}
 \usepackage{xspace}
 
 % L"angen
@@ -158,7 +161,7 @@
 }
 % ... mit fester Breite
 \newcommand\bidinsfixed[1]{%
-\begin{tabularx}{\columnwidth}{p{2.5em}p{2.5em}Y}%
+\begin{tabularx}{\columnwidth}{p{3em}p{2.5em}Y}%
 #1
 \end{tabularx}%
 }
@@ -210,10 +213,10 @@
 % }
 
 % Kasten mit Rahmen
-\setlength{\fboxsep}{2ex}
+\setlength{\fboxsep}{1.5ex}
 \newcommand\notebox[1]%
 {%
-\fbox{\parbox{\columnwidth - 4ex}{#1}}%
+\fbox{\parbox{\columnwidth - 3ex}{#1}}%
 }
 
 % Index
@@ -306,7 +309,7 @@ Seite \pageref{zfregel}.
         &       & \ra 2\SA = \conv{\Index{Ogust}\footnote{\mini/\maxi entsprechend angepasst}} \\[1ex]
 2\SA    & 2-6   & 5\pl{}er-\tr \conv{(Inverted Spezial)}\\
 3\tre	& 7-9	& 5\pl{}er-\tr \conv{(Inverted)}\\[1ex]
-3\kar/\co/\pi & 5-8 & gutes 7\pl{}er-\ka/\co/\pi \conv{(Weak Jump)}\footnote{vor Juni 2005 Fit Jump}\\[1ex]
+3\kar/\co/\pi & 5-8 & gutes 7\pl{}er-\ka/\co/\pi \conv{(Weak Jump)}\\[1ex]
 3\SA	& 13-15	& zum Spielen\\[1ex]
 4\tre	&	& \conv{KCB}\\[1ex]
 4\of	&	& zum Spielen
@@ -434,7 +437,7 @@ Die Reizung beginnt jeweils mit [1\tre{}\sep1\pik;~2\SA{}].
     \edsc
   \item[2\coe] 3-4-2-4
   \item[2\pik] 4-3-2-4
-  \item[2\SA] beliebige 4333-Verteilung\footnote{4er-\ka nicht möglich}
+  \item[2\SA] beliebige 4333-Verteilung\footnote{4er-\ka ist nicht m"oglich, da mit ausgeglichener Hand und 4er-\ka nicht 1\tre er"offnet wird.}
     \bdsc
       \item[3\tre] \rel, Frage nach 4er-Farbe
         \bdsc
@@ -542,11 +545,17 @@ und 2\SA, um m"oglichst viele Verteilungen zeigen zu k"onnen.
 \item starke H"ande "uber [2\SA{}\sep3\tre{}] oder direkt (mehrere Ausnahmen)
 \end{compactitem}
 
-Eine "Ubersicht bietet folgende Tabelle \emph{(NF = Nebenfarbe, OF =
-  Oberfarbe des Antwortenden)}:
+Nicht exakt reizen lassen sich nur
+\begin{compactitem}
+\item mindestens einladende Zweif"arber mit 5er-\ofa und 4er-\ufa sowie
+\item genau einladende Zweif"arber mit 4er-\ofa\ und 5er-\tr.
+\end{compactitem}
+
+\minisec{"Ubersicht}
+\emph{(NF = Nebenfarbe, OF = Oberfarbe des Antwortenden)}
 
 {\relsize{-2}%
-\begin{tabularx}{\columnwidth}{|l|l|Y|Y|Y|}
+\begin{tabularx}{\columnwidth}{|l|l|l|Y|Y|}
 \hline
 \multicolumn{2}{|c}{\textbf{Haltung}} & \multicolumn{3}{|c|}{\textbf{St"arke}}\\
 \hline
@@ -575,9 +584,11 @@ Eine "Ubersicht bietet folgende Tabelle \emph{(NF = Nebenfarbe, OF =
 \hline               
 \end{tabularx}}
 
+\minisec{Bietsequenzen}
 \bdsc
-\item[1\tre{}\sep1\pik; 1\SA] Direkt zeigt man:
+\item[1\tre{}\sep1\pik; 1\SA]~
 
+  Direkt zeigt man:
   \begin{compactitem}%
   \item[1] einladend, 5\pl{}er-\ka und 4er-\ofa
   \item[2] schwach, 5er-\pi, evtl. 4\pl{}er \co
@@ -590,7 +601,7 @@ Eine "Ubersicht bietet folgende Tabelle \emph{(NF = Nebenfarbe, OF =
   \item[2\tre] \pupto2\kar{} -- siehe unten
   \item[2\kar] 4er-\pi, 5\pl{}er-\ka, genau \inv (sonst \conv{Walsh}) (1)
   \item[2\coe] 5/4 \pi{}+\co, zum Spielen oder Ausbessern (2)
-  \item[2\pik] 5er-\pi, schwach (A2)
+  \item[2\pik] 5er-\pi, schwach (2)
   \item[2\SA] \pupto3\tre{} -- siehe unten
   \item[3\anybid] 5/5 \pi{}+\any{}\footnote{beliebige Farbe au"ser \pi}, \pf (3)
   \item[3\pik] 6er-\pi, leichtes \slamint{} (4)
@@ -641,52 +652,6 @@ Eine "Ubersicht bietet folgende Tabelle \emph{(NF = Nebenfarbe, OF =
     stark, 4/5 \pi{}+\ka (nach 1\kar-Er"offnung, 2b)
   \item[3\coe] stark, 5/4 \pi{}+\co (2c)
   \edsc
-\edsc
-
-% \minisec{Handtypen}
-% \begin{compactitem}
-% \item[\textbf{A}]
-%   \begin{compactitem}
-%   \item[1] einladend, 5\pl{}er-\ka und 4er-\ofa
-%   \item[2] schwach, 5er-\pi, evtl. 4\pl \co
-%   \item[3] \pf, 5/5
-%   \item[4] \slamint, 6er-\ofa
-%   \item[5] starker \ofa-Einf"arber mit Single
-%   \end{compactitem}
-% \item[\textbf{B}]
-%   \begin{compactitem}
-%   \item[1] schwach, 4/5\pl \ofa/\ka
-%   \item[2] mindestens \inv, 5er-\ofa, evtl. 4er-\ufa
-%   \item[3] genau \inv
-%     \begin{compactitem}
-%     \item[a] \bal, 4er-\ofa
-%     \item[b] 5/4-Zweif"arber mit beiden \ofa
-%     \item[c] 5/5-Zweif"arber
-%     \item[d] Einf"arber in einer \ofa
-%     \end{compactitem}
-%   \item[4] starker \ofa-Einf"arber mit Chicane
-%   \end{compactitem}
-% \item[\textbf{C}]
-%   \begin{compactitem}
-%   \item[1] schwach, 4/5\pl \ofa/\tr
-%   \item[2] stark:
-%     \begin{compactitem}
-%     \item[a] 4/5 \ofa/\tr nach 1\tre-Er"offnung
-%     \item[b] 4/5 \ofa/\ka nach 1\kar-Er"offnung
-%     \item[c] 5/4 \pi/\co nach 1\pik-Antwort
-%     \end{compactitem}
-%   \end{compactitem}
-% \end{compactitem}
-
-\minisec{Bietsequenzen}
-\bdsc
-\item[1\tre{}\sep1\pik; 1\SA] 12-14 FP \bal
-
-Nicht exakt reizen lassen sich nur
-\begin{compactitem}
-\item mindestens einladende Zweif"arber mit 5er-\ofa und 4er-\ufa sowie
-\item genau einladende Zweif"arber mit 4er-\ofa\ und 5er-\tr.
-\end{compactitem}
 \edsc
 
 \subsection{Bietsequenzen nach Revers-Reizung}
@@ -942,11 +907,10 @@ andere \ofa auf 3er-Stufe gezeigt
   \edsc
 \edsc
 
-\woreizung{
+\woreizung{%
 1\pik & & 2\kar\\
 3\tre & 5/4 in \pi{}+\tr, \pf & 3\kar & forcing\\
-3\SA  & \cstop & 4\SA & quantitativ
-}
+3\SA  & \cstop & 4\SA & quantitativ}
 
 \subsection{Weiterreizung nach [1\of{}\sep2\SA{}] \conv{(Stenberg)}\label{stenberg}}
 
@@ -1055,6 +1019,7 @@ Folgende Tabelle gibt eine "Ubersicht, wie beim Reizen von
 \ofa-Zweif"arbern (5/4\pl-Verteilung) zu verfahren ist -- jeweils mit
 schwachen, einladenden und starken H"anden.  Details siehe unten.
 
+\begin{center}
 \begin{tabular}[t]{|l|c|c|}
 \hline
 \textbf{St"arke} & \textbf{5/4} & \textbf{5/5}\\
@@ -1071,6 +1036,7 @@ schwach & Stayman & \conv{Transfer}\\
 Schlemm & \multicolumn{2}{c|}{Stayman, dann \conv{Smolen}}\\
 \hline
 \end{tabular}
+\end{center}
 
 \subsection{Schwache und einladende Stayman-Sequenzen}
 
@@ -1133,7 +1099,7 @@ Mit einladenden H"anden reizen wir eine 5/4-Verteilung in den \ofa
 \bdsc
   \item[1\SA{}\sep2\kar] \xferto\co
 
-  Ohne 4\pl{}er-\co f"uhr \eo den \xfer aus:
+  Ohne 4\pl{}er-\co f"uhrt der Er"offner den Transfer aus:
   \bdsc
     \item[2\coe] \xfer ausgef"uhrt
     \bdsc
@@ -1160,9 +1126,10 @@ Mit einladenden H"anden reizen wir eine 5/4-Verteilung in den \ofa
         \edsc
       \edsc
     \edsc
-
-    Mit 4\pl{}er-\co bricht \eo aus dem \xfer aus (\conv{Super Accept}).
-    4\kar wiederholt dann den \xfer.
+	\edsc
+  Mit 4\pl{}er-\co bricht der Er"offner aus dem Transfer aus (\conv{Super Accept}).
+  4\kar wiederholt dann den Transfer:
+  \bdsc
     \item[2\pik] 4er-\co, \maxi, \pi-Double
     \item[2\SA] 4er-\co, \maxi, \ka-Double oder 4-3-3-3
     \item[3\tre] 4er-\co, \maxi, \tr-Double
@@ -1475,7 +1442,7 @@ dem beide Farben bekannt sind, so verwenden wir die Konvention
 \item Neue Farben sind mindestens gute 5er-L"angen mit
   Partie-Werten
 \item Hebungen zeigen Trumpf-Anschluss mit mindestens
-  einladender Punktst"arke
+  einladender Punkt\-st"arke
 \end{compactitem}
 \end{compactitem}
 
@@ -1601,9 +1568,8 @@ Two n"aher zu beschreiben (Min Min Max Max). Danach kann der Antwortende mit der
 (au"ser der Trumpffarbe) nach K"urze fragen, wobei eine \sa-Antwort des
 Er"offners (meist 3\SA) eine K"urze in der Fragefarbe zeigt. Das Reizen der
 Trumpffarbe verneint eine K"urze. \emph{Nach Beantworten der K"urzenfrage} ist
-ist die n"achste Farbe\footnote{vor Mai 2005: 4\tre oder h"oher} (au"ser der
-Trumpffarbe auf Partiestufe) PKCA auf Basis der Weak Two-Farbe. Ein \sa-Gebot
-des Antwortenden ist zum Spielen.
+ist die n"achste Farbe (au"ser der Trumpffarbe auf Partiestufe) PKCA auf Basis
+der Weak Two-Farbe. Ein \sa-Gebot des Antwortenden ist zum Spielen.
 
 \bdsc
 \item[2\tre{}\sep2\SA;] Ogust\index{Ogust}
@@ -2159,7 +2125,7 @@ eine partieforcierende.
 Die Vierte Farbe auf der 2er-Stufe gereizt ist mindestens einladend, auf der
 3er-Stufe partieforcierend. Priorit"aten des Antwortenden:
 
-1. 3er-Anschluss in der \ofa des Partners zeigen:
+\textbf{1. 3er-Anschluss in der \ofa des Partners zeigen}
 \begin{description}
 \item[1\coe{}\sep1\pik;~2\tre{}\sep2\kar;~?]~
   \begin{description}
@@ -2168,7 +2134,7 @@ Die Vierte Farbe auf der 2er-Stufe gereizt ist mindestens einladend, auf der
   \end{description}
 \end{description}
 
-2. \sa mit Stopper in der vierten Farbe reizen:
+\textbf{2. \sa mit Stopper in der vierten Farbe reizen}
 \begin{description}
 \item[1\coe{}\sep1\pik;~2\tre{}\sep2\kar;~?]~
   \begin{description}
@@ -2178,10 +2144,13 @@ Die Vierte Farbe auf der 2er-Stufe gereizt ist mindestens einladend, auf der
   \end{description}
 \end{description}
 
-3. Verteilung zeigen
+\textbf{3. Verteilung zeigen}
 
 Nach [1\tre{}\sep1\kar; 1\coe{}\sep1\pik;] darf der Er"offner mit
-\hand{KD94}{AB42}{2}{AKB2} nicht in 4\pik springen, da 1\pik VFF war
+\begin{center}
+\hhand{KD94}{AB42}{2}{AKB2}
+\end{center}
+nicht in 4\pik springen, da 1\pik VFF war
 und nicht nat"urlich gewesen sein muss (wenn 1\pik nat"urlich war,
 zeigt dies eine Er"offnung wegen \conv{Walsh}). In dieser Situation
 ist das richtige Gebot 3\coe!
