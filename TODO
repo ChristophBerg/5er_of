@@ -3,11 +3,11 @@ TODO-Liste
 
 Aenderungen am Inhalt:
 
-* detaillierte Erklaerung von Lebensohl
-* Vereinbarung gegen Multi
+* detaillierte Erklaerung von Lebensohl (d.h. incl. Stayman-Ersatz)
 * detaillierte Definition der Gegenreizung
    - Fit-Spruenge in der Gegenreizung
 * noch mehr Beispiele, v.a. Beispielhaende
+* Wie geht es nach 2SA-Trf;Superaccept weiter? Wird Trf wiederholt?
 
 
 moegliche Aenderungen am System:
@@ -20,9 +20,15 @@ moegliche Aenderungen am System:
     - Zweifaerber
 * Major-Suit Checkback nach 2SA Rueckgebot des Eroeffners
 * Modified Wolff
+
+
+Weitere Vereinbarungen:
+
+* Vereinbarung gegen Multi
+* Vereinbarung gegen 2T/2K wie bei uns
 * gegen 2T stark, 2K stark
-* nach Stenberg 1OF-2NT; 3T als Minimum (nicht 4OF). 4OF
-  als Minimum sperrt AW aus
+* gegen Precision-2T, 2K (-> Bauer-System)
+  evtl. Bauer-1K
 
 
 Kompetitive Sequenzen weiter erlaeutern:
@@ -45,4 +51,10 @@ Kompetitive Sequenzen weiter erlaeutern:
   diese Farbe bitte *nicht* aus", pass bedeutet "Ausspiel ist OK").
   siehe http://www.pitbulls.shawbiz.ca/Lead%20Directing%20Doubles.htm
 * Kontras gg. Splinter zeigen Laenge und fordern zu Opfergebot auf
-* Zwischenreizung nach 2C-2SA
+* Zwischenreizung nach 2C-2SA (wann darf man "ueber 3SA hinaus?)
+
+
+Technischer Kram:
+
+* in den Biet-Beispielen fuegt latex oefters sinnlose Umbrueche ein,
+  wird scheinbar durch Symbole am Anfang verursacht
