@@ -1,4 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \iffalse comment
 % kibitzer.sty
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -6,18 +7,20 @@
 \def\filename{kibitzer}
 \def\filedate{16 Apr 95}
 %	kibitzer.sty
+% \fi
 %
 %	macros for LaTeX 2e to make it easier to typeset bridge articles
 %
 %	this style file requires the package bridge-i, which for 
 %       itself is an extension to 'bridge' style by J.L. Braams (thanks again)
 %
-%	written by Rene Steiner (steiner@uni-duesseldorf.de)
-%	and	   Thomas Hof   (thof@physik.uni-osnabrueck.de)
+%	written by Rene Steiner (rsteiner@freenet.de)
+%	and	   Thomas Hof   (bridge@twrh.de)
 %
 %	if there are any bug reports, please send them to BOTH authors
 %
 %
+%    \begin{macrocode}
 % identification part
 %
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
@@ -32,9 +35,11 @@
 \def\bcdealer{dealer}
 \def\bcvulnerable{vulnerable}
 \def\bcawards{Awards}
-%
+%    \end{macrocode}
+% \section{
 % Declaration of options
-%
+% }
+%    \begin{macrocode}
 \DeclareOption{german}
 {
   \gdef\bcdealer{Teiler}%
@@ -71,9 +76,11 @@
   \c@lumnwidth 0.5\textwidth%
   \advance\c@lumnwidth by -0.5\columnsep%
 }
-%
+%    \end{macrocode}
+% \section{
 % commands for declaring play problems
-%
+% }
+%    \begin{macrocode}
 \newcommand\playproblemNS[1]%
 {%
   \noindent\showNSgame%
@@ -234,9 +241,11 @@
     \bigskip%
   \egroup%
 } 
-%
+%    \end{macrocode}
+% \section{
 %	list environment for list of meanings
-%
+% }
+%    \begin{macrocode}
 \newenvironment{bclist}[1]%
 {%
   \begin{list}{}%
@@ -328,3 +337,4 @@
 %
 %	That's all folks
 \endinput
+%    \end{macrocode}

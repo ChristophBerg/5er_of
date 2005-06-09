@@ -1,5 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \iffalse comment
 % bridge-i.sty
+% \fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %
@@ -31,28 +33,35 @@
 %    example to BOTH authors (we are also only mailing each other because
 %    of the distance!):
 %
-%    Ren\'e Steiner  (steiner@uni-duesseldorf.de)          AND
-%    Thomas Hof      (thof@physik.uni-osnabrueck.de)
+%    Ren\'e Steiner  (rsteiner@freenet.de)          AND
+%    Thomas Hof      (bridge@twrh.de)
 %
 %
-% identification part
 %
+% \section{Options and Initialisation}
+%
+%    \begin{macrocode}
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{bridge-i}[1995/04/16 v1.0 Typesetting bridge]
+%    \end{macrocode}
 %
-% initial code
+%    \begin{macrocode}
 \typeout{*** Package bridge-i v1.0 1995/04/16 ***}  
+%    \end{macrocode}
 %
-% default macros for signs of positions
+% Default macros for signs of positions
 %
+%    \begin{macrocode}
 \def\N@{N}\def\E@{E}\def\S@{S}\def\W@{W}
 \def\N@rth{North}
 \def\S@uth{South}
 \def\E@st{East}
 \def\W@st{West}
+%    \end{macrocode}
 %
-% declaration of options
+% Declaration of options
 %
+%    \begin{macrocode}
 \DeclareOption{german}
 {
   \gdef\N@{N}\gdef\E@{O}\gdef\S@{S}\gdef\W@{W}
@@ -77,20 +86,27 @@
   \gdef\E@st{Est}
   \gdef\W@st{Ouest}
 }
+%    \end{macrocode}
 %
-%\DeclareOption*{}
 %
 %
-% execution of options
+% Execution of options
 %
+%    \begin{macrocode}
 \ProcessOptions
+%    \end{macrocode}
 %
-% package loading 
+% Package loading 
 %
+%    \begin{macrocode}
 \RequirePackage{latexsym}[1994/05/27 v2.1e]
 \RequirePackage{relsize}[1995/03/15]
+%    \end{macrocode}
+%
+% \section{Commands Overview}
 %
 % Commands to be used by the user:
+% \begin{verbatim}
 %    \bidders    \bidderspair   \dealer       \comment
 %    \hand       \northhand     \easthand     \southhand    \westhand
 %    \north      \east          \south        \west
@@ -99,41 +115,44 @@
 %    \showgame   \showNSgame    \showEWgame    \showNEgame   \showNWgame
 %    \hanghand   \hangNSgame
 %    \onesuit    \onesuitNS      \onesuitEW
-%
-%----------------------------------------------------------------------
+% \end{verbatim}
 % User environments
+% \begin{verbatim}
 %    bidding      biddingpair
-%
-%----------------------------------------------------------------------
+% \end{verbatim}
 % Commands which produce texts, or influence them
+% \begin{verbatim}
 %    \N@ \E@ \S@ \W@ \N@rth \E@st \S@uth \W@st
 %    \firstbidd@r \secondbidd@r \thirdbidd@r \fourthbidd@r
 %    \firstn@me \secondn@me \thirdn@me \fourthn@me \alln@me
 %    \bidderfont \namefont \gamesize
-%
-%----------------------------------------------------------------------
+% \end{verbatim}
 % Dimensions that control the layout
+% \begin{verbatim}
 %    \handwidth       The width of a hand in a game display
 %    \bidwidth        The width of the table with the bidding sequence
 %    \cardskip        The distance between subsequent playing cards
-%----------------------------------------------------------------------
+% \end{verbatim}
 % Internal macros
+% \begin{verbatim}
 %    \nh@nd    \eh@nd    \sh@nd    \wh@nd
 %    \hhand    \vhand    \h@nd     \h@nd@
 %    \cards    \suit     \c@rds    \c@rd
 %    \de@l     \c@mm     \@drop
-%----------------------------------------------------------------------
+% \end{verbatim}
 % Extra boxes
+% \begin{verbatim}
 %    \NESW           holds the center of a game display
-%----------------------------------------------------------------------
+% \end{verbatim}
+%
+% \section{Suits}
 %
 %    First we supply shorthands for the `five' colours used in the
-%    bridge bidding. The original commands were geared towards the dutch
-%    language. Here we define the 'international' version with english
+%    bridge bidding. The original commands were geared towards the Dutch
+%    language. Here we define the 'international' version with English
 %    shortcuts which are easier to use for nearly every bridge player.
 %
 %    \begin{macrocode}
-%
 \newcommand\Cl%
 {%
   $\clubsuit$%
@@ -158,8 +177,9 @@
 {%
 \textsc{S\kern-0.08emA}%
 }
-%
 %    \end{macrocode}
+%
+% \section{Dealer}
 %
 %    The macros for the four directions are defined above in the
 %    'declare options' part to support names according to the language
@@ -170,7 +190,6 @@
 %    the position of the dealer (for each direction we provide one macro)
 %
 %    \begin{macrocode}
-%
 \newcommand\dealerN%
 {%
   \gdef\firstbidd@r{\N@rth}%
@@ -199,18 +218,20 @@
   \gdef\thirdbidd@r{\E@st}%
   \gdef\fourthbidd@r{\S@uth}%
 }
-%
 %    \end{macrocode}
 %
-%    default is: North is dealer
+%    Default is: North is dealer
 %
+%    \begin{macrocode}
 \dealerN
+%    \end{macrocode}
+%
+% \section{Bidders}
 %
 %    Now we additionally define a macro to set names for the players
 %    of the board we are looking at.
 %
 %    \begin{macrocode}
-%
 \newcommand\bidders[4]%
 {%
   \gdef\firstn@me{#1}%
@@ -219,12 +240,13 @@
   \gdef\fourthn@me{#4}%
   \gdef\alln@me{#1#2#3#4}%
 }
-%
 %    \end{macrocode}
 %
-%    default is: no names, only positions
+%    Default is: no names, only positions
 %
+%    \begin{macrocode}
 \bidders{}{}{}{}
+%    \end{macrocode}
 %
 %    The last new command defines the names of a players pair only.
 %    For simplification we only set the first and the third name
@@ -233,17 +255,17 @@
 %    other pair.
 %
 %    \begin{macrocode}
-%
 \newcommand\bidderspair[2]%
 {%
   \bidders{#1}{}{#2}{}%
 }
-%
 %    \end{macrocode}
 %
+% \section{Hands and Game Display}
+%
 %    Again the following commands are substitutes of the originals
-%    which were geared towards the dutch language. We gave them
-%    international, i.e. english, names to make them easier to use.
+%    which were geared towards the Dutch language. We gave them
+%    international, i.e. English, names to make them easier to use.
 %    The purpose of these macros is to store the cards each player
 %    holds in private macros. In this way the same game can be shown
 %    again, with minor changes in two hands, without having to
@@ -254,7 +276,6 @@
 %    internal macro \verb+\h@nd+ when executed.
 %
 %    \begin{macrocode}
-%
 \newcommand\northhand[4]%
 {%
   \gdef\nh@nd{\h@nd{t}{#1}{#2}{#3}{#4}}%
@@ -287,7 +308,6 @@
 {%
   \gdef\wh@nd{\h@nd@{#1}}%
 }
-%
 %    \end{macrocode}
 %
 %    One could want to add some more information about a game. For
@@ -296,12 +316,10 @@
 %    information in the top left hand side of a game display.
 %
 %    \begin{macrocode}
-%
 \newcommand\dealer[1]%
 {%
   \gdef\de@l{#1}%
 }
-%
 %    \end{macrocode}
 %
 %    Some more information can be stored via \verb+\comment+, it will
@@ -309,12 +327,10 @@
 %    can specify the number of the hand or other info of special interest.
 %
 %    \begin{macrocode}
-%
 \newcommand\comment[1]%
 {%
   \gdef\c@mm{#1}%
 }
-%
 %    \end{macrocode}
 %
 %    The macros which store texts for later use have to be initialized.
@@ -323,7 +339,6 @@
 %    execute it immediately.
 %
 %    \begin{macrocode}
-%
 \newcommand\newgame%
 {%
   \gdef\de@l{}%
@@ -333,32 +348,29 @@
   \gdef\sh@nd{\h@nd{t}{}{}{}{}}%
   \gdef\wh@nd{\h@nd{c}{}{}{}{}}%
 }
-%
 %    \end{macrocode}
 %
 %    Now, clear the game
 %
+%    \begin{macrocode}
 \newgame
+%    \end{macrocode}
 %
 %    The following parameters control the layout of the game displays
 %    and bidding sequences.
 %
 %    \begin{macrocode}
-%
 \newdimen\cardskip    \setlength\cardskip{1.2pt}
 \newlength\handwidth  \setlength\handwidth{4.5pc}
 \newlength\bidwidth   \setlength\bidwidth{13pc}
-%
 \newcommand\bidderfont[1]%	the font used for the positions
 {%
   \textsl{#1}%
 }
-%
 \newcommand\namefont[1]%	the font used for the names of the players
 {%
   \textrm{#1}%
 }
-%
 %    \end{macrocode}
 %
 % \begin{macro}{\hand}
@@ -368,7 +380,6 @@
 %    bidding sequence. (This can be useful in bridge problems.)
 %
 %    \begin{macrocode}
-%
 \newcommand\hand[4]%
 {%
   \ifhmode%
@@ -377,7 +388,6 @@
     \vhand{#1}{#2}{#3}{#4}%
   \fi%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
@@ -386,9 +396,7 @@
 %    A control sequence to hold the size game displays are set in.
 %
 %    \begin{macrocode}
-%
 \let\gamesize\normalsize
-%
 %    \end{macrocode}
 %
 %  \end{macro}
@@ -397,13 +405,11 @@
 %    A control sequence to change the above one.
 %
 %    \begin{macrocode}
-%
 \newcommand\setgamesize[1]%
 {%
   \let\gamesize#1
   \renewNESW
 }
-%
 %    \end{macrocode}
 %
 %  \end{macro}
@@ -416,7 +422,6 @@
 %    for specification of the alignment of the tabular (defaults to 't').
 %
 %    \begin{macrocode}
-%
 \newcommand\showgame[1][t]%
 {%
   \par%
@@ -431,7 +436,6 @@
     \par%
   }%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
@@ -439,16 +443,13 @@
 % \begin{macro}{\showNSgame}
 %
 %    \begin{macrocode}
-%
 \newcommand\showNSgame[1][c]%
 {%
   \bgroup%
     \gamesize%
-%
 %    the following line is commented because of problems
 %    with \playproblemNS in kibitzer.sty
 %    \addtolength\handwidth{0.4\handwidth}%
-%
     \begin{tabular}[#1]{@{}l@{}}%
       \vtop{\hsize\handwidth\@parboxrestore\c@mm}\\
       \nh@nd\\
@@ -457,7 +458,6 @@
     \end{tabular}%
   \egroup%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
@@ -465,7 +465,6 @@
 % \begin{macro}{\showEWgame}
 %
 %    \begin{macrocode}
-%
 \newcommand\showEWgame[1][t]%
 {%
   \bgroup%
@@ -477,7 +476,6 @@
     \end{tabular}%
   \egroup%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
@@ -485,7 +483,6 @@
 % \begin{macro}{\showNEgame}
 %
 %    \begin{macrocode}
-%
 \newcommand\showNEgame[1][c]%
 {%
   \bgroup%
@@ -496,7 +493,6 @@
     \end{tabular}%
   \egroup%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
@@ -504,7 +500,6 @@
 % \begin{macro}{\showNWgame}
 %
 %    \begin{macrocode}
-%
 \newcommand\showNWgame[1][c]%
 {%
   \bgroup%
@@ -515,16 +510,16 @@
     \end{tabular}%
   \egroup%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
+%
+% \section{Bidding}
 %
 %    The bidding environment is defined using a tabular* environment.
 %    This way the width of the bidding sequence can be controled.
 %
 %    \begin{macrocode}
-%
 \newenvironment{bidding}[1][t]%
 {%
   \begin{tabular*}{\bidwidth}[#1]{@{}*{3}{l@{\extracolsep{0pt plus 1fil}}}l@{}}%
@@ -536,17 +531,13 @@
       \namefont{\thirdn@me}   & \namefont{\fourthn@me}\\%
     \fi%
 }
-%
 %    what's to be done at the end of the environment
-%
 {%
   \end{tabular*}%
 }
-%
 %    \end{macrocode}
 %
 %    \begin{macrocode}
-%
 \newenvironment{biddingpair}[1][t]%
 {%
   \begin{tabular*}{0.55\bidwidth}[#1]{l@{\extracolsep{0pt plus 1fil}}l}%
@@ -556,21 +547,16 @@
       \namefont\firstn@me   & \namefont\thirdn@me \\%
     \fi%
 }%
-%
 %    what's to be done at the end of the environment
-%
 {%
   \end{tabular*}%
 }%
-%
 %    \end{macrocode}
 %
 %    Here is the box that holds the center of the game display.
 %
 %    \begin{macrocode}
-%
 \newbox{\NESW}
-%
 %    \end{macrocode}
 %
 %    If the user redefines one or more of the commands \verb+\N@+,
@@ -578,7 +564,6 @@
 %    Therefore we supply a command to do that.
 %
 %    \begin{macrocode}
-%
 \newcommand\renewNESW%
 {%
   \setbox\NESW\hbox to \handwidth%
@@ -592,19 +577,18 @@
     }%
     \hfil\null%
   }%
-%
 %    To make sure that some white space appears above and below the box
 %    we enlarge its height and depth by 1.2ex (orig.: 0.7ex) resp. 0.7ex.
-%
   \@tempdima=\ht\NESW \advance\@tempdima by 1.2ex \ht\NESW=\@tempdima%
   \@tempdima=\dp\NESW \advance\@tempdima by 0.7ex \dp\NESW=\@tempdima%
 }
-%
 %    \end{macrocode}
 %
 %    All that's left to do is initialize the box with the default values.
 %
+%    \begin{macrocode}
 \renewNESW
+%    \end{macrocode}
 %
 % \begin{macro}{\hanghand}
 %    The macro \verb=\hanghand= puts a hand display in a box. The text
@@ -615,12 +599,10 @@
 %    sequence such as \verb+\vadjust{\vskip\parskip}\hfill\break\indent+.
 %
 %    \begin{macrocode}
-%
 \newcommand\hanghand[4]%
 {%
   \@drop{\vhand{#1}{#2}{#3}{#4}}%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
@@ -628,7 +610,6 @@
 % \begin{macro}{\hangNSgame}
 %
 %    \begin{macrocode}
-%
 \newcommand\hangNSgame%
 {%
   \@drop%
@@ -643,23 +624,23 @@
     }%
   }%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
 %
+% \iffalse comment
 %    J.L., we didn't know what the following line was for, so we commented it.
 %
 %\newcommand\lesshang[1]{\leavevmode\prevgraf=#1}
+% \fi
 %
 % \begin{macro}{\@drop}
 %    The macro \verb=\@drop= is a simplified version of the one appearing
 %    in {\tt drop.sty} by {\tt??}. It puts its argument inside an
 %    \verb=\fbox= and computes the necessary values for
-%    \verb=\hangindent= and \hangafter=.
+%    \verb=\hangindent= and \verb=\hangafter=.
 %
 %    \begin{macrocode}
-%
 \newcommand\@drop[1]%
 {%
   {%
@@ -674,10 +655,11 @@
     \dp8=0in\ht8=0in\box8%
   }%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
+%
+% \section{Internal Macros}
 %
 % \begin{macro}{\hhand}
 %    Now we come to the internal macros.
@@ -686,7 +668,6 @@
 %    spacing. The internal macro \verb+\c@rds+ does the dirty work.
 %
 %    \begin{macrocode}
-%
 \newcommand\hhand[4]%
 {%
   \Sp\kern1.5\cardskip\hbox{\c@rds#1!}%
@@ -694,24 +675,21 @@
   \hspace{2\cardskip}\Di\kern1.5\cardskip\hbox{\c@rds#3!}%
   \hspace{2\cardskip}\Cl\kern1.5\cardskip\hbox{\c@rds#4!}%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
 %
 % \begin{macro}{\vhand}
 %    Now we come to the vertical-mode variant of the \verb+\hand+
-%    macro. t doesn't do much, justs adds a parameter in front of the
+%    macro. It doesn't do much, justs adds a parameter in front of the
 %    four parameters specified by the user and calls another internal
 %    macro to build the minipage with the cards.
 %
 %    \begin{macrocode}
-%
 \newcommand\vhand[4]%
 {%
   \h@nd{t}{#1}{#2}{#3}{#4}%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
@@ -728,7 +706,7 @@
 %    this has to be broken and the rest of the cards will be flush right
 %    against the righthand side of the minipage. To achieve this we
 %    specify a infinitely stretchable \verb+\leftskip+, but cancel
-%    this \leftskip for the first line of the paragraph using the macro
+%    this \verb+\leftskip+ for the first line of the paragraph using the macro
 %    \verb+\everypar+, which is executed at the start of each paragraph.
 %    If the user-arguments are empty \verb+\h@nd+ does next to nothing.
 %    The macro uses \verb+\card+ to format the cards.
@@ -741,11 +719,9 @@
     \rightskip 0\p@ plus 1fill #1%
   \end{minipage}%
 }
-%
 %    \end{macrocode}
 %
 %    \begin{macrocode}
-%
 \newcommand\h@nd[5]%
 {%
   \begin{minipage}[#1]{\handwidth}%
@@ -782,7 +758,6 @@
     \fi%
   \end{minipage}%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
@@ -800,13 +775,12 @@
 %    and the following \verb+0+ will result in a \verb+10+.
 %    This is accomplished by yet another internal macro, \verb+\c@rd+.
 %    As long as the second argument to \verb+\c@rds+ is not empty, a
-%    card is formatted and \ver+\c@rds+ called again. If the second
+%    card is formatted and \verb+\c@rds+ called again. If the second
 %    argument is empty the macro formats the last card and quits.
 %    Notice that the calling macro must have delimited the arguments
 %    to \verb+\c@rds+ with a \verb+!+.
 %
 %    \begin{macrocode}
-%
 \newcommand\suit[1]%
 {%
   \c@rds #1!%
@@ -828,8 +802,9 @@
     \fi%
   \fi%
 }
-%
 %    \end{macrocode}
+% \end{macro}
+% \end{macro}
 %
 % \begin{macro}{\c@rd}
 %    This last macro allows the user to specify either \verb+T+ or
@@ -837,6 +812,7 @@
 %    As a byproduct it also changes a \verb+-+ to \verb+--+ to denote
 %    a renonce.
 %
+%    \begin{macrocode}
 \newcommand\c@rd[1]%
 {%
   \if#1T%
@@ -853,8 +829,8 @@
     \fi%
   \fi%
 }
-%
 %    \end{macrocode}
+% \end{macro}
 %
 %    And now some final commands for showing the cards only in one suit
 %    for one pair or all players at the table.
@@ -862,7 +838,6 @@
 % \begin{macro}{\onesuitNS}
 %
 %    \begin{macrocode}
-%
 \newcommand\onesuitNS[2]%
 {%
   \begin{center}%
@@ -871,7 +846,6 @@
     \c@rds#2!%
   \end{center}%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
@@ -879,7 +853,6 @@
 % \begin{macro}{\onesuitEW}
 %
 %    \begin{macrocode}
-%
 \newcommand\onesuitEW[2]%
 {%
   \begin{center}%
@@ -888,7 +861,6 @@
     \end{tabular}%
   \end{center}%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
@@ -898,7 +870,6 @@
 %    The cards are to be given in the order NESW!
 %
 %    \begin{macrocode}
-%
 \newcommand\onesuit[4]%
 {%
   \begin{center}%
@@ -909,7 +880,6 @@
     \end{tabular}%
   \end{center}%
 }
-%
 %    \end{macrocode}
 %
 % \end{macro}
