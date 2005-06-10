@@ -38,7 +38,7 @@ hmargin=10mm, % zum Abheften
 \setlength{\itemsep}{0ex plus0.2ex}
 
 \handwidth7.5em
-\cardskip0.23ex
+\cardskip0.15ex
 \parindent0mm
 \parskip2ex plus1ex minus1ex
 \renewcommand{\arraystretch}{1.07}
@@ -133,6 +133,7 @@ hmargin=10mm, % zum Abheften
 \def\xferto{\xfer{}~\ra~}
 \def\pup{\textsc{Pup}\xspace}
 \def\pupto{\pup{}~\ra~}
+\def\leadto{\nobreak\hspace{\cardskip}$\leadsto$\hspace{\cardskip}}
 \def\slamint{\textsc{Schl-Int}\xspace}
 
 % Descriptions f"ur Bietb"aume
@@ -560,29 +561,29 @@ Die Reizung beginnt jeweils [1\anybid{}\sep1\of; 1\SA{}\sep?].
 \hline
 \multicolumn{2}{|c|}{\textbf{Haltung}} & \multicolumn{3}{c|}{\textbf{St"arke}}\\
 \hline
-\emph{OF} & \emph{NF} & \emph{schwach} & \inv & \pf\\
+\emph{OF} & \emph{NF} & \emph{schwach} & \emph{einladend} & \emph{partieforcierend}\\
 \hline
 \hline
-4\of  & \bal  & pass  & 2\tre; 2\SA & 3\SA\\
+4\of  & \bal  & pass  & 2\tre{}\leadto2\SA & 3\SA\\
 \hline
-4\of  & 5\tre & 2\SA; p &
+4\of  & 5\tre & 2\SA{}\leadto{}p &
                 \emph{nicht zeigb.} &
-                nach 1\tre: 2\SA; 3\kar{}\\
-4\of  & 5\kar & 2\tre; p &
-                2\kar{}\footnote{genau \inv, sonst \conv{Walsh}} &
-                nach 1\kar: 2\SA; 3\kar{}\\
+                nach 1\tre-E"o.:\par 2\SA{}\leadto3\kar{}\\
+4\of  & 5\kar & 2\tre{}\leadto{}p &
+                2\kar{}\footnote{genau einladend, mit \pf \conv{Walsh} reizen} &
+                nach 1\kar-E"o.:\par 2\SA{}\leadto3\kar{}\\
 \hline
 5\of  & --    & 2\of  &
-                2\tre; 2\of{}\footnote{mindestens \inv} &
-                2\tre; 3\SA\\
-5\of  & 5\anybid & 2\of & 2\tre; 3\anybid & 3\anybid\\
-5\pik & 4\coe & 2\coe & 2\tre; 2\coe & 2\SA; 3\coe\\
+                2\tre{}\leadto2\of{}\footnote{mindestens einladend} &
+                2\tre{}\leadto3\SA\\
+5\of  & 5\anybid & 2\of & 2\tre{}\leadto3\anybid & 3\anybid\\
+5\pik & 4\coe & 2\coe & 2\tre{}\leadto2\coe & 2\SA{}\leadto3\coe\\
 \hline
-6\of  & --    & 2\of  & 2\tre; 3\of & 3\of{}\footnote{leichtes \slamint}\\
-      & Sngl  &       &             & 4\anybid\\
-      & Chic  &       &             & 2\tre; 4\anybid\\
+6\of  & --    & 2\of  & 2\tre{}\leadto3\of & 3\of{}\footnote{leichtes Schlemm-Interesse}\\
+      & Single  &       &             & 4\anybid\\
+      & Chicane  &       &             & 2\tre{}\leadto4\anybid\\
 \hline
-\end{tabularx}
+\end{tabularx}\\[1ex]
 \centerline{\emph{OF = Oberfarbe des Antwortenden, NF = Nebenfarbe}}%
 }%
 \end{minipage}
