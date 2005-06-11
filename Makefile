@@ -1,9 +1,11 @@
 all: 5er_of.ps 5er_of.pdf
 
+dvionly: 5er_of.dvi
+
 %.ps: %.dvi
 	dvips  -o $@ $<
 
-%.dvi: %.tex
+%.dvi: %.tex layout.tex
 	latex -src-specials=par,math $<
 	makeindex 5er_of.idx
 	latex -src-specials=par,math $<

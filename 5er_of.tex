@@ -1,34 +1,13 @@
-% DIN A4, zweispaltig
-%
-\documentclass[11pt,german,twocolumn,twoside]{scrartcl}
-\usepackage[a4paper,vscale=0.94,includehead,
-%rmargin=10mm,lmargin=15mm, % zum Lochen
-hmargin=10mm, % zum Abheften
-]{geometry}
-
-% DIN A5, zweispaltig
-%
-%\documentclass[8pt,german,twocolumn,twoside]{scrartcl}
-%\usepackage[a5paper,vscale=0.94,includehead,hmargin=5mm]{geometry}
-
-% DIN A6, einspaltig
-%
-%\documentclass[8pt,german,twoside]{scrartcl}
-%\usepackage[a6paper,vmargin=1mm,includehead,hmargin=1mm]{geometry}
-%\usepackage{times}
-%\usepackage{savetrees}
-
-\usepackage{color}
+% Format-spezifische Sachen nach layout.tex...
+\input{layout}
+% ... der Rest ist für alle Papiergr"o"sen etc. gleich
 
 \usepackage{babel}
 \usepackage{fancyhdr}
 \usepackage{tabularx}
-%\usepackage{times}
-%\usepackage{german}
 \usepackage{calc}
 \usepackage{suitsymbols}
 \usepackage{makeidx}
-\usepackage{kibitzer}
 \usepackage{xspace}
 
 % L"angen
@@ -42,33 +21,6 @@ hmargin=10mm, % zum Abheften
 \parindent0mm
 \parskip2ex plus1ex minus1ex
 \renewcommand{\arraystretch}{1.07}
-
-%% Farbe
-%
-% Biet-Box-Farben
-\definecolor{ClColor}{rgb}{0.0,0.6,0.0}
-\definecolor{DiColor}{rgb}{1.0,0.3,0.0}
-\definecolor{HeColor}{rgb}{0.9,0.0,0.0}
-\definecolor{SpColor}{rgb}{0.0,0.0,0.7}
-%
-% Farben wie in der Biet-Box
-%\renewcommand{\Cl}{{\color{ClColor}{\clubs}}}
-%\renewcommand{\Di}{{\color{DiColor}{\sdiamonds}}}
-%\renewcommand{\He}{{\color{HeColor}{\shearts}}}
-%\renewcommand{\Sp}{{\color{SpColor}{\spades}}}
-%
-% Schwarz-Rot
-%\renewcommand{\Cl}{\clubs}
-%\renewcommand{\Di}{{\color{HeColor}{\sdiamonds}}}
-%\renewcommand{\He}{{\color{HeColor}{\shearts}}}
-%\renewcommand{\Sp}{\spades}
-%
-% mit pxfonts (haesslich)
-%\usepackage{pxfonts}
-%\renewcommand{\Cl}{{\color{ClColor}{\relsize{2}$\clubsuit$}}}
-%\renewcommand{\Di}{{\color{DiColor}{\relsize{2}$\vardiamondsuit$}}}
-%\renewcommand{\He}{{\color{HeColor}{\relsize{1}$\varheartsuit$}}}
-%\renewcommand{\Sp}{{\color{SpColor}{\relsize{2}$\spadesuit$}}}
 
 % Farben ohne Space davor
 \def\pi{\Sp\xspace}
@@ -140,12 +92,14 @@ hmargin=10mm, % zum Abheften
 \def\bdsc{\begin{description}}
 \def\edsc{\end{description}}
 
+% compactitem
 \usepackage{paralist}
 \setlength{\plitemsep}{0.6ex}
 \setlength{\pltopsep}{0.8ex}
 \setlength{\plpartopsep}{0ex}
 \defaultleftmargin{2.5ex}{2.3ex}{2.1ex}{1.9ex}
 
+% neue Spalte f"ur tabularx
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
 % Reizung mit 4 H"anden
@@ -960,7 +914,7 @@ Hat der Er"offner keine K"urze gezeigt, so ist die n"achste Stufe \conv{RKCB}.
   \edsc
 \edsc
 
-\subsubsection*{Beispielreizungen zu \conv{Stenberg}}
+\minisec{Beispielreizungen zu \conv{Stenberg}}
 
 \exhand{432}{AB10852}{A3}{K2}%
 {KB6}{K976}{K94}{A87}%
@@ -1305,7 +1259,7 @@ ohne die Zwischenreizung 2\kar gereizt h"atte.
 Alle "ubrigen Gebote unterscheiden sich nicht von einer ungest"orten
 Reizung (\conv{Inverted Minors}, \conv{Weak Jumps}, \conv{Fit Jumps}).
 
-\subsubsection*{Details}
+\minisec{Details}
 
 \bdsc
 \item[1\tre{}\sep(1\kar){}\sep?]~
@@ -1335,7 +1289,8 @@ Reizung (\conv{Inverted Minors}, \conv{Weak Jumps}, \conv{Fit Jumps}).
 \edsc
 \edsc
 
-\subsubsection*{Beispiele}
+\minisec{Beispiele}
+
 \begin{description}
 \item[1\kar{}\sep(\kontra){}\sep2\kar] zeigt 10\pl FP und 5\pl{}er
   \ka-Anschluss.
@@ -1369,7 +1324,7 @@ Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
   (1\of{}\sep(1\anybid){}\sep2\anybid{} oder 1\of{}\sep(2\anybid){}\sep3\anybid{}).
 \end{compactitem}
 
-\subsubsection*{Details}
+\minisec{Details}
 
 \bdsc
 \item[1\coe{}\sep(1\pik){}\sep?]~
@@ -1406,7 +1361,8 @@ Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
   \edsc
 \edsc
 
-\subsubsection*{Beispiele}
+\minisec{Beispiele}
+
 \begin{description}
 \item[1\pik{}\sep(2\kar){}\sep2\pik] zeigt weiterhin 6-9 FP mit
   3er-Anschluss.
@@ -1468,7 +1424,7 @@ gegnerischen Farben steht indirekt f"ur die niedrigere bzw. h"ohere unserer Farb
   beiden gegnerischen Farben.
 \end{compactitem}
 
-\subsubsection*{Beispiele}
+\minisec{Beispiele}
 
 \bdsc
 \item[1\coe{}\sep(2\SA{}*){}\sep?] (2\SA = beide \ufa)
@@ -1602,19 +1558,20 @@ er 2\SA, was auch \ka-Fit impliziert. Neue Farben sind nat"urlich und forcing.
     \ra weiter wie nach 2\SA-Er"offnung
   \item[3\tre] Semiforcing in \tr
   \item[3\kar] Semiforcing in \ka
-  \item[3\SA] 26-27 FP, \bal, 5er-\ofa m"oglich
+  \item[3\SA] 26-27 FP, \bal, 5er-\ofa m"oglich \\
+    \ra weiter wie nach 2\SA-Er"offnung
   \edsc
 \edsc
 
-\subsubsection*{Ogust} \label{ogust}
+\subsubsection{Ogust} \label{ogust}
 
 Nach [2\tre{}\sep2\SA{}] benutzt der Er"offner die Ogust-Konvention, um sein Weak
 Two n"aher zu beschreiben (Min Min Max Max). Danach kann der Antwortende mit der n"achsten Farbe
-(au"ser der Trumpffarbe) nach K"urze fragen, wobei eine \sa-Antwort des
+(unter Auslassung der Trumpffarbe und 3\SA, was zum Spielen ist) nach K"urze fragen, wobei eine \sa-Antwort des
 Er"offners (meist 3\SA) eine K"urze in der Fragefarbe zeigt. Das Reizen der
 Trumpffarbe verneint eine K"urze. \emph{Nach Beantworten der K"urzenfrage} ist
 ist die n"achste Farbe (au"ser der Trumpffarbe auf Partiestufe) PKCA auf Basis
-der Weak Two-Farbe. Ein \sa-Gebot des Antwortenden ist zum Spielen.
+der Weak Two-Farbe.
 
 \bdsc
 \item[2\tre{}\sep2\SA;] Ogust\index{Ogust}
@@ -1624,10 +1581,10 @@ der Weak Two-Farbe. Ein \sa-Gebot des Antwortenden ist zum Spielen.
     \item[3\kar] zum Spielen
     \item[3\coe] K"urzenfrage
       \bdsc
-      \item[3\pik] \pi-K"urze (4\tre: PKCA)
-      \item[3\SA] \co-K"urze (4\tre: PKCA)
-      \item[4\tre] \tr-K"urze (4\kar: PKCA)
-      \item[4\kar] keine K"urze (4\coe: PKCA)
+      \item[3\pik] \pi-K"urze \ra 4\tre: PKCA
+      \item[3\SA] \co-K"urze \ra 4\tre: PKCA
+      \item[4\tre] \tr-K"urze \ra 4\kar: PKCA
+      \item[4\kar] keine K"urze \ra 4\coe: PKCA
       \edsc
     \item[3\SA] zum Spielen
     \edsc
@@ -1637,10 +1594,10 @@ der Weak Two-Farbe. Ein \sa-Gebot des Antwortenden ist zum Spielen.
     \bdsc
     \item[3\pik] K"urzenfrage
       \bdsc
-      \item[3\SA] \pi-K"urze (4\tre: PKCA)
-      \item[4\tre] \tr-K"urze (4\kar: PKCA)
-      \item[4\kar] keine K"urze (4\coe: PKCA)
-      \item[4\coe] \co-K"urze (4\pik: PKCA)
+      \item[3\SA] \pi-K"urze \ra 4\tre: PKCA
+      \item[4\tre] \tr-K"urze \ra 4\kar: PKCA
+      \item[4\kar] keine K"urze \ra 4\coe: PKCA
+      \item[4\coe] \co-K"urze \ra 4\pik: PKCA
       \edsc
     \item[3\SA] zum Spielen
     \edsc
@@ -1649,10 +1606,10 @@ der Weak Two-Farbe. Ein \sa-Gebot des Antwortenden ist zum Spielen.
     \item[3\SA] zum Spielen
     \item[4\tre] K"urzenfrage (\emph{nicht} PKCA)
       \bdsc
-      \item[4\SA] \tr-K"urze (5\tre: PKCA\footnote{nicht besonders gl"ucklich})
+      \item[4\SA] \tr-K"urze \ra 5\tre: PKCA\footnote{nicht besonders gl"ucklich}
       \edsc
     \edsc
-  \item[3\SA] 3 Topfiguren: AKD, weiter wie oben
+  \item[3\SA] 3 Topfiguren: \suit{AKD}, weiter wie oben
   \edsc
 \edsc
 
@@ -1711,11 +1668,12 @@ impliziert.
   \item[3\tre] \pf in \tr
   \item[3\kar] \pf in \ka
   \item[3\coe] \pf in \co
-  \item[3\SA] 28\pl FP, \bal, 5er-\ofa m"oglich
+  \item[3\SA] 28\pl FP, \bal, 5er-\ofa m"oglich \\
+    \ra weiter wie nach 2\SA-Er"offnung
   \edsc
 \edsc
 
-\subsubsection*{Ogust}
+\minisec{Ogust}
 
 Das Schema nach [2\kar{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA{}].
 
@@ -1726,10 +1684,10 @@ Das Schema nach [2\kar{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
     \bdsc
     \item[3\kar] K"urzenfrage
       \bdsc
-      \item[3\coe] keine K"urze (3\pik: PKCA)
-      \item[3\pik] \pi-K"urze (4\tre: PKCA)
-      \item[3\SA] \ka-K"urze (4\tre: PKCA)
-      \item[4\tre] \tr-K"urze (4\kar: PKCA)
+      \item[3\coe] keine K"urze \ra 3\pik: PKCA
+      \item[3\pik] \pi-K"urze \ra 4\tre: PKCA
+      \item[3\SA] \ka-K"urze \ra 4\tre: PKCA
+      \item[4\tre] \tr-K"urze \ra 4\kar: PKCA
       \edsc
     \item[3\coe] zum Spielen
     \item[3\SA] zum Spielen
@@ -1739,10 +1697,10 @@ Das Schema nach [2\kar{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
     \item[3\coe] zum Spielen
     \item[3\pik] K"urzenfrage
       \bdsc
-      \item[3\SA] \pi-K"urze (4\tre: PKCA)
-      \item[4\tre] \tr-K"urze (4\kar: PKCA)
-      \item[4\kar] \ka-K"urze (4\pik: PKCA)
-      \item[4\coe] keine K"urze (4\pik: PKCA)
+      \item[3\SA] \pi-K"urze \ra 4\tre: PKCA
+      \item[4\tre] \tr-K"urze \ra 4\kar: PKCA
+      \item[4\kar] \ka-K"urze \ra 4\pik: PKCA
+      \item[4\coe] keine K"urze \ra 4\pik: PKCA
       \edsc
     \edsc
   \item[3\coe] 9-10 FP, schlechte Farbe, weiter wie oben
@@ -1751,7 +1709,7 @@ Das Schema nach [2\kar{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
     \item[3\SA] zum Spielen
     \item[4\tre] K"urzenfrage (\emph{nicht} PKCA)
       \bdsc
-      \item[4\SA] \tr-K"urze (5\tre: PKCA)
+      \item[4\SA] \tr-K"urze \ra 5\tre: PKCA
       \edsc
     \edsc
   \item[3\SA] 3 Topfiguren: \suit{AKD}, weiter wie oben
@@ -1775,7 +1733,7 @@ auch 5/4 sein.
   \edsc
 \edsc
 
-\subsubsection*{Weiterreizung nach [2\coe{}\sep2\SA{}]}
+\minisec{Weiterreizung nach [2\coe{}\sep2\SA{}]}
 
 Der Er"offner zeigt mit seinem R"uckgebot seine zweite Farbe und seine
 Punktst"arke, nur bei einem \co/\tr-Zweif"arber kann er die Punktst"arke nicht
@@ -1840,7 +1798,7 @@ Im Folgenden zeigt \ra die PKCA-Gebote und deren Basis.
   \edsc
 \edsc
 
-\subsubsection*{Beispiele}
+\minisec{Beispiele}
 
 \exhand{3}{DB865}{54}{K10975}
 {9876}{AK}{AK}{AD86}{%
@@ -1884,7 +1842,7 @@ Das Reizen einer neuen Farbe zeigt 6\pl (5 gute) Karten und ist
 selbstverst"andlich forcing. Der Er"offner hebt mit 3er-Anschluss oder mit
 Double-Anschluss und einer K"urze.
 
-\subsubsection*{Ogust}
+\minisec{Ogust}
 
 Das Schema nach [2\pik{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA{}] und
 [2\kar{}\sep2\SA{}].
@@ -1896,10 +1854,10 @@ Das Schema nach [2\pik{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
     \bdsc
     \item[3\kar] K"urzenfrage
       \bdsc
-      \item[3\coe] \co-K"urze (4\tre: PKCA)
-      \item[3\pik] keine K"urze (4\tre: PKCA)
-      \item[3\SA] \ka-K"urze (4\tre: PKCA)
-      \item[4\tre] \tr-K"urze (4\kar: PKCA)
+      \item[3\coe] \co-K"urze \ra 4\tre: PKCA
+      \item[3\pik] keine K"urze \ra 4\tre: PKCA
+      \item[3\SA] \ka-K"urze \ra 4\tre: PKCA
+      \item[4\tre] \tr-K"urze \ra 4\kar: PKCA
       \edsc
     \item[3\pik] zum Spielen
     \item[3\SA] zum Spielen
@@ -1908,10 +1866,10 @@ Das Schema nach [2\pik{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
     \bdsc
     \item[3\coe] K"urzenfrage
       \bdsc
-      \item[3\pik] keine -K"urze (4\tre: PKCA)
-      \item[3\SA] \co-K"urze (4\tre: PKCA)
-      \item[4\tre] \tr-K"urze (4\kar: PKCA)
-      \item[4\kar] \ka-K"urze (4\coe: PKCA)
+      \item[3\pik] keine -K"urze \ra 4\tre: PKCA
+      \item[3\SA] \co-K"urze \ra 4\tre: PKCA
+      \item[4\tre] \tr-K"urze \ra 4\kar: PKCA
+      \item[4\kar] \ka-K"urze \ra 4\coe: PKCA
       \edsc
     \item[3\pik] zum Spielen
     \edsc
@@ -1921,7 +1879,7 @@ Das Schema nach [2\pik{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
     \item[3\SA] zum Spielen
     \item[4\tre] K"urzenfrage (\emph{nicht} PKCA)
       \bdsc
-      \item[4\SA] \tr-K"urze (5\tre PKCA)
+      \item[4\SA] \tr-K"urze \ra 5\tre: PKCA
       \edsc
     \edsc
   \item[3\pik] 9-10 FP, gute Farbe (2 Topfiguren), weiter wie oben
@@ -1929,7 +1887,7 @@ Das Schema nach [2\pik{}\sep2\SA{}] funktioniert genau wie nach [2\tre{}\sep2\SA
   \edsc
 \edsc
 
-\subsubsection*{Beispiele}
+\minisec{Beispiele}
 
 \exhand{KD9874}{862}{B74}{2}
 {A3}{A973}{A92}{A986}{%
@@ -1966,7 +1924,7 @@ neue Farbe auf der 4er-Stufe (au"ser 4\tre) best"atigt den Fit und ist Cuebid.
 4\tre ist PKCA. 4\of auf eine 3\uf-Er"offnung ist zum Spielen. Hebung der
 \ofa ins Vollspiel ist entweder konstruktiv oder weitere Sperre.
 
-\subsubsection*{Bietsequenzen nach 3\tre-Er"offnung}
+\minisec{Bietsequenzen nach 3\tre-Er"offnung}
 
 \woreizung{
   3\tre & & 3\coe & \\
@@ -2176,7 +2134,7 @@ anzusteuern. Der Er"offner bietet \sa, wenn er die vierte Farbe stoppt.
 Die dritte Farbe auf der 2er-Stufe gereizt zeigt eine mindestens einladende
 Hand, auf der 3er-Stufe eine partieforcierende.
 
-\paragraph{Beispiel} ~
+\minisec{Beispiel}
 
 \woreizung{
   2\tre & Semiforcing & 2\kar & \rel \\
@@ -2204,7 +2162,7 @@ Die vierte Farbe auf der 2er-Stufe gereizt ist mindestens einladend, auf der
 3er-Stufe partieforcierend.
 Priorit"aten des Antwortenden:
 
-\paragraph{1. 3er-Anschluss in der \ofa des Partners zeigen}
+\minisec{1. 3er-Anschluss in der \ofa des Partners zeigen}
 \begin{description}
 \item[1\coe{}\sep1\pik;~2\tre{}\sep2\kar;~?]~
   \begin{description}
@@ -2213,7 +2171,7 @@ Priorit"aten des Antwortenden:
   \end{description}
 \end{description}
 
-\paragraph{2. \sa mit Stopper in der vierten Farbe reizen}
+\minisec{2. \sa mit Stopper in der vierten Farbe reizen}
 \begin{description}
 \item[1\coe{}\sep1\pik;~2\tre{}\sep2\kar;~?]~
   \begin{description}
@@ -2223,7 +2181,7 @@ Priorit"aten des Antwortenden:
   \end{description}
 \end{description}
 
-\paragraph{3. Verteilung zeigen} ~
+\minisec{3. Verteilung zeigen}
 
 Nach [1\tre{}\sep1\kar; 1\coe{}\sep1\pik;] darf der Er"offner mit
 \centerline{\hhand{KD94}{AB42}{2}{AKB2}}
@@ -2232,7 +2190,7 @@ und nicht nat"urlich gewesen sein muss (wenn 1\pik nat"urlich war,
 zeigt dies eine Er"offnung wegen \conv{Walsh}). In dieser Situation
 ist das richtige Gebot 3\coe!
 
-\paragraph{Beispiele} ~
+\minisec{Beispiele}
 
 \woreizung{
   1\tre & & 1\kar \\
