@@ -1,0 +1,183 @@
+% Farben ohne Space davor
+\def\pi{\Sp\xspace}
+\def\co{\He\xspace}
+\def\ka{\Di\xspace}
+\def\tr{\Cl\xspace}
+\def\sa{\nobreak\textsf{S\kern-0.08emA}\xspace}
+\def\nt{\nobreak\textsf{N\kern-0.08emT}\xspace}
+% 2 Farben
+\def\ofa{\nobreak\textsf{OF}\xspace}
+\def\aofa{\nobreak\textsf{aOF}\xspace}
+\def\ufa{\nobreak\textsf{UF}\xspace}
+\def\aufa{\nobreak\textsf{aUF}\xspace}
+
+% Farben mit Space davor
+\def\pik{\nobreak\hspace{\cardskip}\Sp\xspace}
+\def\coe{\nobreak\hspace{\cardskip}\He\xspace}
+\def\kar{\nobreak\hspace{\cardskip}\Di\xspace}
+\def\tre{\nobreak\hspace{\cardskip}\Cl\xspace}
+\def\SA{\nobreak\hspace{\cardskip}\sa}
+\def\NT{\nobreak\hspace{\cardskip}\nt}
+% 2 Farben
+\def\of{\nobreak\hspace{\cardskip}\textsf{OF}\xspace}
+\def\aof{\nobreak\hspace{\cardskip}\textsf{aOF}\xspace}
+\def\uf{\nobreak\hspace{\cardskip}\textsf{UF}\xspace}
+\def\mi{\hspace{\cardskip}\Cl{}/\Di\xspace}
+\def\ma{\hspace{\cardskip}\He{}/\Sp\xspace}
+
+% diverse Makros
+\def\good{$^+$\xspace}
+\def\bad{$^-$\xspace}
+\def\ra{$\rightarrow$\xspace}
+\def\pl{$\uparrow$\xspace}
+\def\any{$x$\xspace}
+\def\anybid{\nobreak\hspace{\cardskip}\any}
+\def\kontra{\textsf{X}\xspace}
+\def\rekontra{\textsf{X\kern-0.08emX}\xspace}
+\def\sep{\,--\,}
+\newcommand{\conv}[1]{\emph{#1}}
+\def\bal{\textsc{Ausg}\xspace}
+\def\unbal{\textsc{Unausg}\xspace}
+\def\nat{\textsc{Nat}\xspace}
+\def\pf{\textsc{PF}\xspace}
+\def\maxi{\textsc{Max}\xspace}
+\def\mini{\textsc{Min}\xspace}
+\def\inv{\textsc{Einl}\xspace}
+\def\nf{\textsc{NF}\xspace}
+\def\rel{\textsc{Rel}\xspace}
+\def\stp{\textsc{Stop}\xspace}
+\def\hstp{\textsc{Hstop}\xspace}
+\def\cstop{\co-\stp}
+\def\pstop{\pi-\stp}
+\def\tstop{\tr-\stp}
+\def\kstop{\ka-\stp}
+\def\chstop{\co-\hstp}
+\def\phstop{\pi-\hstp}
+\def\thstop{\tr-\hstp}
+\def\khstop{\ka-\hstp}
+\def\aw{\textsc{Aw}\xspace}
+\def\eo{\textsc{E\"o}\xspace}
+\def\xfer{\textsc{Trf}\xspace}
+\def\xferto{\xfer{}~\ra~}
+\def\pup{\textsc{Pup}\xspace}
+\def\pupto{\pup{}~\ra~}
+\def\leadto{\nobreak\hspace{\cardskip}$\leadsto$\hspace{\cardskip}}
+\def\slamint{\textsc{Schl-Int}\xspace}
+
+% Descriptions f"ur Bietb"aume
+\def\bdsc{\begin{description}}
+\def\edsc{\end{description}}
+
+% neue Spalte f"ur tabularx
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+% Reizung mit 4 H"anden
+\newcommand{\bidex}[1]{\bcbidding{\textsl{West}}{\textsl{Ost}}{#1}}
+
+% Dreispaltige Tabelle f"ur "Ubersichten
+\newcommand\bidins[1]%
+{%
+\begin{flushleft}
+\begin{tabularx}{\columnwidth}{llY}%
+#1
+\end{tabularx}%
+\end{flushleft}
+}
+% ... mit fester Breite
+\newcommand\bidinsfixed[1]{%
+\begin{tabularx}{\columnwidth}{p{3em}p{2.5em}Y}%
+#1
+\end{tabularx}%
+}
+
+% Hand links, vertikale Linie, Text rechts
+\newcommand{\handwithdesc}[5]{%
+\handwidth6em
+\vhand{#1}{#2}{#3}{#4}\hspace{1.5ex}\vrule\hspace{1ex}
+\begin{minipage}[t]{\columnwidth-\handwidth-2.5ex-0.6pt}
+#5
+\end{minipage}
+\smallskip
+\handwidth7.5em
+}
+
+% W/O-Beispielhand mit Bietsequenz darunter
+\newcommand{\exhand}[9]{%
+\begin{minipage}{\columnwidth}
+\westhand{#1}{#2}{#3}{#4}
+\easthand{#5}{#6}{#7}{#8}
+\centerline{\showEWgame}
+\bigskip
+{\smaller\begin{tabularx}{\columnwidth}{rYrY}
+\multicolumn{2}{l}{West} & \multicolumn{2}{l}{Ost}\\
+\hline
+#9
+\end{tabularx}}
+\end{minipage}
+}
+
+% W/O-Bietsequenz
+\newcommand{\woreizung}[1]{%
+\begin{minipage}{\columnwidth}
+{\smaller\begin{tabularx}{\columnwidth}{rYrY}
+\multicolumn{2}{l}{West} & \multicolumn{2}{l}{Ost}\\
+\hline
+#1
+\end{tabularx}}
+\end{minipage}
+}
+
+\newenvironment{reizung}[1][t]%
+{%
+  \begin{tabular*}{\bidwidth}[#1]{@{}*{3}{l@{\extracolsep{0pt plus 1fil}}}l@{}}%
+    West & Nord & Ost & S\"ud \\
+    \hline
+}
+%    what's to be done at the end of the environment
+{%
+  \end{tabular*}%
+}
+
+% Reizung mit 4 H"anden
+\newcommand{\reizungmittext}[3][\bidwidth]{%
+\mbox{\smaller
+\begin{minipage}{#1}
+\begin{reizung}
+#2
+\end{reizung}
+\end{minipage}%
+\hspace{1.5ex}\vrule\hspace{1.5ex}%
+\begin{minipage}{\columnwidth-#1-3ex-0.6pt}%
+#3
+\end{minipage}
+}
+}
+
+% \newcommand\bidseq[1]%
+% {%
+% \begin{flushleft}
+% \begin{tabularx}{\columnwidth}{llY}%
+% #1
+% \end{tabularx}%
+% \end{flushleft}
+% }
+
+% Kasten mit Rahmen
+\setlength{\fboxsep}{1.5ex}
+\newcommand\notebox[1]%
+{%
+\fbox{\parbox{\columnwidth - 3ex}{#1}}%
+}
+
+% Index
+\makeindex
+\newcommand{\Index}[1]{#1\index{#1}}
+
+% Pagestyle
+\renewcommand{\sectionmark}[1]{\markleft{#1}}
+\pagestyle{fancy}
+\fancyhead[RE,LO]{\nouppercase{\emph{\leftmark}}}
+\fancyhead[RO,LE]{\thepage}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+
