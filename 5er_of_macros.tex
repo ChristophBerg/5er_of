@@ -63,6 +63,7 @@
 \def\pupto{\pup{}~\ra~}
 \def\leadto{\nobreak\hspace{\cardskip}$\leadsto$\hspace{\cardskip}}
 \def\slamint{\textsc{Schl-Int}\xspace}
+\def\about{$\sim$\nobreak}
 
 % Descriptions f"ur Bietb"aume
 \def\bdsc{\begin{description}}
@@ -85,7 +86,7 @@
 }
 % ... mit fester Breite
 \newcommand\bidinsfixed[1]{%
-\begin{tabularx}{\columnwidth}{p{3em}p{2.5em}Y}%
+\begin{tabularx}{\columnwidth}{p{3em}p{2.5em}Yr@{,}l@{\%}}%
 #1
 \end{tabularx}%
 }

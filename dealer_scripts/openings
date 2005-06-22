@@ -1,0 +1,144 @@
+# 1 mio hands
+generate 1000000
+
+opening_values = ( hcp(west) >= 12 and hcp(west) <= 19 )
+
+balanced = shape(west, any 4333 + any 5332 + any 4432)
+
+open_1nt = ( hcp(west) >= 15 and hcp(west) <= 17 and
+	 balanced )
+
+open_one_suit = opening_values and not open_1nt
+
+open_one_club = ( open_one_suit and
+	clubs(west) > spades(west) and
+	clubs(west) > hearts(west) and
+	( clubs(west) > diamonds(west) or
+	  clubs(west) == 3 and diamonds(west) == 3 ) )
+
+open_one_diamond = ( open_one_suit and
+	diamonds(west) > spades(west) and
+	diamonds(west) > hearts(west) and
+	diamonds(west) >= clubs(west) and
+        not ( diamonds(west) == 3 and clubs(west) == 3 ) )
+
+open_one_heart = ( open_one_suit and
+	hearts(west) > spades(west) and
+	hearts(west) >= diamonds(west) and
+	hearts(west) >= clubs(west) )
+
+open_one_spade = ( open_one_suit and
+	spades(west) >= hearts(west) and
+	spades(west) >= diamonds(west) and
+	spades(west) >= clubs(west) )
+
+
+weak_two_values = ( hcp(west) >= 5 and hcp(west) <= 11 )
+no_four_major = ( spades(west) < 4 and hearts(west) < 4 )
+
+weak_two_diamonds = (
+	weak_two_values and shape(west, xx6x) and
+	no_four_major and hcp( west, diamonds ) >= 3 )
+
+weak_two_hearts =  (
+	weak_two_values and shape(west, x6xx) and
+	spades(west) < 4 and hcp( west, hearts ) >= 3 )
+
+weak_two_spades =  (
+	weak_two_values and shape(west, 6xxx) and
+	hearts(west) < 4 and hcp( west, spades ) >= 3 )
+
+single_suiter =	(
+	hearts(west) >= 6 or spades(west) >= 6 or
+	diamonds(west) >= 6 or clubs(west) >= 6 )
+
+semiforcing = (
+	loser(west) == 5 and
+	hcp(west) >= 16 and
+	single_suiter )
+
+gameforcing = (
+	loser(west) < 5 and
+	hcp(west) >= 18 and
+	single_suiter )
+
+semi_nt = (
+	balanced and
+	( hcp(west) >= 22 and hcp(west) <= 23 or
+	  hcp(west) >= 26 and hcp(west) <= 27 ) )
+
+gf_nt = (
+	balanced and
+	( hcp(west) >= 24 and hcp(west) <= 25 or
+	  hcp(west) >= 28 ) )
+
+# semi-forcing or weak two diamonds
+open_two_clubs = (
+	weak_two_diamonds or
+	semiforcing or
+	semi_nt )
+
+# game-forcing or weak two hearts
+open_two_diamonds = (
+	weak_two_hearts or
+	gameforcing or
+	gf_nt )	
+
+# two-suiter incl. hearts
+open_two_hearts = (
+	hearts(west) >= 5 and
+	( clubs(west) >= 5 or
+	  diamonds(west) >= 5 or
+	  spades(west) >= 5 ) and
+	hcp(west) >= 5 and hcp(west) <= 10 )
+
+# weak two spades
+open_two_spades = ( weak_two_spades )
+
+# 2NT
+open_two_notrump = (
+	balanced and
+	hcp(west) >= 20 and hcp(west) <= 21 )
+
+# gambling
+gambling = (
+	hcp(west) < 12 and
+	( clubs(west) >= 6 and
+	  ( hcp(west, clubs) == 9 and hascard(west, TC) or
+	    hcp(west, clubs) == 10 )
+	) or (
+	  diamonds(west) >= 6 and
+	  ( hcp(west, diamonds) == 9 and hascard(west, TD) or
+	    hcp(west, diamonds) == 10 )
+	)
+)
+
+# 3 in minor
+open_three_minor = (
+	hcp(west) >= 5 and hcp(west) <= 10 and
+	( diamonds(west) >= 7 or clubs(west) >= 7 )
+	and no_four_major and not gambling
+)
+
+# 3 in major
+open_three_major = (
+	hcp(west) >= 5 and hcp(west) <= 10 and
+	( hearts(west) >= 7 or spades(west) >= 7 ) )
+
+
+action	average "1SA" open_1nt,
+	average "1x" open_one_suit,
+	average "1C" open_one_club,
+	average "1D" open_one_diamond,
+	average "1H" open_one_heart,
+	average "1S" open_one_spade,
+	average "w2D" weak_two_diamonds,
+	average "w2H" weak_two_hearts,
+	average "2C" open_two_clubs,
+	average "2D" open_two_diamonds,
+	average "2H" open_two_hearts,
+	average "2S" open_two_spades,
+	average "2nt" open_two_notrump,
+	average "3m" open_three_minor,
+	average "3M" open_three_major,
+	average "G" gambling

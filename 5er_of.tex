@@ -27,11 +27,13 @@
 \newpage
 \section{"Ubersicht der Er"offnungen}
 
+\emph{Die letzte Spalte gibt ungef"ahre Wahrscheinlichkeiten f"ur die jeweilige Er"offnung in 1. Hand an.  In 2./3./4. Hand sind die Wahrscheinlichkeiten etwas geringer.}
+
 \subsection*{1er-Stufe}
 \bidinsfixed{%
-1\mi & 12\pl	& 3\pl{}er-\mi\\[1ex]
-1\ma & 12\pl	& 5\pl{}er-\ma\\[1ex]
-1\SA & 15-17	& \bal, 5er-\ofa m"oglich
+1\mi & 12\pl	& 3\pl{}er-\mi & 11&5\\[1ex]
+1\ma & 12\pl	& 5\pl{}er-\ma & 16&8\\[1ex]
+1\SA & 15-17	& \bal, 5er-\ofa m"oglich & 4&9
 }
 
 \subsection*{2er-Stufe}
@@ -39,22 +41,22 @@
 2\tre	& 6-10	& Weak Two in \ka, oder\\
 	& 16\pl	& 6er-Farbe, 8 Spielstiche, oder\\
 	& 22-23	& \bal, oder\\
-	& 26-27	& \bal\\[1ex]
+	& 26-27	& \bal & 2&2\\[1ex]
 2\kar	& 6-10	& Weak Two in \co, oder\\
 	& 18\pl	& 6er-Farbe, 9 Spielstiche, oder\\
 	& 24-25	& \bal, oder\\
-	& 28\pl	& \bal\\[1ex]
-2\coe	& 6-10	& Zweif"arber mit \co\\[1ex]
-2\pik	& 6-10	& Weak Two in \pi\\[1ex]
-2\SA	& 20-21	& \bal, 5er-\ofa m"oglich
+	& 28\pl	& \bal & 2&1\\[1ex]
+2\coe	& 6-10	& Zweif"arber mit \co & 1&3\\[1ex]
+2\pik	& 6-10	& Weak Two in \pi & 1&6\\[1ex]
+2\SA	& 20-21	& \bal, 5er-\ofa m"oglich & 0&5
 }
 
 \subsection*{3er-Stufe}
 \bidinsfixed{%
 3\uf	& 5-10	& 7\pl{}er-\ufa (in 1. Hand in Nichtgefahr und 3. Hand 6er-Farbe
-m"oglich)\\[1ex]
-3\of	& 5-10	& 7\pl{}er-\ofa\\[1ex]
-3\SA	& 	& Gambling in 1./2. Hand, in 3./4. Hand zum Spielen
+m"oglich) & 0&8\\[1ex]
+3\of	& 5-10	& 7\pl{}er-\ofa & 1&0\\[1ex]
+3\SA	& 	& Gambling in 1./2. Hand, in 3./4. Hand zum Spielen & 0&3
 }
 
 \subsection*{4er-Stufe}
@@ -425,6 +427,8 @@ aber die Punktspanne ist nach oben limitiert.  Mit st"arkeren H"anden sollte
 [1\of{}\sep3\SA;] zeigt ein Single in der anderen \ofa. Chicane-\conv{Splinter}
 werden mit einem Sprung in die andere \ofa auf 3er-Stufe gezeigt.
 
+Nach St"orung durch die Gegner gelten Ausnahmen.  Siehe hierzu Abschnitt~\ref{zwischenreizung} auf Seite~\pageref{zwischenreizung}.
+
 \bdsc
 \item[1\coe{}\sep3\pik] beliebiges Chicane
   \bdsc
@@ -453,9 +457,11 @@ werden mit einem Sprung in die andere \ofa auf 3er-Stufe gezeigt.
   \bdsc
   \item[1\SA] 12-14 FP \bal
     \bdsc
-    \item[2\tre] \conv{Relaistransfer} \ra 2\kar (\ra \ref{1sarebid}, S.~\pageref{1sarebid})
+    \item[2\tre] \conv{Relaistransfer} \ra 2\kar (\ra \ref{1sarebid},
+S.~\pageref{1sarebid})
     \item[2\kar] 4er-\pi, 5\pl\kar, zum Spielen
-    \item[2\SA] \conv{Relaistransfer} \ra 3\tre (\ra \ref{1sarebid}, S.~\pageref{1sarebid})
+    \item[2\SA] \conv{Relaistransfer} \ra 3\tre (\ra \ref{1sarebid},
+S.~\pageref{1sarebid})
     \item[3\tre] \nat, forcing
       \bdsc
       \item[3\kar] Frage nach \khstop, verneint 3er-\pi
@@ -636,7 +642,8 @@ Verteilung.  5332-Verteilungen mit einer 5er-\ofa sind m"oglich.
 2\SA & 8-9 & \nat, \inv\\
 3\,$x$ && 6\pl{}er-Farbe, \slamint{}\\
 3\SA && zum Spielen\\
-4\tre && \conv{\Index{Gerber}}-Assfrage (0/4, 1, 2, 3; \ra~\ref{gerber}, S.~\pageref{gerber})\\
+4\tre && \conv{\Index{Gerber}}-Assfrage (0/4, 1, 2, 3; \ra~\ref{gerber},
+S.~\pageref{gerber})\\
 4\kar && 5/5\pl in den \ofa, kein \slamint \conv{(Wei"sberger)} \\
 4\SA && quantitative Einladung zu 6\SA \\
 5\SA && quantitative Einladung zu 6\SA/7\SA
@@ -1661,13 +1668,13 @@ oder \emph{Erstrunden}kontrollen, wenn er Schlemminteresse hat.
 \item[(1\anybid)\sep\kontra{}\sep{}(p)\sep{}?]~
   \bdsc
   \item[1\hspace{\cardskip}$y$] (ohne Sprung) 0-7 FP
-  \item[2\anybid] ("Uberruf der Gegnerfarbe)
+  \item[2\anybid{}] ("Uberruf der Gegnerfarbe)
     \begin{compactitem}
       \item 11\pl FP, beliebige Verteilung oder
       \item beide \ofa, 8-10 FP
     \end{compactitem}
-  \item[2\of] (einfacher Sprung) 4er-Farbe, 8-10 FP
-  \item[3\of] (doppelter Sprung) 5er-Farbe, 8-10 FP
+  \item[2\of{}] (einfacher Sprung) 4er-Farbe, 8-10 FP
+  \item[3\of{}] (doppelter Sprung) 5er-Farbe, 8-10 FP
   \edsc
 \edsc
 
@@ -1775,8 +1782,9 @@ konstruktiven H"anden sollte \conv{Crash} nicht gereizt werden.
 %
 \subsection{Relaistransfer nach 1\SA-R"uckgebot} \label{1sarebid}
 
-Neben den nat"urlichen Antworten benutzen wir die beiden Puppet-Gebote 2\tre
-und 2\SA, um m"oglichst viele Verteilungen zeigen zu k"onnen.
+Nach [1\anybid{}\sep1\of; 1\SA{}] verwenden wir neben den nat"urlichen Antworten
+die beiden Puppet-Gebote 2\tre und 2\SA, um m"oglichst viele Verteilungen zeigen
+zu k"onnen.
 
 \minisec{Regeln}
 \begin{compactitem}
@@ -1837,18 +1845,18 @@ Schlemm-Interesse}\\
   Direkt zeigt man:
   \begin{compactitem}%
   \item[1] einladend, 5\pl{}er-\ka und 4er-\ofa
-  \item[2] schwach, 5er-\pi, evtl. 4\pl{}er \co
+  \item[2] schwach, 5er-\pi, evtl. 4\pl{}er-\co
   \item[3] \pf, 5/5
   \item[4] \slamint, 6er-\ofa
   \item[5] starker \ofa-Einf"arber mit Single
   \end{compactitem}
 
   \bdsc
-  \item[2\tre] \pupto2\kar{} -- siehe unten
+  \item[2\tre] \pupto2\kar{} (siehe unten)
   \item[2\kar] 4er-\pi, 5\pl{}er-\ka, genau \inv (sonst \conv{Walsh}) (1)
   \item[2\coe] 5/4 \pi{}+\co, zum Spielen oder Ausbessern (2)
   \item[2\pik] 5er-\pi, schwach (2)
-  \item[2\SA] \pupto3\tre{} -- siehe unten
+  \item[2\SA] \pupto3\tre{} (siehe unten)
   \item[3\anybid] 5/5 \pi{}+\any{}\footnote{beliebige Farbe au"ser \pi}, \pf (3)
   \item[3\pik] 6er-\pi, leichtes \slamint{} (4)
   \item[4\anybid] 6\pl{}er-\pi, Single \any \conv{(Autosplinter)} (5)
@@ -1856,6 +1864,7 @@ Schlemm-Interesse}\\
 
 \item[1\tre{}\sep1\pik; 1\SA{}\sep2\tre; 2\kar{}\sep?]~
 
+  "Uber [2\tre{}; 2\kar{}] zeigt man:
   \begin{compactitem}
   \item[1] schwach, 4/5\pl \ofa/\ka
   \item[2] mindestens \inv, 5er-\ofa, evtl. 4er-\ufa
@@ -1883,6 +1892,7 @@ Schlemm-Interesse}\\
 
 \item[1\tre{}\sep1\pik; 1\SA{}\sep2\SA; 3\tre{}\sep?]~
 
+  "Uber [2\SA{}; 3\tre{}] zeigt man:
   \begin{compactitem}
   \item[1] schwach, 4/5\pl \ofa/\tr
   \item[2] stark:
@@ -2566,48 +2576,49 @@ Seite\\
 \section{Optionale Absprachen}
 
 Die in diesem Abschnitt vorgestellten Konventionen sollten als optional
-angesehen
-werden.  Sie k"oennen mit dem System frei kombiniert werden, ohne das andere
-Teile des Systems abgewandelt werden m"ussen (soweit nicht im Rahmen der
-Konvention
-erw"ahnt).
+angesehen werden.  Sie k"onnen mit dem System frei kombiniert werden, ohne das
+andere Teile des Systems abgewandelt werden m"ussen (soweit nicht im Rahmen der
+Konvention erw"ahnt).
 
 \subsection{Raptor SA-"Uberruf}
 
 Diese Konvention ist als \conv{Raptor Notrump} und \conv{Polish Notrump}
-bekannt.
-Sie ersetzt das nat"urliche 1\SA-Gebot in der Gegenreizung wie folgt:
+bekannt. Sie ersetzt das nat"urliche 1\SA-Gebot in der Gegenreizung wie folgt:
 
 \bdsc
 	\item[(1\uf)\sep{}1\SA] 5\pl{}er-\aufa und genau 4er-\ofa
 	\item[(1\of)\sep{}1\SA] 5\pl{}er-\ufa und genau 4er-\aofa
 \edsc
-Au"serdem verneint das Gebot eine Verteilung f"ur ein klassisches
-Informationskontra.
-Die Punktspanne liegt bei 10-15 FP.
 
-Die nat"urliche 1\SA-Gegenreizung in der Balancing-Position bleibt erhalten.
-Ebenfalls erhalten bleibt die Konvention \conv{Sandwich Notrump}
-(siehe Seite~\pageref{sandwichnt}).  Folglich gilt \conv{Raptor} nur als
-direkter
-"Uberruf in 2. oder 3. Hand einer gegnerischen Farber"offnung auf 1er-Stufe.
+Au"serdem verneint das Gebot eine Verteilung f"ur ein klassisches
+Informationskontra. Die Punktspanne liegt bei 10-15 FP.
+
+Alert: \emph{"`k"unstlich, nicht forcierend, 10-15 Punkte, 4er-Oberfarbe und mindestens 5er-Unterfarbe, keine Verteilung f"ur ein Informationskontra"'} -- die Denomination der jeweils bekannten Farbe sollte explizit genannt werden.
+
+Nicht gereizt wird \conv{Raptor} in folgenden Situationen:
+\begin{compactitem}
+\item In der Balancing/Passout-Position ist 1\SA na\-t"ur\-lich, 11-14~FP.
+\item In 4. Hand falls beide Gegner eine Farbe gereizt haben gilt \conv{Sandwich Notrump}, siehe
+\ref{sandwichnt}, S.~\pageref{sandwichnt}.
+\end{compactitem}
+Eine angepasste Hand kann \conv{Raptor} reizen, mit entsprechend limitierter
+Punkst"arke impliziert.
 
 \subsubsection{Weiterreizung}
 
 \minisec{Allgemeine Prinzipien}
+
 \begin{compactitem}
-\item Gebote, die zum Spielen oder Ausbessern gedacht sein k"onnen, sind dies
-auch.
-\item Die bereits bekannte Farbe ist immer zum Spielen.
-\item Cuebid und 2\SA sind starke Fragegebote.
+	\item Gebote, die zum Spielen oder Ausbessern gedacht sein k"onnen, sind dies auch.
+	\item Die bereits bekannte Farbe ist immer zum Spielen.
+	\item Cuebid und 2\SA sind starke Fragegebote.
 \end{compactitem}
 
 \minisec{Details}
 Nach 1\tre{}- bzw. 1\coe{}-Er"offnung wird folgendermassen weitergereizt falls
-der
-rechte Gegner nicht spricht (nach 1\kar{}- bzw. 1\pik{}-Er"offnung ist die
-Weiterreizung
-komplett analog):
+der rechte Gegner nicht spricht (nach 1\kar{}- bzw. 1\pik{}-Er"offnung ist die
+Weiterreizung komplett analog):
+
 \bdsc
 	\item[(1\tre)\sep{}1\SA{}\sep{}(p)\sep{}?]~
 		
@@ -2620,9 +2631,7 @@ komplett analog):
 					\item[2\SA] Treff-Stopper
 				\edsc
 			\item[2\kar] zum Spielen; entweder "`geringstes "Ubel"'
-oder
-				konstruktive Hebung wie nach nat"urlicher
-Gegenreizung
+oder konstruktive Hebung wie nach nat"urlicher Gegenreizung
 			\item[2\coe] zum Spielen oder Ausbessern in 2\pik
 			\item[2\pik] zum Spielen oder Ausbessern nach folgendem
 Schema:
@@ -2665,9 +2674,7 @@ Schema:
 					\item[4\pik] \maxi, nimmt Einladung an
 				\edsc
 			\item[2\pik] zum Spielen; entweder "`geringstes "Ubel"'
-oder
-				konstruktive Hebung wie nach nat"urlicher
-Gegenreizung
+oder konstruktive Hebung wie nach nat"urlicher Gegenreizung
 			\item[2\NT] starkes Frage-Relais
 				\bdsc
 					\item[3\uf] \mini, \nat
@@ -2685,14 +2692,14 @@ sein
 		\edsc
 \edsc
 
-Falls der rechte Gegner kontriert oder auf der Zweierstufe reizt:
+\minisec{St"orung durch die Gegner}
+Der rechte Gegner kontriert oder reizt auf der Zweierstufe:
 \bdsc
 	\item[(1\anybid{})\sep{}1\SA{}\sep{}(\kontra{})\sep{}?]~
 		\bdsc
 			\item[Pass] Partner soll seine \ufa reizen
 			\item[\rekontra] wie nach nat"urlicher
-\ofa-Gegenreizung: Punktmajorit"at
-				ohne (echten) Fit
+\ofa-Gegenreizung: Punktmajorit"at ohne (echten) Fit
 			\item[Rest] wie oben
 		\edsc
 	\item[(1\anybid{})\sep{}1\SA{}\sep{}(2\anybid{})\sep{}?]~
@@ -2708,8 +2715,7 @@ zeigen
 		(Der rechte Gegner reizt eine neue Farbe auf Zweierstufe.)
 		\bdsc
 			\item[\kontra] Partner soll passen, falls $y$ seine
-unbekannte
-				Farbe ist (Strafvorschlag).
+unbekannte Farbe ist (Strafvorschlag).
 			\item[Rest] nat"urlich
 		\edsc
 \edsc
