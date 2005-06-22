@@ -9,7 +9,7 @@ a6_all: 5er_of_a6.ps 5er_of_a6.pdf
 %.ps: %.dvi
 	dvips  -o $@ $<
 
-%.dvi: %.tex layout.tex
+%.dvi: %.tex 5er_of.tex 5er_of_macros.tex 5er_of_params.tex
 	latex -src-specials=par,math $<
 	latex -src-specials=par,math $<
 #	makeindex 5er_of.idx
