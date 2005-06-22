@@ -1,4 +1,4 @@
-all: a4_all a5_all a6_all
+all: clean a4_all a5_all a6_all
 
 dvionly: 5er_of_a4.dvi 5er_of_a5.dvi 5er_of_a6.dvi
 
