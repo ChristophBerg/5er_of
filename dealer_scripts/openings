@@ -101,17 +101,17 @@ open_two_notrump = (
 	hcp(west) >= 20 and hcp(west) <= 21 )
 
 # gambling
-gambling = (
-	hcp(west) < 12 and
-	( clubs(west) >= 6 and
-	  ( hcp(west, clubs) == 9 and hascard(west, TC) or
-	    hcp(west, clubs) == 10 )
-	) or (
-	  diamonds(west) >= 6 and
-	  ( hcp(west, diamonds) == 9 and hascard(west, TD) or
-	    hcp(west, diamonds) == 10 )
-	)
-)
+gambling = ( top2(west, spades) == 0 and top2(west, hearts) == 0 and
+clubs(west) < 9 and diamonds(west) < 9 and
+( ( clubs(west) >= 6 and top4(west, clubs) == 4 or
+    clubs(west) >= 7 and top3(west, clubs) == 3 and hascard(west, TC) )
+  and top2(west, diamonds) == 0
+or
+  ( diamonds(west) >= 6 and top4(west, diamonds) == 4 or
+    diamonds(west) >= 7 and top3(west, diamonds) == 3 and hascard(west, TD) )
+  and top2(west, clubs) == 0
+) )
+
 
 # 3 in minor
 open_three_minor = (
@@ -124,6 +124,14 @@ open_three_minor = (
 open_three_major = (
 	hcp(west) >= 5 and hcp(west) <= 10 and
 	( hearts(west) >= 7 or spades(west) >= 7 ) )
+
+# walsh slam relays
+walsh_slam = (
+open_one_club and balanced and hcp(west) >= 12 and hcp(west) <= 14 and
+(clubs(east) < 5 or diamonds(east) >= clubs(east)) and
+diamonds(east) > spades(east) and diamonds(east) > hearts(east) and
+diamonds(east) >= 3 and hcp(east) >= 14
+)
 
 
 action	average "1SA" open_1nt,
@@ -141,4 +149,5 @@ action	average "1SA" open_1nt,
 	average "2nt" open_two_notrump,
 	average "3m" open_three_minor,
 	average "3M" open_three_major,
-	average "G" gambling
+	average "G" gambling,
+	average "ws" walsh_slam
