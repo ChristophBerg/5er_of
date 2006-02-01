@@ -41,7 +41,7 @@ Er"offnung in 1. Hand an.}
 \bidinsfixed{%
 2\tre	& 6-10	& Weak Two in \ka, \\
 	& 16\pl	& 6er-Farbe, 8 Spielstiche\footnote{in \ufa jeweils etwas mehr}, \\
-	&	& stehende 7er-\ofa mit Seiten-Ass, \\
+	& 14\pl	& stehende 7er-\ofa mit Nebenwert, \\
 	& 22-23	& \bal, oder\\
 	& 26-27	& \bal & 2&2\\[1ex]
 2\kar	& 6-10	& Weak Two in \co, \\
@@ -58,14 +58,14 @@ Er"offnung in 1. Hand an.}
 3\uf	& 6-10	& 7\pl{}er-\ufa (in 1./2. Hand 2~Tops; in 3. Hand 6er-\tr
 m"oglich) & 0&8\\[1ex]
 3\of	& 6-10	& 7\pl{}er-\ofa & 1&0\\[1ex]
-3\SA	& 	& Gambling & 0&1
+3\SA	& 10-12	& Gambling & 0&1
 }
 
 \subsection*{4er-Stufe}
 \bidinsfixed{%
 4\uf	& 	& schlechtes 8er-\mi \\[1ex]
 4\of	&	& 7\good{}\pl{}er-\ofa, zum Spielen\\[1ex]
-4\SA	&	& 6/5\pl\uf
+4\SA	&	& 6/5\pl\uf, sperrend
 }
 
 %
@@ -120,7 +120,7 @@ Mit ausgeglichenen H"anden zeigt der Er"offner nun seine St"arke, er reizt nach
 
 Antworten mit Fit in \ofa: \conv{Limit-Hebungen},
 \conv{Splinter} (meist 4 in neuer Farbe),
-\conv{Fit-Jumps} (4 in er"offneter Farbe), 4\SA \conv{KCB},
+\conv{Fit-Jumps} (4 in er"offneter \ufa), 4\SA \conv{KCB},
 5\SA \conv{Josephine}, \conv{EKCB}.
 
 Antworten mit Fit in \ufa: \conv{Limit-Hebungen}, 4\uf \conv{KCB}, \conv{Splinter}.
@@ -398,7 +398,7 @@ Nach [1\tre{}\sep2\tre{};] bzw. [1\kar{}\sep2\kar{};] gibt es kein Revers.
 Ziel ist meist einen \sa-Kontrakt zu spielen wenn alle Nebenfarben gestoppt
 sind. Der Er"offner zeigt mit 2\SA eine ausgeglichene, passbare Hand.
 3\tre bzw. 3\kar ist ebenfalls passbar.  Alle anderen Gebote des Er"offners
-zeigen Werte (Stopper) und sind partieforcing, weitere Gebote des Antwortenden
+zeigen Werte (Stopper) und sind partieforcierend, weitere Gebote des Antwortenden
 zeigen ebenfalls Werte.
 
 \bdsc
@@ -412,19 +412,31 @@ zeigen ebenfalls Werte.
             \edsc
           \item[2\pik] \pstop (h"ochstens \chstop)
           \item[2\SA] \stp in \co und \pi
-	\edsc
+        \edsc
     \edsc
 \edsc
 
 \subsection{Bietsequenzen nach [1\kar{}\sep{}2\tre{}]} \label{1kar2tre}
 
 \bdsc
-  \item[1\kar{}\sep2\tre; ?]~
+\item[1\kar{}\sep2\tre; ?]~
+  \bdsc
+  \item[2\kar] bel. 12-15 FP (\bal oder \nat, kann 3er-\ka sein)
     \bdsc
-    \item[2\kar] 12-13 FP, \bal oder \nat (kann 3er-\ka sein)
-    \item[2\of] \nat, \conv{Reverse}
-    \item[2\SA] 14 FP, \bal
+    \item[2\coe] \rel, \pf (oft 5/4 \nat)
+      \bdsc
+      \item[2\pik] 4er-\pi
+      \item[2\SA] \bal, 12-14 (mit 15 wird 1\SA er"offnet)
+      \item[3\tre] 4er-\tr, 5er-\ka
+      \item[3\kar] 6er-\ka
+      \item[3\coe] 4er-\co
+      \edsc
+    \item[2\pik] 5/4, \nat, \pf
+    \item[2\SA/3\tre/\ka] \nat, \inv
     \edsc
+  \item[2\of] \nat, 16\pl FP, \conv{Reverse}
+  \item[2\SA] 18-19 FP, \bal
+  \edsc
 \edsc
 
 
@@ -1135,7 +1147,7 @@ Reizung (\conv{Inverted Minors}, \conv{Weak Jumps}).
 
 Die Reizung nach 1\kar-Er"offnung ist analog.
 
-\subsection{Nach \of-Er"offnung}
+\subsection{Nach \of-Er"offnung} \label{stoerung-of}
 \begin{itemize}
 \item Alle \ofa-Hebungen sind schwach.  Falls \conv{Bergen-Hebungen}
   noch m"oglich sind (d.h. im Sprung), werden diese angewendet%
@@ -1163,8 +1175,8 @@ Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
   \item[2\pik] \pf mit 3\pl{}er-Anschluss
   \item[2\SA] \inv mit \emph{genau} 3er-Anschluss
   \item[3\tre/\ka] weiterhin \conv{Bergen-Hebungen}
-  \item[3\pik] beliebiger Single-\conv{Splinter} (wie in ungest"orter
-    Reizung)
+  \item[3\pik/4\tre/\ka] \conv{Splinter}, Single/Chicane
+  \item[3\SA] \nat
   \edsc
 \item[1\coe{}\sep(2\kar){}\sep?]~
   \bdsc
@@ -1179,14 +1191,14 @@ Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
   \item[2\SA] \inv mit 3\pl{}er-Anschluss
   \item[3\coe] \pf mit 3\pl{}er-Anschluss
   \item[3\pik] schwache Hebung
-  \item[3\SA] Chicane-Splinter (3\coe ist nicht mehr frei)
-  \item[4\coe] \co-Splinter
+  \item[3\SA] \nat
+  \item[4\tre/\ka/\co] \conv{Splinter}
   \edsc
 \item[1\coe{}\sep(2\pik){}\sep?]~
   \bdsc
   \item[3\pik] \pf mit 3\pl{}er-Anschluss
-  \item[3\SA] Chicane oder Single \pi (!)
-  \item[4\pik] EKCB
+  \item[3\SA] \nat
+  \item[4\tre/\ka] \conv{Splinter}
   \edsc
 \edsc
 
@@ -1210,8 +1222,14 @@ Die anderen F"alle k"onnen mittels \conv{Bergen} gezeigt werden.
   Coeur-Anschluss.
 \end{description}
 
-\subsection{Der Gegner reizt einen Zweif"arber \conv{(Unusual over
-    Unusual)}}
+\subsection{Gegner reizt 1\SA}
+
+\conv{Kontra} ist Strafe, neue Farbe nicht forcierend. Nach 1\ufa{}\sep(1\SA)
+zeigt 2\tre beide Oberfarben, schwach. 2\SA zeigt eine partieforcierende,
+unausgeglichene Hand, meist mit Fit, die nicht f"ur ein Strafkontra geeignet
+ist.
+
+\subsection{Gegner reizt Zweif"arber \conv{(Unusual over Unusual)}}
 
 Reizt der Gegner "uber unsere 1\anybid-Er"offnung einen Zweif"arber bei
 dem beide Farben bekannt sind, so verwenden wir die Konvention
@@ -1365,7 +1383,7 @@ Antwortende war entweder schwach mit L"ange in beiden Oberfarben, oder stark.
 \item[1\SA{}\sep(p)\sep2\tre{}\sep(2\coe);] (Gegner reizt nach Stayman)
     \bdsc
     \item[\kontra] 4er-\co
-    \item[2\pik] 5er-\pi
+    \item[2\pik] 4er-\pi
     \item[pass] verneint 4er-\co
       \bdsc
       \item[pass] Stayman war schwach
@@ -1469,7 +1487,7 @@ Die 2\tre-Er"offnung zeigt entweder
 \item ein \Index{\textbf{Weak Two}} in Karo,
 \item ein \textbf{Semiforcing} in Farbe
   (16\pl FP, 6\pl{}er-Farbe, 8 Spielstiche\footnote{in \ufa 9 Stiche}),
-\item ein \textbf{Partieforcing} mit einer stehenden Oberfarbe oder
+\item ein \textbf{Partieforcing} mit einer stehenden Oberfarbe mit Nebenwert oder
 \item eine \textbf{ausgeglichene Hand} mit 22-23 oder 26-27~FP.
 \end{itemize}
 Der Antwortende reizt in der Regel 2\kar als Relais, es sei denn, dass
@@ -1479,12 +1497,11 @@ er 2\SA, was auch Karo-Fit impliziert. Neue Farben sind nat"urlich und forcing.
 \bdsc
 \item[2\tre{}\sep2\kar;] \rel
   \bdsc
-  \item[2\coe] Semiforcing in \co
-  \item[2\pik] Semiforcing in \pi
+  \item[2\coe/\pi] Semiforcing in \of
   \item[2\SA] 22-23 FP, \bal, 5er-\ofa m"oglich \\
     \ra weiter wie nach 2\SA-Er"offnung
-  \item[3\tre] Semiforcing in \tr
-  \item[3\kar] Semiforcing in \ka
+  \item[3\tre/\ka] Semiforcing in \uf
+  \item[3\coe/\pi] \pf in \of, stehende 7er-Farbe, Nebenwert
   \item[3\SA] 26-27 FP, \bal, 5er-\ofa m"oglich \\
     \ra weiter wie nach 2\SA-Er"offnung
   \edsc
@@ -1792,6 +1809,8 @@ Double-Anschluss und einer K"urze.
 \subsection{3 in Farbe}
 
 Die Farber"offnung auf 3er-Stufe zeigt eine 7\pl{}er-L"ange und 6-10 FP.
+In 1./2. Hand soll die Farbe 2 Topfiguren haben, damit der Partner leichter
+3\SA ansagen kann.
 Hebungen sind entweder konstruktiv oder weitere Sperre.
 Eine neue Farbe auf der 3er-Stufe nat"urlich und partieforcierend. Eine
 neue Farbe auf der 4er-Stufe (au"ser 4\tre) best"atigt den Fit und ist Cuebid.
@@ -1815,7 +1834,7 @@ neue Farbe auf der 4er-Stufe (au"ser 4\tre) best"atigt den Fit und ist Cuebid.
 
 Nach anderen Sperransagen sind die Sequenzen entsprechend.
 
-\subsection{3\SA: Gambling}\index{Gambling}
+\subsection{3\SA: Gambling} \index{Gambling} \label{gambling}
 
 Die 3\SA-Er"offnung zeigt eine stehende 7er-\ufa ohne Werte in den
 Nebenfarben (\conv{Gambling}).
@@ -1841,12 +1860,11 @@ Nebenfarben (\conv{Gambling}).
   \edsc
 \edsc
 
-\subsection{4\uf: Namyats}\index{Namyats}
+\subsection{4\uf: Sperre} \label{4uf}
 
-Die 4\uf-Er"offnung zeigt eine stehende 7er-\ofa (\tr{}\ra{}\co, \ka{}\ra{}\pi)
-mit
-einer Nebenfarb-Kontrolle (K"onig/Ass). Partner reizt entweder 4 in der \ofa
-oder \emph{Erstrunden}kontrollen, wenn er Schlemminteresse hat.
+Die 4\uf-Er"offnung zeigt eine schlechte 8er-\ufa, mit der man kein \sa spielen
+m"ochte.\footnote{Stehende 7er-\ofa mit weiterer Kontrolle (Namyats) werden
+"uber 2\tre er"offnet.}
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1896,6 +1914,12 @@ Spr"unge in die 2er-Stufe zeigen 6-10 FP und eine 6er-Farbe oder eine sehr gute
 S.~\pageref{ogust}).
 Spr"unge in die 3er-Stufe zeigen eine 7\pl{}er-Farbe und eine punktschwache
 Hand.
+
+\subsection{Sprung"uberruf}
+
+Nach \ofa-Er"offung zeigt der Sprung"uberruf eine stehende Unterfarbe und fragt
+nach Stopper, um 3\SA spielen zu k"onnen ("ahnlich \conv{Gambling}, \ra \ref{gambling}).
+Nach \ofa-Er"offung ist der Sprung"uberruf nat"urlich und sperrend.
 
 \subsection{Michaels Pr"azis}
 
@@ -1984,6 +2008,15 @@ sp"ater durch Kontra, wenn das Relais zu uns durchgepasst wurde.
     Info-\kontra gegen \co-Weak Two
   \item[2\coe] \nat
   \edsc
+\edsc
+
+\subsection{2\SA als \uf-Zweif"arber}
+
+\bdsc
+\item[\kontra] allgemeine St"arke ab 16\pl FP. Jedes weitere \kontra ist Strafe.
+\item[3\tre] Info-\kontra mit l"angeren \co (\hhand{ADxx}{KDxxx}{Kx}{xx})
+\item[3\kar] Info-\kontra mit l"angeren \pi (\hhand{DBxxx}{AKx}{KDxx}{x})
+\item[3\of] 6er-\ofa, Er"offnungsst"arke
 \edsc
 
 \subsection{Crash gegen starke 1\tre-Er"offnung}
@@ -2146,6 +2179,19 @@ Schlemm-Interesse}\\
   \item[3\kar] stark, 4/5 \pi{}+\tr (nach 1\tre-Er"offnung, 2a) \\
     stark, 4/5 \pi{}+\ka (nach 1\kar-Er"offnung, 2b)
   \item[3\coe] stark, 5/4 \pi{}+\co (2c)
+  \edsc
+\edsc
+
+\minisec{Abweichungen nach [1\coe{}\sep{}1\pik]}
+\bdsc
+\item[1\coe{}\sep1\pik; 1\SA{}\sep?]~
+  \bdsc
+  \item[2\tre; 2\kar{}\sep?]~
+    \bdsc
+    \item[2\coe] \inv, 3er-\co, 4er-\pi, \bal
+    \item[3\coe] \slamint, 3er-\co, 5er-\pi
+    \edsc
+  \item[3\coe] \pf, 3er-\co, 4er-\pi, \bal
   \edsc
 \edsc
 
@@ -2615,7 +2661,7 @@ Kontrollgebot} reizen!
 
 Das direkte 4\tre-Gebot auf die 1 oder 2\SA-Er"offnung fragt den Er"offner nach Zahl
 der Asse. Danach wird rollend nach platzierten K"onigen gefragt.
-Nach 2\SA-Er"offnung ist 4\SA solange Blackwood, bis ein Fit bestätigt wurde.
+Nach 2\SA-Er"offnung ist 4\SA solange Blackwood, bis ein Fit best"atigt wurde.
 
 \bdsc
 \item[1\SA/2\SA{}\sep4\tre] Gerber-Assfrage
@@ -3000,6 +3046,9 @@ Gegen"uber fr"uheren Versionen des Systems wurde ge"andert:
 \item Schema nach partieforcierender \ofa{}-Hebung ge"andert (\ra \ref{majorgf}, S.~\pageref{majorgf})
 \item 2\tre enth"alt auch \pf mit stehender Oberfarbe
 \item 4-Farben-\xfer nach 1\SA-Er"offnung (\ra \ref{1saxfer})
+\item Januar 2005: 4\ufa ist Sperre in \uf (\ra \ref{4uf})
+\item Januar 2005: Vereinfachung nach \of-Er"offnung und St"orung durch Gegner (\ra \ref{stoerung-of})
+\item Januar 2005: [1\kar{}\sep{}2\tre; 2\SA] zeigt 18-19, \dots (\ra \ref{1kar2tre})
 \end{itemize}
 
 \subsection{Alte Konventionen}
@@ -3039,9 +3088,9 @@ wissen, ob der \eo einen 3er-Anschluss hat.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Autoren}
 
-\copyright{} 2005 Thomas Schmitt \\
+\copyright{} 2005, 2006 Thomas Schmitt \\
 \copyright{} 2005 Frank Luithle \\
-\copyright{} 2005 Christoph Berg \\
+\copyright{} 2005, 2006 Christoph Berg \\
 Alle Rechte vorbehalten.
 
 Skript im Web: http://www.df7cb.de/bridge/
@@ -3057,3 +3106,4 @@ Skript im Web: http://www.df7cb.de/bridge/
 
 \end{document}
 
+% vim:et:sw=4:sta:
