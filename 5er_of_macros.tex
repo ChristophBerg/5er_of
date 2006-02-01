@@ -179,8 +179,9 @@
 % Pagestyle
 \renewcommand{\sectionmark}[1]{\markleft{#1}}
 \pagestyle{fancy}
-\fancyhead[RE,LO]{\nouppercase{\emph{\leftmark}}}
-\fancyhead[RO,LE]{\thepage}
+\fancyhead[RE,LO]{\emph{5er-Oberfarben}}
+\fancyhead[RO]{\nouppercase{\leftmark} -- \thepage}
+\fancyhead[LE]{\thepage{} -- \nouppercase{\leftmark}}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 
